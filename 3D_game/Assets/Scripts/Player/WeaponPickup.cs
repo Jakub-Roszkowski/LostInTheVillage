@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 public class WeaponPickup : MonoBehaviour
 {
@@ -11,9 +11,18 @@ public class WeaponPickup : MonoBehaviour
 
     public GameObject currentWeapon; // Obecna broñ postaci
 
+
+    private InputManager inputManager;
+
+    private void Start()
+    {
+        inputManager = GetComponent<InputManager>();
+        
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (inputManager.onFoot.Interact.triggered)
         {
             TryPickupWeapon();
         }
