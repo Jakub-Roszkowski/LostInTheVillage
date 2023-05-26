@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    private Camera cam;[SerializeField]
+    private Camera cam;
+    [SerializeField]
     private float distance = 3f;
     [SerializeField]
     private LayerMask mask;
-    private LayerMask mask2;
     private PlayerUI playerUI;
     private InputManager inputManager;
     // Start is called before the first frame update Unity Message | 0 references
@@ -27,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * distance);
         RaycastHit hitInfo; // variable to store our collision information.
 
-        if (Physics.Raycast(ray, out hitInfo, distance, mask)|| Physics.Raycast(ray, out hitInfo, distance, mask2))
+        if (Physics.Raycast(ray, out hitInfo, distance, mask))
         {
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {

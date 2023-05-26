@@ -4,40 +4,59 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public GUN_Stats GUN_Stats;
     public Transform fpsCam;
-    public float range = 20;
-    public float impactForce = 150;
-    public int damageAmount = 20;
+    private float range;
+    private float impactForce;
+    private int damageAmount;
 
-    public int fireRate = 10;
+    public AudioSource BGM;
+    private int fireRate = 10;
     private float nextTimeToFire = 0;
+
+    private AudioClip shootSound;
+    private AudioClip ReloudSound;
 
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+
     public int currentAmmo;
-    public int maxAmmo = 10;
-    public int magazineAmmo = 30;
 
-    public float reloadTime = 2f;
-    public bool isReloading;
+    private int magazineAmmo;
 
-    //public Animator animator;
+    private float reloadTime;
 
-    InputAction shoot;
+    private bool ISReloundig;
 
-    private InputManager inputManager;
+
+    private InputManagerToShoot inputManager;
 
     public GameObject lightObject;
 
 
     void Start()
     {
-        inputManager = GetComponent<InputManager>();
-        shoot = inputManager.onFoot.Interact;
-        shoot.Enable();
+        ISReloundig = false;
+        range = GUN_Stats.Range;
+        impactForce = GUN_Stats.impactForce;
+        damageAmount = GUN_Stats.Damage;
+        fireRate = GUN_Stats.fireRate;
+        magazineAmmo = GUN_Stats.MagazineAMMO;
 
-        currentAmmo = maxAmmo;
+        reloadTime = GUN_Stats.ReloudTime;
+
+
+
+        shootSound = GUN_Stats.shoot;
+        ReloudSound = GUN_Stats.ReloudSound;
+
+        inputManager = GetComponent<InputManagerToShoot>();
+
+        
+
+        currentAmmo = magazineAmmo;
+        SetAmmoCountForParent(currentAmmo);
 
         Light lightComponent = lightObject.GetComponent<Light>();
         if (lightComponent != null)
@@ -49,45 +68,45 @@ public class Gun : MonoBehaviour
     }
     private void OnEnable()
     {
-        isReloading = false;
-        //animator.SetBool("isReloading", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentAmmo == 0 && magazineAmmo == 0)
+        if (transform.parent != null && transform.parent.name == "test")
         {
-            //animator.SetBool("isShooting", false);
-            return;
+
+
+            bool isShooting = inputManager.onFoot.Shoot.triggered;
+
+            if (currentAmmo == 0)
+            {
+                StartCoroutine(Reload());
+            }
+
+
+            bool isReloading = inputManager.onFoot.Reloud.triggered;
+
+            if (isReloading)
+            {
+                StartCoroutine(Reload());
+            }
+
+            if (isShooting && Time.time >= nextTimeToFire && currentAmmo>0 && !ISReloundig)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Fire();
+            }
+
+
         }
-
-        if (isReloading)
-            return;
-
-        bool isShooting = inputManager.onFoot.Shoot.triggered;
-        //animator.SetBool("isShooting", isShooting);
-
-        if (isShooting && Time.time >= nextTimeToFire)
-        {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Fire();
-        }
-
-        if (currentAmmo == 0 && magazineAmmo > 0 && !isReloading)
-        {
-            StartCoroutine(Reload());
-        }
+        SetAmmoCountForParent(currentAmmo);
 
     }
 
     private void Fire()
     {
-        //AudioManager.instance.Play("Shoot");
-
-
-
-
+        ChangeBGM(shootSound);
         muzzleFlash.Play();
 
 
@@ -108,21 +127,14 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
-            //Enemy e = hit.transform.GetComponent<Enemy>();
-            //if (e != null)
-            //{
-            //    e.TakeDamage(damageAmount);
-            //    return;
-            //}
 
-
-                // SprawdŸ, czy trafiony obiekt mo¿e znikn¹æ
-                DisappearingObject disappearingObject = hit.collider.GetComponent<DisappearingObject>();
-                if (disappearingObject != null)
-                {
-                    // Wywo³aj metodê, która sprawi, ¿e obiekt zniknie
-                    disappearingObject.Disappear();
-                }
+            // SprawdŸ, czy trafiony obiekt mo¿e znikn¹æ
+            DisappearingObject disappearingObject = hit.collider.GetComponent<DisappearingObject>();
+            if (disappearingObject != null)
+            {
+                // Wywo³aj metodê, która sprawi, ¿e obiekt zniknie
+                disappearingObject.Disappear();
+            }
 
 
             Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
@@ -134,22 +146,13 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        isReloading = true;
-        //AudioManager.instance.Play("Reload");
-        //animator.SetBool("isReloading", true);
+        ISReloundig = true;
+        ChangeBGM(ReloudSound);
         yield return new WaitForSeconds(reloadTime);
-        //animator.SetBool("isReloading", false);
-        if (magazineAmmo >= maxAmmo)
-        {
-            currentAmmo = maxAmmo;
-            magazineAmmo -= maxAmmo;
-        }
-        else
-        {
-            currentAmmo = magazineAmmo;
-            magazineAmmo = 0;
-        }
-        isReloading = false;
+        currentAmmo = magazineAmmo;
+        ISReloundig = false;
+
+
     }
 
     IEnumerator DisableLightAfterDelay(Light light, float delay)
@@ -157,4 +160,32 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(delay);
         light.enabled = false; // Wy³¹cz œwiat³o po opóŸnieniu
     }
+
+
+
+
+    public void ChangeBGM(AudioClip music)
+    {
+
+        
+
+        BGM.Stop();
+        BGM.clip = music;
+        BGM.Play();
+
+    }
+
+    void SetAmmoCountForParent(int ammo)
+    {
+        GameObject parentObject = transform.parent.gameObject;
+        if (parentObject != null)
+        {
+            AMMO ammoScript = parentObject.GetComponent<AMMO>();
+            if (ammoScript != null)
+            {
+                ammoScript.AMMO_count = ammo;
+            }
+        }
+    }
 }
+
