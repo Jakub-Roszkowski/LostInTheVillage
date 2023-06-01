@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTakeDemage : MonoBehaviour
 {
@@ -21,5 +22,21 @@ public class PlayerTakeDemage : MonoBehaviour
     {
         player.health -= demage;
 
+        if (player.health < 0)
+            Restart_game();
+
+    }
+    public void Restart_game()
+    {
+
+            Time.timeScale = 1f;
+            Retry();
+        
+    }
+
+    public void Retry()
+    {
+        //Restarts current level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
