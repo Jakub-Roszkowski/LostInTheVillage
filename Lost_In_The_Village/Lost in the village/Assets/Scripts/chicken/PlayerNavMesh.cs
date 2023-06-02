@@ -9,6 +9,7 @@ public class PlayerNavMesh : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     private int currentDestinationIndex = 0;
+    [SerializeField] private int avoidanceDistance = 5;
 
     private void Awake()
     {
@@ -32,5 +33,15 @@ public class PlayerNavMesh : MonoBehaviour
     private void SetDestination()
     {
         navMeshAgent.destination = movePositionTransforms[currentDestinationIndex].position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("chicken"))
+        {
+            // Odbicie od innego kurczaka
+            Vector3 avoidanceDirection = transform.position - collision.transform.position;
+            navMeshAgent.destination = transform.position + avoidanceDirection.normalized * avoidanceDistance;
+        }
     }
 }

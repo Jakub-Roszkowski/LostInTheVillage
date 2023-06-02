@@ -151,6 +151,14 @@ public class Gun : MonoBehaviour
                 disappearingObject.Disappear();
             }
 
+            // SprawdŸ, czy trafiony obiekt mo¿e znikn¹æ
+            DisappearinChicken disappearingObject2 = hit.collider.GetComponent<DisappearinChicken>();
+            if (disappearingObject2 != null)
+            {
+                // Wywo³aj metodê, która sprawi, ¿e obiekt zniknie
+                disappearingObject2.Disappear();
+            }
+
 
             Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
             GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
