@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: c5c80a52ec520a949aba075f46688c6a
+timeCreated: 1471640556
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackLeft_wheel
+    100002: BackRight_wheel
+    100004: bl_brake
+    100006: bl_disk
+    100008: br_brake
+    100010: br_disk
+    100012: exhaust_1
+    100014: exhaust_2
+    100016: fl_brake
+    100018: fl_disk
+    100020: fr_brake
+    100022: fr_disk
+    100024: FrontLeft_wheel
+    100026: FrontRight_wheel
+    100028: //RootNode
+    100030: sport_car_1_body
+    100032: sport_car_1_interior
+    100034: sport_car_1_lights
+    100036: sport_car_1_steering_wheel
+    100038: sport_car_1_windows
+    400000: BackLeft_wheel
+    400002: BackRight_wheel
+    400004: bl_brake
+    400006: bl_disk
+    400008: br_brake
+    400010: br_disk
+    400012: exhaust_1
+    400014: exhaust_2
+    400016: fl_brake
+    400018: fl_disk
+    400020: fr_brake
+    400022: fr_disk
+    400024: FrontLeft_wheel
+    400026: FrontRight_wheel
+    400028: //RootNode
+    400030: sport_car_1_body
+    400032: sport_car_1_interior
+    400034: sport_car_1_lights
+    400036: sport_car_1_steering_wheel
+    400038: sport_car_1_windows
+    2300000: bl_brake
+    2300002: bl_disk
+    2300004: br_brake
+    2300006: br_disk
+    2300008: fl_brake
+    2300010: fl_disk
+    2300012: fr_brake
+    2300014: fr_disk
+    2300016: sport_car_1_body
+    2300018: sport_car_1_interior
+    2300020: sport_car_1_lights
+    2300022: sport_car_1_steering_wheel
+    2300024: sport_car_1_windows
+    3300000: bl_brake
+    3300002: bl_disk
+    3300004: br_brake
+    3300006: br_disk
+    3300008: fl_brake
+    3300010: fl_disk
+    3300012: fr_brake
+    3300014: fr_disk
+    3300016: sport_car_1_body
+    3300018: sport_car_1_interior
+    3300020: sport_car_1_lights
+    3300022: sport_car_1_steering_wheel
+    3300024: sport_car_1_windows
+    4300000: sport_car_1_body
+    4300002: bl_brake
+    4300004: bl_disk
+    4300006: br_brake
+    4300008: br_disk
+    4300010: fl_brake
+    4300012: fl_disk
+    4300014: fr_brake
+    4300016: fr_disk
+    4300018: sport_car_1_interior
+    4300020: sport_car_1_steering_wheel
+    4300022: sport_car_1_lights
+    4300024: sport_car_1_windows
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
