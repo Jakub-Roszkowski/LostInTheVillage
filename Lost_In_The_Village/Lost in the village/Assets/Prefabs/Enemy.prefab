@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2853246361981442966}
   - component: {fileID: 2853246361981442969}
   - component: {fileID: 2853246361981442968}
-  - component: {fileID: 2853246361981442964}
   - component: {fileID: -3166337599310293080}
   m_Layer: 0
   m_Name: Enemy
@@ -124,36 +123,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2853246361981442964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2853246361981442970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46c7d6fa2f11e4aefb963ef2246f5a90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  playerTransform: {fileID: 0}
-  playerHealth: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  walkPointSet: 0
-  timeBetweenAttacks: 0.5
-  sightRange: 15
-  attackRange: 10
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  bulletPrefab: {fileID: 4512355593803068829, guid: cdb55a0fb5b25404ca6180ffb4204316, type: 3}
 --- !u!54 &-3166337599310293080
 Rigidbody:
   m_ObjectHideFlags: 0
