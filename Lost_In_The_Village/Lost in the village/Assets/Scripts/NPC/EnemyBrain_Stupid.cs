@@ -15,7 +15,7 @@ public class EnemyBrain_Stupid : MonoBehaviour
     private void Awake()
     {
         enemyReferences = GetComponent<EnemyReferences>();
-
+        target = GameObject.Find("Player").transform;
     }
 
     private void Start()
