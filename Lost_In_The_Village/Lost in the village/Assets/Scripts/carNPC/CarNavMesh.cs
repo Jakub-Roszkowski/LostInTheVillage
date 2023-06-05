@@ -19,20 +19,21 @@ public class CarNavMesh : MonoBehaviour
 
     private void Start()
     {
-        SetDestination();
+        SetRandomDestination();
     }
 
     private void Update()
     {
         if (!isAvoiding && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
-            currentDestinationIndex = (currentDestinationIndex + 1) % movePositionTransforms.Count;
-            SetDestination();
+            SetRandomDestination();
         }
     }
 
-    private void SetDestination()
+    private void SetRandomDestination()
     {
+        int randomIndex = Random.Range(0, movePositionTransforms.Count);
+        currentDestinationIndex = randomIndex;
         navMeshAgent.destination = movePositionTransforms[currentDestinationIndex].position;
     }
 
@@ -64,7 +65,8 @@ public class CarNavMesh : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         // Powrót do normalnej trasy dla obu samochodów
-        SetDestination();
+        SetRandomDestination();
         isAvoiding = false;
     }
 }
+
