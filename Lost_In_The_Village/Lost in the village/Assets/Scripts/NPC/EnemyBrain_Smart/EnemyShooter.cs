@@ -13,7 +13,11 @@ public class EnemyShooter : MonoBehaviour
     [Header("Gun")]
     public Vector3 spread = new Vector3(0.06f, 0.06f, 0.06f);
     public TrailRenderer bulletTrail;
+    public int ammo = 30;
     private EnemyReferences enemyReferences;
+    private int currentAmmo;
+
+
 
 
     private void Awake()
@@ -24,6 +28,8 @@ public class EnemyShooter : MonoBehaviour
 
     public void Shoot()
     {
+        if (ShouldReload()) return;
+
         Vector3 direction = GetDirection();
         if(Physics.Raycast(shootPoint.position,direction,out RaycastHit hit, float.MaxValue,layerMask))
         {
@@ -31,6 +37,8 @@ public class EnemyShooter : MonoBehaviour
 
             TrailRenderer trial = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrial(trial, hit));
+
+            currentAmmo -= 1;
         }
     }
 
@@ -70,15 +78,13 @@ public class EnemyShooter : MonoBehaviour
         Destroy(trial.gameObject, trial.time);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public bool ShouldReload()
     {
-        
+        return currentAmmo <= 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Reload() {
+        currentAmmo = ammo;
     }
+    
 }

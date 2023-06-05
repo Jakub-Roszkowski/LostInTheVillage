@@ -9,6 +9,9 @@ public class EnemyReferences : MonoBehaviour
 
     public Animator animator;
 
+    public EnemyShooter shooter;
+
+
     [Header("Stats")]
     public float pathUpdateDelay = 0.2f;
     
@@ -16,6 +19,7 @@ public class EnemyReferences : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        shooter = GetComponent<EnemyShooter>();
     }
 
 

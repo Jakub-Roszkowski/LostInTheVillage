@@ -31,5 +31,10 @@ public class EnemyState_RunToCover : IState
         enemyReferences.animator.SetFloat("speed", enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude);
     }
 
+    public bool HasArrivedAtDestination()
+    {
+        return enemyReferences.navMeshAgent.remainingDistance < 0.1f;
+    }
+
 
 }
