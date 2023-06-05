@@ -38,7 +38,10 @@ public class EnemyBrain_Stupid : MonoBehaviour
             {
                 UpdatePath();
             }
+            enemyReferences.animator.SetBool("shooting", inRange);
+
         }
+        enemyReferences.animator.SetFloat("speed", enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude);
     }
 
 
@@ -55,7 +58,6 @@ public class EnemyBrain_Stupid : MonoBehaviour
     {
         if(Time.time >= pathUpdateDeadline)
         {
-            Debug.Log("Updating path");
             pathUpdateDeadline = Time.time + enemyReferences.pathUpdateDelay;
             enemyReferences.navMeshAgent.SetDestination(target.position);
         }
