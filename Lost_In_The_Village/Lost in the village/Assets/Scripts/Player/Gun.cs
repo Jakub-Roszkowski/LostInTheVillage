@@ -43,14 +43,6 @@ public class Gun : MonoBehaviour
     void Start()
     {
 
-
-
-
-
-
-
-
-
         ISReloundig = false;
         range = GUN_Stats.Range;
         impactForce = GUN_Stats.impactForce;
@@ -129,8 +121,8 @@ public class Gun : MonoBehaviour
         Light lightComponent = lightObject.GetComponent<Light>();
         if (lightComponent != null)
         {
-            lightComponent.enabled = true; // W³¹cz œwiat³o podczas strza³u
-            StartCoroutine(DisableLightAfterDelay(lightComponent, 0.1f)); // Wy³¹cz œwiat³o po opóŸnieniu
+            lightComponent.enabled = true; // Wï¿½ï¿½cz ï¿½wiatï¿½o podczas strzaï¿½u
+            StartCoroutine(DisableLightAfterDelay(lightComponent, 0.1f)); // Wyï¿½ï¿½cz ï¿½wiatï¿½o po opï¿½nieniu
         }
 
         currentAmmo--;
@@ -143,19 +135,19 @@ public class Gun : MonoBehaviour
             }
 
 
-            // SprawdŸ, czy trafiony obiekt mo¿e znikn¹æ
+            // Sprawdï¿½, czy trafiony obiekt moï¿½e zniknï¿½ï¿½
             DisappearingObject disappearingObject = hit.collider.GetComponent<DisappearingObject>();
             if (disappearingObject != null)
             {
-                // Wywo³aj metodê, która sprawi, ¿e obiekt zniknie
+                // Wywoï¿½aj metodï¿½, ktï¿½ra sprawi, ï¿½e obiekt zniknie
                 disappearingObject.Disappear();
             }
 
-            // SprawdŸ, czy trafiony obiekt mo¿e znikn¹æ
+            // Sprawdï¿½, czy trafiony obiekt moï¿½e zniknï¿½ï¿½
             DisappearinChicken disappearingObject2 = hit.collider.GetComponent<DisappearinChicken>();
             if (disappearingObject2 != null)
             {
-                // Wywo³aj metodê, która sprawi, ¿e obiekt zniknie
+                // Wywoï¿½aj metodï¿½, ktï¿½ra sprawi, ï¿½e obiekt zniknie
                 disappearingObject2.Disappear();
             }
 
@@ -181,7 +173,7 @@ public class Gun : MonoBehaviour
     IEnumerator DisableLightAfterDelay(Light light, float delay)
     {
         yield return new WaitForSeconds(delay);
-        light.enabled = false; // Wy³¹cz œwiat³o po opóŸnieniu
+        light.enabled = false; // Wyï¿½ï¿½cz ï¿½wiatï¿½o po opï¿½nieniu
     }
 
 

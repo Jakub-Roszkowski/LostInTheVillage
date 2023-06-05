@@ -29,8 +29,8 @@ public class Mine : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerTakeDemage objectTODemage = other.GetComponent<PlayerTakeDemage>();
+            objectTODemage.TakeDemage(10);
 
-            objectTODemage.TakeDemage(30);
         }
         StartCoroutine(DestroyOBJ());
     }
