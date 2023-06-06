@@ -135,6 +135,20 @@ public class Gun : MonoBehaviour
             }
 
 
+
+
+            //KURCZAK_______________________________________________________________________________________________________________________________________________________________________________
+            // Sprawdź, czy trafiony obiekt może zniknąć
+            DisappearinChicken disappearingChicken = hit.collider.GetComponent<DisappearinChicken>();
+            if (disappearingChicken != null)
+            {
+                // Wywołaj metodę, która sprawi, że obiekt zniknie
+                disappearingChicken.Disappear();
+            }
+            //KURCZAK_______________________________________________________________________________________________________________________________________________________________________________
+
+
+
             Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
             GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
             impact.transform.parent = hit.transform;
