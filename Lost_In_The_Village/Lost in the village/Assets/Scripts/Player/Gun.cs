@@ -143,13 +143,6 @@ public class Gun : MonoBehaviour
                 disappearingObject.Disappear();
             }
 
-            // Sprawd�, czy trafiony obiekt mo�e znikn��
-            DisappearinChicken disappearingObject2 = hit.collider.GetComponent<DisappearinChicken>();
-            if (disappearingObject2 != null)
-            {
-                // Wywo�aj metod�, kt�ra sprawi, �e obiekt zniknie
-                disappearingObject2.Disappear();
-            }
 
 
             Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
@@ -181,9 +174,6 @@ public class Gun : MonoBehaviour
 
     public void ChangeBGM(AudioClip music)
     {
-
-        
-
         BGM.Stop();
         BGM.clip = music;
         BGM.Play();
