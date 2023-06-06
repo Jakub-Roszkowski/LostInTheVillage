@@ -15,7 +15,6 @@ public class EnemyState_Shoot : IState
 
     public void OnEnter()
     {
-        Debug.Log("Started shooting");
         target = GameObject.FindWithTag("Player").transform;
     }
 
@@ -38,5 +37,11 @@ public class EnemyState_Shoot : IState
 
             enemyReferences.animator.SetBool("shooting", true);
         }
+    }
+
+
+    public Color GizmoColor()
+    {
+        return Color.red;
     }
 }

@@ -11,17 +11,18 @@ public class EnemyState_Delay : IState
     public EnemyState_Delay(float waitForSeconds)
     {
         this.waitForSeconds = waitForSeconds;
-
     }
 
     public void OnEnter()
     {
         deadline = Time.time + waitForSeconds;
+        Debug.Log("enemy delay onEnter");
+
     }
 
     public void OnExit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("enemy delay onExit");
     }
 
     public void Tick()
@@ -34,4 +35,8 @@ public class EnemyState_Delay : IState
         return Time.time >= deadline;
     }
 
+    public Color GizmoColor()
+    {
+        return Color.white;
+    }
 }

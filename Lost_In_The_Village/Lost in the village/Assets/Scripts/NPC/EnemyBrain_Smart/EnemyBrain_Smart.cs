@@ -22,16 +22,16 @@ public class EnemyBrain_Smart : MonoBehaviour
         var delayAfterRun = new EnemyState_Delay(2f);
         var cover = new EnemyState_Cover(enemyReferences);
 
-
-        stateMachine.SetState(runToCover);
-
-
-        void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
-        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
-
         //Transitions
         At(runToCover, delayAfterRun, () => runToCover.HasArrivedAtDestination());
         At(delayAfterRun, cover, () => delayAfterRun.IsDone());
+
+        //Start state
+        stateMachine.SetState(runToCover);
+
+        //Functions
+        void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
+        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
 
     }
 
@@ -39,6 +39,15 @@ public class EnemyBrain_Smart : MonoBehaviour
     private void Update()
     {
         stateMachine.Tick();
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (stateMachine != null)
+        {
+            Gizmos.color = stateMachine.GetGizmoColor();
+            Gizmos.DrawSphere(transform.position + Vector3.up * 3, 0.4f);
+        }
     }
 
 

@@ -23,6 +23,7 @@ public class EnemyShooter : MonoBehaviour
     private void Awake()
     {
         enemyReferences = GetComponent<EnemyReferences>();
+        Reload();
     }
 
 
@@ -84,6 +85,7 @@ public class EnemyShooter : MonoBehaviour
     }
 
     public void Reload() {
+        Debug.Log("Reloaded");
         currentAmmo = ammo;
     }
     

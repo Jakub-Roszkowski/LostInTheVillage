@@ -11,6 +11,7 @@ public class EnemyState_Cover : IState
 
     public EnemyState_Cover(EnemyReferences enemyReferences)
     {
+
         this.enemyReferences = enemyReferences;
 
         stateMachine = new StateMachine();
@@ -30,16 +31,20 @@ public class EnemyState_Cover : IState
 
     }
 
+    public Color GizmoColor()
+    {
+        return stateMachine.GetGizmoColor();
+    }
 
     public void OnEnter()
     {
+        Debug.Log("Im covering!!!!!");
         enemyReferences.animator.SetBool("combat", true);
     }
 
     public void OnExit()
     {
         enemyReferences.animator.SetBool("combat", false);
-
     }
 
     public void Tick()
