@@ -135,16 +135,6 @@ public class Gun : MonoBehaviour
             }
 
 
-            // Sprawd�, czy trafiony obiekt mo�e znikn��
-            DisappearingObject disappearingObject = hit.collider.GetComponent<DisappearingObject>();
-            if (disappearingObject != null)
-            {
-                // Wywo�aj metod�, kt�ra sprawi, �e obiekt zniknie
-                disappearingObject.Disappear();
-            }
-
-
-
             Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
             GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
             impact.transform.parent = hit.transform;
