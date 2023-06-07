@@ -98,6 +98,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Light"",
+                    ""type"": ""Button"",
+                    ""id"": ""46c3baf0-ac80-40fc-bf8b-645e3d93b470"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -362,6 +371,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb62c8cb-67be-4e69-ad5f-01e1d9eb85e3"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""098ee821-31e5-44cf-837e-b7a04a02a7ba"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -896,6 +927,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnFoot_Run = m_OnFoot.FindAction("Run", throwIfNotFound: true);
         m_OnFoot_Reloud = m_OnFoot.FindAction("Reloud", throwIfNotFound: true);
         m_OnFoot_Exit = m_OnFoot.FindAction("Exit", throwIfNotFound: true);
+        m_OnFoot_Light = m_OnFoot.FindAction("Light", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -977,6 +1009,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Run;
     private readonly InputAction m_OnFoot_Reloud;
     private readonly InputAction m_OnFoot_Exit;
+    private readonly InputAction m_OnFoot_Light;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -989,6 +1022,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Run => m_Wrapper.m_OnFoot_Run;
         public InputAction @Reloud => m_Wrapper.m_OnFoot_Reloud;
         public InputAction @Exit => m_Wrapper.m_OnFoot_Exit;
+        public InputAction @Light => m_Wrapper.m_OnFoot_Light;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1022,6 +1056,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Exit.started += instance.OnExit;
             @Exit.performed += instance.OnExit;
             @Exit.canceled += instance.OnExit;
+            @Light.started += instance.OnLight;
+            @Light.performed += instance.OnLight;
+            @Light.canceled += instance.OnLight;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -1050,6 +1087,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Exit.started -= instance.OnExit;
             @Exit.performed -= instance.OnExit;
             @Exit.canceled -= instance.OnExit;
+            @Light.started -= instance.OnLight;
+            @Light.performed -= instance.OnLight;
+            @Light.canceled -= instance.OnLight;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -1195,6 +1235,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnReloud(InputAction.CallbackContext context);
         void OnExit(InputAction.CallbackContext context);
+        void OnLight(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
