@@ -18,7 +18,6 @@ public class EnemyState_RunToCover : IState
 
     public void OnEnter()
     {
-        Debug.Log("onEnter");
         Cover nextCover = this.coverArea.GetRandomCover(enemyReferences.transform.position);
         enemyReferences.navMeshAgent.SetDestination(nextCover.transform.position);
         destination = nextCover.transform.position;
@@ -28,7 +27,7 @@ public class EnemyState_RunToCover : IState
     public void OnExit()
     {
         enemyReferences.animator.SetFloat("speed", 0f);
-        Debug.Log("OnExit runToCover");
+
     }
 
     public void Tick()

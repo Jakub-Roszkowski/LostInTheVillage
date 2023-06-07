@@ -16,13 +16,12 @@ public class EnemyState_Delay : IState
     public void OnEnter()
     {
         deadline = Time.time + waitForSeconds;
-        Debug.Log("enemy delay onEnter");
 
     }
 
     public void OnExit()
     {
-        Debug.Log("enemy delay onExit");
+
     }
 
     public void Tick()

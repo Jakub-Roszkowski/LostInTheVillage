@@ -38,7 +38,6 @@ public class EnemyState_Cover : IState
 
     public void OnEnter()
     {
-        Debug.Log("Im covering!!!!!");
         enemyReferences.animator.SetBool("combat", true);
     }
 
