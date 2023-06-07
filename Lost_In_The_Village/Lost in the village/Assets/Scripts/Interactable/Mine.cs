@@ -28,9 +28,8 @@ public class Mine : MonoBehaviour
         Fire.Play();
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerTakeDemage objectTODemage = other.GetComponent<PlayerTakeDemage>();
-            objectTODemage.TakeDemage(10);
-
+            Health objectTODemage = other.GetComponent<Health>();
+            objectTODemage.TakeDamage(10);
         }
         StartCoroutine(DestroyOBJ());
     }

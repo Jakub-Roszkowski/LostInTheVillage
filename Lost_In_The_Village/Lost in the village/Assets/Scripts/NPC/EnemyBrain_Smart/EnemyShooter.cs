@@ -18,6 +18,8 @@ public class EnemyShooter : MonoBehaviour
     private int currentAmmo;
 
 
+    private Health playerHealth;
+
 
 
     private void Awake()
@@ -40,6 +42,14 @@ public class EnemyShooter : MonoBehaviour
             StartCoroutine(SpawnTrial(trial, hit));
 
             currentAmmo -= 1;
+            if (hit.collider.CompareTag("Player"))
+            {
+                Health playerHealth = hit.collider.GetComponent<Health>();
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(10);
+                }
+            }
         }
     }
 
