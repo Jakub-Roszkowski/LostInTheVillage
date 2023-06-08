@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class wskazowka : MonoBehaviour
@@ -9,10 +10,14 @@ public class wskazowka : MonoBehaviour
 
     public AudioSource BGM;
     public AudioClip wiadomosc;
+    public TextMeshProUGUI promptText;
+
+    public bool ifistoOpen = false;
 
 
     private void Start()
     {
+
         BGM.Stop();
         inputManager = GetComponent<InputManagerToExitCanva>();
     }
@@ -29,8 +34,15 @@ public class wskazowka : MonoBehaviour
     {
         if (other.CompareTag("Player")) // SprawdŸ, czy kolizja wystêpuje z graczem (lub innym obiektem o tagu "Player")
         {
-            ChangeBGM(wiadomosc);
-            canvasToActivate.gameObject.SetActive(true); // Aktywuj Canvas
+            if (ifistoOpen)
+            {
+                ChangeBGM(wiadomosc);
+                canvasToActivate.gameObject.SetActive(true); // Aktywuj Canvas
+            }
+            else
+            {
+                DisplayPromptText();
+            }
         }
     }
 
@@ -45,5 +57,20 @@ public class wskazowka : MonoBehaviour
 
     }
 
+    private void DisplayPromptText()
+    {
+        promptText.text = "Nie posiadasz klucza";
+
+        StartCoroutine(ClearPromptText(3f));
+    }
+
+    private System.Collections.IEnumerator ClearPromptText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        promptText.text = string.Empty;
+    }
 }
+
+
 

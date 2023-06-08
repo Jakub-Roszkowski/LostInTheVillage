@@ -6,6 +6,7 @@ TagManager:
   tags:
   - chicken
   - car
+  - first
   layers:
   - Default
   - TransparentFX
