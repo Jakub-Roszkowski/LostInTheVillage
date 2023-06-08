@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyState_Cover : IState
 {
 
     private EnemyReferences enemyReferences;
     private StateMachine stateMachine;
+    private Transform target;
+    public float spotingDistance = 40f;
 
     public EnemyState_Cover(EnemyReferences enemyReferences)
     {
@@ -31,6 +35,12 @@ public class EnemyState_Cover : IState
 
     }
 
+    public bool PlayerInRange()
+    {
+        return Vector3.Distance(enemyReferences.transform.position, target.position) <= spotingDistance;
+    }
+
+
     public Color GizmoColor()
     {
         return stateMachine.GetGizmoColor();
@@ -38,7 +48,7 @@ public class EnemyState_Cover : IState
 
     public void OnEnter()
     {
-        Debug.Log("Im covering!!!!!");
+        target = GameObject.FindWithTag("Player").transform;
         enemyReferences.animator.SetBool("combat", true);
     }
 
@@ -46,6 +56,7 @@ public class EnemyState_Cover : IState
     {
         enemyReferences.animator.SetBool("combat", false);
     }
+
 
     public void Tick()
     {

@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    public Player player;
-    public Slider healtbar;
+    public Health player;
+    public Slider health;
     [SerializeField]
     private TextMeshProUGUI promptText;
     [SerializeField]
@@ -16,9 +16,9 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healtbar.maxValue = 100;
+        health.maxValue = 100;
 
-        healtbar.value = 100;
+        health.value = 100;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class PlayerUI : MonoBehaviour
     }
     public void Update()
     {
-        healtbar.value = player.health;
+        health.value = player.GetCurrentHealth();
         AMMOText.text = GetAmmoCount().ToString();
     }
 
@@ -50,6 +50,6 @@ public class PlayerUI : MonoBehaviour
             }
         }
 
-        return 0; // Jeœli nie znaleziono obiektu "test" lub komponentu AMMO, zwróæ 0
+        return 0; // Jeï¿½li nie znaleziono obiektu "test" lub komponentu AMMO, zwrï¿½ï¿½ 0
     }
 }

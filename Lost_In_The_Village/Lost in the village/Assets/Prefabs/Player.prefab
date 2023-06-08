@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 7226331525203836408}
   - component: {fileID: 4239565828338338838}
   - component: {fileID: 3686707719015771715}
-  - component: {fileID: 4275602189511625609}
   m_Layer: 7
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4275602189511625609
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3299576519685247060}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3534466371823524596
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,15 +239,15 @@ GameObject:
   - component: {fileID: 3928910244673092199}
   - component: {fileID: 6946353659745411101}
   - component: {fileID: 3534466371858221911}
-  - component: {fileID: 3534466371858221896}
   - component: {fileID: 3534466371858221914}
   - component: {fileID: 3534466371858221913}
   - component: {fileID: 3534466371858221912}
   - component: {fileID: 3534466371858221906}
   - component: {fileID: 3534466371858221905}
+  - component: {fileID: 8477626311557696886}
   - component: {fileID: 3534466371858221903}
-  - component: {fileID: 3534466371858221901}
   - component: {fileID: 3534466371858221898}
+  - component: {fileID: 5068705498201945213}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -325,19 +310,6 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &3534466371858221896
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4453386725461434589}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3534466371858221914
 MonoBehaviour:
@@ -412,10 +384,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a27d562fe3df5e46abddc6b23b0544c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 81cb3319d9e5c334e83e3e9cb03afb2d, type: 2}
-  healtbar: {fileID: 0}
+  player: {fileID: 0}
+  health: {fileID: 0}
   promptText: {fileID: 0}
   AMMOText: {fileID: 0}
+--- !u!114 &8477626311557696886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453386725461434589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5881a281f58f47c28cdebdebb9ac56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!114 &3534466371858221903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,19 +419,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   currentWeapon: {fileID: 3534466370590571594}
---- !u!114 &3534466371858221901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4453386725461434589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2287f31a8fc09e4429261864c90cc0d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 81cb3319d9e5c334e83e3e9cb03afb2d, type: 2}
 --- !u!195 &3534466371858221898
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -469,6 +441,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &5068705498201945213
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453386725461434589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.609322
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.80466104, z: 0}
 --- !u!1001 &3534466370590538474
 PrefabInstance:
   m_ObjectHideFlags: 0

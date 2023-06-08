@@ -16,7 +16,6 @@ public class EnemyState_Reload : IState
 
     public void OnEnter()
     {
-        Debug.Log("Start reloading");
         enemyReferences.animator.SetFloat("cover", 1);
         enemyReferences.animator.SetTrigger("reload");
     }

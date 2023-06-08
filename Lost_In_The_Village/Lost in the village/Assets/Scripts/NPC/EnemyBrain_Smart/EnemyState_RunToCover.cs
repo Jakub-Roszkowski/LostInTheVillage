@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
+
 public class EnemyState_RunToCover : IState
 {
 
@@ -18,8 +19,7 @@ public class EnemyState_RunToCover : IState
 
     public void OnEnter()
     {
-        Debug.Log("onEnter");
-        Cover nextCover = this.coverArea.GetRandomCover(enemyReferences.transform.position);
+        Cover nextCover = this.coverArea.GetNearestCover(enemyReferences.transform.position,null);
         enemyReferences.navMeshAgent.SetDestination(nextCover.transform.position);
         destination = nextCover.transform.position;
     }
@@ -28,13 +28,12 @@ public class EnemyState_RunToCover : IState
     public void OnExit()
     {
         enemyReferences.animator.SetFloat("speed", 0f);
-        Debug.Log("OnExit runToCover");
+
     }
 
     public void Tick()
     {
         enemyReferences.animator.SetFloat("speed", enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude);
-
     }
 
     public bool HasArrivedAtDestination()

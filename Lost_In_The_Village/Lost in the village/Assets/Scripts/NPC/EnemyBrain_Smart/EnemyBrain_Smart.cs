@@ -18,16 +18,23 @@ public class EnemyBrain_Smart : MonoBehaviour
         CoverArea coverArea = FindObjectOfType<CoverArea>();
 
         //States
+        var patrol = new EnemyState_Patroling(enemyReferences, coverArea);
         var runToCover = new EnemyState_RunToCover(enemyReferences, coverArea);
-        var delayAfterRun = new EnemyState_Delay(2f);
+        var patrolStop = new EnemyState_Wait(2f);
+        var delayAfterRun = new EnemyState_Delay(1f);
         var cover = new EnemyState_Cover(enemyReferences);
-
         //Transitions
+        At(patrol, runToCover, () => patrol.PlayerSpotted());
+        At(patrol, patrolStop, () => patrol.HasArrivedAtDestination());
+        At(patrolStop, patrol, () => patrolStop.IsDone());
         At(runToCover, delayAfterRun, () => runToCover.HasArrivedAtDestination());
         At(delayAfterRun, cover, () => delayAfterRun.IsDone());
 
+        At(cover, patrolStop, () => !cover.PlayerInRange());
+
+
         //Start state
-        stateMachine.SetState(runToCover);
+        stateMachine.SetState(patrol);
 
         //Functions
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);

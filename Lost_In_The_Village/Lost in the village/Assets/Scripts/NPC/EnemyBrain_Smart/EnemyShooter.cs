@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyShooter : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class EnemyShooter : MonoBehaviour
     private int currentAmmo;
 
 
+    private Health playerHealth;
+
+    public Transform target;
 
 
     private void Awake()
@@ -31,15 +36,28 @@ public class EnemyShooter : MonoBehaviour
     {
         if (ShouldReload()) return;
 
+
         Vector3 direction = GetDirection();
-        if(Physics.Raycast(shootPoint.position,direction,out RaycastHit hit, float.MaxValue,layerMask))
+        if (Physics.Raycast(shootPoint.position, direction, out RaycastHit hit, float.MaxValue, layerMask))
         {
-            Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
+            UnityEngine.Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
 
             TrailRenderer trial = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrial(trial, hit));
 
             currentAmmo -= 1;
+
+            if (hit.collider.CompareTag("Player"))
+            {
+                Health playerHealth = hit.collider.GetComponent<Health>();
+
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(5);
+                }
+
+            }
+
         }
     }
 
@@ -85,7 +103,6 @@ public class EnemyShooter : MonoBehaviour
     }
 
     public void Reload() {
-        Debug.Log("Reloaded");
         currentAmmo = ammo;
     }
     

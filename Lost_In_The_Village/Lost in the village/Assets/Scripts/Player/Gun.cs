@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 public class Gun : MonoBehaviour
 {
@@ -146,6 +148,19 @@ public class Gun : MonoBehaviour
                 disappearingChicken.Disappear();
             }
             //KURCZAK_______________________________________________________________________________________________________________________________________________________________________________
+
+            //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
+            // Sprawdź, czy trafiony obiekt może zniknąć
+            Health enemy = hit.collider.GetComponent<Health>();
+            if (enemy != null)
+            {
+                // Wywołaj metodę, która sprawi, że obiekt zniknie
+                enemy.TakeDamage(10);
+                Debug.Log(enemy.GetCurrentHealth());
+
+            }
+            //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
+
 
 
 
