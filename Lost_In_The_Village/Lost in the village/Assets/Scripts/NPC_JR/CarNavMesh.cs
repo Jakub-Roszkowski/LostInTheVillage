@@ -62,7 +62,7 @@ public class CarNavMesh : MonoBehaviour
         }
 
         // Czekanie przez 2 sekundy
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         // Powrót do normalnej trasy dla obu samochodów
         SetRandomDestination();

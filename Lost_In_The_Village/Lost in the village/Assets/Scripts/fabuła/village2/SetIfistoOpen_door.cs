@@ -6,15 +6,24 @@ public class SetIfistoOpen_door : MonoBehaviour
 {
     public List<GameObject> targetObjects = new List<GameObject>();
 
+    private bool ifistoOpen = false;
+    wskazowka wskazowka;
     private void Start()
     {
+        wskazowka wskazowka = GetComponent<wskazowka>(); // Pobieranie komponentu Pointer z obiektu
+        ifistoOpen = wskazowka.ifistoOpen; // Pobieranie wartoœci IsOpen z komponentu
+    }
 
+    private void Update()
+    {
+        wskazowka = GetComponent<wskazowka>(); // Pobieranie komponentu Pointer z obiektu
+        ifistoOpen = wskazowka.ifistoOpen; // Pobieranie wartoœci IsOpen z komponentu
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && ifistoOpen)
         {
 
                 SetIfistoOpenValue();
