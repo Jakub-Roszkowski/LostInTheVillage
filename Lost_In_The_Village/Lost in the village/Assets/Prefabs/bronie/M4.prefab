@@ -341,6 +341,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1524346670463023278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524346669284130893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901a5ccf8bdd1c34bbd6fba659c221e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1524346670463023280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +385,7 @@ MonoBehaviour:
   impactEffect: {fileID: 100002, guid: 957385c45b877e645a128e11a3efb2f9, type: 3}
   currentAmmo: 0
   lightObject: {fileID: 0}
---- !u!114 &1524346670463023278
+--- !u!114 &6266666429058942465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -382,7 +394,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524346669284130893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901a5ccf8bdd1c34bbd6fba659c221e5, type: 3}
+  m_Script: {fileID: 11500000, guid: ea5ee17b9cd3a57408c95a9ed70763c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1524346669284236397 stripped
