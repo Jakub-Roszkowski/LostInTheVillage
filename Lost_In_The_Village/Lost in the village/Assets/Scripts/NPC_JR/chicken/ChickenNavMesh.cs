@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class ChickenNavMesh : MonoBehaviour
 {
     [SerializeField] private List<Transform> movePositionTransforms = new List<Transform>();
@@ -18,20 +19,21 @@ public class ChickenNavMesh : MonoBehaviour
 
     private void Start()
     {
-        SetDestination();
+        SetRandomDestination();
     }
 
     private void Update()
     {
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
-            currentDestinationIndex = (currentDestinationIndex + 1) % movePositionTransforms.Count;
-            SetDestination();
+            SetRandomDestination();
         }
     }
 
-    private void SetDestination()
+    private void SetRandomDestination()
     {
+        int randomIndex = Random.Range(0, movePositionTransforms.Count);
+        currentDestinationIndex = randomIndex;
         navMeshAgent.destination = movePositionTransforms[currentDestinationIndex].position;
     }
 
