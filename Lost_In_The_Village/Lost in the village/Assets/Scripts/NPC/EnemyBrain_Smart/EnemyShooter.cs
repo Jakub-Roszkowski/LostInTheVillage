@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyShooter : MonoBehaviour
 {
@@ -21,12 +21,15 @@ public class EnemyShooter : MonoBehaviour
 
 
     private Health playerHealth;
+    private float shootingDistance;
 
+    public Transform target;
 
 
     private void Awake()
     {
         enemyReferences = GetComponent<EnemyReferences>();
+        shootingDistance = enemyReferences.navMeshAgent.stoppingDistance;
         Reload();
     }
 
@@ -35,10 +38,11 @@ public class EnemyShooter : MonoBehaviour
     {
         if (ShouldReload()) return;
 
+
         Vector3 direction = GetDirection();
-        if(Physics.Raycast(shootPoint.position,direction,out RaycastHit hit, float.MaxValue,layerMask))
+        if (Physics.Raycast(shootPoint.position, direction, out RaycastHit hit, float.MaxValue, layerMask))
         {
-            //Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
+            UnityEngine.Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
 
             TrailRenderer trial = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrial(trial, hit));
@@ -47,14 +51,17 @@ public class EnemyShooter : MonoBehaviour
 
             if (hit.collider.CompareTag("Player"))
             {
-                UnityEngine.Debug.Log("Im in");
                 Health playerHealth = hit.collider.GetComponent<Health>();
-                UnityEngine.Debug.Log(playerHealth);
+
+                UnityEngine.Debug.Log(playerHealth.GetCurrentHealth());
+
                 if (playerHealth != null)
                 {
-                    playerHealth.TakeDamage(10);
+                    playerHealth.TakeDamage(5);
                 }
+
             }
+
         }
     }
 

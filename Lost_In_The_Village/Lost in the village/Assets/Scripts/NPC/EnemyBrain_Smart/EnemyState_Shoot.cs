@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
+using Quaternion = UnityEngine.Quaternion;
+
 
 public class EnemyState_Shoot : IState
 {
@@ -26,7 +30,7 @@ public class EnemyState_Shoot : IState
 
     public void Tick()
     {
-        if (target != null)
+        if (target != null && Vector3.Distance(enemyReferences.transform.position, target.position) <= enemyReferences.navMeshAgent.stoppingDistance)
         {
             Vector3 lookPos = target.position - enemyReferences.transform.position;
             lookPos.y = 0;
