@@ -31,7 +31,6 @@ public class Health : MonoBehaviour
     private void Die()
     {
         // Logika po śmierci, np. wywołanie animacji, zakończenie gry itp.
-        Debug.Log("DIe"+ gameObject.name);
     }
 
 }

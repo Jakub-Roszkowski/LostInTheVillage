@@ -30,7 +30,8 @@ public class EnemyState_Shoot : IState
 
     public void Tick()
     {
-        if (target != null && Vector3.Distance(enemyReferences.transform.position, target.position) <= enemyReferences.navMeshAgent.stoppingDistance)
+
+        if (target != null)
         {
             Vector3 lookPos = target.position - enemyReferences.transform.position;
             lookPos.y = 0;

@@ -902,12 +902,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4882570109792873611}
   - component: {fileID: 4882570108849722126}
-  - component: {fileID: 7249067715853086146}
   - component: {fileID: 7249067715853086152}
   - component: {fileID: 7249067715853086153}
   - component: {fileID: 7249067715853086158}
   - component: {fileID: 7249067715853086159}
   - component: {fileID: 7249067715853086145}
+  - component: {fileID: 5870887319868240789}
   m_Layer: 0
   m_Name: PBRCharacter_Smart
   m_TagString: Untagged
@@ -958,19 +958,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!135 &7249067715853086146
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4882570109792776363}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7249067715853086152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,7 +978,7 @@ MonoBehaviour:
   spread: {x: 0.06, y: 0.06, z: 0.06}
   bulletTrail: {fileID: 9081681284167735846, guid: 98fc8cf4937c34e3396b2bfb297d8ae1, type: 3}
   ammo: 30
-  playerHealth: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &7249067715853086153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1041,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5881a281f58f47c28cdebdebb9ac56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!136 &5870887319868240789
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882570109792776363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.0421932
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0184907, z: 0}
 --- !u!1 &4882570109792776365
 GameObject:
   m_ObjectHideFlags: 0

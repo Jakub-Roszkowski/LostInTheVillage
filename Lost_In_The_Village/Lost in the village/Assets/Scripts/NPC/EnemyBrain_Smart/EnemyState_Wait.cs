@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState_Delay : IState
+public class EnemyState_Wait : IState
 {
 
     private float waitForSeconds;
     private float deadline;
 
-    public EnemyState_Delay(float waitForSeconds)
+    public EnemyState_Wait(float waitForSeconds)
     {
         this.waitForSeconds = waitForSeconds;
     }

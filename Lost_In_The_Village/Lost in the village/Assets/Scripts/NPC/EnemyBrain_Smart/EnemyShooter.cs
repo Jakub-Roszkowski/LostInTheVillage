@@ -21,7 +21,6 @@ public class EnemyShooter : MonoBehaviour
 
 
     private Health playerHealth;
-    private float shootingDistance;
 
     public Transform target;
 
@@ -29,7 +28,6 @@ public class EnemyShooter : MonoBehaviour
     private void Awake()
     {
         enemyReferences = GetComponent<EnemyReferences>();
-        shootingDistance = enemyReferences.navMeshAgent.stoppingDistance;
         Reload();
     }
 
@@ -52,8 +50,6 @@ public class EnemyShooter : MonoBehaviour
             if (hit.collider.CompareTag("Player"))
             {
                 Health playerHealth = hit.collider.GetComponent<Health>();
-
-                UnityEngine.Debug.Log(playerHealth.GetCurrentHealth());
 
                 if (playerHealth != null)
                 {
@@ -107,7 +103,6 @@ public class EnemyShooter : MonoBehaviour
     }
 
     public void Reload() {
-        UnityEngine.Debug.Log("Reloaded");
         currentAmmo = ammo;
     }
     
