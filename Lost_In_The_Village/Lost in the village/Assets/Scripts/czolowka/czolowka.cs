@@ -10,14 +10,14 @@ public class czolowka : MonoBehaviour
     private InputManagerToCzolowka inputManager;
 
 
-    private bool ifactive = false;
+    private bool ifactive;
 
 
 
     private void Start()
     {
         inputManager = GetComponent<InputManagerToCzolowka>();
-        ifactive = false;
+        ifactive = true;
     }
 
     private void Update()
