@@ -3,6 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public enum Level
+{
+    Easy,
+    Medium,
+    Hard
+}
 
 public class Pause : MonoBehaviour
 {
@@ -12,8 +20,10 @@ public class Pause : MonoBehaviour
     public static bool GameIsPaused = false;
     public static bool MusicisMute = false;
     public static bool SoundisMute = false;
+    public static Level currentLevel = Level.Medium;
 
     public GameObject pauseMenu;
+    public RawImage image;
 
     void Start()
     {
@@ -74,4 +84,22 @@ public class Pause : MonoBehaviour
     {
         SoundisMute = !SoundisMute;
     }
+
+    public void SetEasy()
+    {
+        currentLevel = Level.Easy;
+        image.color = Color.green;
+    }
+
+    public void SetMedium()
+    {
+        currentLevel = Level.Medium;
+        image.color = Color.yellow;
+    }
+    public void SetHard()
+    {
+        currentLevel = Level.Hard;
+        image.color = Color.red;
+    }
 }
+
