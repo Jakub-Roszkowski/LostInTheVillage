@@ -87,10 +87,7 @@ public class Gun : MonoBehaviour
 
             bool isShooting = inputManager.onFoot.Shoot.triggered;
 
-            if (currentAmmo == 0)
-            {
-                StartCoroutine(Reload());
-            }
+
 
 
             bool isReloading = inputManager.onFoot.Reloud.triggered;
@@ -100,7 +97,7 @@ public class Gun : MonoBehaviour
                 StartCoroutine(Reload());
             }
 
-            if (isShooting && Time.time >= nextTimeToFire && currentAmmo > 0 && !ISReloundig)
+            if (isShooting && Time.time >= nextTimeToFire && currentAmmo > 0 && !ISReloundig && !Pause.GameIsPaused)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Fire();
@@ -168,6 +165,10 @@ public class Gun : MonoBehaviour
             GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
             impact.transform.parent = hit.transform;
             Destroy(impact, 5);
+        }
+        if (currentAmmo == 0)
+        {
+            StartCoroutine(Reload());
         }
     }
 

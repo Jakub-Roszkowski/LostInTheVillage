@@ -7,6 +7,12 @@ using Vector3 = UnityEngine.Vector3;
 public class EnemyShooter : MonoBehaviour
 {
 
+
+    //toSounds
+    public AudioSource BGM;
+    public AudioClip shootSound;
+
+
     [Header("General")]
     public Transform shootPoint; //Where the raycast starts from
     public Transform gunPoint; //Where the visual trial starts from
@@ -34,6 +40,10 @@ public class EnemyShooter : MonoBehaviour
 
     public void Shoot()
     {
+
+        //add Sounds
+        ChangeBGM(shootSound);
+
         if (ShouldReload()) return;
 
 
@@ -105,5 +115,14 @@ public class EnemyShooter : MonoBehaviour
     public void Reload() {
         currentAmmo = ammo;
     }
-    
+
+
+    public void ChangeBGM(AudioClip music)
+    {
+        BGM.Stop();
+        BGM.clip = music;
+        BGM.Play();
+
+    }
+
 }
