@@ -54,7 +54,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
         while (!asyncOperation.isDone)
         {
-            float progress = Mathf.Clamp01(asyncOperation.progress / 0.9f);
+            float progress = Mathf.Clamp01(asyncOperation.progress);
             loadingSlider.value = progress;
 
             if (asyncOperation.progress >= 0.9f)
