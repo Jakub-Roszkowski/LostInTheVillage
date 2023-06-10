@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c718285a1be82448ce9d50f6d861b4, type: 3}
   m_Name: ak-47
   m_EditorClassIdentifier: 
-  Range: 30
-  Damage: 60
+  Range: 50
+  Damage: 20
   MagazineAMMO: 30
   ReloudTime: 3
   impactForce: 150
   fireRate: 10
   shoot: {fileID: 8300000, guid: d30eff8484112d948981166b11320a77, type: 3}
   ReloudSound: {fileID: 8300000, guid: a1076cac41dde154dbf9fab428bd5ccd, type: 3}
+  headshoot: {fileID: 8300000, guid: 2603784a7ec1d8e42ba6155b8acbdb27, type: 3}

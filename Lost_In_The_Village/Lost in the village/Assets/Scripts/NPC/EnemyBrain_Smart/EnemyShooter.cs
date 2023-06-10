@@ -28,6 +28,8 @@ public class EnemyShooter : MonoBehaviour
     private EnemyReferences enemyReferences;
     private int currentAmmo;
 
+    private float demage = 5;
+
 
     private Health playerHealth;
 
@@ -38,6 +40,22 @@ public class EnemyShooter : MonoBehaviour
     {
         enemyReferences = GetComponent<EnemyReferences>();
         Reload();
+    }
+
+    private void Update()
+    {
+        if (Pause.currentLevel == Level.Easy)
+        {
+            demage = 3f;
+        }
+        if (Pause.currentLevel == Level.Medium)
+        {
+            demage = 5f;
+        }
+        if (Pause.currentLevel == Level.Hard)
+        {
+            demage = 10f;
+        }
     }
 
     public void Shoot()
@@ -65,7 +83,7 @@ public class EnemyShooter : MonoBehaviour
                 Health playerHealth = hit.collider.GetComponent<Health>();
                 if (playerHealth != null)
                 {
-                    playerHealth.TakeDamage(5);
+                    playerHealth.TakeDamage(demage);
                 }
             }
         }

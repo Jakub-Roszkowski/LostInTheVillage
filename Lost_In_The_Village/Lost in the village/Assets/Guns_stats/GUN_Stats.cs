@@ -14,5 +14,6 @@ public class GUN_Stats : ScriptableObject
 
     public AudioClip shoot;
     public AudioClip ReloudSound;
+    public AudioClip headshoot;
 
 }

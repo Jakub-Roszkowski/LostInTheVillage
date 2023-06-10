@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
     public Transform fpsCam;
     private float range;
     private float impactForce;
-    private int damageAmount;
+    private float damageAmount;
 
     public AudioSource BGM;
     private int fireRate = 10;
@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
 
     private AudioClip shootSound;
     private AudioClip ReloudSound;
+    private AudioClip headshoot;
 
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
@@ -58,10 +59,11 @@ public class Gun : MonoBehaviour
 
         shootSound = GUN_Stats.shoot;
         ReloudSound = GUN_Stats.ReloudSound;
+        headshoot = GUN_Stats.headshoot;
 
         inputManager = GetComponent<InputManagerToShoot>();
 
-        
+
 
         currentAmmo = magazineAmmo;
         SetAmmoCountForParent(currentAmmo);
@@ -81,6 +83,17 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Pause.currentLevel == Level.Easy){
+            damageAmount = GUN_Stats.Damage * 2;
+        }
+        if (Pause.currentLevel == Level.Medium)
+        {
+            damageAmount = GUN_Stats.Damage;
+        }
+        if (Pause.currentLevel == Level.Hard)
+        {
+            damageAmount = GUN_Stats.Damage * 0.5f;
+        }
         if (transform.parent != null && transform.parent.name == "test")
         {
 
@@ -135,7 +148,6 @@ public class Gun : MonoBehaviour
 
 
 
-
             //KURCZAK_______________________________________________________________________________________________________________________________________________________________________________
             // Sprawdź, czy trafiony obiekt może zniknąć
             DisappearinChicken disappearingChicken = hit.collider.GetComponent<DisappearinChicken>();
@@ -148,13 +160,49 @@ public class Gun : MonoBehaviour
 
             //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
             // Sprawdź, czy trafiony obiekt może zniknąć
-            Health enemy = hit.collider.GetComponent<Health>();
-            if (enemy != null)
+            if (hit.collider.CompareTag("Body"))
             {
-                // Wywołaj metodę, która sprawi, że obiekt zniknie
-                enemy.TakeDamage(10);
-                Debug.Log(enemy.GetCurrentHealth());
+                Debug.Log("Body");
+                Transform parent = hit.transform.parent;
+                Health enemy = null;
 
+                while (parent != null)
+                {
+                    enemy = parent.GetComponent<Health>();
+                    if (enemy != null)
+                        break;
+
+                    parent = parent.parent;
+                }
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damageAmount);
+                    Debug.Log(enemy.GetCurrentHealth());
+
+                }
+            }
+            if (hit.collider.CompareTag("Head"))
+            {
+                Transform parent = hit.transform.parent;
+                Health enemy = null;
+
+                while (parent != null)
+                {
+                    enemy = parent.GetComponent<Health>();
+                    if (enemy != null)
+                        break;
+
+                    parent = parent.parent;
+                }
+                if (enemy != null)
+                {
+
+                    enemy.TakeDamage(damageAmount * 3);
+                    Debug.Log(enemy.GetCurrentHealth());
+                    Debug.Log("Head");
+                    StartCoroutine(wait());
+
+                }
             }
             //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
 
@@ -211,6 +259,13 @@ public class Gun : MonoBehaviour
                 ammoScript.AMMO_count = ammo;
             }
         }
+    }
+
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.2f);
+        ChangeBGM(headshoot);
     }
 }
 

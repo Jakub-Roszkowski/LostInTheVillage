@@ -9,6 +9,8 @@ TagManager:
   - first
   - AK47
   - M4A1
+  - Head
+  - Body
   layers:
   - Default
   - TransparentFX

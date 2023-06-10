@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c718285a1be82448ce9d50f6d861b4, type: 3}
   m_Name: M4A1
   m_EditorClassIdentifier: 
-  Range: 30
-  Damage: 40
+  Range: 60
+  Damage: 10
   MagazineAMMO: 30
   ReloudTime: 3
   impactForce: 150
   fireRate: 10
   shoot: {fileID: 8300000, guid: e372607efafb9d14298adc2d871ebcfd, type: 3}
   ReloudSound: {fileID: 8300000, guid: 968a18ffaf5703a47a9a44f601fad801, type: 3}
+  headshoot: {fileID: 8300000, guid: 2603784a7ec1d8e42ba6155b8acbdb27, type: 3}
