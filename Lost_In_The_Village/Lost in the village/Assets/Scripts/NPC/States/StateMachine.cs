@@ -100,4 +100,9 @@ public class StateMachine
         }
         return Color.grey;
     }
+
+    public IState GetCurrentState()
+    {
+        return _currentState;
+    }
 }

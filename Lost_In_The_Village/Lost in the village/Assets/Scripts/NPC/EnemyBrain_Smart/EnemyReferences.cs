@@ -11,6 +11,8 @@ public class EnemyReferences : MonoBehaviour
 
     public EnemyShooter shooter;
 
+    public LayerMask whatIsGround;
+
 
     [Header("Stats")]
     public float pathUpdateDelay = 0.2f;

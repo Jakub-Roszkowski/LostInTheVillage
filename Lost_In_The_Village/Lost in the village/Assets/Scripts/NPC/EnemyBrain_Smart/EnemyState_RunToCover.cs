@@ -9,7 +9,7 @@ public class EnemyState_RunToCover : IState
 
     private EnemyReferences enemyReferences;
     private CoverArea coverArea;
-    private Vector3 destination;
+    public Vector3 destination;
 
     public EnemyState_RunToCover(EnemyReferences enemyReferences, CoverArea coverArea)
     {

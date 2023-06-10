@@ -5,14 +5,15 @@ using System.Numerics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 using Quaternion = UnityEngine.Quaternion;
+using Debug = UnityEngine.Debug;
 
 public class EnemyShooter : MonoBehaviour
 {
 
 
     //toSounds
-    public AudioSource BGM;
-    public AudioClip shootSound;
+
+    public AudioSource shootSound;
     public AudioSource reloadSound;
 
     [Header("General")]
@@ -41,9 +42,7 @@ public class EnemyShooter : MonoBehaviour
 
     public void Shoot()
     {
-        // Add Sounds
-        ChangeBGM(shootSound);
-
+        shootSound.Play();
         if (ShouldReload())
             return;
 
@@ -61,7 +60,7 @@ public class EnemyShooter : MonoBehaviour
                 TrailRenderer trail = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
                 StartCoroutine(SpawnTrial(trail, hit));
 
-                currentAmmo -= 1;
+                currentAmmo -= 3;
 
                 Health playerHealth = hit.collider.GetComponent<Health>();
                 if (playerHealth != null)
@@ -110,6 +109,7 @@ public class EnemyShooter : MonoBehaviour
 
     public bool ShouldReload()
     {
+
         return currentAmmo <= 0;
     }
 
@@ -119,12 +119,5 @@ public class EnemyShooter : MonoBehaviour
     }
 
 
-    public void ChangeBGM(AudioClip music)
-    {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
-
-    }
 
 }

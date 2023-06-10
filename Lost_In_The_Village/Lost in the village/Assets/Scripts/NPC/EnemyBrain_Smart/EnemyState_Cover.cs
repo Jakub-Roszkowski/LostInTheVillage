@@ -23,7 +23,7 @@ public class EnemyState_Cover : IState
         stateMachine = new StateMachine();
 
         var enemyShoot = new EnemyState_Shoot(enemyReferences);
-        var enemyDelay = new EnemyState_Delay(1.5f);
+        var enemyDelay = new EnemyState_Delay(2f);
         var enemyReload = new EnemyState_Reload(enemyReferences);
 
         At(enemyShoot, enemyReload, () => enemyReferences.shooter.ShouldReload());
@@ -56,7 +56,6 @@ public class EnemyState_Cover : IState
     public void OnExit()
     {
         enemyReferences.animator.SetBool("combat", false);
-        enemyReferences.animator.SetBool("shooting", false);
     }
 
     public bool CanSeePlayer()
@@ -86,7 +85,7 @@ public class EnemyState_Cover : IState
 
     public void Tick()
     {
-        Debug.Log(CanSeePlayer());
         stateMachine.Tick();
+        Debug.Log(enemyReferences.shooter.ShouldReload());
     }
 }
