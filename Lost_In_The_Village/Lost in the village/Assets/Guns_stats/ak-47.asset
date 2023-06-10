@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 50
   Damage: 20
-  MagazineAMMO: 30
+  MagazineAMMO: 35
   ReloudTime: 3
   impactForce: 150
   fireRate: 10

@@ -197,7 +197,7 @@ public class Gun : MonoBehaviour
                 if (enemy != null)
                 {
 
-                    enemy.TakeDamage(damageAmount * 3);
+                    enemy.TakeDamage(damageAmount * 4);
                     Debug.Log(enemy.GetCurrentHealth());
                     Debug.Log("Head");
                     StartCoroutine(wait());
