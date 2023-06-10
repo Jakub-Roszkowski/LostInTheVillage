@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class EnemyState_Wait : IState
+public class EnemyState_CoverDelay : IState
 {
 
     private float waitForSeconds;
     private float deadline;
 
-    public EnemyState_Wait(float waitForSeconds)
+    public EnemyState_CoverDelay(float waitForSeconds)
     {
         this.waitForSeconds = waitForSeconds;
     }
@@ -16,6 +19,7 @@ public class EnemyState_Wait : IState
     public void OnEnter()
     {
         deadline = Time.time + waitForSeconds;
+
     }
 
     public void OnExit()
@@ -34,6 +38,6 @@ public class EnemyState_Wait : IState
 
     public Color GizmoColor()
     {
-        return Color.black;
+        return Color.yellow;
     }
 }

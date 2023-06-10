@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,13 +15,34 @@ public class EnemyState_Patroling : IState
     private Transform target;
     public float spottingDistance = 40f;
 
-    bool isReturning = false;
     private Cover currentCover=null;
+
+    private StateMachine stateMachine;
+    
+
 
     public EnemyState_Patroling(EnemyReferences enemyReferences, CoverArea coverArea)
     {
         this.enemyReferences = enemyReferences;
         this.coverArea = coverArea;
+
+        stateMachine = new StateMachine();
+
+        var runToCover = new EnemyState_RunToCover(enemyReferences, coverArea);
+        var patrolStop = new EnemyState_Wait(1.5f);
+        var delayAfterCover = new EnemyState_CoverDelay(1f);
+
+
+        //Any(patrolStop, () => HasArrivedAtDestination());
+        //At(patrolStop, this, () => patrolStop.IsDone());
+        //Any(runToCover, () => PlayerSpotted());
+
+
+        //Functions
+        void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
+        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
+
+
     }
 
     public void OnEnter()
@@ -28,6 +50,7 @@ public class EnemyState_Patroling : IState
         currentCover = this.coverArea.GetNearestCover(enemyReferences.transform.position,currentCover);
         enemyReferences.navMeshAgent.SetDestination(currentCover.transform.position);
         destination = currentCover.transform.position;
+
         target = GameObject.FindWithTag("Player").transform;
         enemyReferences.animator.SetBool("shooting", false);
     }
@@ -54,6 +77,11 @@ public class EnemyState_Patroling : IState
     {
         return Vector3.Distance(enemyReferences.transform.position, target.position) <= spottingDistance;
     }
+
+    public bool EndPatrol() {
+        return PlayerSpotted() && HasArrivedAtDestination();
+    }
+
 
     public Color GizmoColor()
     {

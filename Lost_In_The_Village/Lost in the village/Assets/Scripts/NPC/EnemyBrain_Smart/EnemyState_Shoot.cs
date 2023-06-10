@@ -30,7 +30,6 @@ public class EnemyState_Shoot : IState
 
     public void Tick()
     {
-
         if (target != null)
         {
             Vector3 lookPos = target.position - enemyReferences.transform.position;
@@ -43,6 +42,8 @@ public class EnemyState_Shoot : IState
             enemyReferences.animator.SetBool("shooting", true);
         }
     }
+
+
 
 
     public Color GizmoColor()

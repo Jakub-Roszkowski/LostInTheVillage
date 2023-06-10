@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
+using Quaternion = UnityEngine.Quaternion;
 
 public class EnemyShooter : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class EnemyShooter : MonoBehaviour
     //toSounds
     public AudioSource BGM;
     public AudioClip shootSound;
-
+    public AudioSource reloadSound;
 
     [Header("General")]
     public Transform shootPoint; //Where the raycast starts from
@@ -37,37 +39,36 @@ public class EnemyShooter : MonoBehaviour
         Reload();
     }
 
-
     public void Shoot()
     {
-
-        //add Sounds
+        // Add Sounds
         ChangeBGM(shootSound);
 
-        if (ShouldReload()) return;
-
+        if (ShouldReload())
+            return;
 
         Vector3 direction = GetDirection();
-        if (Physics.Raycast(shootPoint.position, direction, out RaycastHit hit, float.MaxValue, layerMask))
+        Vector3 shootPointPosition = shootPoint.position;
+
+        RaycastHit hit;
+        if (Physics.Raycast(shootPointPosition, direction, out hit, float.MaxValue, layerMask))
         {
-            UnityEngine.Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
-
-            TrailRenderer trial = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
-            StartCoroutine(SpawnTrial(trial, hit));
-
-            currentAmmo -= 1;
-
+            // Check if the hit object is the player and if it's visible
             if (hit.collider.CompareTag("Player"))
             {
-                Health playerHealth = hit.collider.GetComponent<Health>();
+                UnityEngine.Debug.DrawLine(shootPointPosition, hit.point, Color.red, 1f);
 
+                TrailRenderer trail = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
+                StartCoroutine(SpawnTrial(trail, hit));
+
+                currentAmmo -= 1;
+
+                Health playerHealth = hit.collider.GetComponent<Health>();
                 if (playerHealth != null)
                 {
                     playerHealth.TakeDamage(5);
                 }
-
             }
-
         }
     }
 
@@ -114,6 +115,7 @@ public class EnemyShooter : MonoBehaviour
 
     public void Reload() {
         currentAmmo = ammo;
+        reloadSound.Play();
     }
 
 

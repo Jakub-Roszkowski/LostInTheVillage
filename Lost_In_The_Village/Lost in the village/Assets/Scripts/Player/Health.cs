@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -18,7 +19,16 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            if (IsPlayer())
+            {
+                Scene activeScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(activeScene.buildIndex);
+            }
+            else
+            {
+                Animator animator = this.GetComponent<Animator>();
+                animator.SetBool("isDead", true);
+            }
         }
     }
 
@@ -30,7 +40,13 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        // Logika po śmierci, np. wywołanie animacji, zakończenie gry itp.
+        gameObject.SetActive(false);
+    }
+
+    private bool IsPlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        return (gameObject == player);
     }
 
 }

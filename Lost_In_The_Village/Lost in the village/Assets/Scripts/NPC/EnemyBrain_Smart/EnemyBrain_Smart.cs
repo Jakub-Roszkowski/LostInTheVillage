@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyBrain_Smart : MonoBehaviour
 {
     private EnemyReferences enemyReferences;
-
+    public CoverArea coverArea;
     private StateMachine stateMachine;
 
     private void Start()
@@ -15,23 +15,14 @@ public class EnemyBrain_Smart : MonoBehaviour
 
         stateMachine = new StateMachine();
 
-        CoverArea coverArea = FindObjectOfType<CoverArea>();
-
         //States
         var patrol = new EnemyState_Patroling(enemyReferences, coverArea);
-        var runToCover = new EnemyState_RunToCover(enemyReferences, coverArea);
-        var patrolStop = new EnemyState_Wait(2f);
-        var delayAfterRun = new EnemyState_Delay(1f);
+        var change = new EnemyState_Wait(0.5f);
         var cover = new EnemyState_Cover(enemyReferences);
         //Transitions
-        At(patrol, runToCover, () => patrol.PlayerSpotted());
-        At(patrol, patrolStop, () => patrol.HasArrivedAtDestination());
-        At(patrolStop, patrol, () => patrolStop.IsDone());
-        At(runToCover, delayAfterRun, () => runToCover.HasArrivedAtDestination());
-        At(delayAfterRun, cover, () => delayAfterRun.IsDone());
-
-        At(cover, patrolStop, () => !cover.PlayerInRange());
-
+        At(patrol, change, () => patrol.EndPatrol());
+        At(change, cover, () => change.IsDone());
+        //At(cover, patrol, () => !cover.ShouldCover());
 
         //Start state
         stateMachine.SetState(patrol);

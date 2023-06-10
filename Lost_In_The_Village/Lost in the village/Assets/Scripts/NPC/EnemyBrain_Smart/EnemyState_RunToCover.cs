@@ -22,6 +22,7 @@ public class EnemyState_RunToCover : IState
         Cover nextCover = this.coverArea.GetNearestCover(enemyReferences.transform.position,null);
         enemyReferences.navMeshAgent.SetDestination(nextCover.transform.position);
         destination = nextCover.transform.position;
+        enemyReferences.animator.SetBool("isWalking", false);
     }
 
 

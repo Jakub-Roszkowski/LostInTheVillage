@@ -26,6 +26,9 @@ public class CoverArea : MonoBehaviour
         Cover nearestCover = null;
         float nearestDistance = Mathf.Infinity;
 
+        if (covers.Length == 1) return covers[0];
+
+
         foreach (Cover cover in covers)
         {
             if (!cover.Equals(currentCover)) 

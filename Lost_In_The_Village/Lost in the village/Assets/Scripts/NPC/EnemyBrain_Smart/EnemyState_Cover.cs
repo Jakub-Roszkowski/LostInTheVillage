@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
+using Quaternion = UnityEngine.Quaternion;
 
 public class EnemyState_Cover : IState
 {
@@ -15,13 +16,14 @@ public class EnemyState_Cover : IState
 
     public EnemyState_Cover(EnemyReferences enemyReferences)
     {
+        target = GameObject.FindWithTag("Player").transform;
 
         this.enemyReferences = enemyReferences;
 
         stateMachine = new StateMachine();
 
         var enemyShoot = new EnemyState_Shoot(enemyReferences);
-        var enemyDelay = new EnemyState_Delay(1f);
+        var enemyDelay = new EnemyState_Delay(1.5f);
         var enemyReload = new EnemyState_Reload(enemyReferences);
 
         At(enemyShoot, enemyReload, () => enemyReferences.shooter.ShouldReload());
@@ -48,18 +50,43 @@ public class EnemyState_Cover : IState
 
     public void OnEnter()
     {
-        target = GameObject.FindWithTag("Player").transform;
         enemyReferences.animator.SetBool("combat", true);
     }
 
     public void OnExit()
     {
         enemyReferences.animator.SetBool("combat", false);
+        enemyReferences.animator.SetBool("shooting", false);
+    }
+
+    public bool CanSeePlayer()
+    {
+        Vector3 directionToPlayer = target.position - enemyReferences.transform.position;
+        Ray ray = new Ray(enemyReferences.transform.position, directionToPlayer);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true; // Player is visible
+            }
+        }
+
+        return false; // Player is not visible or obstacle is blocking the view
+    }
+
+
+
+    public bool ShouldCover()
+    {
+        return  PlayerInRange() && CanSeePlayer();
     }
 
 
     public void Tick()
     {
+        Debug.Log(CanSeePlayer());
         stateMachine.Tick();
     }
 }
