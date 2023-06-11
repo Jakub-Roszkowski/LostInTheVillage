@@ -49,4 +49,8 @@ public class Health : MonoBehaviour
         return (gameObject == player);
     }
 
+    public void RestoreHealth(int healthToRestore)
+    {
+        currentHealth += healthToRestore;
+    }
 }
