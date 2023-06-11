@@ -14,7 +14,7 @@ public class EnemyState_Patroling : IState
     private CoverArea coverArea;
     public Vector3 destination;
     private Transform target;
-    public float spottingDistance = 40f;
+    public float spottingDistance = 70f;
 
     private Cover currentCover=null;
 
