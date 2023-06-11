@@ -12,7 +12,7 @@ public class EnemyState_Cover : IState
     private EnemyReferences enemyReferences;
     private StateMachine stateMachine;
     private Transform target;
-    public float spotingDistance = 40f;
+    public float spotingDistance = 70f;
 
     public EnemyState_Cover(EnemyReferences enemyReferences)
     {
