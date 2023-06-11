@@ -26528,6 +26528,10 @@ PrefabInstance:
       propertyPath: promptText
       value: 
       objectReference: {fileID: 895488398}
+    - target: {fileID: 3534466371858221906, guid: cb85848634a0d1144b497c83550271ce, type: 3}
+      propertyPath: mask.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3928910244673092199, guid: cb85848634a0d1144b497c83550271ce, type: 3}
       propertyPath: m_RootOrder
       value: 2
