@@ -46,7 +46,7 @@ public class EnemyShooter : MonoBehaviour
     {
         if (Pause.currentLevel == Level.Easy)
         {
-            demage = 3f;
+            demage = 1.5f;
         }
         if (Pause.currentLevel == Level.Medium)
         {

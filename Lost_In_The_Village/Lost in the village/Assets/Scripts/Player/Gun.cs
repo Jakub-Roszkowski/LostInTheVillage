@@ -84,7 +84,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
         if(Pause.currentLevel == Level.Easy){
-            damageAmount = GUN_Stats.Damage * 2;
+            damageAmount = GUN_Stats.Damage * 3;
         }
         if (Pause.currentLevel == Level.Medium)
         {

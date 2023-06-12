@@ -43,7 +43,7 @@ public class Door_evacuation : MonoBehaviour
 
     private void DisplayPromptText()
     {
-        promptText.text = "Nie posiadasz klucza";
+        promptText.text = "JSOS jeszcze nie dzia³a";
 
         StartCoroutine(ClearPromptText(3f));
     }

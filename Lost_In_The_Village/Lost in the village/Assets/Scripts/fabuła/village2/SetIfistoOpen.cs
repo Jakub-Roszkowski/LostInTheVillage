@@ -46,6 +46,12 @@ public class SetIfistoOpen : MonoBehaviour
                 {
                     targetComponent.ifistoOpen = true;
                 }
+                var targetComponent2 = targetObject.GetComponent<disable>();
+
+                if (targetComponent2 != null)
+                {
+                    targetComponent2.ifistoOpen = true;
+                }
             }
         }
     }
