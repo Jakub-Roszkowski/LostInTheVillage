@@ -11,7 +11,9 @@ public class wskazowka_poczatek : MonoBehaviour
     public AudioSource BGM;
     public AudioClip wiadomosc;
 
+    public string text;
 
+    public TextMeshProUGUI promptText;
 
 
     private void Start()
@@ -35,7 +37,7 @@ public class wskazowka_poczatek : MonoBehaviour
 
                 ChangeBGM(wiadomosc);
                 canvasToActivate.gameObject.SetActive(true); // Aktywuj Canvas
-
+                promptText.text = text;
 
         }
     }

@@ -14,6 +14,9 @@ public class wskazowka : MonoBehaviour
 
     public bool ifistoOpen = false;
 
+    public string text;
+
+    public TextMeshProUGUI promptText2;
 
     private void Start()
     {
@@ -38,6 +41,8 @@ public class wskazowka : MonoBehaviour
             {
                 ChangeBGM(wiadomosc);
                 canvasToActivate.gameObject.SetActive(true); // Aktywuj Canvas
+                promptText2.text = text;
+
             }
             else
             {

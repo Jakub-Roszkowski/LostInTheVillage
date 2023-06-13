@@ -28,6 +28,18 @@ public class Pause : MonoBehaviour
     void Start()
     {
         inputManager = GetComponent<InputManagerToMenu>();
+        if (currentLevel == Level.Easy)
+        {
+            image.color = Color.green;
+        }
+        else if (currentLevel == Level.Medium)
+        {
+            image.color = Color.yellow;
+        }
+        else if (currentLevel == Level.Hard)
+        {
+            image.color = Color.red;
+        }
     }
 
     // Update is called once per frame
