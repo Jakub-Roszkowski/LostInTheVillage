@@ -17,7 +17,7 @@ public class WeaponPickup : MonoBehaviour
     private void Start()
     {
         inputManager = GetComponent<InputManager>();
-        
+
     }
 
     private void Update()
@@ -37,31 +37,36 @@ public class WeaponPickup : MonoBehaviour
         {
             GameObject weaponToPickup = hit.collider.gameObject;
 
+
+            Debug.Log("current " + currentWeapon.tag);
+            Debug.Log("weaponToPickup " + weaponToPickup.tag);
+
             if (currentWeapon != null)
             {
                 DropWeapon();
             }
 
             PickupWeapon(weaponToPickup);
+
         }
     }
 
     private void PickupWeapon(GameObject weapon)
     {
-        weapon.SetActive(true); // Wy³¹cz broniê podnoszon¹ z ziemi
+        weapon.SetActive(true);
 
-        weapon.transform.SetParent(weaponSocket); // Ustaw rodzica dla broni na punkt do³¹czenia
+        weapon.transform.SetParent(weaponSocket);
         if (weapon.CompareTag("AK47"))
         {
-            weapon.transform.localPosition = new Vector3(0.18f, -0.298f, 0.38273f); // Zresetuj pozycjê lokaln¹ broni
-            weapon.transform.localRotation = Quaternion.Euler(0f, -12f, -14f); // Ustaw konkretn¹ rotacjê broni
-            weapon.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f); // Ustaw skalê broni
+            weapon.transform.localPosition = new Vector3(0.18f, -0.298f, 0.38273f);
+            weapon.transform.localRotation = Quaternion.Euler(0f, -12f, -14f);
+            weapon.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         }
         else if (weapon.CompareTag("M4A1"))
         {
-            weapon.transform.localPosition = new Vector3(0.1431269f, -0.298f, 0.3827395f); // Zresetuj pozycjê lokaln¹ broni
-            weapon.transform.localRotation = Quaternion.Euler(-3.328f, 172.462f, -40.959f); // Ustaw konkretn¹ rotacjê broni
-            weapon.transform.localScale = new Vector3(0.8175049f, 0.8234f, 0.8001348f); // Ustaw skalê broni
+            weapon.transform.localPosition = new Vector3(0.1431269f, -0.298f, 0.3827395f);
+            weapon.transform.localRotation = Quaternion.Euler(-3.328f, 172.462f, -40.959f);
+            weapon.transform.localScale = new Vector3(0.8175049f, 0.8234f, 0.8001348f);
         }
 
 
@@ -70,8 +75,8 @@ public class WeaponPickup : MonoBehaviour
 
     private void DropWeapon()
     {
-        currentWeapon.SetActive(false); 
-        currentWeapon.transform.SetParent(null); // Usuñ rodzica dla broni
+        currentWeapon.SetActive(false);
+        currentWeapon.transform.SetParent(null);
 
         currentWeapon = null;
     }
