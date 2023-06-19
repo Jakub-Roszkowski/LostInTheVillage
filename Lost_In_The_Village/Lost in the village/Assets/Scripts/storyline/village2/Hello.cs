@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class siema : MonoBehaviour
+public class Hello : MonoBehaviour
 {
 
 

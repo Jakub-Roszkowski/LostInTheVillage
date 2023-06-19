@@ -41,7 +41,6 @@ public class ChickenNavMesh : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("chicken"))
         {
-            // Odbicie od innego kurczaka
             Vector3 avoidanceDirection = transform.position - collision.transform.position;
             navMeshAgent.destination = transform.position + avoidanceDirection.normalized * avoidanceDistance;
         }

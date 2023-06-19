@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LoadSceneOnTrigger : MonoBehaviour
 {
-    public string sceneName = "Village2"; // Nazwa docelowej sceny, któr¹ chcesz za³adowaæ
+    public string sceneName = "Village2"; // The name of the target scene you want to load
     public TextMeshProUGUI promptText;
     public bool ifistoOpen = false;
     public Slider loadingSlider;
@@ -16,11 +16,11 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Sprawdzamy, czy obiekt, który wszed³ w obszar kolizji, ma tag "Player". Mo¿esz dostosowaæ ten warunek do swoich potrzeb.
+        if (other.CompareTag("Player"))
         {
             if (ifistoOpen)
             {
-                StartCoroutine(LoadSceneAsync()); // £adujemy docelow¹ scenê na podstawie jej nazwy
+                StartCoroutine(LoadSceneAsync()); 
             }
             else
             {
@@ -49,8 +49,8 @@ public class LoadSceneOnTrigger : MonoBehaviour
         ActivateObjects();
         loadingSlider.value = 0f;
         yield return new WaitForSeconds(4f);
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName); // Rozpoczêcie asynchronicznego ³adowania nowej sceny
-        asyncOperation.allowSceneActivation = false; // Ustawienie na false, aby nowa scena nie zosta³a automatycznie aktywowana po za³adowaniu
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName); 
+        asyncOperation.allowSceneActivation = false;
 
         while (!asyncOperation.isDone)
         {
@@ -59,13 +59,12 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
             if (asyncOperation.progress >= 0.9f)
             {
-                asyncOperation.allowSceneActivation = true; // Jeœli postêp ³adowania osi¹gnie 90%, mo¿na zezwoliæ na automatyczn¹ aktywacjê nowej sceny
+                asyncOperation.allowSceneActivation = true; 
             }
 
             yield return null;
         }
 
-        // Mo¿esz tutaj wykonaæ dodatkowe operacje po zakoñczeniu ³adowania nowej sceny
     }
 
     private void ActivateObjects()

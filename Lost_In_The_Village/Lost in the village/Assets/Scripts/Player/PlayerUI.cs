@@ -50,6 +50,6 @@ public class PlayerUI : MonoBehaviour
             }
         }
 
-        return 0; // Je�li nie znaleziono obiektu "test" lub komponentu AMMO, zwr�� 0
+        return 0;
     }
 }

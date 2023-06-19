@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public class WeaponPickup : MonoBehaviour
 {
-    public Camera playerCamera; // Referencja do kamery gracza
-    public Transform weaponSocket; // Referencja do punktu do³¹czenia broni do postaci
-    public LayerMask pickupLayerMask; // Warstwa u¿ywana do wykrywania broni do podniesienia
+    public Camera playerCamera; // Player Camera
+    public Transform weaponSocket; // A reference to the point where the weapon is attached to the character
+    public LayerMask pickupLayerMask; // A layer introduced to the weapon to be picked up
 
-    public GameObject currentWeapon; // Obecna broñ postaci
+    public GameObject currentWeapon; 
 
 
     private InputManager inputManager;

@@ -35,12 +35,10 @@ public abstract class Interactable_donut : MonoBehaviour
     }
     protected virtual void Interact()
     {
-        //we wont have any code written in this function
-        //this is a template function to be overridden by our subclasses
+
     }
     protected virtual void Interact1()
     {
-        //we wont have any code written in this function
-        //this is a template function to be overridden by our subclasses
+
     }
 }

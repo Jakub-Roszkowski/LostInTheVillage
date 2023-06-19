@@ -26,7 +26,7 @@ public class PlayerLook : MonoBehaviour
         float mouseX = input.x;
         float mouseY = input.y;
 
-        // Sprawdzanie, czy u¿ywane jest urz¹dzenie typu Gamepad
+        // Check Gamepad
         if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue() != Vector2.zero)
         {
             xSensitivity = gamepadXSensitivity;
@@ -38,18 +38,14 @@ public class PlayerLook : MonoBehaviour
             ySensitivity = mouseYSensitivity;
         }
 
-        // Mno¿enie wartoœci osi przez odpowiednie czu³oœci
         mouseX *= xSensitivity;
         mouseY *= ySensitivity;
 
-        // Obliczanie rotacji kamery dla ruchu w górê i w dó³
         xRotation -= (mouseY * Time.deltaTime);
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
 
-        // Zastosowanie rotacji do transformacji kamery
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
 
-        // Obrót gracza w lewo i w prawo
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime));
     }
 }

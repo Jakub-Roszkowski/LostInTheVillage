@@ -133,8 +133,8 @@ public class Gun : MonoBehaviour
         Light lightComponent = lightObject.GetComponent<Light>();
         if (lightComponent != null)
         {
-            lightComponent.enabled = true; // W��cz �wiat�o podczas strza�u
-            StartCoroutine(DisableLightAfterDelay(lightComponent, 0.1f)); // Wy��cz �wiat�o po op�nieniu
+            lightComponent.enabled = true;
+            StartCoroutine(DisableLightAfterDelay(lightComponent, 0.1f));
         }
 
         currentAmmo--;
@@ -148,18 +148,15 @@ public class Gun : MonoBehaviour
 
 
 
-            //KURCZAK_______________________________________________________________________________________________________________________________________________________________________________
-            // Sprawdź, czy trafiony obiekt może zniknąć
+            //Chicken_______________________________________________________________________________________________________________________________________________________________________________
             DisappearinChicken disappearingChicken = hit.collider.GetComponent<DisappearinChicken>();
             if (disappearingChicken != null)
             {
-                // Wywołaj metodę, która sprawi, że obiekt zniknie
                 disappearingChicken.Disappear();
             }
-            //KURCZAK_______________________________________________________________________________________________________________________________________________________________________________
+            //Chicken________________________________________________________________________________________________________________________________________________________________________________
 
             //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
-            // Sprawdź, czy trafiony obiekt może zniknąć
             if (hit.collider.CompareTag("Body"))
             {
                 Debug.Log("Body");
@@ -234,7 +231,7 @@ public class Gun : MonoBehaviour
     IEnumerator DisableLightAfterDelay(Light light, float delay)
     {
         yield return new WaitForSeconds(delay);
-        light.enabled = false; // Wy��cz �wiat�o po op�nieniu
+        light.enabled = false;
     }
 
 

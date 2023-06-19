@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class czolowka : MonoBehaviour
+public class headlamp : MonoBehaviour
 {
 
 
     public Light light;
-    private InputManagerToCzolowka inputManager;
+    private InputManagerToHeadLamp inputManager;
 
 
     private bool ifactive;
@@ -16,7 +16,7 @@ public class czolowka : MonoBehaviour
 
     private void Start()
     {
-        inputManager = GetComponent<InputManagerToCzolowka>();
+        inputManager = GetComponent<InputManagerToHeadLamp>();
         ifactive = true;
     }
 

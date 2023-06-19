@@ -18,7 +18,7 @@ public class AudioPlaylist : MonoBehaviour
     {
         if (currentClipIndex >= audioClips.Length)
         {
-            currentClipIndex = 0; // Wraca do pocz¹tku playlisty, gdy skoñczy siê ostatni utwór
+            currentClipIndex = 0;
         }
 
         audioSource.clip = audioClips[currentClipIndex];

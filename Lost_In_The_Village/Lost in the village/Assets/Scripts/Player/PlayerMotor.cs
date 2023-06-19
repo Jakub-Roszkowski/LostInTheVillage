@@ -12,19 +12,16 @@ public class PlayerMotor : MonoBehaviour
     public float gravity = -9.8f;
     public float jumpHeight = 0.5f;
 
-    // Start is called before the first frame update Unity Message | O references
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded = controller.isGrounded;
     }
 
-    //receive the inputs for our InputManager.cs and apply them to our character controller. 1 reference
     public void ProcessMove(Vector2 input, bool isRunning)
     {
         Vector3 moveDirection = Vector3.zero;

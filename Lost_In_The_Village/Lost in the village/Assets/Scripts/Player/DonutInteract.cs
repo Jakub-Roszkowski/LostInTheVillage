@@ -34,7 +34,7 @@ public class DonutInteract : Interactable_donut
 
         if (playerHealth != null&&iseat)
         {
-            // Restore 20 HP to the player
+            // Restore HP to the player
             playerHealth.RestoreHealth(value);
             eatingSound.Play();
             iseat = false;

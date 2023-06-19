@@ -49,7 +49,7 @@ public class CarNavMesh : MonoBehaviour
     {
         isAvoiding = true;
 
-        // Skrêcanie w lewo dla obu samochodów
+
         Quaternion targetRotation = Quaternion.LookRotation(-transform.right);
         float rotateTime = 1.0f;
         float elapsedTime = 0.0f;
@@ -61,10 +61,9 @@ public class CarNavMesh : MonoBehaviour
             yield return null;
         }
 
-        // Czekanie przez 2 sekundy
+
         yield return new WaitForSeconds(1.0f);
 
-        // Powrót do normalnej trasy dla obu samochodów
         SetRandomDestination();
         isAvoiding = false;
     }

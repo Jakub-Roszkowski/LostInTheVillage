@@ -7,18 +7,18 @@ public class SetIfistoOpen : MonoBehaviour
     public List<GameObject> targetObjects = new List<GameObject>();
 
     private bool ifistoOpen = false;
-    wskazowka wskazowka;
+    Hint hint;
     private void Start()
     {
-        wskazowka wskazowka = GetComponent<wskazowka>(); // Pobieranie komponentu Pointer z obiektu
-        ifistoOpen = wskazowka.ifistoOpen; // Pobieranie wartoœci IsOpen z komponentu
+        Hint wskazowka = GetComponent<Hint>(); 
+        ifistoOpen = wskazowka.ifistoOpen;
     }
 
 
     private void Update()
     {
-        wskazowka = GetComponent<wskazowka>(); // Pobieranie komponentu Pointer z obiektu
-        ifistoOpen = wskazowka.ifistoOpen; // Pobieranie wartoœci IsOpen z komponentu
+        hint = GetComponent<Hint>();
+        ifistoOpen = hint.ifistoOpen;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,7 +40,7 @@ public class SetIfistoOpen : MonoBehaviour
         {
             if (targetObject != null)
             {
-                var targetComponent = targetObject.GetComponent<wskazowka>();
+                var targetComponent = targetObject.GetComponent<Hint>();
 
                 if (targetComponent != null)
                 {

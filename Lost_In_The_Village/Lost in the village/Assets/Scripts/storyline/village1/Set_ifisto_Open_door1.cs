@@ -7,18 +7,18 @@ public class Set_ifisto_Open_door1 : MonoBehaviour
     public List<GameObject> targetObjects = new List<GameObject>();
 
     private bool ifistoOpen=false;
-    wskazowka wskazowka;
+    Hint hint;
 
     private void Start()
     {
-        wskazowka = GetComponent<wskazowka>(); // Pobieranie komponentu Pointer z obiektu
-        ifistoOpen = wskazowka.ifistoOpen; // Pobieranie wartoœci IsOpen z komponentu
+        hint = GetComponent<Hint>();
+        ifistoOpen = hint.ifistoOpen;
 
     }
     private void Update()
     {
-        wskazowka = GetComponent<wskazowka>(); // Pobieranie komponentu Pointer z obiektu
-        ifistoOpen = wskazowka.ifistoOpen; // Pobieranie wartoœci IsOpen z komponentu
+        hint = GetComponent<Hint>(); 
+        ifistoOpen = hint.ifistoOpen;
     }
 
 

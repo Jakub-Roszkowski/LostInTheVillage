@@ -13,12 +13,12 @@ public class disable : MonoBehaviour
         {
             if (ifistoOpen)
             {
-                ActivateObjects();
+                DisableObjects();
             }
         }
     }
 
-    private void ActivateObjects()
+    private void DisableObjects()
     {
         foreach (var obj in objectsToDeactivate)
         {

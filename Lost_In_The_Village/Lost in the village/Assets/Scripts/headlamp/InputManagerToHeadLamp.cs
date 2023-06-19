@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManagerToCzolowka : MonoBehaviour
+public class InputManagerToHeadLamp : MonoBehaviour
 {
 
     private PlayerInput playerInput;
     public PlayerInput.OnFootActions onFoot;
-    // Start is called before the first frame update
     void Awake()
     {
         playerInput = new PlayerInput();
@@ -15,7 +14,6 @@ public class InputManagerToCzolowka : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
