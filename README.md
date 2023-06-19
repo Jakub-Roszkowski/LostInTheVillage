@@ -8,7 +8,7 @@ Lost In the Village is a 3D game featuring a simple storyline, two villages, and
 
 - **WASD** - Movement
 - **Space** - Jump
-- **E** - Pick up weapon/doughnut
+- **E** - Pick up weapon/donut
 - **Shift** - Sprint
 - **R** - Reload
 - **Esc** - Pause
