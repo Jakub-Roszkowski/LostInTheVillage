@@ -47,4 +47,4 @@ To install the game on an Android device, follow these steps:
 
 ## Have Fun!
 
-Thank you for choosing to play Lost In the Village. We hope you have a great time in this extraordinary game. If you have any questions or feedback, feel free to contact our team. Enjoy yourself and good luck uncovering the secrets of the village!
+Thank you for choosing to play Lost In the Village. I hope you have a great time in this extraordinary game. If you have any questions or feedback, feel free to contact with me. Enjoy yourself and good luck uncovering the secrets of the village!
