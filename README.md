@@ -1,4 +1,4 @@
-# Lost In the Village
+# Lost In The Village
 
 ## Description
 
