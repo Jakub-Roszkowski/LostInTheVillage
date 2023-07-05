@@ -23,7 +23,7 @@ public class EnemyState_Cover : IState
         stateMachine = new StateMachine();
 
         var enemyShoot = new EnemyState_Shoot(enemyReferences);
-        var enemyDelay = new EnemyState_Delay(2f);
+        var enemyDelay = new EnemyState_Delay(0.2f);
         var enemyReload = new EnemyState_Reload(enemyReferences);
 
         At(enemyShoot, enemyReload, () => enemyReferences.shooter.ShouldReload());

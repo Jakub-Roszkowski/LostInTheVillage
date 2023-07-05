@@ -17,7 +17,7 @@ public class EnemyBrain_Smart : MonoBehaviour
 
         //States
         var patrol = new EnemyState_Patroling(enemyReferences, coverArea);
-        var change = new EnemyState_Wait(2f);
+        var change = new EnemyState_Wait(0.2f);
         var cover = new EnemyState_Cover(enemyReferences);
         var runToCover = new EnemyState_RunToCover(enemyReferences, coverArea);
 
