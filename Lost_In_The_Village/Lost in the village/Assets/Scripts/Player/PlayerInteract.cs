@@ -48,6 +48,16 @@ public class PlayerInteract : MonoBehaviour
                     interactable.BaseInteract();
                 }
             }
+            else if (hitInfo.collider.GetComponent<Interactable_wine>() != null)
+            {
+                Interactable_wine interactable = hitInfo.collider.GetComponent<Interactable_wine>();
+                interactable.BaseInteract1();
+                playerUI.UpdateText(interactable.promptMessage);
+                if (inputManager.onFoot.Interact.triggered)
+                {
+                    interactable.BaseInteract();
+                }
+            }
         }
 
     }

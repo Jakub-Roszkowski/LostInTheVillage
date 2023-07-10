@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ak-47
   m_EditorClassIdentifier: 
   Range: 50
-  Damage: 20
+  Damage: 13
   MagazineAMMO: 35
   ReloudTime: 3
   impactForce: 150
