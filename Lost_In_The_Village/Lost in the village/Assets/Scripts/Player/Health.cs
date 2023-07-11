@@ -17,11 +17,14 @@ public class Health : MonoBehaviour
     private RawImage bloodImage;
 
     private int nearDeathValue = 40;
-    
+    private bool death = false;
+    public static GameObject[] dontDestroyObjects;
+
 
     private void Start()
     {
         currentHealth = maxHealth;
+        death = false;
         //panelBlood.SetActive(false);
     }
 
@@ -93,10 +96,18 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            if (IsPlayer())
+            if (IsPlayer() && death ==false)
             {
-                Scene activeScene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(activeScene.buildIndex);
+                death = true;
+                dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
+
+                foreach (GameObject obj in dontDestroyObjects)
+                {
+                    // Wy³¹cz sam obiekt
+                    Destroy(obj);
+                }
+                //Scene activeScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(sceneMenager2.currentScene);
             }
             else
             {
@@ -119,13 +130,18 @@ public class Health : MonoBehaviour
 
     private bool IsPlayer()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        return (gameObject == player);
+        if (gameObject.tag == "Player")
+        {
+            return true;
+        }
+        else
+            return false;
+        //return (gameObject == player);
     }
 
     public void RestoreHealth(int healthToRestore)
     {
-        if((currentHealth += healthToRestore) >= nearDeathValue)
+        if((currentHealth += healthToRestore) >= nearDeathValue && currentHealth<nearDeathValue)
         {
             // Zakoñcz animacjê
             canvasGroup.alpha = 0f;

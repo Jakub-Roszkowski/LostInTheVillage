@@ -11,6 +11,8 @@ TagManager:
   - M4A1
   - Head
   - Body
+  - test
+  - DontDestroyOnLoad
   layers:
   - Default
   - TransparentFX

@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village2.unity
     guid: c5a1419e485e441e39199248fae41053
+  - enabled: 1
+    path: Assets/mini_gry/puzzle/Scenes/puzzle.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/empty.unity
+    guid: c9ad6271f33f813418470d425506cfbc
   m_configObjects: {}
