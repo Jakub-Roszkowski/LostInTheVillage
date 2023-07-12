@@ -100,14 +100,17 @@ public class time_and_rest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F8) || Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
-            Time.timeScale = 1f;
             Retry();
         }
     }
 
     public void Retry()
     {
-        //Restarts current level
+        Time.timeScale = 1f;
+        foreach (GameObject obj in MoveDontDestroyOnLoadObjects.dontDestroyObjects)
+        {
+            obj.SetActive(true);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Finish_game()
@@ -122,15 +125,12 @@ public class time_and_rest : MonoBehaviour
     public void Finish()
     {
 
+        Time.timeScale = 1f;
         foreach (GameObject obj in MoveDontDestroyOnLoadObjects.dontDestroyObjects)
         {
-            // Wy³¹cz sam obiekt
             obj.SetActive(true);
         }
-
-
-
-
         SceneManager.LoadScene("empty");
+        mini_game_menu.ingame2 = true;
     }
 }

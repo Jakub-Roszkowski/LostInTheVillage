@@ -10,8 +10,8 @@ public class FiendTelephone : MonoBehaviour
     public GameObject Button;
     public GameObject FriendTelephone;
 
-    int random = 0;
-    int random2 = 0;
+    //int random = 0;
+    //int random2 = 0;
     string answear;
 
 
@@ -29,8 +29,8 @@ public class FiendTelephone : MonoBehaviour
         FriendTelephone.SetActive(false);
 
         System.Random rnd = new System.Random();
-        random = rnd.Next(100);
-        random2 = rnd.Next(3);
+        //random = rnd.Next(100);
+        //random2 = rnd.Next(1);
 
         answears.Add("A");
         answears.Add("B");
@@ -48,15 +48,18 @@ public class FiendTelephone : MonoBehaviour
 
 
         string corect = test_milioneirs.CurrentAnswear;
+        answear = corect;
 
-        answears.Remove(corect);
 
-        if (random <= 80) answear = corect;
-        else
-        {
-            answear = (string)answears[random2];
-        }
-        
+
+        //answears.Remove(corect);
+
+        //if (random <= 80) answear = corect;
+        //else
+        //{
+        //    answear = (string)answears[random2];
+        //}
+
 
         AnswearText.text = "Drogi przyjacielu moim skromnym zdaniem poprawna odpowiedŸ to: " + answear;
 

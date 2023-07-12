@@ -103,7 +103,7 @@ public class QestionText : MonoBehaviour
 
         corect = test_milioneirs.CurrentAnswear;
 
-        //time = DateTime.Now;
+        time = DateTime.Now;
 
 
         //answears.Remove(answear);
@@ -141,7 +141,7 @@ public class QestionText : MonoBehaviour
         //int cur = test.CurrentPosition;
         //text.text = nick + " Wygra³eœ:";
 
-        /*
+        
         if (timeif)
         {
             if (timestart.AddSeconds(15) < time) {
@@ -159,7 +159,7 @@ public class QestionText : MonoBehaviour
             }
             
         }
-        */
+        
 
         q = test_milioneirs.CurrentQuestion;
         qa = test_milioneirs.CurrentAnswearA;

@@ -141,7 +141,7 @@ public class Health : MonoBehaviour
 
     public void RestoreHealth(int healthToRestore)
     {
-        if((currentHealth += healthToRestore) >= nearDeathValue && currentHealth<nearDeathValue)
+        if((currentHealth += healthToRestore) >= nearDeathValue && currentHealth<100)
         {
             // Zakoñcz animacjê
             canvasGroup.alpha = 0f;
@@ -149,6 +149,8 @@ public class Health : MonoBehaviour
             ShowBloodPanel();
         }
         currentHealth += healthToRestore;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
     }
 
 

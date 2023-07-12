@@ -58,6 +58,16 @@ public class PlayerInteract : MonoBehaviour
                     interactable.BaseInteract();
                 }
             }
+            else if (hitInfo.collider.GetComponent<Interactable_game_console>() != null)
+            {
+                Interactable_game_console interactable = hitInfo.collider.GetComponent<Interactable_game_console>();
+                interactable.BaseInteract1();
+                playerUI.UpdateText(interactable.promptMessage);
+                if (inputManager.onFoot.Interact.triggered)
+                {
+                    interactable.BaseInteract();
+                }
+            }
         }
 
     }

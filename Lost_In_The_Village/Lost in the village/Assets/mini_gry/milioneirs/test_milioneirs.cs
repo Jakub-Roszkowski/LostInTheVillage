@@ -61,7 +61,7 @@ public class test_milioneirs : MonoBehaviour
         hard2.Add(new Question("Która z tych planet jest najmniejsza w Uk³adzie S³onecznym?", "A. Neptun", "B. Wenus", "C. Mars", "D. Merkury", "D"));
         hard2.Add(new Question("Która rzeka jest najd³u¿sza na œwiecie?", "A. Nil", "B. Amazonka", "C. Jangcy", "D. Missisipi", "A"));
         hard2.Add(new Question("Jaki jest symbol chemiczny tlenu?", "A. Tl", "B. O", "C. Te", "D. S", "B"));
-        hard2.Add(new Question("Który kolor nie jest obecny na fladze Japonii?", "A. Czerwony", "B. Bia³y", "C. Niebieski", "D. Zielony", "D"));
+        hard2.Add(new Question("Który kolor nie jest obecny na fladze Niemiec?", "A. Czerwony", "B. Czarny", "C. Z³oty", "D. Zielony", "D"));
         hard3.Add(new Question("Jaka jest stolica Chin?", "A. Szanghaj", "B. Pekin", "C. Hongkong", "D. Kanton", "B"));
         hard3.Add(new Question("Który z tych krajów nie graniczy z Niemcami?", "A. Szwajcaria", "B. Belgia", "C. Hiszpania", "D. Czechy", "C"));
         hard4.Add(new Question("Który z nastêpuj¹cych oceanów jest najwiêkszy pod wzglêdem powierzchni? ", "A. Ocean Indyjski", "B. Ocean Atlantycki", "C. Ocean Spokojny", "D. Ocean Arktyczny", "C"));
@@ -79,7 +79,6 @@ public class test_milioneirs : MonoBehaviour
 
 
 
-        hard1.Add(new Question("Który kraj jest najwiêkszym producentem kawy na œwiecie?", "A.Brazylia", "B.Kolumbia", "C.Etiopia", "D.Wietnam", "A"));
         hard1.Add(new Question("Który z tych filmów zosta³ wyre¿yserowany przez Stevena Spielberga ?", "A.Forrest Gump", "B.Jurassic Park", "C.Titanic", "D.Gladiator", "B"));
         hard1.Add(new Question("Który z tych instrumentów jest strunowy?", "A.Tr¹bka", "B.Gitara", "C.Perkusja", "D.Flet", "B"));
         hard2.Add(new Question("W którym kraju znajduje siê Machu Picchu ?", "A.Chile", "B.Argentyna", "C.Peru", "D.Boliwia", "C"));
@@ -252,7 +251,7 @@ public class test_milioneirs : MonoBehaviour
         {
             //Application.LoadLevel(0);
 
-            Time.timeScale = 1f;
+
 
             Retry();
         }
@@ -262,8 +261,12 @@ public class test_milioneirs : MonoBehaviour
             //Application.LoadLevel(0);
 
             Time.timeScale = 1f;
-
-            Application.Quit();
+            foreach (GameObject obj in MoveDontDestroyOnLoadObjects.dontDestroyObjects)
+            {
+                obj.SetActive(true);
+            }
+            SceneManager.LoadScene("empty");
+            mini_game_menu.ingame2 = true;
         }
         
 
@@ -272,6 +275,11 @@ public class test_milioneirs : MonoBehaviour
 
     public void Retry()
     {
+        Time.timeScale = 1f;
+        foreach (GameObject obj in MoveDontDestroyOnLoadObjects.dontDestroyObjects)
+        {
+            obj.SetActive(true);
+        }
         //Restarts current level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -86,6 +86,14 @@ public class Pause : MonoBehaviour
     public void Restart()
     {
         Resume();
+        GameObject[] dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
+
+        foreach (GameObject obj in dontDestroyObjects)
+        {
+            // Wy³¹cz sam obiekt
+            Destroy(obj);
+        }
+
         SceneManager.LoadScene("Village1");
     }
     public void MuteMusic()
