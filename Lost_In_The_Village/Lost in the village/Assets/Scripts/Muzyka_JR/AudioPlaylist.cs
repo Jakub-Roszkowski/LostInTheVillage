@@ -33,10 +33,15 @@ public class AudioPlaylist : MonoBehaviour
         {
             audioSource.volume = 0f;
         }
+        else if (CharacterMessage.isMusicDown)
+        {
+            audioSource.volume = glosnosc / 2;
+        }
         else
         {
             audioSource.volume = glosnosc;
         }
+
         if (!audioSource.isPlaying)
         {
             PlayNextClip();

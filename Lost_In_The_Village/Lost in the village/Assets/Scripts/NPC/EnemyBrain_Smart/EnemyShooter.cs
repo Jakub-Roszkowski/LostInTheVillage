@@ -60,7 +60,7 @@ public class EnemyShooter : MonoBehaviour
 
     public void Shoot()
     {
-        shootSound.Play();
+
         if (ShouldReload())
             return;
 
@@ -73,6 +73,7 @@ public class EnemyShooter : MonoBehaviour
             // Check if the hit object is the player and if it's visible
             if (hit.collider.CompareTag("Player"))
             {
+                shootSound.Play();
                 UnityEngine.Debug.DrawLine(shootPointPosition, hit.point, Color.red, 1f);
 
                 TrailRenderer trail = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
@@ -87,6 +88,19 @@ public class EnemyShooter : MonoBehaviour
                 }
             }
         }
+    }
+
+    private bool IsVisible(GameObject targetObject)
+    {
+        Vector3 direction = targetObject.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, layerMask))
+        {
+            if (hit.collider.gameObject == targetObject)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -133,6 +147,11 @@ public class EnemyShooter : MonoBehaviour
 
     public void Reload() {
         currentAmmo = ammo;
+        //reloadSound.Play();
+    }
+    public void Reload2()
+    {
+        //currentAmmo = ammo;
         reloadSound.Play();
     }
 

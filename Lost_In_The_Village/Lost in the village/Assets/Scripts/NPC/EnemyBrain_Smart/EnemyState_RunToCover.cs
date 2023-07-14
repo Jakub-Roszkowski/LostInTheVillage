@@ -40,6 +40,7 @@ public class EnemyState_RunToCover : IState
     public bool HasArrivedAtDestination()
     {
         return Vector3.Distance(enemyReferences.transform.position, destination) < 0.5f;
+        //zmienilem z 0.5f
     }
 
     public Color GizmoColor()

@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     private Camera cam;
-    [SerializeField]
-    private float distance = 3f;
+
+    private float distance = 8f;
     [SerializeField]
     private LayerMask mask;
     private PlayerUI playerUI;
@@ -17,6 +17,8 @@ public class PlayerInteract : MonoBehaviour
         cam = GetComponent<PlayerLook>().cam;
         playerUI = GetComponent<PlayerUI>();
         inputManager = GetComponent<InputManager>();
+
+
     }
 
     void Update()
@@ -66,6 +68,16 @@ public class PlayerInteract : MonoBehaviour
                 if (inputManager.onFoot.Interact.triggered)
                 {
                     interactable.BaseInteract();
+                }
+            }
+            else if (hitInfo.collider.GetComponent<Interactable_Character>() != null)
+            {
+                Interactable_Character interactable = hitInfo.collider.GetComponent<Interactable_Character>();
+                interactable.Interact();
+                playerUI.UpdateText(interactable.promptMessage);
+                if (inputManager.onFoot.Interact.triggered)
+                {
+                    interactable.Interact2();
                 }
             }
         }

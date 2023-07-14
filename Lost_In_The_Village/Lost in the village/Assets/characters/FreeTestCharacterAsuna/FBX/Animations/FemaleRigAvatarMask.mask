@@ -1,0 +1,763 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FemaleRigAvatarMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: AsunaBoots
+    m_Weight: 0
+  - m_Path: AsunaHair
+    m_Weight: 0
+  - m_Path: AsunaHairTie
+    m_Weight: 0
+  - m_Path: BodyMesh
+    m_Weight: 0
+  - m_Path: EyeballLeft
+    m_Weight: 0
+  - m_Path: EyeballRight
+    m_Weight: 0
+  - m_Path: Root
+    m_Weight: 0
+  - m_Path: Root/cMainV
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/1HMeleeHolsterLeg_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/1HMeleeHolsterLeg_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cButt_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cButt_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cThigh_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/cThigh_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/cHip_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L/Foot_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L/Foot_L/Toe1_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_L/Shin_L/KneeArmor_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/cHip_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/PistolHolster_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R/Foot_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R/Foot_R/Toe1_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Hip_R/Shin_R/KneeArmor_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/1HMeleeHolsterBack_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/1HMeleeHolsterBack_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/2HMeleeHolster_Socket_Back
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/ArrowQuiver_Socket_Back
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Boob_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Boob_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/BowHolster_Socket_Back
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/cWrist_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/ElbowArmor_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Bow_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Firearm_SocketBoltActionRifle_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Firearm_SocketBoltActionRifleMagazine_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Melee_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Middle1_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Middle1_L/Middle2_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Middle1_L/Middle2_L/Middle3_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pinky1_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pinky1_L/Pinky2_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pinky1_L/Pinky2_L/Pinky3_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pointer1_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pointer1_L/Pointer2_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Pointer1_L/Pointer2_L/Pointer3_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Reload12Gauge_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadFlamerTank_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyGRL45_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyMissileLauncher_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyOldPistol_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyPistol_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyPistolARK9_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyRifle_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyRifleOld_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptyShotgunKL228_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptySMG_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptySniperRifle_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEmptySniperRifleOld_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineEnergyOld_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineGRL45_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineMissileLauncher_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineOldPistol_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazinePistol_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazinePistolARK9_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineRifle_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineRifleOld_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineShotgunKL228_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineSMG_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineSniperRifle_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMagazineSniperRifleOld_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMG&MinigunMagazine_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/ReloadMG&MinigunMagazineEmpty_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Ring1_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Ring1_L/Ring2_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Ring1_L/Ring2_L/Ring3_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Shield_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Thumb1_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Thumb1_L/Thumb2_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/4arm_L/Hand_L/Thumb1_L/Thumb2_L/Thumb3_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Bicep_L/cBicep_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Shoulder_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_L/Shoulder_L/ShoulderArmor_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/cWrist_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/ElbowArmor_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Arrow_Socket_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketARK9_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketNKK27_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketPistol_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketPNT34_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketRifle_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Firearm_SocketRifleOld_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/FirearmMagazine_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/HandGrenade_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Melee_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Middle1_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Middle1_R/Middle2_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Middle1_R/Middle2_R/Middle3_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/MinesExplosives_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Minigun_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pinky1_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pinky1_R/Pinky2_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pinky1_R/Pinky2_R/Pinky3_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pointer1_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pointer1_R/Pointer2_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Pointer1_R/Pointer2_R/Pointer3_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/ReloadMagazineBoltActionRifle_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/ReloadMagazineEmptyBoltActionRifle_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Ring1_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Ring1_R/Ring2_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Ring1_R/Ring2_R/Ring3_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/ShotgunCrossbow_Socket_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Thumb1_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Thumb1_R/Thumb2_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/4arm_R/Hand_R/Thumb1_R/Thumb2_R/Thumb3_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Bicep_R/cBicep_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Shoulder_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/cShrugger_R/Shoulder_R/ShoulderArmor_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/MinigunHolster_Socket_Back
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/MissileLauncherHolster_Socket_Back
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Eye_L
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Eye_R
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2/HairBackLong3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2/HairBackLong3/HairBackLong4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2/HairBackLong3/HairBackLong4/HairBackLong5
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2/HairBackLong3/HairBackLong4/HairBackLong5/HairBackLong6
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2/HairBackLong3/HairBackLong4/HairBackLong5/HairBackLong6/HairBackLong7
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLong1/HairBackLong2/HairBackLong3/HairBackLong4/HairBackLong5/HairBackLong6/HairBackLong7/HairBackLong8
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L/HairBackLongA2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L/HairBackLongA2_L/HairBackLongA3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L/HairBackLongA2_L/HairBackLongA3_L/HairBackLongA4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L/HairBackLongA2_L/HairBackLongA3_L/HairBackLongA4_L/HairBackLongA5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L/HairBackLongA2_L/HairBackLongA3_L/HairBackLongA4_L/HairBackLongA5_L/HairBackLongA6_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_L/HairBackLongA2_L/HairBackLongA3_L/HairBackLongA4_L/HairBackLongA5_L/HairBackLongA6_L/HairBackLongA7_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R/HairBackLongA2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R/HairBackLongA2_R/HairBackLongA3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R/HairBackLongA2_R/HairBackLongA3_R/HairBackLongA4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R/HairBackLongA2_R/HairBackLongA3_R/HairBackLongA4_R/HairBackLongA5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R/HairBackLongA2_R/HairBackLongA3_R/HairBackLongA4_R/HairBackLongA5_R/HairBackLongA6_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongA1_R/HairBackLongA2_R/HairBackLongA3_R/HairBackLongA4_R/HairBackLongA5_R/HairBackLongA6_R/HairBackLongA7_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L/HairBackLongB2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L/HairBackLongB2_L/HairBackLongB3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L/HairBackLongB2_L/HairBackLongB3_L/HairBackLongB4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L/HairBackLongB2_L/HairBackLongB3_L/HairBackLongB4_L/HairBackLongB5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L/HairBackLongB2_L/HairBackLongB3_L/HairBackLongB4_L/HairBackLongB5_L/HairBackLongB6_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_L/HairBackLongB2_L/HairBackLongB3_L/HairBackLongB4_L/HairBackLongB5_L/HairBackLongB6_L/HairBackLongB7_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R/HairBackLongB2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R/HairBackLongB2_R/HairBackLongB3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R/HairBackLongB2_R/HairBackLongB3_R/HairBackLongB4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R/HairBackLongB2_R/HairBackLongB3_R/HairBackLongB4_R/HairBackLongB5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R/HairBackLongB2_R/HairBackLongB3_R/HairBackLongB4_R/HairBackLongB5_R/HairBackLongB6_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongB1_R/HairBackLongB2_R/HairBackLongB3_R/HairBackLongB4_R/HairBackLongB5_R/HairBackLongB6_R/HairBackLongB7_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_L/HairBackLongC2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_L/HairBackLongC2_L/HairBackLongC3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_L/HairBackLongC2_L/HairBackLongC3_L/HairBackLongC4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_L/HairBackLongC2_L/HairBackLongC3_L/HairBackLongC4_L/HairBackLongC5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_L/HairBackLongC2_L/HairBackLongC3_L/HairBackLongC4_L/HairBackLongC5_L/HairBackLongC6_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_R/HairBackLongC2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_R/HairBackLongC2_R/HairBackLongC3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_R/HairBackLongC2_R/HairBackLongC3_R/HairBackLongC4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_R/HairBackLongC2_R/HairBackLongC3_R/HairBackLongC4_R/HairBackLongC5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongC1_R/HairBackLongC2_R/HairBackLongC3_R/HairBackLongC4_R/HairBackLongC5_R/HairBackLongC6_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_L/HairBackLongD2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_L/HairBackLongD2_L/HairBackLongD3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_L/HairBackLongD2_L/HairBackLongD3_L/HairBackLongD4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_R/HairBackLongD2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_R/HairBackLongD2_R/HairBackLongD3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBackLongD1_R/HairBackLongD2_R/HairBackLongD3_R/HairBackLongD4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_L/HairBraid2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_L/HairBraid2_L/HairBraid3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_L/HairBraid2_L/HairBraid3_L/HairBraid4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_L/HairBraid2_L/HairBraid3_L/HairBraid4_L/HairBraid5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_R/HairBraid2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_R/HairBraid2_R/HairBraid3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_R/HairBraid2_R/HairBraid3_R/HairBraid4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraid1_R/HairBraid2_R/HairBraid3_R/HairBraid4_R/HairBraid5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraidSingle1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraidSingle1_R/HairBraidSingle2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraidSingle1_R/HairBraidSingle2_R/HairBraidSingle3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairBraidSingle1_R/HairBraidSingle2_R/HairBraidSingle3_R/HairBraidSingle4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_L/HairFrontLongA2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_L/HairFrontLongA2_L/HairFrontLongA3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_L/HairFrontLongA2_L/HairFrontLongA3_L/HairFrontLongA4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_L/HairFrontLongA2_L/HairFrontLongA3_L/HairFrontLongA4_L/HairFrontLongA5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_R/HairFrontLongA2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_R/HairFrontLongA2_R/HairFrontLongA3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_R/HairFrontLongA2_R/HairFrontLongA3_R/HairFrontLongA4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongA1_R/HairFrontLongA2_R/HairFrontLongA3_R/HairFrontLongA4_R/HairFrontLongA5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongB1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongB1/HairFrontLongB2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongB1/HairFrontLongB2/HairFrontLongB3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongB1/HairFrontLongB2/HairFrontLongB3/HairFrontLongB4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongC1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongC1/HairFrontLongC2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongC1/HairFrontLongC2/HairFrontLongC3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongC1/HairFrontLongC2/HairFrontLongC3/HairFrontLongC4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongD1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongD1/HairFrontLongD2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongD1/HairFrontLongD2/HairFrontLongD3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongD1/HairFrontLongD2/HairFrontLongD3/HairFrontLongD4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongE1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongE1/HairFrontLongE2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongE1/HairFrontLongE2/HairFrontLongE3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongE1/HairFrontLongE2/HairFrontLongE3/HairFrontLongE4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongE1/HairFrontLongE2/HairFrontLongE3/HairFrontLongE4/HairFrontLongE5
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongE1/HairFrontLongE2/HairFrontLongE3/HairFrontLongE4/HairFrontLongE5/HairFrontLongE6
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_L/HairFrontLongF2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_L/HairFrontLongF2_L/HairFrontLongF3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_L/HairFrontLongF2_L/HairFrontLongF3_L/HairFrontLongF4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_L/HairFrontLongF2_L/HairFrontLongF3_L/HairFrontLongF4_L/HairFrontLongF5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_L/HairFrontLongF2_L/HairFrontLongF3_L/HairFrontLongF4_L/HairFrontLongF5_L/HairFrontLongF6_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_R/HairFrontLongF2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_R/HairFrontLongF2_R/HairFrontLongF3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_R/HairFrontLongF2_R/HairFrontLongF3_R/HairFrontLongF4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_R/HairFrontLongF2_R/HairFrontLongF3_R/HairFrontLongF4_R/HairFrontLongF5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongF1_R/HairFrontLongF2_R/HairFrontLongF3_R/HairFrontLongF4_R/HairFrontLongF5_R/HairFrontLongF6_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongG1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongG1_L/HairFrontLongG2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongG1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongG1_R/HairFrontLongG2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_L/HairFrontLongH2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_L/HairFrontLongH2_L/HairFrontLongH3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_L/HairFrontLongH2_L/HairFrontLongH3_L/HairFrontLongH4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_R/HairFrontLongH2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_R/HairFrontLongH2_R/HairFrontLongH3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairFrontLongH1_R/HairFrontLongH2_R/HairFrontLongH3_R/HairFrontLongH4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortA1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortA1/HairShortA2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortA1/HairShortA2/HairShortA3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortB1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortB1/HairShortB2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortB1/HairShortB2/HairShortB3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortC1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortC1/HairShortC2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortC1/HairShortC2/HairShortC3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortD1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortD1/HairShortD2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortD1/HairShortD2/HairShortD3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortE1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortE1/HairShortE2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortE1/HairShortE2/HairShortE3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortF1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortF1/HairShortF2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortF1/HairShortF2/HairShortF3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortG1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortG1/HairShortG2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortG1/HairShortG2/HairShortG3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortH1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortH1/HairShortH2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortH1/HairShortH2/HairShortH3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortI1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortI1/HairShortI2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortI1/HairShortI2/HairShortI3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_L/HairShortJ2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_L/HairShortJ2_L/HairShortJ3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_L/HairShortJ2_L/HairShortJ3_L/HairShortJ4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_R/HairShortJ2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_R/HairShortJ2_R/HairShortJ3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortJ1_R/HairShortJ2_R/HairShortJ3_R/HairShortJ4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_L/HairShortK2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_L/HairShortK2_L/HairShortK3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_R/HairShortK2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortK1_R/HairShortK2_R/HairShortK3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_L/HairShortL2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_L/HairShortL2_L/HairShortL3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_R/HairShortL2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortL1_R/HairShortL2_R/HairShortL3R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortM1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortM1_L/HairShortM2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortM1_L/HairShortM2_L/HairShortM3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortM1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortM1_R/HairShortM2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortM1_R/HairShortM2_R/HairShortM3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_L/HairShortN2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_L/HairShortN2_L/HairShortN3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_L/HairShortN2_L/HairShortN3_L/HairShortN4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_R/HairShortN2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_R/HairShortN2_R/HairShortN3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairShortN1_R/HairShortN2_R/HairShortN3_R/HairShortN4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_L/HairStrandFront2_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_L/HairStrandFront2_L/HairStrandFront3_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_L/HairStrandFront2_L/HairStrandFront3_L/HairStrandFront4_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_L/HairStrandFront2_L/HairStrandFront3_L/HairStrandFront4_L/HairStrandFront5_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_R/HairStrandFront2_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_R/HairStrandFront2_R/HairStrandFront3_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_R/HairStrandFront2_R/HairStrandFront3_R/HairStrandFront4_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/HairStrandFront1_R/HairStrandFront2_R/HairStrandFront3_R/HairStrandFront4_R/HairStrandFront5_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3/Tail4
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3/Tail4/Tail5
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail1/Tail2/Tail3/Tail4/Tail5/Tail6
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9/Tail10
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9/Tail10/Tail11
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9/Tail10/Tail11/Tail12
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9/Tail10/Tail11/Tail12/Tail13
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9/Tail10/Tail11/Tail12/Tail13/Tail14
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail7/Tail8/Tail9/Tail10/Tail11/Tail12/Tail13/Tail14/Tail15
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail16
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17/Tail18
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17/Tail18/Tail19
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17/Tail18/Tail19/Tail20
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17/Tail18/Tail19/Tail20/Tail21
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17/Tail18/Tail19/Tail20/Tail21/Tail22
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17_L/Tail18_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17_L/Tail18_L/Tail19_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17_L/Tail18_L/Tail19_L/Tail20_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17_L/Tail18_L/Tail19_L/Tail20_L/Tail21_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail17_L/Tail18_L/Tail19_L/Tail20_L/Tail21_L/Tail22_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_L/Tail24_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_L/Tail24_L/Tail25_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_L/Tail24_L/Tail25_L/Tail26_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_L/Tail24_L/Tail25_L/Tail26_L/Tail27_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_L/Tail24_L/Tail25_L/Tail26_L/Tail27_L/Tail28_L
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_R/Tail24_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_R/Tail24_R/Tail25_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_R/Tail24_R/Tail25_R/Tail26_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_R/Tail24_R/Tail25_R/Tail26_R/Tail27_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/Neck/Head/Tail23_R/Tail24_R/Tail25_R/Tail26_R/Tail27_R/Tail28_R
+    m_Weight: 1
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/RifleHolster_Socket_Back
+    m_Weight: 0
+  - m_Path: Root/cMainV/cMainH/Spine0/Spine1/Spine2/Spine3/ShotgunCrossbowHolster_Socket_Back
+    m_Weight: 0

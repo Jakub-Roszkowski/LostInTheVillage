@@ -16,7 +16,6 @@ public class EnemyReferences : MonoBehaviour
 
     [Header("Stats")]
     public float pathUpdateDelay = 0.2f;
-    
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();

@@ -79,7 +79,8 @@ public class EnemyState_Cover : IState
 
     public bool ShouldCover()
     {
-        return  PlayerInRange() && CanSeePlayer();
+        return  PlayerInRange(); //&& CanSeePlayer();
+        //zmiana_____________________________
     }
 
 

@@ -197,7 +197,7 @@ public class Gun : MonoBehaviour
                     enemy.TakeDamage(damageAmount * 4);
                     Debug.Log(enemy.GetCurrentHealth());
                     Debug.Log("Head");
-                    StartCoroutine(wait());
+                    StartCoroutine(wait_Head());
 
                 }
             }
@@ -259,7 +259,7 @@ public class Gun : MonoBehaviour
     }
 
 
-    IEnumerator wait()
+    IEnumerator wait_Head()
     {
         yield return new WaitForSeconds(0.2f);
         ChangeBGM(headshoot);

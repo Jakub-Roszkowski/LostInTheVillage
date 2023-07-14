@@ -109,7 +109,7 @@ public class Health : MonoBehaviour
                 //Scene activeScene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(sceneMenager2.currentScene);
             }
-            else
+            else if(!IsPlayer())
             {
                 Animator animator = this.GetComponent<Animator>();
                 animator.SetBool("isDead", true);
@@ -141,7 +141,7 @@ public class Health : MonoBehaviour
 
     public void RestoreHealth(int healthToRestore)
     {
-        if((currentHealth += healthToRestore) >= nearDeathValue && currentHealth<100)
+        if((currentHealth + healthToRestore) >= nearDeathValue && currentHealth<100)
         {
             // Zakoñcz animacjê
             canvasGroup.alpha = 0f;
