@@ -15,9 +15,9 @@ MonoBehaviour:
   Range: 50
   Damage: 13
   MagazineAMMO: 35
-  ReloudTime: 3
+  ReloadTime: 3
   impactForce: 150
   fireRate: 10
   shoot: {fileID: 8300000, guid: d30eff8484112d948981166b11320a77, type: 3}
-  ReloudSound: {fileID: 8300000, guid: a1076cac41dde154dbf9fab428bd5ccd, type: 3}
+  ReloadSound: {fileID: 8300000, guid: a1076cac41dde154dbf9fab428bd5ccd, type: 3}
   headshoot: {fileID: 8300000, guid: 2603784a7ec1d8e42ba6155b8acbdb27, type: 3}

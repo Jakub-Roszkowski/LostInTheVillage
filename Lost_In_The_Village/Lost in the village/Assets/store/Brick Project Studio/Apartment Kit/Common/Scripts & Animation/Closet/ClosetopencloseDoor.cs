@@ -7,95 +7,57 @@ namespace SojaExiles
 {
 	public class ClosetopencloseDoor : MonoBehaviour
 	{
-		private PlayerInput playerInput;
-		public PlayerInput.OnFootActions onFoot;
-		void Awake()
-		{
-			playerInput = new PlayerInput();
-			onFoot = playerInput.OnFoot;
-
-		}
-
-		void Update()
-		{
-
-		}
-
-		private void OnEnable()
-		{
-			onFoot.Enable();
-		}
 
 
-		private void OnDisable()
-		{
-			onFoot.Disable();
-		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		public string promptMessage;
+		private string text;
 
 
 		public Animator Closetopenandclose;
 		public bool open;
-		private Transform Player;
 
 		void Start()
 		{
 			open = false;
-			Player = FindObjectOfType<PlayerController>().transform;
 		}
 
-		void OnMouseOver()
+		public void Interact()
 		{
+
+			switch (Language.language)
 			{
-				if (Player)
+				case Language_enum.Polish:
+					text = "Otworz / Zamknij (E)";
+					break;
+				case Language_enum.English:
+					text = "Open / Close (E)";
+					break;
+				case Language_enum.German:
+					text = "Öffnen / Schließen (E)";
+					break;
+				case Language_enum.Spain:
+					text = "Abrir / Cerrar (E)";
+					break;
+			}
+
+			promptMessage = text;
+
+		}
+		public void Interact2()
+		{
+			if (open == false)
+			{
+				StartCoroutine(opening());
+			}
+			else
+			{
+				if (open == true)
 				{
-					float dist = Vector3.Distance(Player.position, transform.position);
-					if (dist < 15)
-					{
-						if (open == false)
-						{
-							if (onFoot.Interact.triggered)
-							{
-								StartCoroutine(opening());
-							}
-						}
-						else
-						{
-							if (open == true)
-							{
-								if (onFoot.Interact.triggered)
-								{
-									StartCoroutine(closing());
-								}
-							}
 
-						}
-
-					}
+					StartCoroutine(closing());
 				}
 
 			}
-
 		}
 
 		IEnumerator opening()

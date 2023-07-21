@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c718285a1be82448ce9d50f6d861b4, type: 3}
+  m_Name: shotgun
+  m_EditorClassIdentifier: 
+  Range: 30
+  Damage: 40
+  MagazineAMMO: 12
+  ReloadTime: 2.5
+  impactForce: 150
+  fireRate: 12
+  shoot: {fileID: 8300000, guid: 1af20722fcde5a84f816c65c5629e302, type: 3}
+  ReloadSound: {fileID: 8300000, guid: 1eed651947ee4c64f9e3d1346d8d2196, type: 3}
+  headshoot: {fileID: 8300000, guid: 2603784a7ec1d8e42ba6155b8acbdb27, type: 3}

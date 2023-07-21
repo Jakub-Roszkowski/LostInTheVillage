@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,6 +57,9 @@ public class QestionText : MonoBehaviour
     System.DateTime time;
     public static System.DateTime timestart;
 
+
+    private string text1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +81,7 @@ public class QestionText : MonoBehaviour
 
 
         FrameLose2.SetActive(false);
-        text.text = nick + " Wygra≥eú:";
+        text.text = nick + " Wygra≈Çe≈õ:";
         Value.text = test_milioneirs.guaranteedWIN.ToString();
 
         lose = false;
@@ -95,6 +98,27 @@ public class QestionText : MonoBehaviour
         FrameAnswearD.transform.GetComponent<Button>().onClick.AddListener(onClickD);
         ButtonFinish.transform.GetComponent<Button>().onClick.AddListener(MessageWin);
         Button50.transform.GetComponent<Button>().onClick.AddListener(Message50);
+
+
+
+
+
+
+        switch (Language.language)
+        {
+            case Language_enum.Polish:
+                text1 = " Wygra≈Çe≈õ: ";
+                break;
+            case Language_enum.English:
+                text1 = " You won: ";
+                break;
+            case Language_enum.German:
+                text1 = " Du hast gewonnen: ";
+                break;
+            case Language_enum.Spain:
+                text1 = " ¬°Has ganado! ";
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -139,7 +163,7 @@ public class QestionText : MonoBehaviour
 
 
         //int cur = test.CurrentPosition;
-        //text.text = nick + " Wygra≥eú:";
+        //text.text = nick + " Wygra≈Çe≈õ:";
 
         
         if (timeif)
@@ -396,7 +420,7 @@ public class QestionText : MonoBehaviour
 
         iftext = !iftext;
 
-        text.text = nick + " Wygra≥eú:";
+        text.text = nick + text1;
     }
 
     public static void next2()

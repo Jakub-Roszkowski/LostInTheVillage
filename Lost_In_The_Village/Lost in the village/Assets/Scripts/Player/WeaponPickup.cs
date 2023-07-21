@@ -5,79 +5,51 @@ using UnityEngine.InputSystem;
 
 public class WeaponPickup : MonoBehaviour
 {
-    public Camera playerCamera; // Player Camera
-    public Transform weaponSocket; // A reference to the point where the weapon is attached to the character
-    public LayerMask pickupLayerMask; // A layer introduced to the weapon to be picked up
+    public GunManager gunManager;
+    public string promptMessage;
+    private string text;
+    private bool isToSee = false;
 
-    public GameObject currentWeapon; 
 
-
-    private InputManager inputManager;
-
-    private void Start()
+    public void Interact(GameObject wepaon)
     {
-        inputManager = GetComponent<InputManager>();
+
+        switch (Language.language)
+        {
+            case Language_enum.Polish:
+                text = "Podnieœ " + wepaon.tag + " (E)";
+                break;
+            case Language_enum.English:
+                text = "Pick up " + wepaon.tag + " (E)";
+                break;
+            case Language_enum.German:
+                text = "Abholen " + wepaon.tag + " (E)";
+                break;
+            case Language_enum.Spain:
+                text = "Levantar " + wepaon.tag + " (E)";
+                break;
+        }
+        if (!gunManager.IsTheSame(wepaon))
+        {
+            promptMessage = text;
+            isToSee = true;
+        }
+        else
+        {
+            promptMessage = "";
+            isToSee = false;
+        }
 
     }
 
-    private void Update()
+    public void Interact2(GameObject weapon)
     {
-        if (inputManager.onFoot.Interact.triggered)
+        if (isToSee)
         {
-            TryPickupWeapon();
+            gunManager.PickupWeapon(weapon.tag);
+            gunManager.DropWeapon(weapon.tag);
+            weapon.SetActive(false);
         }
     }
 
-    private void TryPickupWeapon()
-    {
-        Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0f));
-
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, pickupLayerMask))
-        {
-            GameObject weaponToPickup = hit.collider.gameObject;
-
-
-            Debug.Log("current " + currentWeapon.tag);
-            Debug.Log("weaponToPickup " + weaponToPickup.tag);
-
-            if (currentWeapon != null)
-            {
-                DropWeapon();
-            }
-
-            PickupWeapon(weaponToPickup);
-
-        }
-    }
-
-    private void PickupWeapon(GameObject weapon)
-    {
-        weapon.SetActive(true);
-
-        weapon.transform.SetParent(weaponSocket);
-        if (weapon.CompareTag("AK47"))
-        {
-            weapon.transform.localPosition = new Vector3(0.18f, -0.298f, 0.38273f);
-            weapon.transform.localRotation = Quaternion.Euler(0f, -12f, -14f);
-            weapon.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-        }
-        else if (weapon.CompareTag("M4A1"))
-        {
-            weapon.transform.localPosition = new Vector3(0.1431269f, -0.298f, 0.3827395f);
-            weapon.transform.localRotation = Quaternion.Euler(-3.328f, 172.462f, -40.959f);
-            weapon.transform.localScale = new Vector3(0.8175049f, 0.8234f, 0.8001348f);
-        }
-
-
-        currentWeapon = weapon;
-    }
-
-    private void DropWeapon()
-    {
-        currentWeapon.SetActive(false);
-        currentWeapon.transform.SetParent(null);
-
-        currentWeapon = null;
-    }
 }

@@ -27,7 +27,7 @@ public class EnemyState_RunToPlayer : IState
         enemyReferences.animator.SetFloat("speed", 0f);
 
     }
-
+    
     public void Tick()
     {
         enemyReferences.animator.SetFloat("speed", enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude);
@@ -35,8 +35,14 @@ public class EnemyState_RunToPlayer : IState
 
     public bool HasArrivedAtDestination()
     {
-        return Vector3.Distance(enemyReferences.transform.position, destination) < 30f;
-        //zmienilem z 0.5f
+        enemyReferences.navMeshAgent.SetDestination(player.transform.position);
+        destination = player.transform.position;
+        if (Vector3.Distance(enemyReferences.transform.position, destination) < 28f)
+        {
+            enemyReferences.navMeshAgent.ResetPath();
+            return true;
+        }
+        else return false;
     }
 
     public Color GizmoColor()

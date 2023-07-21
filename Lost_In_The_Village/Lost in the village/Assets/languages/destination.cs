@@ -9,6 +9,7 @@ public class destination : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         switch (Language.language)
         {
             case Language_enum.Polish:
@@ -24,6 +25,7 @@ public class destination : MonoBehaviour
                 promptText.text = "Habla con el hombre fuera del pueblo.";
                 break;
         }
+
     }
 
     // Update is called once per frame

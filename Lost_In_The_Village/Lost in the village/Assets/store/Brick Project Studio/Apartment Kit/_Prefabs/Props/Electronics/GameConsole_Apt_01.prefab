@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.00000012293506, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4532440485179112049}
   m_RootOrder: 0
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -93,6 +95,7 @@ GameObject:
   - component: {fileID: 3438951910907112944}
   - component: {fileID: 8561054005993573663}
   - component: {fileID: 3649349523859120096}
+  - component: {fileID: 6839460467612635549}
   m_Layer: 0
   m_Name: GameConsole_Apt_01
   m_TagString: Untagged
@@ -110,6 +113,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6472282251405188857}
   m_Father: {fileID: 0}
@@ -134,6 +138,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -177,3 +182,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5173292, y: 0.12484, z: 0.6467283}
   m_Center: {x: -0.007703826, y: 0.062419984, z: 0.000000014901161}
+--- !u!205 &6839460467612635549
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105533147478963073}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0077038407, y: 0.062415216, z: 0}
+  m_Size: 0.6467283
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.036156893
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8561054005993573663}
+    - renderer: {fileID: 7109118716814398927}
+  - screenRelativeHeight: 0.101
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

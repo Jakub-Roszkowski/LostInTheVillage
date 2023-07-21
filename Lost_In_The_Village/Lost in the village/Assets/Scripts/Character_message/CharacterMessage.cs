@@ -14,6 +14,8 @@ public enum Place_enum
     Orzel_glasses,
     Orzel_tunel,
     Orzel_laptop,
+    Village1,
+    Village1Man,
 }
 
 public class CharacterMessage : MonoBehaviour
@@ -74,6 +76,16 @@ public class CharacterMessage : MonoBehaviour
 
 
 
+    public AudioClip Village1_PL;
+    public AudioClip Village1_EN;
+    public AudioClip Village1_GER;
+    public AudioClip Village1_SPA;
+
+    public AudioClip Village1Man_PL;
+    public AudioClip Village1Man_EN;
+    public AudioClip Village1Man_GER;
+    public AudioClip Village1Man_SPA;
+
 
 
 
@@ -122,9 +134,15 @@ public class CharacterMessage : MonoBehaviour
     private string str_Orzel_laptop_GER = "Der Fehler wurde schnell behoben. Endlich kann ich diese Stadt verlassen. Begleite mich zu den Toren der Stadt.";
     private string str_Orzel_laptop_SPA = "El error se solucionó rápidamente. Finalmente puedo dejar esta ciudad. Llévame a las puertas de la ciudad.";
 
+    private string str_Village1_PL = "Budzisz się przez hałas w twojej spokojnej wiosce. Idź do centrali i dowiedz się, co się stało.";
+    private string str_Village1_EN = "You wake up to the noise in your peaceful village. Go to headquarters and find out what happened";
+    private string str_Village1_GER = "Sie wachen mit dem Lärm in Ihrem friedlichen Dorf auf. Gehen Sie zum Zentral und finden Sie heraus, was passiert ist.";
+    private string str_Village1_SPA = "Te despiertas con el ruido de tu tranquilo pueblo. Ve a la sede y averigua qué pasó.";
 
-
-
+    private string str_Village1Man_PL = "Jakiś nieodpowiedzialny programista postanowił powierzyć całą swoją pracę Chatowi GPT i puścił nieprzetestowany kod na produkcję. Teraz pojawiły się wrogie roboty. Musisz iść do miasta 'Orzeł', tam jest programista, który może nas uratować.";
+    private string str_Village1Man_EN = "Some irresponsible programmer decided to delegate all of their work to Chatbot GPT and released untested code into production. Now hostile robots have appeared. You must go to the town of 'Orzeł,' there is a programmer who can save us.";
+    private string str_Village1Man_GER = "Ein verantwortungsloser Programmierer hat beschlossen, seine gesamte Arbeit dem Chatbot GPT zu überlassen und ungetesteten Code in die Produktion zu bringen. Jetzt sind feindliche Roboter aufgetaucht. Du musst in die Stadt 'Orzeł' gehen, dort ist ein Programmierer, der uns retten kann.";
+    private string str_Village1Man_SPA = "Un programador irresponsable decidió delegar todo su trabajo en el Chatbot GPT y lanzó código no probado a producción. Ahora han aparecido robots hostiles. Debes ir a la ciudad 'Orzeł', allí hay un programador que puede salvarnos.";
 
     private string str2_Welcome_Village2_PL = "Cicha 4";
     private string str2_Welcome_Village2_EN = "Quiet 4 Street";
@@ -153,8 +171,8 @@ public class CharacterMessage : MonoBehaviour
 
     private string str2_Orzel_welcome_PL = "PWR - Niemiecka";
     private string str2_Orzel_welcome_EN = "PWR - German";
-    private string str2_Orzel_welcome_GER = "PWR - Deutsch";
-    private string str2_Orzel_welcome_SPA = "PWR - Alemán";
+    private string str2_Orzel_welcome_GER = "PWR - Deutsche Straße";
+    private string str2_Orzel_welcome_SPA = "PWR - calle alemana";
 
     private string str2_Orzel_glasses_PL = "tunel przy ulicy Cichej między pierwszym a drugim domem";
     private string str2_Orzel_glasses_EN = "the tunnel on Quiet Street, between the first and second house";
@@ -170,6 +188,16 @@ public class CharacterMessage : MonoBehaviour
     private string str2_Orzel_laptop_EN = "City gates";
     private string str2_Orzel_laptop_GER = "Stadttore";
     private string str2_Orzel_laptop_SPA = "puertas de la ciudad";
+
+    private string str2_Village1_PL = "Centrala";
+    private string str2_Village1_EN = "headquarters";
+    private string str2_Village1_GER = "Zentral";
+    private string str2_Village1_SPA = "la sede";
+
+    private string str2_Village1Man_PL = "Bramy wioski";
+    private string str2_Village1Man_EN = "Gates of the village";
+    private string str2_Village1Man_GER = "Tore des Dorfes";
+    private string str2_Village1Man_SPA = "Puertas del pueblo";
 
     public AudioClip audio;
     private string promptString;
@@ -231,7 +259,14 @@ public class CharacterMessage : MonoBehaviour
         destination.text = destinationString;
 
         ChangeBGM(audio);
-        StartCoroutine(waitingFun(audio.length));
+        if (!(place == Place_enum.Village1))
+        {
+            StartCoroutine(waitingFun(audio.length));
+        }
+        else
+        {
+            StartCoroutine(waitingFunVillage(audio.length));
+        }
 
 
 
@@ -244,22 +279,38 @@ public class CharacterMessage : MonoBehaviour
         animator.SetBool("is_talk", true);
         yield return new WaitForSeconds(time1);
         animator.SetBool("is_talk", false);
-        yield return new WaitForSeconds(2.0f);
-        promptText.text = "";
-        isMusicDown = false;
+
+        yield return new WaitForSeconds(1.0f);
 
         if (place == Place_enum.Bar1)
         {
             GoToWine gotowine = GetComponent<GoToWine>();
             gotowine.MoveToDestination();
-            Debug.Log("ide");
         }
         else if (place == Place_enum.Bar2)
         {
             GoToWine gotowine = GetComponent<GoToWine>();
             gotowine.MoveToDestination2();
-            Debug.Log("ide");
         }
+
+        else if (place == Place_enum.Orzel_welcome || place == Place_enum.Orzel_glasses || place == Place_enum.Orzel_tunel || place == Place_enum.Orzel_laptop)
+        {
+            GoToPlayer goToPlayer = GetComponent<GoToPlayer>();
+            goToPlayer.isToGo = true;
+        }
+        yield return new WaitForSeconds(1.0f);
+        promptText.text = "";
+        isMusicDown = false;
+    }
+
+    IEnumerator waitingFunVillage(float time1)
+    {
+        isMusicDown = true;
+        promptText.text = promptString;
+        yield return new WaitForSeconds(time1);
+        yield return new WaitForSeconds(2.0f);
+        promptText.text = "";
+        isMusicDown = false;
     }
 
     private void ChangeBGM(AudioClip music)
@@ -497,6 +548,56 @@ public class CharacterMessage : MonoBehaviour
                         audio = Orzel_laptop_SPA;
                         promptString = str_Orzel_laptop_SPA;
                         destinationString = str2_Orzel_laptop_SPA;
+                        break;
+                }
+                break;
+            case Place_enum.Village1:
+                switch (Language.language)
+                {
+                    case Language_enum.Polish:
+                        audio = Village1_PL;
+                        promptString = str_Village1_PL;
+                        destinationString = str2_Village1_PL;
+                        break;
+                    case Language_enum.English:
+                        audio = Village1_EN;
+                        promptString = str_Village1_EN;
+                        destinationString = str2_Village1_EN;
+                        break;
+                    case Language_enum.German:
+                        audio = Village1_GER;
+                        promptString = str_Village1_GER;
+                        destinationString = str2_Village1_GER;
+                        break;
+                    case Language_enum.Spain:
+                        audio = Village1_SPA;
+                        promptString = str_Village1_SPA;
+                        destinationString = str2_Village1_SPA;
+                        break;
+                }
+                break;
+            case Place_enum.Village1Man:
+                switch (Language.language)
+                {
+                    case Language_enum.Polish:
+                        audio = Village1Man_PL;
+                        promptString = str_Village1Man_PL;
+                        destinationString = str2_Village1Man_PL;
+                        break;
+                    case Language_enum.English:
+                        audio = Village1Man_EN;
+                        promptString = str_Village1Man_EN;
+                        destinationString = str2_Village1Man_EN;
+                        break;
+                    case Language_enum.German:
+                        audio = Village1Man_GER;
+                        promptString = str_Village1Man_GER;
+                        destinationString = str2_Village1Man_GER;
+                        break;
+                    case Language_enum.Spain:
+                        audio = Village1Man_SPA;
+                        promptString = str_Village1Man_SPA;
+                        destinationString = str2_Village1Man_SPA;
                         break;
                 }
                 break;

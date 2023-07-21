@@ -20,6 +20,9 @@ public class FiendTelephone : MonoBehaviour
     public static bool f1 = true;
 
 
+    private string text;
+
+
 
 
 
@@ -39,7 +42,23 @@ public class FiendTelephone : MonoBehaviour
 
         f1 = true;
 
-}
+        switch (Language.language)
+        {
+            case Language_enum.Polish:
+                text = "Drogi przyjacielu moim skromnym zdaniem poprawna odpowiedü to: ";
+                break;
+            case Language_enum.English:
+                text = "Dear friend, in my humble opinion, the correct answer is: ";
+                break;
+            case Language_enum.German:
+                text = "Lieber Freund, meiner bescheidenen Meinung nach ist die richtige Antwort: ";
+                break;
+            case Language_enum.Spain:
+                text = "Querido amigo, en mi humilde opiniÛn, la respuesta correcta es: ";
+                break;
+        }
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -61,7 +80,7 @@ public class FiendTelephone : MonoBehaviour
         //}
 
 
-        AnswearText.text = "Drogi przyjacielu moim skromnym zdaniem poprawna odpowiedü to: " + answear;
+        AnswearText.text = text + answear;
 
         Button.transform.GetComponent<Button>().onClick.AddListener(onClickButton);
         if (Input.GetKey(KeyCode.Escape))

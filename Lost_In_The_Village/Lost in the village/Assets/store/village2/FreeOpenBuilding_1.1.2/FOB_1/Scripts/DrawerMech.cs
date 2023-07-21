@@ -5,54 +5,54 @@ using UnityEngine;
 public class DrawerMech : MonoBehaviour 
 {
 
-	public Vector3 OpenPosition, ClosePosition;
+	//public Vector3 OpenPosition, ClosePosition;
 
-	float moveSpeed;
+	//float moveSpeed;
 
-    float lerpTimer;
+ //   float lerpTimer;
 
-    public bool drawerBool;
+ //   public bool drawerBool;
 
     
 
-	void Start()
-	{
-        drawerBool = false;
-	}
+	//void Start()
+	//{
+ //       drawerBool = false;
+	//}
 		
-	void OnTriggerStay(Collider col)
-	{
-		if(col.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E))
-		{
-			if (!drawerBool)
-                drawerBool = true;
-			else
-                drawerBool = false;
-		}
-	}
+	//void OnTriggerStay(Collider col)
+	//{
+	//	if(col.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E))
+	//	{
+	//		if (!drawerBool)
+ //               drawerBool = true;
+	//		else
+ //               drawerBool = false;
+	//	}
+	//}
 
-	void Update()
-	{
+	//void Update()
+	//{
 
-        if (drawerBool)
-        {
-            moveSpeed = +1f;
+ //       if (drawerBool)
+ //       {
+ //           moveSpeed = +1f;
 
-            lerpTimer = Mathf.Clamp(lerpTimer + Time.deltaTime * moveSpeed, 0f, 1f);
+ //           lerpTimer = Mathf.Clamp(lerpTimer + Time.deltaTime * moveSpeed, 0f, 1f);
 
-            transform.localPosition = Vector3.Lerp(ClosePosition, OpenPosition, lerpTimer);
-        }
+ //           transform.localPosition = Vector3.Lerp(ClosePosition, OpenPosition, lerpTimer);
+ //       }
             
-        else
-        {
-            moveSpeed = -1f;
+ //       else
+ //       {
+ //           moveSpeed = -1f;
 
-            lerpTimer = Mathf.Clamp(lerpTimer + Time.deltaTime * moveSpeed, 0f, 1f);
+ //           lerpTimer = Mathf.Clamp(lerpTimer + Time.deltaTime * moveSpeed, 0f, 1f);
 
-            transform.localPosition = Vector3.Lerp(ClosePosition, OpenPosition, lerpTimer);
-        }
+ //           transform.localPosition = Vector3.Lerp(ClosePosition, OpenPosition, lerpTimer);
+ //       }
 
-    }
+ //   }
 
 }
 

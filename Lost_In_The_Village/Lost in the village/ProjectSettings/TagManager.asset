@@ -13,6 +13,8 @@ TagManager:
   - Body
   - test
   - DontDestroyOnLoad
+  - shotgun
+  - SMG
   layers:
   - Default
   - TransparentFX

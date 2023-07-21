@@ -33,11 +33,14 @@ public class EnemyState_Shoot : IState
         if (target != null)
         {
             Vector3 lookPos = target.position - enemyReferences.transform.position;
-            lookPos.y = 0;
+            //lookPos.y = 0;
 
             Quaternion rotation = Quaternion.LookRotation(lookPos);
 
-            enemyReferences.transform.rotation = Quaternion.Slerp(enemyReferences.transform.rotation, rotation, 0.2f);
+            //enemyReferences.transform.rotation = Quaternion.Slerp(enemyReferences.transform.rotation, rotation, 0.2f);
+            enemyReferences.transform.rotation = Quaternion.LookRotation(lookPos);
+
+
 
             enemyReferences.animator.SetBool("shooting", true);
         }

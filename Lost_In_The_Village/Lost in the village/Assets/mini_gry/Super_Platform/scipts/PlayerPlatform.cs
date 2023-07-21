@@ -115,7 +115,7 @@ public class PlayerPlatform : MonoBehaviour
         runAminations();
         sounds();
 
-        Restart_game(); 
+        Restart_game();
         Finish_game();
         PanelInGame();
 
@@ -186,7 +186,14 @@ public class PlayerPlatform : MonoBehaviour
             obj.SetActive(true);
         }
         SceneManager.LoadScene("empty");
-        mini_game_menu.ingame2 = true;
+        if (!GameOpenerSuperPlatform.inGame)
+        {
+            MiniGameMenu.ingame2 = true;
+        }
+        else
+        {
+            GameOpenerSuperPlatform.inGame = false;
+        }
     }
 
     public void defoultMovement()
@@ -314,14 +321,15 @@ public class PlayerPlatform : MonoBehaviour
             score++;
             coin = true;
             Destroy(collision.gameObject);
-        } 
+        }
         if (collision.collider.CompareTag("spike"))
         {
             if (health >= 11) health = health - 10;
-            else {
-            health = 0;
-            death = true;
-            demage = true;
+            else
+            {
+                health = 0;
+                death = true;
+                demage = true;
             }
             demage = true;
 
@@ -346,12 +354,16 @@ public class PlayerPlatform : MonoBehaviour
             win = true;
             win_movement = true;
             Destroy(win_obj);
+            if (GameOpenerSuperPlatform.inGame)
+            {
+                GameOpenerSuperPlatform.finishGame = true;
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
-        {   
+        {
             grounded = false;
         }
     }

@@ -11,7 +11,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: Not walkable to Chicken
+  - name: Roads
     cost: 1
   - name: 
     cost: 1

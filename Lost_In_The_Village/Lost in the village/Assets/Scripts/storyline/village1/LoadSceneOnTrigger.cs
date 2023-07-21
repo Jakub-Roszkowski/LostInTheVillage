@@ -9,10 +9,16 @@ public class LoadSceneOnTrigger : MonoBehaviour
 {
     public string sceneName = "Village2"; // The name of the target scene you want to load
     public TextMeshProUGUI promptText;
-    public bool ifistoOpen = false;
+    public static bool ifistoOpen = false;
     public Slider loadingSlider;
     public GameObject objectToActivate;
     public GameObject[] objectsToDeactivate;
+
+
+    void Start()
+    {
+        ifistoOpen = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,7 +38,21 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
     private void DisplayPromptText()
     {
-        promptText.text = "Nie posiadasz klucza";
+        switch (Language.language)
+        {
+            case Language_enum.Polish:
+                promptText.text = "Niedostêpne";
+                break;
+            case Language_enum.English:
+                promptText.text = "Not available";
+                break;
+            case Language_enum.German:
+                promptText.text = "Nicht verfügbar";
+                break;
+            case Language_enum.Spain:
+                promptText.text = "No disponible";
+                break;
+        }
 
         StartCoroutine(ClearPromptText(3f));
     }

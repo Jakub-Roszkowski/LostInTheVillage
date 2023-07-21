@@ -170,6 +170,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6678921216906355346, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
   m_PrefabInstance: {fileID: 1979525390}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &108362140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108362136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebaff2965ba21f45ba6b25bbf1f88dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1474032438}
 --- !u!1 &123041828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6678921216542142890, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
@@ -266,6 +279,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 586285476}
+--- !u!114 &586285479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586285473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5ee17b9cd3a57408c95a9ed70763c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &644876534 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6678921216234434727, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
@@ -351,6 +376,17 @@ MonoBehaviour:
 --- !u!114 &1436931544 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6678921216503640740, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
+  m_PrefabInstance: {fileID: 1979525390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1474032438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6678921216217509472, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
   m_PrefabInstance: {fileID: 1979525390}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -512,9 +548,17 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6678921216801653371, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
+      propertyPath: m_text
+      value: Milioneirs
+      objectReference: {fileID: 0}
     - target: {fileID: 6678921216961160785, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678921216961375555, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
+      propertyPath: m_text
+      value: 'Enter nick:'
       objectReference: {fileID: 0}
     - target: {fileID: 6678921217018810712, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
       propertyPath: m_RootOrder

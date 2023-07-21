@@ -11,6 +11,12 @@ public class drunk : MonoBehaviour
         isEffectActive = false;
     }
 
+
+    public void DisableDrunkEffect()
+    {
+        isEffectActive = false;
+    }
+
     public void DrunkEffect()
     {
         StartCoroutine(ActivateEffectAfterDelay());

@@ -5,116 +5,74 @@ using UnityEngine;
 namespace SojaExiles
 
 {
-	public class Drawer_Pull_Z : MonoBehaviour
-	{
-		private PlayerInput playerInput;
-		public PlayerInput.OnFootActions onFoot;
-		void Awake()
-		{
-			playerInput = new PlayerInput();
-			onFoot = playerInput.OnFoot;
+    public class Drawer_Pull_Z : MonoBehaviour
+    {
+        public string promptMessage;
+        private string text;
+        public Animator pull;
+        public bool open;
+        private Transform Player;
 
-		}
+        void Start()
+        {
+            open = false;
+        }
 
-		void Update()
-		{
+        public void Interact()
+        {
 
-		}
+            switch (Language.language)
+            {
+                case Language_enum.Polish:
+                    text = "Otworz / Zamknij (E)";
+                    break;
+                case Language_enum.English:
+                    text = "Open / Close (E)";
+                    break;
+                case Language_enum.German:
+                    text = "Öffnen / Schließen (E)";
+                    break;
+                case Language_enum.Spain:
+                    text = "Abrir / Cerrar (E)";
+                    break;
+            }
 
-		private void OnEnable()
-		{
-			onFoot.Enable();
-		}
+            promptMessage = text;
 
+        }
+        public void Interact2()
+        {
+            if (open == false)
+            {
+                StartCoroutine(opening());
+            }
+            else
+            {
+                if (open == true)
+                {
 
-		private void OnDisable()
-		{
-			onFoot.Disable();
-		}
+                    StartCoroutine(closing());
+                }
 
+            }
+        }
 
+        IEnumerator opening()
+        {
+            print("you are opening the door");
+            pull.Play("openpull");
+            open = true;
+            yield return new WaitForSeconds(.5f);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		public Animator pull;
-		public bool open;
-		private Transform Player;
-
-		void Start()
-		{
-			open = false;
-			Player = FindObjectOfType<PlayerController>().transform;
-		}
-
-		void OnMouseOver()
-		{
-			{
-				if (Player)
-				{
-					float dist = Vector3.Distance(Player.position, transform.position);
-					if (dist < 10)
-					{
-						print("object name");
-						if (open == false)
-						{
-							if (onFoot.Interact.triggered)
-							{
-								StartCoroutine(opening());
-							}
-						}
-						else
-						{
-							if (open == true)
-							{
-								if (onFoot.Interact.triggered)
-								{
-									StartCoroutine(closing());
-								}
-							}
-
-						}
-
-					}
-				}
-
-			}
-
-		}
-
-		IEnumerator opening()
-		{
-			print("you are opening the door");
-			pull.Play("openpull");
-			open = true;
-			yield return new WaitForSeconds(.5f);
-		}
-
-		IEnumerator closing()
-		{
-			print("you are closing the door");
-			pull.Play("closepush");
-			open = false;
-			yield return new WaitForSeconds(.5f);
-		}
+        IEnumerator closing()
+        {
+            print("you are closing the door");
+            pull.Play("closepush");
+            open = false;
+            yield return new WaitForSeconds(.5f);
+        }
 
 
-	}
+    }
 }

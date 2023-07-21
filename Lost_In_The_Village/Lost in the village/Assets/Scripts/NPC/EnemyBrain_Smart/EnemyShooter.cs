@@ -70,6 +70,7 @@ public class EnemyShooter : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(shootPointPosition, direction, out hit, float.MaxValue, layerMask))
         {
+
             // Check if the hit object is the player and if it's visible
             if (hit.collider.CompareTag("Player"))
             {
@@ -114,7 +115,7 @@ public class EnemyShooter : MonoBehaviour
             Random.Range(-spread.z, spread.z)
             );
 
-        direction.Normalize();
+        //direction.Normalize();
         return direction;
     }
 

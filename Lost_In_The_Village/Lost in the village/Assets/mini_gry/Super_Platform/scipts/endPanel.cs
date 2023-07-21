@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,6 +12,15 @@ public class endPanel : MonoBehaviour
     private Image img;
     private string rezifwin="";
 
+
+    private string text1;
+    private string text2;
+    private string text3;
+    private string text4;
+    private string text5;
+    private string text6;
+
+
     private string result;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +28,42 @@ public class endPanel : MonoBehaviour
         Panel.SetActive(false);
         img = Panel.GetComponent<Image>();
 
+
+        switch (Language.language)
+        {
+            case Language_enum.Polish:
+                text1 = "Wygra≈Çe≈õ";
+                text2 = "Przegra≈Çe≈õ";
+                text3 = "Czas:";
+                text4 = "Wynik:";
+                text5 = "[Naci≈õnij F8 aby uruchomiƒá ponownie]";
+                text6 = "[Naci≈õnij F9 aby sko≈Ñczyƒá gre]";
+                break;
+            case Language_enum.English:
+                text1 = "You won!";
+                text2 = "You lost!";
+                text3 = "Time:";
+                text4 = "Score:";
+                text5 = "[Press F8 to restart]";
+                text6 = "[Press F9 to end the game]";
+                break;
+            case Language_enum.German:
+                text1 = "Du hast gewonnen!";
+                text2 = "Du hast verloren!";
+                text3 = "Zeit:";
+                text4 = "Punktzahl:";
+                text5 = "[Dr√ºcken Sie F8, um neu zu starten]";
+                text6 = "[Dr√ºcken Sie F9, um das Spiel zu beenden]";
+                break;
+            case Language_enum.Spain:
+                text1 = "¬°Ganaste!";
+                text2 = "¬°Perdiste!";
+                text3 = "Tiempo:";
+                text4 = "Puntuaci√≥n:";
+                text5 = "[Pulsa F8 para reiniciar]";
+                text6 = "[Pulsa F9 para terminar el juego]";
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -27,16 +72,16 @@ public class endPanel : MonoBehaviour
         
             if (PlayerPlatform.win)
             {
-                rezifwin = "Wygra≥eú";
+            rezifwin = text1;
                 img.color = UnityEngine.Color.green;
             }
             else
             {
-                rezifwin = "Przegra≥eú";
+            rezifwin = text2;
                 img.color = UnityEngine.Color.red;
             }
 
-            result = $"{rezifwin} \n \n Czas: {PlayerPlatform.timeres}\nWynik: {PlayerPlatform.score}\n \n [Naciúnij F8 aby uruchomiÊ ponownie]\n \n [Naciúnij F9 aby skoÒczyÊ gre";
+            result = $"{rezifwin} \n \n {text3}: {PlayerPlatform.timeres}\n{text4} {PlayerPlatform.score}\n \n {text5}\n \n {text6}";
 
             Score_TMP.text = result;
 

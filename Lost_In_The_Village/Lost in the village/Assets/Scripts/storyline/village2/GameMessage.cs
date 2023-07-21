@@ -20,8 +20,6 @@ public class GameMessage : MonoBehaviour
 
     private PlayerInput playerInput;
     public PlayerInput.OnFootActions onFoot;
-    public bool ingame = false;
-    public static bool ingame2 = false;
     void Awake()
     {
         playerInput = new PlayerInput();
@@ -96,7 +94,7 @@ public class GameMessage : MonoBehaviour
                 promptText.text = "Gehen Sie zum Computer";
                 break;
             case Language_enum.Spain:
-                promptText.text = "Ir a la computadora.";
+                promptText.text = "Ir a la computadora";
                 break;
         }
     }

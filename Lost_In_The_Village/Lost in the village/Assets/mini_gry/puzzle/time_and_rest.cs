@@ -49,7 +49,26 @@ public class time_and_rest : MonoBehaviour
                 soundInt = 2;
                 PanelWIN.SetActive(true);
                 timeres = (DateTime.Now - timestart).Minutes.ToString() + ":" + (DateTime.Now - timestart).Seconds.ToString();
-                Time_TMP2.text ="wygra³eœ w czasie:\n"+ timeres+"\n"+"Naciœnij F8 aby zacz¹æ ponownie";
+                switch (Language.language)
+                {
+                    case Language_enum.Polish:
+                        Time_TMP2.text = "wygra³eœ w czasie:\n" + timeres + "\n" + "Naciœnij F8 aby zacz¹æ ponownie" +"\n" + "Naciœnij F9 aby wyjœæ";
+                        break;
+                    case Language_enum.English:
+                        Time_TMP2.text = "you won in time:\n" + timeres + "\n" + "Press F8 to start again" + "\n" + "Press F9 to exit";
+                        break;
+                    case Language_enum.German:
+                        Time_TMP2.text = "Sie haben in der Zeit gewonnen:\n" +timeres + "\n" + "Drücken Sie F8, um erneut zu beginnen" +"\n" + "Drücken Sie F9, um zu beenden";
+                        break;
+                    case Language_enum.Spain:
+                        Time_TMP2.text = "ganaste a tiempo:\n" + timeres + "\n" + "Presiona F8 para comenzar de nuevo" + "\n" + "Presiona F9 para salir";
+                        break;
+                }
+                if (GameOpenerPuzzle.inGame)
+                {
+                    GameOpenerPuzzle.finishGame = true;
+                }
+
                 counter = 17;
             }
                 sound();
@@ -130,7 +149,13 @@ public class time_and_rest : MonoBehaviour
         {
             obj.SetActive(true);
         }
+        if (!GameOpenerPuzzle.inGame) { 
+            MiniGameMenu.ingame2 = true;
+        }
+        else
+        {
+            GameOpenerPuzzle.inGame = false;
+        }
         SceneManager.LoadScene("empty");
-        mini_game_menu.ingame2 = true;
     }
 }

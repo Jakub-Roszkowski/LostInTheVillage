@@ -9,54 +9,40 @@ public class GoToWine : MonoBehaviour
     private Animator animator;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private bool first;
+    private bool second;
 
 
     [SerializeField] private Transform movePositionTransforms;
-
     [SerializeField] private Transform movePositionTransforms2;
 
     private NavMeshAgent navMeshAgent;
-    private int currentDestinationIndex = 0;
-    [SerializeField] private int avoidanceDistance = 5;
-    private bool isAvoiding = false;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
+
+    private void Start()
+    {
+        first = false;
+        second = false;
+    }
     public void MoveToDestination()
     {
-
+        first = true;
         SetDestination();
         animator.SetBool("is_walk", true);
+
 
     }
     public void MoveToDestination2()
     {
-
+        second = true;
         SetDestination2();
         animator.SetBool("is_walk", true);
+
 
     }
 
@@ -66,9 +52,23 @@ public class GoToWine : MonoBehaviour
 
     private void Update()
     {
-        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+        if (first)
         {
-            animator.SetBool("is_walk", false);
+            float distance = Vector3.Distance(movePositionTransforms.position, transform.position);
+            if (distance < 1f)
+            {
+                animator.SetBool("is_walk", false);
+                first = false;
+            }
+        }
+        else if (second)
+        {
+            float distance = Vector3.Distance(movePositionTransforms2.position, transform.position);
+            if (distance < 1f)
+            {
+                animator.SetBool("is_walk", false);
+                second = false;
+            }
         }
     }
 

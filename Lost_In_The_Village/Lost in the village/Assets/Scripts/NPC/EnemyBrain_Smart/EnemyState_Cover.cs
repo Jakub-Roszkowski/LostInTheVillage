@@ -87,6 +87,5 @@ public class EnemyState_Cover : IState
     public void Tick()
     {
         stateMachine.Tick();
-        Debug.Log(enemyReferences.shooter.ShouldReload());
     }
 }

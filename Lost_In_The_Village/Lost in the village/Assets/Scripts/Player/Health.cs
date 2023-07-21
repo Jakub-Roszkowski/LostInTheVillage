@@ -32,53 +32,34 @@ public class Health : MonoBehaviour
     {
         if (IsPlayer())
         {
-            if (currentHealth < nearDeathValue)
-            {
+            //if (currentHealth < nearDeathValue)
+            //{
 
-                // Upewnij siê, ¿e panelBlood jest ukryty na pocz¹tku
-                panelBlood.SetActive(false);
+            //    panelBlood.SetActive(false);
+            //    canvasGroup = panelBlood.GetComponent<CanvasGroup>();
+            //    if (canvasGroup == null)
+            //    {
+            //        canvasGroup = panelBlood.AddComponent<CanvasGroup>();
+            //    }
 
-                // Pobierz lub dodaj komponent CanvasGroup do paneluBlood
-                canvasGroup = panelBlood.GetComponent<CanvasGroup>();
-                if (canvasGroup == null)
-                {
-                    canvasGroup = panelBlood.AddComponent<CanvasGroup>();
-                }
+            //    bloodImage = panelBlood.GetComponentInChildren<RawImage>();
 
-                // Pobierz komponent RawImage z dziecka panelBlood
-                bloodImage = panelBlood.GetComponentInChildren<RawImage>();
+            //    canvasGroup.alpha = 1f;
+            //    StopAllCoroutines();
 
-                // Zresetuj wartoœci przezroczystoœci i przerwij poprzedni¹ animacjê, jeœli by³a uruchomiona
-                canvasGroup.alpha = 1f;
-                StopAllCoroutines();
+            //    panelBlood.SetActive(true);
 
-                // Wyœwietl panelBlood
-                panelBlood.SetActive(true);
+            //    float frameDuration = fadeDuration / 60f;
 
-                // Oblicz czas dla pojedynczej klatki animacji
-                float frameDuration = fadeDuration / 60f;
-
-                // Wykonuj animacjê zmiany przezroczystoœci w pêtli
-                
-                    // Oblicz now¹ wartoœæ przezroczystoœci w oparciu o czas
-                    float alpha = 0.7f;
-
-                    // Ustaw now¹ wartoœæ przezroczystoœci dla CanvasGroup paneluBlood
-                    canvasGroup.alpha = alpha;
-
-                    // Ustaw now¹ wartoœæ przezroczystoœci dla obrazu "bloodImage"
-                    if (bloodImage != null)
-                    {
-                        Color imageColor = bloodImage.color;
-                        imageColor.a = alpha;
-                        bloodImage.color = imageColor;
-                    }
-
-
-                
-
-
-            }
+            //        float alpha = 0.7f;
+            //        canvasGroup.alpha = alpha;
+            //        if (bloodImage != null)
+            //        {
+            //            Color imageColor = bloodImage.color;
+            //            imageColor.a = alpha;
+            //            bloodImage.color = imageColor;
+            //        }
+            //}
         }
     }
 
@@ -94,6 +75,38 @@ public class Health : MonoBehaviour
             
         }
 
+        if (IsPlayer())
+        {
+            if (currentHealth < nearDeathValue)
+            {
+
+                panelBlood.SetActive(false);
+                canvasGroup = panelBlood.GetComponent<CanvasGroup>();
+                if (canvasGroup == null)
+                {
+                    canvasGroup = panelBlood.AddComponent<CanvasGroup>();
+                }
+
+                bloodImage = panelBlood.GetComponentInChildren<RawImage>();
+
+                canvasGroup.alpha = 1f;
+                StopAllCoroutines();
+
+                panelBlood.SetActive(true);
+
+                float frameDuration = fadeDuration / 60f;
+
+                float alpha = 0.7f;
+                canvasGroup.alpha = alpha;
+                if (bloodImage != null)
+                {
+                    Color imageColor = bloodImage.color;
+                    imageColor.a = alpha;
+                    bloodImage.color = imageColor;
+                }
+            }
+        }
+
         if (currentHealth <= 0)
         {
             if (IsPlayer() && death ==false)
@@ -103,10 +116,8 @@ public class Health : MonoBehaviour
 
                 foreach (GameObject obj in dontDestroyObjects)
                 {
-                    // Wy³¹cz sam obiekt
                     Destroy(obj);
                 }
-                //Scene activeScene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(sceneMenager2.currentScene);
             }
             else if(!IsPlayer())
@@ -136,14 +147,12 @@ public class Health : MonoBehaviour
         }
         else
             return false;
-        //return (gameObject == player);
     }
 
     public void RestoreHealth(int healthToRestore)
     {
         if((currentHealth + healthToRestore) >= nearDeathValue && currentHealth<100)
         {
-            // Zakoñcz animacjê
             canvasGroup.alpha = 0f;
             panelBlood.SetActive(false);
             ShowBloodPanel();
@@ -158,60 +167,44 @@ public class Health : MonoBehaviour
 
     public void ShowBloodPanel()
     {
-        // Upewnij siê, ¿e panelBlood jest ukryty na pocz¹tku
         panelBlood.SetActive(false);
-
-        // Pobierz lub dodaj komponent CanvasGroup do paneluBlood
         canvasGroup = panelBlood.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
         {
             canvasGroup = panelBlood.AddComponent<CanvasGroup>();
         }
 
-        // Pobierz komponent RawImage z dziecka panelBlood
         bloodImage = panelBlood.GetComponentInChildren<RawImage>();
 
-        // Zresetuj wartoœci przezroczystoœci i przerwij poprzedni¹ animacjê, jeœli by³a uruchomiona
         canvasGroup.alpha = 1f;
         StopAllCoroutines();
 
-        // Wyœwietl panelBlood
         panelBlood.SetActive(true);
 
-        // Rozpocznij animacjê zmiany przezroczystoœci
         StartCoroutine(FadeBloodImage());
     }
 
     private System.Collections.IEnumerator FadeBloodImage()
     {
-        // OpóŸnij animacjê
         yield return new WaitForSeconds(fadeDelay);
 
-        // Oblicz czas dla pojedynczej klatki animacji
         float frameDuration = fadeDuration / 60f;
 
-        // Wykonuj animacjê zmiany przezroczystoœci w pêtli
         for (float time = fadeDuration; time > 0f; time -= frameDuration)
         {
-            // Oblicz now¹ wartoœæ przezroczystoœci w oparciu o czas
+
             float alpha = time / fadeDuration;
 
-            // Ustaw now¹ wartoœæ przezroczystoœci dla CanvasGroup paneluBlood
             canvasGroup.alpha = alpha;
 
-            // Ustaw now¹ wartoœæ przezroczystoœci dla obrazu "bloodImage"
             if (bloodImage != null)
             {
                 Color imageColor = bloodImage.color;
                 imageColor.a = alpha;
                 bloodImage.color = imageColor;
             }
-
-            // Poczekaj na kolejn¹ klatkê
             yield return new WaitForSeconds(frameDuration);
         }
-
-        // Zakoñcz animacjê
         canvasGroup.alpha = 0f;
         panelBlood.SetActive(false);
     }

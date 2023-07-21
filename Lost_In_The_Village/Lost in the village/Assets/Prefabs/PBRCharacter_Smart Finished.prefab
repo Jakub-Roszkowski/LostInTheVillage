@@ -409,7 +409,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 59783c940b58440028e45ddba1798285, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1279,7 +1279,7 @@ Transform:
   m_GameObject: {fileID: 4548902764607001145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -17.550707, y: -2.1369996, z: 729.31744}
-  m_LocalScale: {x: 1.3624, y: 1.3624, z: 1.3624}
+  m_LocalScale: {x: 1.3624, y: 1.5, z: 1.3624}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4548902764607360603}
@@ -1364,8 +1364,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 4548902764607001145}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
+  m_Radius: 0.68
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -1403,6 +1403,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  panelBlood: {fileID: 0}
+  fadeDuration: 1
+  fadeDelay: 0.5
 --- !u!136 &3286283825231253767
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1524,7 +1527,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da0c3bdd6d7705a48936a57ef83661ad, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2451,7 +2454,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 138f0bb57b31341fea7c5b2354cef841, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2461,7 +2464,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

@@ -2461,6 +2461,7 @@ GameObject:
   - component: {fileID: 806753636}
   - component: {fileID: 806753638}
   - component: {fileID: 806753639}
+  - component: {fileID: 806753640}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2598,6 +2599,18 @@ MonoBehaviour:
   notcorrect: {fileID: 8300000, guid: af28c6cf4228c7f49859110a91e70bce, type: 3}
   win: {fileID: 8300000, guid: f3a8e1703a6a4414a88df58ae02b42dd, type: 3}
   PanelWIN: {fileID: 2001078936}
+--- !u!114 &806753640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806753635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5ee17b9cd3a57408c95a9ed70763c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &904463613
 GameObject:
   m_ObjectHideFlags: 0

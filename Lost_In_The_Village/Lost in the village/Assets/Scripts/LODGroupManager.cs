@@ -6,15 +6,10 @@ using UnityEngine;
 
 public class LODGroupManager : MonoBehaviour
 {
-    public Renderer[] renderers; // Tablica na modele renderowania
+    public Renderer[] renderers;
 
     void Start()
     {
-        Transform wineObject = transform.Find("wina");
-        if (wineObject != null)
-        {
-            CollectRenderers(wineObject);
-        }
         Transform interiorObject = transform.Find("interior");
         if (interiorObject != null)
         {
@@ -23,18 +18,16 @@ public class LODGroupManager : MonoBehaviour
 
         LODGroup lodGroup = GetComponent<LODGroup>();
         LOD[] lods = new LOD[1];
-        lods[0] = new LOD(1f, renderers);
+        lods[0] = new LOD(0.9f, renderers);
         lodGroup.SetLODs(lods);
         lodGroup.RecalculateBounds();
     }
 
     void CollectRenderers(Transform parent)
     {
-        // Pobierz modele renderowania z obiektu i jego dzieci i dodaj je do tablicy renderujπcej
         Renderer[] childRenderers = parent.GetComponentsInChildren<Renderer>();
         renderers = renderers.Concat(childRenderers).ToArray();
 
-        // Rekurencyjnie przechodü przez dzieci i zbieraj modele renderowania
         for (int i = 0; i < parent.childCount; i++)
         {
             Transform child = parent.GetChild(i);

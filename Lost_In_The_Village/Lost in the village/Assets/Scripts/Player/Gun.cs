@@ -38,6 +38,9 @@ public class Gun : MonoBehaviour
     public GameObject lightObject;
 
 
+    private float shotgunHolesRandom = 0.3f;
+
+
 
 
 
@@ -45,7 +48,6 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-
         ISReloundig = false;
         range = GUN_Stats.Range;
         impactForce = GUN_Stats.impactForce;
@@ -53,12 +55,12 @@ public class Gun : MonoBehaviour
         fireRate = GUN_Stats.fireRate;
         magazineAmmo = GUN_Stats.MagazineAMMO;
 
-        reloadTime = GUN_Stats.ReloudTime;
+        reloadTime = GUN_Stats.ReloadTime;
 
 
 
         shootSound = GUN_Stats.shoot;
-        ReloudSound = GUN_Stats.ReloudSound;
+        ReloudSound = GUN_Stats.ReloadSound;
         headshoot = GUN_Stats.headshoot;
 
         inputManager = GetComponent<InputManagerToShoot>();
@@ -83,14 +85,15 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Pause.currentLevel == Level.Easy){
-            damageAmount = GUN_Stats.Damage * 3;
+        if (Pause.currentLevel == Level.Easy)
+        {
+            damageAmount = GUN_Stats.Damage * 2;
         }
-        if (Pause.currentLevel == Level.Medium)
+        else if (Pause.currentLevel == Level.Medium)
         {
             damageAmount = GUN_Stats.Damage;
         }
-        if (Pause.currentLevel == Level.Hard)
+        else if (Pause.currentLevel == Level.Hard)
         {
             damageAmount = GUN_Stats.Damage * 0.5f;
         }
@@ -159,7 +162,6 @@ public class Gun : MonoBehaviour
             //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
             if (hit.collider.CompareTag("Body"))
             {
-                Debug.Log("Body");
                 Transform parent = hit.transform.parent;
                 Health enemy = null;
 
@@ -174,8 +176,6 @@ public class Gun : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.TakeDamage(damageAmount);
-                    Debug.Log(enemy.GetCurrentHealth());
-
                 }
             }
             if (hit.collider.CompareTag("Head"))
@@ -194,22 +194,65 @@ public class Gun : MonoBehaviour
                 if (enemy != null)
                 {
 
-                    enemy.TakeDamage(damageAmount * 4);
-                    Debug.Log(enemy.GetCurrentHealth());
-                    Debug.Log("Head");
+                    enemy.TakeDamage(damageAmount * 6);
                     StartCoroutine(wait_Head());
 
                 }
             }
             //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
 
+            if (gameObject.CompareTag("shotgun"))
+            {
 
+                // Offset dla pierwszej dziury;
+                Quaternion impactRotation1 = Quaternion.LookRotation(hit.normal);
+                GameObject impact1 = Instantiate(impactEffect, hit.point, impactRotation1);
+                impact1.transform.parent = hit.transform;
+                Destroy(impact1, 5);
 
+                // Offset dla drugiej dziury
+                Vector3 offset2 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
+                Quaternion impactRotation2 = Quaternion.LookRotation(hit.normal);
+                GameObject impact2 = Instantiate(impactEffect, hit.point + offset2, impactRotation2);
+                impact2.transform.parent = hit.transform;
+                Destroy(impact2, 5);
 
-            Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
-            GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
-            impact.transform.parent = hit.transform;
-            Destroy(impact, 5);
+                // Offset dla drugiej dziury
+                Vector3 offset3 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
+                Quaternion impactRotation3 = Quaternion.LookRotation(hit.normal);
+                GameObject impact3 = Instantiate(impactEffect, hit.point + offset3, impactRotation3);
+                impact3.transform.parent = hit.transform;
+                Destroy(impact3, 5);
+
+                // Offset dla drugiej dziury
+                Vector3 offset4 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
+                Quaternion impactRotation4 = Quaternion.LookRotation(hit.normal);
+                GameObject impact4 = Instantiate(impactEffect, hit.point + offset4, impactRotation4);
+                impact4.transform.parent = hit.transform;
+                Destroy(impact4, 5);
+
+                // Offset dla drugiej dziury
+                Vector3 offset5 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
+                Quaternion impactRotation5 = Quaternion.LookRotation(hit.normal);
+                GameObject impact5 = Instantiate(impactEffect, hit.point + offset5, impactRotation5);
+                impact5.transform.parent = hit.transform;
+                Destroy(impact5, 5);
+
+                // Offset dla drugiej dziury
+                Vector3 offset6 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
+                Quaternion impactRotation6 = Quaternion.LookRotation(hit.normal);
+                GameObject impact6 = Instantiate(impactEffect, hit.point + offset6, impactRotation6);
+                impact6.transform.parent = hit.transform;
+                Destroy(impact6, 5);
+            }
+            else
+            {
+                Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
+                GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
+                impact.transform.parent = hit.transform;
+                Destroy(impact, 5);
+            }
+
         }
         if (currentAmmo == 0)
         {

@@ -8,6 +8,7 @@ public class Mine : MonoBehaviour
 
     public AudioSource BGM;
     public AudioClip boom;
+    private float demage;
 
 
     void Start()
@@ -24,12 +25,26 @@ public class Mine : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if (Pause.currentLevel == Level.Easy)
+        {
+            demage = 5;
+        }
+        else if (Pause.currentLevel == Level.Medium)
+        {
+            demage = 10;
+        }
+        else if (Pause.currentLevel == Level.Hard)
+        {
+            demage = 20;
+        }
+
+
         ChangeBGM(boom);
         Fire.Play();
         if (other.gameObject.CompareTag("Player"))
         {
             Health objectTODemage = other.GetComponent<Health>();
-            objectTODemage.TakeDamage(10);
+            objectTODemage.TakeDamage(demage);
         }
         StartCoroutine(DestroyOBJ());
     }

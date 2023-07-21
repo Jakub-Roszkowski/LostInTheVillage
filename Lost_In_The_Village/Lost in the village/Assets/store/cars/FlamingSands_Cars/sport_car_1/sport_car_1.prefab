@@ -980,6 +980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412298}
+  - component: {fileID: 6927340162617542833}
   m_Layer: 0
   m_Name: sport_car_1
   m_TagString: Untagged
@@ -1012,6 +1013,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &6927340162617542833
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166318}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0000004172325, y: 0.65556264, z: 0.011386871}
+  m_Size: 4.355237
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.7805886
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2307612}
+    - renderer: {fileID: 2345874}
+    - renderer: {fileID: 2303858}
+    - renderer: {fileID: 2330534}
+    - renderer: {fileID: 2342454}
+    - renderer: {fileID: 2383500}
+    - renderer: {fileID: 2324012}
+    - renderer: {fileID: 2384566}
+    - renderer: {fileID: 2334700}
+    - renderer: {fileID: 2357046}
+    - renderer: {fileID: 2312562}
+    - renderer: {fileID: 2354676}
+    - renderer: {fileID: 2346196}
+    - renderer: {fileID: 2386334}
+    - renderer: {fileID: 2344228}
+    - renderer: {fileID: 2303294}
+    - renderer: {fileID: 2333230}
+  - screenRelativeHeight: 0.28219673
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2357046}
+    - renderer: {fileID: 2312562}
+    - renderer: {fileID: 2354676}
+    - renderer: {fileID: 2346196}
+    - renderer: {fileID: 2386334}
+    - renderer: {fileID: 2344228}
+    - renderer: {fileID: 2303294}
+    - renderer: {fileID: 2333230}
+  - screenRelativeHeight: 0.061381508
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2354676}
+    - renderer: {fileID: 2312562}
+    - renderer: {fileID: 2386334}
+    - renderer: {fileID: 2344228}
+    - renderer: {fileID: 2303294}
+    - renderer: {fileID: 2333230}
+  m_Enabled: 1
 --- !u!1 &175804
 GameObject:
   m_ObjectHideFlags: 0

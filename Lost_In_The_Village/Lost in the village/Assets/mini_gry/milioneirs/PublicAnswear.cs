@@ -25,6 +25,8 @@ public class PublicAnswear : MonoBehaviour
 
     public static bool f3 = true;
 
+    private string text;
+
 
     ArrayList answears = new ArrayList();
     // Start is called before the first frame update
@@ -42,6 +44,25 @@ public class PublicAnswear : MonoBehaviour
         randomMax = randomMax - random2;
         random3 = rnd.Next(randomMax);
         randomMax = randomMax - random3;
+
+
+
+
+        switch (Language.language)
+        {
+            case Language_enum.Polish:
+                text = "Tak odpowiedzia³a publicznoœæ:";
+                break;
+            case Language_enum.English:
+                text = "This is how the audience responded:";
+                break;
+            case Language_enum.German:
+                text = "So hat das Publikum geantwortet:";
+                break;
+            case Language_enum.Spain:
+                text = "Así respondió la audiencia:";
+                break;
+        }
 
     }
 
@@ -105,7 +126,7 @@ public class PublicAnswear : MonoBehaviour
                 break;
         }
 
-        AnswearText.text = "Tak odpowiedzia³a publicznoœæ:" + "\n"+"A:"+valueA.ToString()+"%" + "\n" + "B:" + valueB.ToString() + "%" + "\n" + "C:" + valueC.ToString() + "%" + "\n" + "D:" + valueD.ToString() + "%";
+        AnswearText.text = text + "\n"+"A:"+valueA.ToString()+"%" + "\n" + "B:" + valueB.ToString() + "%" + "\n" + "C:" + valueC.ToString() + "%" + "\n" + "D:" + valueD.ToString() + "%";
 
         f3 = false;
     }
