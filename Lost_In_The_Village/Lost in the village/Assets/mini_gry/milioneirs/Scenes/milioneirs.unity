@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnswearText: {fileID: 301184592}
   Button: {fileID: 772282529}
-  FriendTelephone: {fileID: 568453492}
+  TelephonePanel: {fileID: 568453492}
 --- !u!1 &60072637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6678921216105053708, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}

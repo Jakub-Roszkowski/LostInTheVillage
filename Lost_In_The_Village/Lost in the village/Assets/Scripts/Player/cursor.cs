@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class cursor : MonoBehaviour
@@ -8,10 +6,8 @@ public class cursor : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
 

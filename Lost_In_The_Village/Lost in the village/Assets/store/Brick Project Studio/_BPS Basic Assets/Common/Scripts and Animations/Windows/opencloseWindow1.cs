@@ -1,17 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SojaExiles
-
 {
-    public class opencloseWindow1 : MonoBehaviour
+    public class opencloseWindow1 : AbstractInteractableObject
     {
-
-
-        public string promptMessage;
-        private string text;
-
+        public string promptMessageTemp;
 
         public Animator openandclosewindow1;
         public bool open;
@@ -21,29 +15,11 @@ namespace SojaExiles
             open = false;
         }
 
-        public void Interact()
+        protected override void Interact()
         {
-
-            switch (Language.language)
-            {
-                case Language_enum.Polish:
-                    text = "Otworz / Zamknij (E)";
-                    break;
-                case Language_enum.English:
-                    text = "Open / Close (E)";
-                    break;
-                case Language_enum.German:
-                    text = "Öffnen / Schließen (E)";
-                    break;
-                case Language_enum.Spain:
-                    text = "Abrir / Cerrar (E)";
-                    break;
-            }
-
-            promptMessage = text;
-
+            promptMessageTemp = Helpers.Languages.SetTextOpenClose();
         }
-        public void Interact2()
+        protected override void Interact2()
         {
             if (open == false)
             {
@@ -51,12 +27,7 @@ namespace SojaExiles
             }
             else
             {
-                if (open == true)
-                {
-
-                    StartCoroutine(closing());
-                }
-
+                StartCoroutine(closing());
             }
         }
 
@@ -76,6 +47,9 @@ namespace SojaExiles
             yield return new WaitForSeconds(.5f);
         }
 
-
+        protected override string promptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

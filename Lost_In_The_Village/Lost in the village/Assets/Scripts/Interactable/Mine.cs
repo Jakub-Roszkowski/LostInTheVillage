@@ -1,15 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    public ParticleSystem Fire;
+    [SerializeField] private ParticleSystem Fire;
 
-    public AudioSource BGM;
-    public AudioClip boom;
+    [SerializeField] private AudioSource BGM;
+    [SerializeField] private AudioClip boom;
+
     private float demage;
-
 
     void Start()
     {
@@ -17,7 +16,6 @@ public class Mine : MonoBehaviour
         Fire.Pause();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -38,7 +36,6 @@ public class Mine : MonoBehaviour
             demage = 20;
         }
 
-
         ChangeBGM(boom);
         Fire.Play();
         if (other.gameObject.CompareTag("Player"))
@@ -50,34 +47,25 @@ public class Mine : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
-        
+
     }
 
     public void OnTriggerStay(Collider other)
     {
-        
-    }
 
+    }
 
     IEnumerator DestroyOBJ()
     {
-
         yield return new WaitForSeconds(4f);
         Destroy(gameObject);
-
-
-
     }
 
     public void ChangeBGM(AudioClip music)
     {
-
-
-
         BGM.Stop();
         BGM.clip = music;
         BGM.Play();
-
     }
 }
 

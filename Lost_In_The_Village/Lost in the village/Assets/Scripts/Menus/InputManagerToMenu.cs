@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManagerToMenu : MonoBehaviour
 {
+    public PlayerInput.OnFootActions onFoot;
 
     private PlayerInput playerInput;
-    public PlayerInput.OnFootActions onFoot;
-    // Start is called before the first frame update
+    
     void Awake()
     {
         playerInput = new PlayerInput();
         onFoot = playerInput.OnFoot;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -25,7 +21,6 @@ public class InputManagerToMenu : MonoBehaviour
     {
         onFoot.Enable();
     }
-
 
     private void OnDisable()
     {

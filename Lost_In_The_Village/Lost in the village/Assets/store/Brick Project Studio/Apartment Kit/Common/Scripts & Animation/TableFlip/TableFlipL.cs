@@ -56,7 +56,7 @@ public class TableFlipL: MonoBehaviour {
 
 	void Start (){
 		open = false;
-		Player = FindObjectOfType<PlayerController>().transform;
+		//Player = FindObjectOfType<PlayerController>().transform;
 	}
 
 	void OnMouseOver (){

@@ -1,52 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Plotka : MonoBehaviour
+public class Plotka : AbstractInteractableObject
 {
-    public string promptMessage;
-    private string text;
-    public GameObject objToActive;
-    public static bool toFeed;
-    public TextMeshProUGUI destinationText;
-    public CharacterMessage Roszkol;
+    [SerializeField] private GameObject objToActive;
+    [SerializeField] private TextMeshProUGUI destinationText;
+    [SerializeField] private CharacterMessage Roszkol;
 
-    // Start is called before the first frame update
+    public static bool toFeed;
+
+    private string promptMessageTemp;
+
     void Start()
     {
         toFeed = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
     }
 
-    public void Interact()
+    protected override void Interact()
     {
-
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                text = "Nakarm P³otke (E)";
-                break;
-            case Language_enum.English:
-                text = "Feed Roach (E)";
-                break;
-            case Language_enum.German:
-                text = "Füttern Plötze (E)";
-                break;
-            case Language_enum.Spain:
-                text = "alimentar Sardinilla(E)";
-                break;
-        }
         if (toFeed)
-            promptMessage = text;
+            promptMessageTemp = Helpers.Languages.SetTextFeed();
         else
-            promptMessage = "";
+            promptMessageTemp = "";
     }
-    public void Interact2()
+
+    protected override void Interact2()
     {
         if (toFeed)
         {
@@ -56,23 +37,14 @@ public class Plotka : MonoBehaviour
             setText();
         }
     }
+
     private void setText()
     {
+        destinationText.text = Helpers.Languages.SetTextFindRoszkol();
+    }
 
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                destinationText.text = "znajdŸ Roszkola";
-                break;
-            case Language_enum.English:
-                destinationText.text = "Find Roszkol";
-                break;
-            case Language_enum.German:
-                destinationText.text = "Finde Roszkol";
-                break;
-            case Language_enum.Spain:
-                destinationText.text = "Encuentra Roszkol";
-                break;
-        }
+    protected override string promptMessage()
+    {
+        return promptMessageTemp;
     }
 }

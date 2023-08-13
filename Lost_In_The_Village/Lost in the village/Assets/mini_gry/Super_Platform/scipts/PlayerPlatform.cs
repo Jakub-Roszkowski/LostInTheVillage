@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
@@ -22,7 +19,6 @@ public class PlayerPlatform : MonoBehaviour
 
     public GameObject win_obj;
     public BoxCollider2D winBox;
-
 
     public GameObject PanelWIN;
 
@@ -63,12 +59,9 @@ public class PlayerPlatform : MonoBehaviour
 
     public static string timeres = "";
 
-
     public static int health = 100;
 
     private int level = 0;
-
-
 
     System.DateTime time;
     public static System.DateTime timestart;
@@ -80,8 +73,6 @@ public class PlayerPlatform : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         glosnosc = audioSource.volume;
-
-
 
         health = 100;
         death = false;
@@ -100,10 +91,7 @@ public class PlayerPlatform : MonoBehaviour
 
         defoultMovement();
         timeres = "";
-
-        //timestart = DateTime.Now;
     }
-
 
     void Update()
     {
@@ -129,12 +117,6 @@ public class PlayerPlatform : MonoBehaviour
     {
         Score_TMP.text = score.ToString();
 
-
-        //if (mute) Mute_TMP.text = "0";
-        //else Mute_TMP.text = "1";
-
-        //muteSounds_button.transform.GetComponent<Button>().onClick.AddListener(onClickButton);
-        //if (Input.GetKeyDown(KeyCode.Joystick1Button4)) onClickButton();
         if (Pause.MusicisMute)
         {
             audioSource.volume = 0f;
@@ -143,8 +125,6 @@ public class PlayerPlatform : MonoBehaviour
         {
             audioSource.volume = glosnosc;
         }
-
-
 
         if (!win_movement && !death)
         {
@@ -159,7 +139,6 @@ public class PlayerPlatform : MonoBehaviour
             Retry();
         }
     }
-
     public void Retry()
     {
         Time.timeScale = 1f;
@@ -169,7 +148,6 @@ public class PlayerPlatform : MonoBehaviour
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
     public void Finish_game()
     {
         if (Input.GetKeyDown(KeyCode.F9) || Input.GetKeyDown(KeyCode.Joystick1Button0))
@@ -185,7 +163,7 @@ public class PlayerPlatform : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        SceneManager.LoadScene("empty");
+        SceneManager.LoadScene(Helpers.Scenes.Empty);
         if (!GameOpenerSuperPlatform.inGame)
         {
             MiniGameMenu.ingame2 = true;
@@ -195,7 +173,6 @@ public class PlayerPlatform : MonoBehaviour
             GameOpenerSuperPlatform.inGame = false;
         }
     }
-
     public void defoultMovement()
     {
         jumpPower = 5500f;
@@ -204,19 +181,12 @@ public class PlayerPlatform : MonoBehaviour
 
     void Movement()
     {
-
-        //if (!grounded && rbody.velocity.y == 0)
-        //{
-        //	grounded = true;
-        //}
-        //w górê, skok
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button1)) && grounded == true)
         {
             rbody.AddForce(transform.up * jumpPower);
             jump = true;
         }
 
-        //w lewo
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0f)
         {
 
@@ -225,8 +195,6 @@ public class PlayerPlatform : MonoBehaviour
                 transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
 
-
-        //w prawo
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0f)
         {
 
@@ -244,13 +212,6 @@ public class PlayerPlatform : MonoBehaviour
             runningAnim = false;
         }
     }
-
-
-
-
-
-
-
 
     void sounds()
     {
@@ -296,9 +257,6 @@ public class PlayerPlatform : MonoBehaviour
             ChangeBGM(Jump_sound);
             jump = false;
         }
-
-
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -383,23 +341,14 @@ public class PlayerPlatform : MonoBehaviour
             animator.SetInteger("Anim", 1);
         }
         else animator.SetInteger("Anim", 0);
-
-
     }
-
-
-
     public void ChangeBGM(AudioClip music)
     {
-
         if (BGM.clip.name != Jump_sound.name)
         {
             if (BGM.clip.name == music.name)
                 return;
         }
-
-
-
 
         BGM.Stop();
         BGM.clip = music;

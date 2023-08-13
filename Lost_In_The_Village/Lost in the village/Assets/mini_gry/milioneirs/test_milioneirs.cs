@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.SceneManagement;
 
 public class Question
@@ -50,18 +48,11 @@ public class test_milioneirs : MonoBehaviour
     public static int guaranteedWIN = 0;
     public static int potentialWIN = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
-
-
-
         switch (Language.language)
         {
             case Language_enum.Polish:
-
-
-
 
                 hard1.Add(new Question("Jaki kraj ma najwięcej ludności na świecie?", "A. USA", "B. Chiny", "C. Stany Zjednoczone", "D. Rosja", "B"));
                 hard1.Add(new Question("Jaki ocean jest największy na świecie?", "A. Spokojny", "B. Atlantycki", "C. Indyjski", "D. Arktyczny", "A"));
@@ -84,8 +75,6 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("W jakim kraju narodził się malarz Vincent van Gogh?", "A. Francja", "B. Niemcy", "C. Holandia", "D. Włochy", "C"));
                 hard11.Add(new Question("Który piosenkarz jest autorem utworu 'Thriller'?", "A. Michael Jackson", "B. Prince", "C. Elvis Presley", "D. Madonna", "A"));
                 hard12.Add(new Question("Które państwo jest największym producentem kawy na świecie?", "A. Brazylia", "B. Kolumbia", "C. Etiopia", "D. Wietnam", "A"));
-
-
 
                 hard1.Add(new Question("Który z tych filmów został wyreżyserowany przez Stevena Spielberga ?", "A.Forrest Gump", "B.Jurassic Park", "C.Titanic", "D.Gladiator", "B"));
                 hard1.Add(new Question("Który z tych instrumentów jest strunowy?", "A.Trąbka", "B.Gitara", "C.Perkusja", "D.Flet", "B"));
@@ -114,29 +103,8 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("Która z tych piramid jest największa?", "A.Piramida Cheopsa", "B.Piramida Mykerinosa", "C.Piramida Chefrena", "D.Piramida Amenemhata III", "A"));
                 hard12.Add(new Question("Która z tych drużyn piłkarskich ma siedzibę w Londynie ?", "A.Arsenal", "B.Manchester United", "C.Liverpool", "D.Everton", "A"));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 break;
             case Language_enum.English:
-
-
-
-
-
 
                 hard1.Add(new Question("Which country has the most population in the world?", "A. USA", "B. China", "C. United States", "D. Russia", "B"));
                 hard1.Add(new Question("What is the largest ocean in the world?", "A. Pacific", "B. Atlantic", "C. Indian", "D. Arctic", "A"));
@@ -159,12 +127,6 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("Which country was the painter Vincent van Gogh born in?", "A. France", "B. Germany", "C. Holland", "D. Italy", "C"));
                 hard11.Add(new Question("Which singer wrote 'Thriller'?", "A. Michael Jackson", "B. Prince", "C. Elvis Presley", "D. Madonna", "A"));
                 hard12.Add(new Question("Which country is the largest coffee producer in the world?", "A. Brazil", "B. Colombia", "C. Ethiopia", "D. Vietnam", "A"));
-
-
-
-
-
-
 
                 hard1.Add(new Question("Which of these movies was directed by Steven Spielberg?", "A.Forrest Gump", "B.Jurassic Park", "C.Titanic", "D.Gladiator", "B"));
                 hard1.Add(new Question("Which of these instruments is stringed?", "A.Trumpet", "B.Guitar", "C.Drums", "D.Flet", "B"));
@@ -193,41 +155,8 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("Which of these pyramids is the largest?", "A. Pyramid of Cheops", "B. Pyramid of Mykerinos", "C. Pyramid of Chephren", "D. Pyramid of Amenemhat III", "A"));
                 hard12.Add(new Question("Which of these soccer teams are based in London?", "A.Arsenal", "B.Manchester United", "C.Liverpool", "D.Everton", "A"));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 break;
             case Language_enum.German:
-
-
-
-
-
-
-
-
-
 
                 hard1.Add(new Question("Welches Land hat die größte Bevölkerung der Welt?", "A. USA", "B. China", "C. Vereinigte Staaten", "D. Russland", "B"));
                 hard1.Add(new Question("Was ist der größte Ozean der Welt?", "A. Pazifik", "B. Atlantik", "C. Indien", "D. Arktis", "A"));
@@ -250,8 +179,6 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("In welchem ​​Land wurde der Maler Vincent van Gogh geboren?", "A. Frankreich", "B. Deutschland", "C. Holland", "D. Italien", "C"));
                 hard11.Add(new Question("Welcher Sänger hat 'Thriller' geschrieben?", "A. Michael Jackson", "B. Prince", "C. Elvis Presley", "D. Madonna", "A"));
                 hard12.Add(new Question("Welches Land ist der größte Kaffeeproduzent der Welt?", "A. Brasilien", "B. Kolumbien", "C. Äthiopien", "D. Vietnam", "A"));
-
-
 
                 hard1.Add(new Question("Welcher dieser Filme wurde von Steven Spielberg gedreht?", "A.Forrest Gump", "B.Jurassic Park", "C.Titanic", "D.Gladiator", "B"));
                 hard1.Add(new Question("Welches dieser Instrumente ist ein Streichinstrument?", "A.Trumpet", "B.Guitar", "C.Drums", "D.Flet", "B"));
@@ -280,41 +207,8 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("Welche dieser Pyramiden ist die größte?", "A. Pyramide des Cheops", "B. Pyramide des Mykerinos", "C. Pyramide des Chephren", "D. Pyramide von Amenemhat III", "A"));
                 hard12.Add(new Question("Welche dieser Fußballmannschaften haben ihren Sitz in London?", "A.Arsenal", "B.Manchester United", "C.Liverpool", "D.Everton", "A"));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 break;
             case Language_enum.Spain:
-
-
-
-
-
 
                 hard1.Add(new Question("¿Qué país tiene la mayor población del mundo?", "A. EE. UU.", "B. China", "C. Estados Unidos", "D. Rusia", "B"));
                 hard1.Add(new Question("¿Cuál es el océano más grande del mundo?", "A. Pacífico", "B. Atlántico", "C. Índico", "D. Ártico", "A"));
@@ -337,9 +231,6 @@ public class test_milioneirs : MonoBehaviour
                 hard11.Add(new Question("¿En qué país nació el pintor Vincent van Gogh?", "A. Francia", "B. Alemania", "C. Holanda", "D. Italia", "C"));
                 hard11.Add(new Question("¿Qué cantante escribió 'Thriller'?", "A. Michael Jackson", "B. Prince", "C. Elvis Presley", "D. Madonna", "A"));
                 hard12.Add(new Question("¿Qué país es el mayor productor de café del mundo?", "A. Brasil", "B. Colombia", "C. Etiopía", "D. Vietnam", "A"));
-
-
-
 
                 hard1.Add(new Question("¿Cuál de estas películas fue dirigida por Steven Spielberg?", "A.Forrest Gump", "B.Jurassic Park", "C.Titanic", "D.Gladiator", "B"));
                 hard1.Add(new Question("¿Cuál de estos instrumentos es de cuerda?", "A.Trumpet", "B.Guitar", "C.Drums", "D.Flet", "B"));
@@ -372,129 +263,27 @@ public class test_milioneirs : MonoBehaviour
         }
 
         CurrentPosition = 1;
-        /*
-                arrayList.Add(hard1);
-                arrayList.Add(hard2);
-                arrayList.Add(hard3);
-                arrayList.Add(hard4);
-                arrayList.Add(hard5);
-                arrayList.Add(hard6);
-                arrayList.Add(hard7);
-                arrayList.Add(hard8);
-                arrayList.Add(hard9);
-                arrayList.Add(hard10);
-                arrayList.Add(hard11);
-                arrayList.Add(hard12);
-
-
-                string[] lines = System.IO.File.ReadAllLines(Application.streamingAssetsPath+"/baza.txt");
-
-
-                foreach (var item in lines) {
-                    string[] line = item.Split(";");
-                    Question question = new Question(System.Convert.ToInt32(line[0]), line[1], line[2], line[3], line[4], line[5], System.Convert.ToString(line[6]).Trim());
-
-
-                    switch (question.hard)
-                    {
-                        case 1:
-                            hard1.Add(question);
-                            break;
-                        case 2:
-                            hard2.Add(question);
-                            break;
-                        case 3:
-                            hard3.Add(question);
-                            break;
-                        case 4:
-                            hard4.Add(question);
-                            break;
-                        case 5:
-                            hard5.Add(question);
-                            break;
-                        case 6:
-                            hard6.Add(question);
-                            break;
-                        case 7:
-                            hard7.Add(question);
-                            break;
-                        case 8:
-                            hard8.Add(question);
-                            break;
-                        case 9:
-                            hard9.Add(question);
-                            break;
-                        case 10:
-                            hard10.Add(question);
-                            break;
-                        case 11:
-                            hard11.Add(question);
-                            break;
-                        case 12:
-                            hard12.Add(question);
-                            break;
-                    }
-                }
-
-                */
-        /*
-        foreach(Question item in hard1)
-        {
-            Debug.LogError(item.question);
-        }
-        foreach (Question item in hard2)
-        {
-            Debug.LogError(item.question);
-        }
-        foreach (Question item in hard3)
-        {
-            Debug.LogError(item.question);
-        }
-        foreach (Question item in hard4)
-        {
-            Debug.LogError(item.question);
-        }
-        foreach (Question item in hard5)
-        {
-            Debug.LogError(item.question);
-        }
-        */
+        
         NextQuestion();
-
-
-
     }
-
-    // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.F8))
         {
-            //Application.LoadLevel(0);
-
-
-
             Retry();
         }
 
         if (Input.GetKeyDown(KeyCode.F9))
         {
-            //Application.LoadLevel(0);
-
             Time.timeScale = 1f;
             foreach (GameObject obj in MoveDontDestroyOnLoadObjects.dontDestroyObjects)
             {
                 obj.SetActive(true);
             }
-            SceneManager.LoadScene("empty");
+            SceneManager.LoadScene(Helpers.Scenes.Empty);
             MiniGameMenu.ingame2 = true;
         }
-
-
-
     }
-
     public void Retry()
     {
         Time.timeScale = 1f;
@@ -502,7 +291,6 @@ public class test_milioneirs : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        //Restarts current level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -646,16 +434,12 @@ public class test_milioneirs : MonoBehaviour
                 CurrentAnswear = question12.answear;
                 break;
         }
-
     }
-
     public static void VauleuWON()
     {
-
         if (CurrentPosition < 3) guaranteedWIN = 0;
         else if (CurrentPosition <= 7) guaranteedWIN = 1000;
         else if (CurrentPosition <= 12) guaranteedWIN = 50000;
-
 
         switch (CurrentPosition)
         {
@@ -699,7 +483,5 @@ public class test_milioneirs : MonoBehaviour
                 potentialWIN = 500000;
                 break;
         }
-
-
     }
 }

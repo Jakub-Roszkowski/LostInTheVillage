@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Village2Start : MonoBehaviour
 {
-    public InteractableCharacter InteractableCharacter;
+    [SerializeField] private CharacterInteractable InteractableCharacter;
     void Start()
     {
         StartCoroutine(wait());

@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
 public class PublicAnswear : MonoBehaviour
 {
-
     public TMP_Text AnswearText;
     public GameObject Button;
     public GameObject PublicPanel;
@@ -15,24 +12,14 @@ public class PublicAnswear : MonoBehaviour
     int random = 0;
     int random2 = 0;
     int random3 = 0;
-    int answearA;
-    int answearB;
-    int answearC;
-    int answearD;
 
     string corect;
 
-
     public static bool f3 = true;
-
     private string text;
 
-
-    ArrayList answears = new ArrayList();
-    // Start is called before the first frame update
     void Start()
     {
-
         f3 = true;
         PublicPanel.SetActive(false);
 
@@ -45,32 +32,12 @@ public class PublicAnswear : MonoBehaviour
         random3 = rnd.Next(randomMax);
         randomMax = randomMax - random3;
 
-
-
-
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                text = "Tak odpowiedzia³a publicznoœæ:";
-                break;
-            case Language_enum.English:
-                text = "This is how the audience responded:";
-                break;
-            case Language_enum.German:
-                text = "So hat das Publikum geantwortet:";
-                break;
-            case Language_enum.Spain:
-                text = "Así respondió la audiencia:";
-                break;
-        }
-
+        text = Helpers.Languages.SetTextPublicAnswear();
     }
 
-    // Update is called once per frame
     void Update()
     {
         corect = test_milioneirs.CurrentAnswear;
-
 
         Button.transform.GetComponent<Button>().onClick.AddListener(onClickButton);
         if (Input.GetKey(KeyCode.Escape))
@@ -89,7 +56,6 @@ public class PublicAnswear : MonoBehaviour
 
     void onClickButton()
     {
-
         PublicPanel.SetActive(true);
         Button.SetActive(false);
 

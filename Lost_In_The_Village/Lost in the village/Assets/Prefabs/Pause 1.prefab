@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1660439533213326780}
   - component: {fileID: 8494987273364669149}
   m_Layer: 0
-  m_Name: sredni
+  m_Name: medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8310510501986773220}
   - component: {fileID: 2329733710686843791}
   m_Layer: 0
-  m_Name: "\u0142atwy"
+  m_Name: easy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 2663774255097617137}
   - component: {fileID: 2550612743476277207}
   m_Layer: 0
-  m_Name: trudny
+  m_Name: hard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6777091813620162668}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -928,7 +928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3707168628459430789}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: GameLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,8 +987,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8045087664528731083}
   - {fileID: 8045087665001595325}
+  - {fileID: 8045087664528731083}
   - {fileID: 8045087665217762127}
   - {fileID: 6777091813620162668}
   - {fileID: 3707168628459430789}
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 8045087664521538899}
   - component: {fileID: 8045087664521538896}
   m_Layer: 0
-  m_Name: Button (4)
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 8045087664528731125}
   - component: {fileID: 8045087664528731082}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ RectTransform:
   m_Children:
   - {fileID: 8045087665757332812}
   m_Father: {fileID: 8045087663781970018}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1455,6 +1455,7 @@ GameObject:
   - component: {fileID: 8045087664699242654}
   - component: {fileID: 8045087664699242655}
   - component: {fileID: 8045087664699242652}
+  - component: {fileID: 8602106509292445818}
   m_Layer: 0
   m_Name: Pause 1
   m_TagString: Untagged
@@ -1504,6 +1505,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1622f192d288b4496e1671e1acb11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8602106509292445818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045087664699242653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b8fa072d7fca347a69c83e51b4ade7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resume: {fileID: 8045087665757332815}
+  Restart: {fileID: 8045087664437253444}
+  GameLevel: {fileID: 6670489020180464655}
+  Easy: {fileID: 6922232152989393257}
+  Medium: {fileID: 1900041542393321650}
+  Hard: {fileID: 5204184021100428837}
+  Quit: {fileID: 8045087664731496695}
+  Music: {fileID: 8045087665206729062}
+  Sounds: {fileID: 8045087664859942914}
 --- !u!1 &8045087664722405345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +1910,7 @@ GameObject:
   - component: {fileID: 8045087664945333319}
   - component: {fileID: 8045087664945333316}
   m_Layer: 0
-  m_Name: Button (5)
+  m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2021,7 +2043,7 @@ GameObject:
   - component: {fileID: 8045087665001595327}
   - component: {fileID: 8045087665001595324}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2040,7 +2062,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8045087663781970018}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2157,7 +2179,7 @@ GameObject:
   - component: {fileID: 8045087665139530804}
   - component: {fileID: 8045087665139530805}
   m_Layer: 0
-  m_Name: Button (3)
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2426,7 +2448,7 @@ GameObject:
   - component: {fileID: 8045087665217762121}
   - component: {fileID: 8045087665217762126}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

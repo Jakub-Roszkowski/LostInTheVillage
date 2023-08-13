@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,16 +11,15 @@ public enum Level
 
 public class Pause : MonoBehaviour
 {
-
-    private InputManagerToMenu inputManager;
+    public GameObject pauseMenu;
+    public RawImage image;
 
     public static bool GameIsPaused = false;
     public static bool MusicisMute = false;
     public static bool SoundisMute = false;
     public static Level currentLevel = Level.Medium;
 
-    public GameObject pauseMenu;
-    public RawImage image;
+    private InputManagerToMenu inputManager;
 
     void Start()
     {
@@ -42,7 +38,6 @@ public class Pause : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (inputManager.onFoot.Pause.triggered)
@@ -62,7 +57,6 @@ public class Pause : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
 
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -90,16 +84,17 @@ public class Pause : MonoBehaviour
 
         foreach (GameObject obj in dontDestroyObjects)
         {
-            // Wy³¹cz sam obiekt
             Destroy(obj);
         }
 
         SceneManager.LoadScene("Village1");
     }
+
     public void MuteMusic()
     {
         MusicisMute = !MusicisMute;
     }
+
     public void MuteSound()
     {
         SoundisMute = !SoundisMute;
@@ -122,4 +117,3 @@ public class Pause : MonoBehaviour
         image.color = Color.red;
     }
 }
-

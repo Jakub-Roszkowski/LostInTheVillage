@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,13 +6,14 @@ using UnityEngine.UI;
 
 public class LoadSceneOnTrigger : MonoBehaviour
 {
-    public string sceneName = "Village2"; // The name of the target scene you want to load
-    public TextMeshProUGUI promptText;
-    public static bool ifistoOpen = false;
-    public Slider loadingSlider;
-    public GameObject objectToActivate;
-    public GameObject[] objectsToDeactivate;
+    [SerializeField] private TextMeshProUGUI promptText;
+    [SerializeField] private Slider loadingSlider;
+    [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private GameObject[] objectsToDeactivate;
 
+    public static bool ifistoOpen = false;
+
+    private string sceneName = Helpers.Scenes.Village2;
 
     void Start()
     {
@@ -26,33 +26,18 @@ public class LoadSceneOnTrigger : MonoBehaviour
         {
             if (ifistoOpen)
             {
-                StartCoroutine(LoadSceneAsync()); 
+                StartCoroutine(LoadSceneAsync());
             }
             else
             {
                 DisplayPromptText();
             }
-
         }
     }
 
     private void DisplayPromptText()
     {
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                promptText.text = "Niedostêpne";
-                break;
-            case Language_enum.English:
-                promptText.text = "Not available";
-                break;
-            case Language_enum.German:
-                promptText.text = "Nicht verfügbar";
-                break;
-            case Language_enum.Spain:
-                promptText.text = "No disponible";
-                break;
-        }
+        promptText.text = Helpers.Languages.SetTextNotAvailable();
 
         StartCoroutine(ClearPromptText(3f));
     }
@@ -69,7 +54,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
         ActivateObjects();
         loadingSlider.value = 0f;
         yield return new WaitForSeconds(4f);
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName); 
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         asyncOperation.allowSceneActivation = false;
 
         while (!asyncOperation.isDone)
@@ -79,12 +64,10 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
             if (asyncOperation.progress >= 0.9f)
             {
-                asyncOperation.allowSceneActivation = true; 
+                asyncOperation.allowSceneActivation = true;
             }
-
             yield return null;
         }
-
     }
 
     private void ActivateObjects()
@@ -103,8 +86,3 @@ public class LoadSceneOnTrigger : MonoBehaviour
         }
     }
 }
-
-
-
-
-

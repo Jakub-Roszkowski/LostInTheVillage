@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,7 +34,6 @@ public class GoToPlayer : MonoBehaviour
                 animator.SetBool("is_walk", false);
             }
         }
-
 
         if (movePositionTransforms != null)
         {

@@ -1,21 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Sounds : MonoBehaviour
 {
-
-    private float glosnosc;
     private AudioSource audioSource;
-    // Start is called before the first frame update
+    private float volume;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        glosnosc = audioSource.volume;
-
+        volume = audioSource.volume;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Pause.GameIsPaused)
@@ -24,7 +19,7 @@ public class Sounds : MonoBehaviour
         }
         else
         {
-            audioSource.volume = glosnosc;
+            audioSource.volume = volume;
         }
 
         if (Pause.SoundisMute)
@@ -33,7 +28,7 @@ public class Sounds : MonoBehaviour
         }
         else
         {
-            audioSource.volume = glosnosc;
+            audioSource.volume = volume;
         }
     }
 }

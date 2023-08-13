@@ -1,27 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    public Health player;
-    public Slider health;
-    [SerializeField]
-    private TextMeshProUGUI promptText;
-    [SerializeField]
-    private TextMeshProUGUI AMMOText;
-    // Start is called before the first frame update
+    [SerializeField] private Health player;
+    [SerializeField] private Slider health;
+    [SerializeField] private TextMeshProUGUI promptText;
+    [SerializeField] private TextMeshProUGUI AMMOText;
+
     void Start()
     {
         health.maxValue = 100;
-
         health.value = 100;
     }
 
-    // Update is called once per frame
     public void UpdateText(string promptMessage)
     {
         promptText.text = promptMessage;
@@ -32,7 +25,6 @@ public class PlayerUI : MonoBehaviour
         health.value = player.GetCurrentHealth();
         AMMOText.text = GetAmmoCount().ToString();
     }
-
 
     private int GetAmmoCount()
     {
@@ -49,7 +41,6 @@ public class PlayerUI : MonoBehaviour
                 }
             }
         }
-
         return 0;
     }
 }

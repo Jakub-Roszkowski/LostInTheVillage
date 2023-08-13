@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
-    public GameObject panelBlood;
+    [SerializeField] private GameObject panelBlood;
 
+    public float maxHealth = 100f;
+    public static GameObject[] dontDestroyObjects;
+    
     public float fadeDuration = 1f;
     public float fadeDelay = 0.5f;
 
@@ -18,61 +17,26 @@ public class Health : MonoBehaviour
 
     private int nearDeathValue = 40;
     private bool death = false;
-    public static GameObject[] dontDestroyObjects;
-
+    private float currentHealth;
 
     private void Start()
     {
         currentHealth = maxHealth;
         death = false;
-        //panelBlood.SetActive(false);
     }
 
     public void Update()
     {
-        if (IsPlayer())
-        {
-            //if (currentHealth < nearDeathValue)
-            //{
 
-            //    panelBlood.SetActive(false);
-            //    canvasGroup = panelBlood.GetComponent<CanvasGroup>();
-            //    if (canvasGroup == null)
-            //    {
-            //        canvasGroup = panelBlood.AddComponent<CanvasGroup>();
-            //    }
-
-            //    bloodImage = panelBlood.GetComponentInChildren<RawImage>();
-
-            //    canvasGroup.alpha = 1f;
-            //    StopAllCoroutines();
-
-            //    panelBlood.SetActive(true);
-
-            //    float frameDuration = fadeDuration / 60f;
-
-            //        float alpha = 0.7f;
-            //        canvasGroup.alpha = alpha;
-            //        if (bloodImage != null)
-            //        {
-            //            Color imageColor = bloodImage.color;
-            //            imageColor.a = alpha;
-            //            bloodImage.color = imageColor;
-            //        }
-            //}
-        }
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
-        if (IsPlayer() && damage>0 && (currentHealth >= nearDeathValue))
+        if (IsPlayer() && damage > 0 && (currentHealth >= nearDeathValue))
         {
-
-                ShowBloodPanel();
-            
-            
+            ShowBloodPanel();
         }
 
         if (IsPlayer())
@@ -109,7 +73,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            if (IsPlayer() && death ==false)
+            if (IsPlayer() && death == false)
             {
                 death = true;
                 dontDestroyObjects = GameObject.FindGameObjectsWithTag("DontDestroyOnLoad");
@@ -120,7 +84,7 @@ public class Health : MonoBehaviour
                 }
                 SceneManager.LoadScene(sceneMenager2.currentScene);
             }
-            else if(!IsPlayer())
+            else if (!IsPlayer())
             {
                 Animator animator = this.GetComponent<Animator>();
                 animator.SetBool("isDead", true);
@@ -131,12 +95,6 @@ public class Health : MonoBehaviour
     public float GetCurrentHealth()
     {
         return currentHealth;
-    }
-
-
-    private void Die()
-    {
-        gameObject.SetActive(false);
     }
 
     private bool IsPlayer()
@@ -151,7 +109,7 @@ public class Health : MonoBehaviour
 
     public void RestoreHealth(int healthToRestore)
     {
-        if((currentHealth + healthToRestore) >= nearDeathValue && currentHealth<100)
+        if ((currentHealth + healthToRestore) >= nearDeathValue && currentHealth < 100)
         {
             canvasGroup.alpha = 0f;
             panelBlood.SetActive(false);
@@ -162,8 +120,11 @@ public class Health : MonoBehaviour
             currentHealth = maxHealth;
     }
 
-
-
+    //this is using in animation Die
+    private void Die()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void ShowBloodPanel()
     {

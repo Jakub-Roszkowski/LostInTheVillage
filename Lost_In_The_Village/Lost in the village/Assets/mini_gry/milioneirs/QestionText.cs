@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,7 +6,6 @@ using System;
 
 public class QestionText : MonoBehaviour
 {
-
     public TMP_Text Question;
     public TMP_Text AnswearA;
     public TMP_Text AnswearB;
@@ -24,20 +22,16 @@ public class QestionText : MonoBehaviour
     public GameObject ButtonFinish;
     public GameObject Button50;
 
-
     int random2 = 0;
     string answear;
 
     static bool iftext;
 
-
     ArrayList answears = new ArrayList();
-
 
     public GameObject FrameLose2;
     public TMP_Text text;
     public TMP_Text Value;
-
 
     public string corect;
 
@@ -46,7 +40,6 @@ public class QestionText : MonoBehaviour
     public static bool timeif=false;
     public static bool f2=true;
     public static bool buttonsActive=true;
-
 
     string q;
     string qa;
@@ -57,15 +50,13 @@ public class QestionText : MonoBehaviour
     System.DateTime time;
     public static System.DateTime timestart;
 
-
     private string text1;
-
-    // Start is called before the first frame update
+    private int timeToAnswear = 25;
     void Start()
     {
         buttonsActive = true;
         f2 = true;
-        bool iftext = false;
+        iftext = false;
         timeif = false;
         timestart = DateTime.Now;
 
@@ -77,11 +68,8 @@ public class QestionText : MonoBehaviour
         answears.Add("C");
         answears.Add("D");
 
-
-
-
         FrameLose2.SetActive(false);
-        text.text = nick + " Wygrałeś:";
+        text.text = nick + Helpers.Languages.SetTextWin();
         Value.text = test_milioneirs.guaranteedWIN.ToString();
 
         lose = false;
@@ -99,55 +87,13 @@ public class QestionText : MonoBehaviour
         ButtonFinish.transform.GetComponent<Button>().onClick.AddListener(MessageWin);
         Button50.transform.GetComponent<Button>().onClick.AddListener(Message50);
 
-
-
-
-
-
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                text1 = " Wygrałeś: ";
-                break;
-            case Language_enum.English:
-                text1 = " You won: ";
-                break;
-            case Language_enum.German:
-                text1 = " Du hast gewonnen: ";
-                break;
-            case Language_enum.Spain:
-                text1 = " ¡Has ganado! ";
-                break;
-        }
+        text1 = Helpers.Languages.SetTextWin();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         corect = test_milioneirs.CurrentAnswear;
-
         time = DateTime.Now;
-
-
-        //answears.Remove(answear);
-
-        /*
-
-        Question.text = test.CurrentQuestion;
-        AnswearA.text = test.CurrentAnswearA;
-        AnswearB.text = test.CurrentAnswearB;
-        AnswearC.text = test.CurrentAnswearC;
-        AnswearD.text = test.CurrentAnswearD;
-
-        FrameAnswearA.transform.GetComponent<Button>().onClick.AddListener(onClickA);
-        FrameAnswearB.transform.GetComponent<Button>().onClick.AddListener(onClickB);
-        FrameAnswearC.transform.GetComponent<Button>().onClick.AddListener(onClickC);
-        FrameAnswearD.transform.GetComponent<Button>().onClick.AddListener(onClickD);
-        ButtonFinish.transform.GetComponent<Button>().onClick.AddListener(MessageWin);
-        Button50.transform.GetComponent<Button>().onClick.AddListener(Message50);
-
-        */
 
         if (f2) { 
             if (Input.GetKeyDown(KeyCode.F2))
@@ -161,14 +107,9 @@ public class QestionText : MonoBehaviour
             MessageWin();
         }
 
-
-        //int cur = test.CurrentPosition;
-        //text.text = nick + " Wygrałeś:";
-
-        
         if (timeif)
         {
-            if (timestart.AddSeconds(15) < time) {
+            if (timestart.AddSeconds(timeToAnswear) < time) {
                 corectValue();
                 Message();
                 lose = true;
@@ -181,9 +122,7 @@ public class QestionText : MonoBehaviour
             {
                 timeShow.text = "";
             }
-            
         }
-        
 
         q = test_milioneirs.CurrentQuestion;
         qa = test_milioneirs.CurrentAnswearA;
@@ -192,13 +131,7 @@ public class QestionText : MonoBehaviour
         qd = test_milioneirs.CurrentAnswearD;
 
         if (text){ next(); }
-
-
-
     }
-
-
-
 
     void onClickA()
     {
@@ -211,10 +144,7 @@ public class QestionText : MonoBehaviour
                 checkmilion();
 
                 timestart = DateTime.Now;
-
-
             }
-
             else
             {
                 FrameAnswearA.transform.GetComponent<Image>().color = Color.red;
@@ -225,8 +155,6 @@ public class QestionText : MonoBehaviour
             FrameAnswearA.SetActive(true);
         }
     }
-
-
     void onClickB()
     {
         if (buttonsActive)
@@ -237,9 +165,7 @@ public class QestionText : MonoBehaviour
                 SomeMethod();
                 checkmilion();
                 timestart = DateTime.Now;
-
             }
-
             else
             {
                 FrameAnswearB.transform.GetComponent<Image>().color = Color.red;
@@ -249,7 +175,6 @@ public class QestionText : MonoBehaviour
             }
             FrameAnswearB.SetActive(true);
         }
-
     }
 
     void onClickC()
@@ -262,9 +187,7 @@ public class QestionText : MonoBehaviour
                 SomeMethod();
                 checkmilion();
                 timestart = DateTime.Now;
-
             }
-
             else
             {
                 FrameAnswearC.transform.GetComponent<Image>().color = Color.red;
@@ -274,7 +197,6 @@ public class QestionText : MonoBehaviour
             }
             FrameAnswearC.SetActive(true);
         }
-
     }
     void onClickD()
     {
@@ -286,9 +208,7 @@ public class QestionText : MonoBehaviour
                 SomeMethod();
                 checkmilion();
                 timestart = DateTime.Now;
-
             }
-
             else
             {
                 FrameAnswearD.transform.GetComponent<Image>().color = Color.red;
@@ -298,9 +218,7 @@ public class QestionText : MonoBehaviour
             }
             FrameAnswearD.transform.GetComponent<Button>().CancelInvoke();
         }
-
     }
-
     void corectValue()
     {
         if (test_milioneirs.CurrentAnswear == "A")
@@ -342,8 +260,6 @@ public class QestionText : MonoBehaviour
         FrameAnswearD.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
 
         buttonsActive = true;
-        
-
     }
 
     void Message()
@@ -366,9 +282,7 @@ public class QestionText : MonoBehaviour
     {
         answears.Remove(corect);
         answear = (string)answears[random2];
-        //answears.Remove(answear);
         Debug.Log("onclic" + (string)answears[0] + " " + (string)answears[1]);
-
 
         if ((string)answears[0] == "A" || (string)answears[1] == "A")
         {
@@ -387,18 +301,11 @@ public class QestionText : MonoBehaviour
             test_milioneirs.CurrentAnswearD = "";
         }
 
-
         Button50.SetActive(false);
         f2 = false;
     }
-
-
-
-
-
     void checkmilion()
     {
-        
         if (test_milioneirs.CurrentPosition >= 13)
         {
             FrameLose2.SetActive(true);
@@ -409,14 +316,11 @@ public class QestionText : MonoBehaviour
 
     void next()
     {
-
-
         Question.text = q;
         AnswearA.text = qa;
         AnswearB.text = qb;
         AnswearC.text = qc;
         AnswearD.text = qd;
-
 
         iftext = !iftext;
 
@@ -427,7 +331,6 @@ public class QestionText : MonoBehaviour
     {
         iftext = !iftext;
     }
-
 
     void disableButtons()
     {

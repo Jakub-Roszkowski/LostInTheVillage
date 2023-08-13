@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -20,74 +19,67 @@ public enum Place_enum
 
 public class CharacterMessage : MonoBehaviour
 {
-
-    public TextMeshProUGUI promptText;
-    public TextMeshProUGUI destination;
+    [SerializeField] private TextMeshProUGUI promptText;
+    [SerializeField] private TextMeshProUGUI destination;
     public Place_enum place;
     public AudioSource BGM;
 
     public static bool isMusicDown = false;
 
+    [SerializeField] private AudioClip Welcome_Village2_PL;
+    [SerializeField] private AudioClip Welcome_Village2_EN;
+    [SerializeField] private AudioClip Welcome_Village2_GER;
+    [SerializeField] private AudioClip Welcome_Village2_SPA;
 
-    public AudioClip Welcome_Village2_PL;
-    public AudioClip Welcome_Village2_EN;
-    public AudioClip Welcome_Village2_GER;
-    public AudioClip Welcome_Village2_SPA;
+    [SerializeField] private AudioClip Bar1_PL;
+    [SerializeField] private AudioClip Bar1_EN;
+    [SerializeField] private AudioClip Bar1_GER;
+    [SerializeField] private AudioClip Bar1_SPA;
 
-    public AudioClip Bar1_PL;
-    public AudioClip Bar1_EN;
-    public AudioClip Bar1_GER;
-    public AudioClip Bar1_SPA;
+    [SerializeField] private AudioClip Bar2_PL;
+    [SerializeField] private AudioClip Bar2_EN;
+    [SerializeField] private AudioClip Bar2_GER;
+    [SerializeField] private AudioClip Bar2_SPA;
 
-    public AudioClip Bar2_PL;
-    public AudioClip Bar2_EN;
-    public AudioClip Bar2_GER;
-    public AudioClip Bar2_SPA;
+    [SerializeField] private AudioClip Roszkol1_PL;
+    [SerializeField] private AudioClip Roszkol1_EN;
+    [SerializeField] private AudioClip Roszkol1_GER;
+    [SerializeField] private AudioClip Roszkol1_SPA;
 
-    public AudioClip Roszkol1_PL;
-    public AudioClip Roszkol1_EN;
-    public AudioClip Roszkol1_GER;
-    public AudioClip Roszkol1_SPA;
+    [SerializeField] private AudioClip Roszkol2_PL;
+    [SerializeField] private AudioClip Roszkol2_EN;
+    [SerializeField] private AudioClip Roszkol2_GER;
+    [SerializeField] private AudioClip Roszkol2_SPA;
 
-    public AudioClip Roszkol2_PL;
-    public AudioClip Roszkol2_EN;
-    public AudioClip Roszkol2_GER;
-    public AudioClip Roszkol2_SPA;
+    [SerializeField] private AudioClip Orzel_welcome_PL;
+    [SerializeField] private AudioClip Orzel_welcome_EN;
+    [SerializeField] private AudioClip Orzel_welcome_GER;
+    [SerializeField] private AudioClip Orzel_welcome_SPA;
 
-    public AudioClip Orzel_welcome_PL;
-    public AudioClip Orzel_welcome_EN;
-    public AudioClip Orzel_welcome_GER;
-    public AudioClip Orzel_welcome_SPA;
+    [SerializeField] private AudioClip Orzel_glasses_PL;
+    [SerializeField] private AudioClip Orzel_glasses_EN;
+    [SerializeField] private AudioClip Orzel_glasses_GER;
+    [SerializeField] private AudioClip Orzel_glasses_SPA;
 
-    public AudioClip Orzel_glasses_PL;
-    public AudioClip Orzel_glasses_EN;
-    public AudioClip Orzel_glasses_GER;
-    public AudioClip Orzel_glasses_SPA;
+    [SerializeField] private AudioClip Orzel_tunel_PL;
+    [SerializeField] private AudioClip Orzel_tunel_EN;
+    [SerializeField] private AudioClip Orzel_tunel_GER;
+    [SerializeField] private AudioClip Orzel_tunel_SPA;
 
-    public AudioClip Orzel_tunel_PL;
-    public AudioClip Orzel_tunel_EN;
-    public AudioClip Orzel_tunel_GER;
-    public AudioClip Orzel_tunel_SPA;
+    [SerializeField] private AudioClip Orzel_laptop_PL;
+    [SerializeField] private AudioClip Orzel_laptop_EN;
+    [SerializeField] private AudioClip Orzel_laptop_GER;
+    [SerializeField] private AudioClip Orzel_laptop_SPA;
 
-    public AudioClip Orzel_laptop_PL;
-    public AudioClip Orzel_laptop_EN;
-    public AudioClip Orzel_laptop_GER;
-    public AudioClip Orzel_laptop_SPA;
+    [SerializeField] private AudioClip Village1_PL;
+    [SerializeField] private AudioClip Village1_EN;
+    [SerializeField] private AudioClip Village1_GER;
+    [SerializeField] private AudioClip Village1_SPA;
 
-
-
-    public AudioClip Village1_PL;
-    public AudioClip Village1_EN;
-    public AudioClip Village1_GER;
-    public AudioClip Village1_SPA;
-
-    public AudioClip Village1Man_PL;
-    public AudioClip Village1Man_EN;
-    public AudioClip Village1Man_GER;
-    public AudioClip Village1Man_SPA;
-
-
-
+    [SerializeField] private AudioClip Village1Man_PL;
+    [SerializeField] private AudioClip Village1Man_EN;
+    [SerializeField] private AudioClip Village1Man_GER;
+    [SerializeField] private AudioClip Village1Man_SPA;
 
     private string str_Welcome_Village2_PL = "Ahh te okropne miasto. Jak widzisz pojawiły się wrogie roboty. Tylko Orzeł może nas uratować. Ostatni raz widziałem go w domu alkoholików. To jest na ulicy Cichej 4";
     private string str_Welcome_Village2_EN = "Ahh this horrible city. As you can see, hostile robots have appeared. Only the Eagle can save us. The last time I saw him was at an alcoholic's home. This is on Quiet 4 Street";
@@ -149,7 +141,7 @@ public class CharacterMessage : MonoBehaviour
     private string str2_Welcome_Village2_GER = "Ruhige-Straße 4";
     private string str2_Welcome_Village2_SPA = "calle Tranquila 4";
 
-    private string str2_Bar1_PL = "Napij się wina";
+    private string str2_Bar1_PL = "Napij się wina ze stolika";
     private string str2_Bar1_EN = "Drink some wine";
     private string str2_Bar1_GER = "Trink etwas Wein";
     private string str2_Bar1_SPA = "Toma un poco de vino";
@@ -203,14 +195,12 @@ public class CharacterMessage : MonoBehaviour
     private string promptString;
     private string destinationString;
 
-
     private Transform cameraTransform;
     private Quaternion initialRotation;
     private bool isRotating = false;
     private float rotationSpeed = 2f;
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         GameObject mainCamera = GameObject.FindWithTag("MainCamera");
@@ -222,32 +212,27 @@ public class CharacterMessage : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isMusicDown)
         {
             if (cameraTransform != null)
             {
-                // Oblicz kierunek patrzenia postaci tylko dla osi Y
                 Vector3 lookDirection = cameraTransform.position - transform.position;
-                lookDirection.y = 0f; // Wyzeruj składową Y, aby obrót był tylko dla osi Y
+                lookDirection.y = 0f;
 
-                // Obróć postać tylko dla osi Y zachowując pozostałe składowe obrotu
                 Quaternion targetRotation = Quaternion.LookRotation(lookDirection.normalized, transform.up);
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
             }
         }
         else
         {
-            // Płynnie wróć do początkowej rotacji
             transform.rotation = Quaternion.Lerp(transform.rotation, initialRotation, rotationSpeed * Time.deltaTime);
 
-            // Sprawdź, czy bliskość początkowej rotacji jest wystarczająca
             if (Quaternion.Angle(transform.rotation, initialRotation) < 1f)
             {
-                transform.rotation = initialRotation; // Ustaw dokładną początkową rotację
-                isRotating = false; // Zatrzymaj rotację
+                transform.rotation = initialRotation;
+                isRotating = false;
             }
         }
     }
@@ -267,11 +252,8 @@ public class CharacterMessage : MonoBehaviour
         {
             StartCoroutine(waitingFunVillage(audio.length));
         }
-
-
-
-
     }
+
     IEnumerator waitingFun(float time1)
     {
         isMusicDown = true;
@@ -318,9 +300,7 @@ public class CharacterMessage : MonoBehaviour
         BGM.Stop();
         BGM.clip = music;
         BGM.Play();
-
     }
-
 
     private void Select()
     {

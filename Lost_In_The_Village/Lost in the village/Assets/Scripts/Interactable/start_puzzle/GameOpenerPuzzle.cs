@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOpenerPuzzle : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI destinationText;
+    [SerializeField] private CharacterMessage Orzel;
+    [SerializeField] private GameObject bosses;
+
     public static bool inGame = false;
     public static bool finishGame = false;
-
-    public TextMeshProUGUI destinationText;
-    public CharacterMessage Orzel;
-
-    public GameObject bosses;
 
     void Start()
     {
         inGame = false;
         finishGame = false;
     }
-
 
     void Update()
     {
@@ -30,10 +26,8 @@ public class GameOpenerPuzzle : MonoBehaviour
             bosses.SetActive(true);
             Time.timeScale = 1f;
             finishGame = false;
-            InteractableLaptop.toSee = true;
+            LaptopInteractable.toSee = true;
         }
-
-
     }
 
     public void startGame()
@@ -41,27 +35,11 @@ public class GameOpenerPuzzle : MonoBehaviour
         inGame = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("puzzle");
-
+        SceneManager.LoadScene(Helpers.Scenes.Puzzle);
     }
 
     private void setText()
     {
-
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                destinationText.text = "Orze³";
-                break;
-            case Language_enum.English:
-                destinationText.text = "Eagle";
-                break;
-            case Language_enum.German:
-                destinationText.text = "Adler";
-                break;
-            case Language_enum.Spain:
-                destinationText.text = "Águila";
-                break;
-        }
+        destinationText.text = Helpers.Languages.SetTextEagle();
     }
 }

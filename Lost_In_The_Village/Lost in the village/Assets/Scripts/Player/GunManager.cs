@@ -1,56 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
+    [SerializeField] private GameObject weapon1;
+    [SerializeField] private GameObject weapon2;
+    [SerializeField] private GameObject weapon3;
+    [SerializeField] private GameObject weapon4;
+    [SerializeField] private GameObject currentWeapon;
 
-    public GameObject weapon1;
-    public GameObject weapon2;
-    public GameObject weapon3;
-    public GameObject weapon4;
-    public GameObject currentWeapon;
+    [SerializeField] private GameObject weapon2Panel;
+    [SerializeField] private GameObject weapon3Panel;
+    [SerializeField] private GameObject weapon4Panel;
+
+    public PlayerInput.OnFootActions onFoot;
+
+    private PlayerInput playerInput;
 
     private bool weapon1Available = true;
     private bool weapon2Available = false;
     private bool weapon3Available = false;
     private bool weapon4Available = false;
 
-    public GameObject weapon2Panel;
-    public GameObject weapon3Panel;
-    public GameObject weapon4Panel;
-
-
-
-
-
-    private PlayerInput playerInput;
-    public PlayerInput.OnFootActions onFoot;
-    // Start is called before the first frame update
     void Awake()
     {
         playerInput = new PlayerInput();
         onFoot = playerInput.OnFoot;
-
     }
-
-
 
     private void OnEnable()
     {
         onFoot.Enable();
     }
 
-
     private void OnDisable()
     {
         onFoot.Disable();
     }
-
-
-
-
-
 
     void Start()
     {
@@ -107,7 +92,6 @@ public class GunManager : MonoBehaviour
             weapon4Available = true;
             weapon4Panel.SetActive(true);
         }
-
     }
 
     public void DropWeapon(string weapon)
@@ -136,8 +120,8 @@ public class GunManager : MonoBehaviour
             weapon2.SetActive(false);
             weapon3.SetActive(false);
         }
-
     }
+
     public bool IsTheSame(GameObject weapon)
     {
         if (weapon.CompareTag(currentWeapon.tag))

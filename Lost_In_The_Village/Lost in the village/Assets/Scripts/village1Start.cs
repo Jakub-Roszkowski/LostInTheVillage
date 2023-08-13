@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class village1Start : MonoBehaviour
 {
-    public InteractableCharacter InteractableCharacter;
+    public CharacterInteractable InteractableCharacter;
     void Start()
     {
         CharacterMessage characterMessage = gameObject.GetComponent<CharacterMessage>();
@@ -15,7 +14,7 @@ public class village1Start : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     IEnumerator wait()

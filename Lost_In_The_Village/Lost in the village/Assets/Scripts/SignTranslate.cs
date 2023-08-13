@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -18,10 +16,8 @@ public enum StreetName
     CowshedStreet,
 }
 
-
 public class SignTranslate : MonoBehaviour
 {
-
     private string DistantStreetPL = "Odleg³a";
     private string MainStreetPL = "G³ówna";
     private string QuietStreetPL = "Cicha";
@@ -70,40 +66,29 @@ public class SignTranslate : MonoBehaviour
     private string VillageStreetSP = "calle del pueblo";
     private string CowshedStreetSP = "calle establo";
 
-
-
-
-
-
-
     public TextMeshProUGUI street1;
     public TextMeshProUGUI street2;
 
-
-
     public StreetName streetname1;
     public StreetName streetname2;
+
     void Start()
     {
         street1.text = Select(streetname1);
         street2.text = Select(streetname2);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
 
-
-
-
     private string Select(StreetName street)
     {
-        string text="";
+        string text = "";
         switch (street)
         {
-            case StreetName.DistantStreet :
+            case StreetName.DistantStreet:
                 switch (Language.language)
                 {
                     case Language_enum.Polish:

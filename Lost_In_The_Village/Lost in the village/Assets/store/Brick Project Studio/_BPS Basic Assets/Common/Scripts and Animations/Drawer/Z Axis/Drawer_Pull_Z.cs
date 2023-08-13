@@ -1,46 +1,24 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SojaExiles
-
 {
-    public class Drawer_Pull_Z : MonoBehaviour
+    public class Drawer_Pull_Z : AbstractInteractableObject
     {
-        public string promptMessage;
-        private string text;
+        public string promptMessageTemp;
         public Animator pull;
         public bool open;
-        private Transform Player;
 
         void Start()
         {
             open = false;
         }
 
-        public void Interact()
+        protected override void Interact()
         {
-
-            switch (Language.language)
-            {
-                case Language_enum.Polish:
-                    text = "Otworz / Zamknij (E)";
-                    break;
-                case Language_enum.English:
-                    text = "Open / Close (E)";
-                    break;
-                case Language_enum.German:
-                    text = "Öffnen / Schließen (E)";
-                    break;
-                case Language_enum.Spain:
-                    text = "Abrir / Cerrar (E)";
-                    break;
-            }
-
-            promptMessage = text;
-
+            promptMessageTemp = Helpers.Languages.SetTextOpenClose();
         }
-        public void Interact2()
+        protected override void Interact2()
         {
             if (open == false)
             {
@@ -48,15 +26,9 @@ namespace SojaExiles
             }
             else
             {
-                if (open == true)
-                {
-
-                    StartCoroutine(closing());
-                }
-
+                StartCoroutine(closing());
             }
         }
-
         IEnumerator opening()
         {
             print("you are opening the door");
@@ -64,7 +36,6 @@ namespace SojaExiles
             open = true;
             yield return new WaitForSeconds(.5f);
         }
-
         IEnumerator closing()
         {
             print("you are closing the door");
@@ -73,6 +44,9 @@ namespace SojaExiles
             yield return new WaitForSeconds(.5f);
         }
 
-
+        protected override string promptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

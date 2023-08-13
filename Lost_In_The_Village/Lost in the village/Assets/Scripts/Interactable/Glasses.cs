@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Glasses : MonoBehaviour
+public class Glasses : AbstractInteractableObject
 {
-    public string promptMessage;
-    private string text;
+    [SerializeField] private CharacterMessage Orzel;
+    [SerializeField] private TextMeshProUGUI destinationText;
+
     public static bool toSee = false;
-    public CharacterMessage Orzel;
-    public TextMeshProUGUI destinationText;
+    
+    private string promptMessageTemp;
+    private string text;
+
     void Start()
     {
         toSee = false;
@@ -17,34 +18,20 @@ public class Glasses : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
-    public void Interact()
+    protected override void Interact()
     {
+        text = Helpers.Languages.SetTextPickUp();
 
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                text = "Podnieœ (E)";
-                break;
-            case Language_enum.English:
-                text = "Pick up (E)";
-                break;
-            case Language_enum.German:
-                text = "Abholen (E)";
-                break;
-            case Language_enum.Spain:
-                text = "Levantar (E)";
-                break;
-        }
         if (toSee)
-            promptMessage = text;
+            promptMessageTemp = text;
         else
-            promptMessage = "";
+            promptMessageTemp = "";
     }
 
-    public void Interact2()
+    protected override void Interact2()
     {
         if (toSee)
         {
@@ -55,21 +42,11 @@ public class Glasses : MonoBehaviour
     }
     private void setText()
     {
+        destinationText.text = Helpers.Languages.SetTextEagle();
+    }
 
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                destinationText.text = "Orze³";
-                break;
-            case Language_enum.English:
-                destinationText.text = "Eagle";
-                break;
-            case Language_enum.German:
-                destinationText.text = "Adler";
-                break;
-            case Language_enum.Spain:
-                destinationText.text = "Águila";
-                break;
-        }
+    protected override string promptMessage()
+    {
+        return promptMessageTemp;
     }
 }

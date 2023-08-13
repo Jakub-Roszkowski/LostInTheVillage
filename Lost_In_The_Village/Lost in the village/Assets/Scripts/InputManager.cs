@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -13,7 +10,6 @@ public class InputManager : MonoBehaviour
 
     private bool isRunning = false;
 
-    // Start is called before the first frame update 
     void Awake()
     {
         playerInput = new PlayerInput();
@@ -28,12 +24,8 @@ public class InputManager : MonoBehaviour
         onFoot.Run.canceled += ctx => SetRunning(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //tell the playermotor to move using the value from our movement action. motor. ProcessMove (on Foot. Movement. ReadValue<Vector2>());
-
-
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>(), isRunning);
     }
 
@@ -46,7 +38,6 @@ public class InputManager : MonoBehaviour
     {
         onFoot.Enable();
     }
-
 
     private void OnDisable()
     {

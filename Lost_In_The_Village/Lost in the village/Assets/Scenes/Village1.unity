@@ -6618,13 +6618,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 666878073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e3e9c6932073a4b8327a87c6b7b171, type: 3}
+  m_Script: {fileID: 11500000, guid: d576ee57c9774214da610f2cbd1d957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: 
-  to_see: 1
-  to_see2: 1
   next_character: {fileID: 0}
+  to_see: 0
+  to_see2: 1
 --- !u!82 &666878075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8779,7 +8778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f1e2bcf2ac08444956b3b3ea91e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Village2
   promptText: {fileID: 1199200257}
   loadingSlider: {fileID: 1834546602}
   objectToActivate: {fileID: 509299650}
@@ -11066,7 +11064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f1e2bcf2ac08444956b3b3ea91e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Village2
   promptText: {fileID: 1199200257}
   loadingSlider: {fileID: 1834546602}
   objectToActivate: {fileID: 509299650}
@@ -15034,6 +15031,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 347831848}
     m_Modifications:
+    - target: {fileID: 1560197097604017502, guid: 04cfe82c78fb62047878a9dc389407ff, type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f8c2983972e0be4e945a023509434ce, type: 3}
     - target: {fileID: 3923089050042766576, guid: 04cfe82c78fb62047878a9dc389407ff, type: 3}
       propertyPath: text
       value: "Wyjd\u017A z wie\u017Cy"

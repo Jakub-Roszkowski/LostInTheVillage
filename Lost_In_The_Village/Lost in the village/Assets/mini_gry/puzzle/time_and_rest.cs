@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,8 +12,6 @@ public class time_and_rest : MonoBehaviour
     private static string timeres = "";
     public static int counter;
     public static int soundInt;
-
-
 
     public AudioSource BGM;
     public AudioClip correct;
@@ -36,7 +32,6 @@ public class time_and_rest : MonoBehaviour
         PanelWIN.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeres = (DateTime.Now - timestart).Minutes.ToString() + ":" + (DateTime.Now - timestart).Seconds.ToString();
@@ -49,21 +44,8 @@ public class time_and_rest : MonoBehaviour
                 soundInt = 2;
                 PanelWIN.SetActive(true);
                 timeres = (DateTime.Now - timestart).Minutes.ToString() + ":" + (DateTime.Now - timestart).Seconds.ToString();
-                switch (Language.language)
-                {
-                    case Language_enum.Polish:
-                        Time_TMP2.text = "wygra³eœ w czasie:\n" + timeres + "\n" + "Naciœnij F8 aby zacz¹æ ponownie" +"\n" + "Naciœnij F9 aby wyjœæ";
-                        break;
-                    case Language_enum.English:
-                        Time_TMP2.text = "you won in time:\n" + timeres + "\n" + "Press F8 to start again" + "\n" + "Press F9 to exit";
-                        break;
-                    case Language_enum.German:
-                        Time_TMP2.text = "Sie haben in der Zeit gewonnen:\n" +timeres + "\n" + "Drücken Sie F8, um erneut zu beginnen" +"\n" + "Drücken Sie F9, um zu beenden";
-                        break;
-                    case Language_enum.Spain:
-                        Time_TMP2.text = "ganaste a tiempo:\n" + timeres + "\n" + "Presiona F8 para comenzar de nuevo" + "\n" + "Presiona F9 para salir";
-                        break;
-                }
+                Time_TMP2.text = Helpers.Languages.SetTextPuzzle(timeres);
+
                 if (GameOpenerPuzzle.inGame)
                 {
                     GameOpenerPuzzle.finishGame = true;
@@ -82,9 +64,6 @@ public class time_and_rest : MonoBehaviour
 
     public void ChangeBGM(AudioClip music)
     {
-        //if (BGM.clip.name == music.name)
-        //    return;
-
         Debug.Log(music.name);
         BGM.Stop();
         BGM.clip = music;
@@ -112,8 +91,6 @@ public class time_and_rest : MonoBehaviour
         ifsound = true;
 
     }
-
-
 
     public void Restart_game()
     {
@@ -156,6 +133,6 @@ public class time_and_rest : MonoBehaviour
         {
             GameOpenerPuzzle.inGame = false;
         }
-        SceneManager.LoadScene("empty");
+        SceneManager.LoadScene(Helpers.Scenes.Empty);
     }
 }

@@ -1,16 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class InteractableGameToIN : MonoBehaviour
+public class InteractableGameToIN : AbstractInteractableObject
 {
-
-    public string promptMessage;
-    private string text;
+    public string promptMessageTemp;
     public bool to_see = true;
 
-
     private GameOpenerSuperPlatform game_opener;
+    private string text;
 
     void Start()
     {
@@ -18,44 +12,30 @@ public class InteractableGameToIN : MonoBehaviour
         to_see = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 
-
-
-    public void Interact()
+    protected override void Interact()
     {
-
-        switch (Language.language)
-        {
-            case Language_enum.Polish:
-                text = "Zagraj (E)";
-                break;
-            case Language_enum.English:
-                text = "Play (E)";
-                break;
-            case Language_enum.German:
-                text = "Spielen (E)";
-                break;
-            case Language_enum.Spain:
-                text = "Jugar (E)";
-                break;
-        }
+        text = Helpers.Languages.SetTextGameToIn();
 
         if (to_see)
-            promptMessage = text;
+            promptMessageTemp = text;
         else
-            promptMessage = "";
+            promptMessageTemp = "";
     }
 
-    public void Interact2()
+    protected override void Interact2()
     {
         if (to_see)
         {
             game_opener.startGame();
         }
+    }
+
+    protected override string promptMessage()
+    {
+        return promptMessageTemp;
     }
 }

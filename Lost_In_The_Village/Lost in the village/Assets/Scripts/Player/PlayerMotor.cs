@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
@@ -33,7 +31,6 @@ public class PlayerMotor : MonoBehaviour
         {
             currentSpeed = RunSpeed;
         }
-
 
         controller.Move(transform.TransformDirection(moveDirection) * currentSpeed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;

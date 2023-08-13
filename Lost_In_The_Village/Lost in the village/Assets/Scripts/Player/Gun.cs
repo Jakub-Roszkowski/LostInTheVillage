@@ -1,13 +1,13 @@
 using System.Collections;
-using UnityEngine.InputSystem;
 using UnityEngine;
-using System.Diagnostics;
-using Debug = UnityEngine.Debug;
 
 public class Gun : MonoBehaviour
 {
-    public GUN_Stats GUN_Stats;
-    public Transform fpsCam;
+    [SerializeField] private GUN_Stats GUN_Stats;
+    [SerializeField] private Transform fpsCam;
+    [SerializeField] private ParticleSystem muzzleFlash;
+    [SerializeField] private GameObject impactEffect;
+
     private float range;
     private float impactForce;
     private float damageAmount;
@@ -20,31 +20,14 @@ public class Gun : MonoBehaviour
     private AudioClip ReloudSound;
     private AudioClip headshoot;
 
-    public ParticleSystem muzzleFlash;
-    public GameObject impactEffect;
-
-
     public int currentAmmo;
-
     private int magazineAmmo;
-
     private float reloadTime;
-
     private bool ISReloundig;
-
-
-    private InputManagerToShoot inputManager;
-
-    public GameObject lightObject;
-
-
     private float shotgunHolesRandom = 0.3f;
 
-
-
-
-
-
+    private InputManagerToShoot inputManager;
+    public GameObject lightObject;
 
     void Start()
     {
@@ -57,15 +40,11 @@ public class Gun : MonoBehaviour
 
         reloadTime = GUN_Stats.ReloadTime;
 
-
-
         shootSound = GUN_Stats.shoot;
         ReloudSound = GUN_Stats.ReloadSound;
         headshoot = GUN_Stats.headshoot;
 
         inputManager = GetComponent<InputManagerToShoot>();
-
-
 
         currentAmmo = magazineAmmo;
         SetAmmoCountForParent(currentAmmo);
@@ -75,14 +54,11 @@ public class Gun : MonoBehaviour
         {
             lightComponent.enabled = false;
         }
-
-
     }
     private void OnEnable()
     {
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Pause.currentLevel == Level.Easy)
@@ -99,12 +75,7 @@ public class Gun : MonoBehaviour
         }
         if (transform.parent != null && transform.parent.name == "test")
         {
-
-
             bool isShooting = inputManager.onFoot.Shoot.triggered;
-
-
-
 
             bool isReloading = inputManager.onFoot.Reloud.triggered;
 
@@ -118,20 +89,14 @@ public class Gun : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Fire();
             }
-
-
-
         }
         SetAmmoCountForParent(currentAmmo);
-
     }
 
     private void Fire()
     {
         ChangeBGM(shootSound);
         muzzleFlash.Play();
-
-
 
         Light lightComponent = lightObject.GetComponent<Light>();
         if (lightComponent != null)
@@ -148,8 +113,6 @@ public class Gun : MonoBehaviour
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-
-
 
             //Chicken_______________________________________________________________________________________________________________________________________________________________________________
             DisappearinChicken disappearingChicken = hit.collider.GetComponent<DisappearinChicken>();
@@ -193,52 +156,43 @@ public class Gun : MonoBehaviour
                 }
                 if (enemy != null)
                 {
-
                     enemy.TakeDamage(damageAmount * 6);
                     StartCoroutine(wait_Head());
-
                 }
             }
             //ENEMY_______________________________________________________________________________________________________________________________________________________________________________
 
             if (gameObject.CompareTag("shotgun"))
             {
-
-                // Offset dla pierwszej dziury;
                 Quaternion impactRotation1 = Quaternion.LookRotation(hit.normal);
                 GameObject impact1 = Instantiate(impactEffect, hit.point, impactRotation1);
                 impact1.transform.parent = hit.transform;
                 Destroy(impact1, 5);
 
-                // Offset dla drugiej dziury
                 Vector3 offset2 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
                 Quaternion impactRotation2 = Quaternion.LookRotation(hit.normal);
                 GameObject impact2 = Instantiate(impactEffect, hit.point + offset2, impactRotation2);
                 impact2.transform.parent = hit.transform;
                 Destroy(impact2, 5);
 
-                // Offset dla drugiej dziury
                 Vector3 offset3 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
                 Quaternion impactRotation3 = Quaternion.LookRotation(hit.normal);
                 GameObject impact3 = Instantiate(impactEffect, hit.point + offset3, impactRotation3);
                 impact3.transform.parent = hit.transform;
                 Destroy(impact3, 5);
 
-                // Offset dla drugiej dziury
                 Vector3 offset4 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
                 Quaternion impactRotation4 = Quaternion.LookRotation(hit.normal);
                 GameObject impact4 = Instantiate(impactEffect, hit.point + offset4, impactRotation4);
                 impact4.transform.parent = hit.transform;
                 Destroy(impact4, 5);
 
-                // Offset dla drugiej dziury
                 Vector3 offset5 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
                 Quaternion impactRotation5 = Quaternion.LookRotation(hit.normal);
                 GameObject impact5 = Instantiate(impactEffect, hit.point + offset5, impactRotation5);
                 impact5.transform.parent = hit.transform;
                 Destroy(impact5, 5);
 
-                // Offset dla drugiej dziury
                 Vector3 offset6 = hit.normal * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.up * Random.Range(-shotgunHolesRandom, shotgunHolesRandom) + Vector3.right * Random.Range(-shotgunHolesRandom, shotgunHolesRandom);
                 Quaternion impactRotation6 = Quaternion.LookRotation(hit.normal);
                 GameObject impact6 = Instantiate(impactEffect, hit.point + offset6, impactRotation6);
@@ -252,7 +206,6 @@ public class Gun : MonoBehaviour
                 impact.transform.parent = hit.transform;
                 Destroy(impact, 5);
             }
-
         }
         if (currentAmmo == 0)
         {
@@ -267,8 +220,6 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = magazineAmmo;
         ISReloundig = false;
-
-
     }
 
     IEnumerator DisableLightAfterDelay(Light light, float delay)
@@ -277,15 +228,11 @@ public class Gun : MonoBehaviour
         light.enabled = false;
     }
 
-
-
-
     public void ChangeBGM(AudioClip music)
     {
         BGM.Stop();
         BGM.clip = music;
         BGM.Play();
-
     }
 
     void SetAmmoCountForParent(int ammo)
@@ -301,11 +248,9 @@ public class Gun : MonoBehaviour
         }
     }
 
-
     IEnumerator wait_Head()
     {
         yield return new WaitForSeconds(0.2f);
         ChangeBGM(headshoot);
     }
 }
-

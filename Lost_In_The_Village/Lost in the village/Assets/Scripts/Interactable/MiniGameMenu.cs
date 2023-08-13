@@ -1,53 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MiniGameMenu : MonoBehaviour
 {
-    public GameObject gamesPanel;
+    [SerializeField] private GameObject gamesPanel;
+    [SerializeField] private GameObject[] objects_to_active;
 
-    public GameObject[] objects_to_active;
-    //consoles canvas and (test this is for shooting)
-
-
-
-    private PlayerInput playerInput;
     public PlayerInput.OnFootActions onFoot;
     public bool ingame = false;
+
     public static bool ingame2 = false;
+    
+    private PlayerInput playerInput;
+
     void Awake()
     {
         playerInput = new PlayerInput();
         onFoot = playerInput.OnFoot;
-
     }
-
 
     private void OnEnable()
     {
         onFoot.Enable();
     }
 
-
     private void OnDisable()
     {
         onFoot.Disable();
     }
 
-
-
-
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (onFoot.Exit.triggered)
@@ -58,14 +44,12 @@ public class MiniGameMenu : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            //Time.timeScale = 0f;
         }
         if (ingame2)
         {
             Time.timeScale = 0f;
         }
     }
-
 
     public void Quit()
     {
@@ -85,7 +69,7 @@ public class MiniGameMenu : MonoBehaviour
     {
         ingame = true;
         ingame2 = false;
-        SceneManager.LoadScene("milioneirs");
+        SceneManager.LoadScene(Helpers.Scenes.Milioneirs);
         Time.timeScale = 1f;
     }
 
@@ -93,17 +77,15 @@ public class MiniGameMenu : MonoBehaviour
     {
         ingame = true;
         ingame2 = false;
-        SceneManager.LoadScene("puzzle");
+        SceneManager.LoadScene(Helpers.Scenes.Puzzle);
         Time.timeScale = 1f;
-
     }
 
     public void superPlatform()
     {
         ingame = true;
         ingame2 = false;
-        SceneManager.LoadScene("SuperPlatform");
+        SceneManager.LoadScene(Helpers.Scenes.SuperPlatform);
         Time.timeScale = 1f;
     }
-
 }
