@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e562956deda5b645a141de066b53b92, type: 3}
+  m_Name: New Character
+  m_EditorClassIdentifier: 
+  Welcome_Village2_PL: {fileID: 8300000, guid: ef84b876479ce0d40a571f3f76167dd4, type: 3}
+  Welcome_Village2_EN: {fileID: 8300000, guid: 5e3e1a6e8a801cc4799ccd52c6d7953f, type: 3}
+  Welcome_Village2_GER: {fileID: 8300000, guid: 0799cabc36b39f549a748c221bb5dcbb, type: 3}
+  Welcome_Village2_SPA: {fileID: 8300000, guid: ab0e74fdd0e06d84090e8be3d76428a4, type: 3}
+  Bar1_PL: {fileID: 8300000, guid: c2bd9104b83fe7444af3807417135fcc, type: 3}
+  Bar1_EN: {fileID: 8300000, guid: d556e414179cfeb49926e46bb2d8a6b2, type: 3}
+  Bar1_GER: {fileID: 8300000, guid: 7d9db65aeb5d2b044a951df497c62c8e, type: 3}
+  Bar1_SPA: {fileID: 8300000, guid: 6ee81a7dca4748440898b5e57463c267, type: 3}
+  Bar2_PL: {fileID: 8300000, guid: 7b732067af302424aa5f9af2fe8e2eb9, type: 3}
+  Bar2_EN: {fileID: 8300000, guid: 0d238b15eb48c204abec989f79a5ab01, type: 3}
+  Bar2_GER: {fileID: 8300000, guid: aa1e2ed84972f8f46bba0d5488ea3cbf, type: 3}
+  Bar2_SPA: {fileID: 8300000, guid: 92e0b0691f322f246903606e8f356ae1, type: 3}
+  Roszkol1_PL: {fileID: 8300000, guid: dcc634083451e3e45bdf4b4e4d50b38a, type: 3}
+  Roszkol1_EN: {fileID: 8300000, guid: 56d3be81dabf7f24687f3f72c1fa0564, type: 3}
+  Roszkol1_GER: {fileID: 8300000, guid: 303d509f7479735429f5a85142b075c9, type: 3}
+  Roszkol1_SPA: {fileID: 8300000, guid: bf74b913d5e954f49ad5e5d7f38a53e1, type: 3}
+  Roszkol2_PL: {fileID: 8300000, guid: 549ee51fef3b6ac4cbd8854b85a4947a, type: 3}
+  Roszkol2_EN: {fileID: 8300000, guid: 6e0e6c015141df74c964c9766cc5e9df, type: 3}
+  Roszkol2_GER: {fileID: 8300000, guid: 3d8a19917ea212e42901874dab6fb9c2, type: 3}
+  Roszkol2_SPA: {fileID: 8300000, guid: 440b7df7e424ff749a202ccdf7d26002, type: 3}
+  Orzel_welcome_PL: {fileID: 8300000, guid: 19623c8be4379424aa44a475efafdfbc, type: 3}
+  Orzel_welcome_EN: {fileID: 8300000, guid: 2758a1821ded028478aa55f7c71b4275, type: 3}
+  Orzel_welcome_GER: {fileID: 8300000, guid: 00ebab2ec93c62741bc4d7c91a2a62a6, type: 3}
+  Orzel_welcome_SPA: {fileID: 8300000, guid: bc16d2eea016e204f8ad7fba0e7712e7, type: 3}
+  Orzel_glasses_PL: {fileID: 8300000, guid: dbed997d554e04646bbe00b8013a3078, type: 3}
+  Orzel_glasses_EN: {fileID: 8300000, guid: 15e274e10dfc345459abfe4858cbdf3c, type: 3}
+  Orzel_glasses_GER: {fileID: 8300000, guid: 205cfa86c92625448bb0d99f48bb0ac9, type: 3}
+  Orzel_glasses_SPA: {fileID: 8300000, guid: 3e1b46b5829d7f24b9e8a93b76cf24f0, type: 3}
+  Orzel_tunel_PL: {fileID: 8300000, guid: 3455f508d891fec4aa3558b08ecaf3b0, type: 3}
+  Orzel_tunel_EN: {fileID: 8300000, guid: 74392df953983204f8ecdacfad8d550a, type: 3}
+  Orzel_tunel_GER: {fileID: 8300000, guid: 29fc560a270197d4e94f959b71c4cbfd, type: 3}
+  Orzel_tunel_SPA: {fileID: 8300000, guid: 7e8d6856d39108c4086fac7f481d6970, type: 3}
+  Orzel_laptop_PL: {fileID: 8300000, guid: 4264b0024bfbfe7409c6d5957ed12bd9, type: 3}
+  Orzel_laptop_EN: {fileID: 8300000, guid: 4b5113efe208a564e829ad1fd06bed58, type: 3}
+  Orzel_laptop_GER: {fileID: 8300000, guid: 5055986b5dd42764da30fefdffc81259, type: 3}
+  Orzel_laptop_SPA: {fileID: 8300000, guid: 1ea64eeadc315ea4bb3f5250ef54c40f, type: 3}
+  Village1_PL: {fileID: 8300000, guid: f17554091f17ab942b01bfb47838a8e4, type: 3}
+  Village1_EN: {fileID: 8300000, guid: f13fd60fc9b969545b06d2b3106959e7, type: 3}
+  Village1_GER: {fileID: 8300000, guid: 592c5f6464570fb41870ae19675602ac, type: 3}
+  Village1_SPA: {fileID: 8300000, guid: 7f10a5bddf2bec74095359414ad29a89, type: 3}
+  Village1Man_PL: {fileID: 8300000, guid: f3cff1f2bc0c2bb43898fe2741562ae4, type: 3}
+  Village1Man_EN: {fileID: 8300000, guid: 65fd8e1b935aacb42b61b0b176de7b45, type: 3}
+  Village1Man_GER: {fileID: 8300000, guid: 745521da8cf231d4f9de5cbdbe98fba4, type: 3}
+  Village1Man_SPA: {fileID: 8300000, guid: a0cc641ab1b4d8e47a6f6c0227ea8750, type: 3}
