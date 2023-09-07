@@ -15,15 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Village2.unity
     guid: c5a1419e485e441e39199248fae41053
   - enabled: 1
-    path: Assets/mini_gry/Super_Platform/Scenes/SuperPlatform.unity
+    path: Assets/MiniGames/Games/SuperPlatform/Scenes/SuperPlatform.unity
     guid: 60b1b2a645f77474cbf92f200493820a
   - enabled: 1
     path: Assets/Scenes/empty.unity
     guid: c9ad6271f33f813418470d425506cfbc
   - enabled: 1
-    path: Assets/mini_gry/puzzle/Scenes/puzzle.unity
+    path: Assets/MiniGames/Games/Puzzle/Scenes/puzzle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/mini_gry/milioneirs/Scenes/milioneirs.unity
+    path: Assets/MiniGames/Games/Milioneirs/Scenes/milioneirs.unity
     guid: 171524a466ca2d84daec75ea9a6dbf97
   m_configObjects: {}
