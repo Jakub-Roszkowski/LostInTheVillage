@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c718285a1be82448ce9d50f6d861b4, type: 3}
+  m_Name: M4A1
+  m_EditorClassIdentifier: 
+  Range: 60
+  Damage: 10
+  MagazineAMMO: 30
+  ReloadTime: 3
+  impactForce: 150
+  fireRate: 10
+  shoot: {fileID: 8300000, guid: e372607efafb9d14298adc2d871ebcfd, type: 3}
+  ReloadSound: {fileID: 8300000, guid: 968a18ffaf5703a47a9a44f601fad801, type: 3}
+  headshoot: {fileID: 8300000, guid: 2603784a7ec1d8e42ba6155b8acbdb27, type: 3}
