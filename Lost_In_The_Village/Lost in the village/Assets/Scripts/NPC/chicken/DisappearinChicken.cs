@@ -1,30 +1,28 @@
 using UnityEngine;
 
-public class DisappearinChicken : MonoBehaviour
+namespace LostInTheVillage.NPC.Chicken
 {
-    [SerializeField] private AudioSource BGM;
-    [SerializeField] private AudioClip die;
-
-    private void Start()
+    public class DisappearinChicken : MonoBehaviour
     {
+        [SerializeField] private AudioSource BGM;
+        [SerializeField] private AudioClip die;
 
-    }
+        public void Disappear()
+        {
+            ChangeBGM(die);
+            Invoke("HideObject", 0.7f);
+        }
 
-    public void Disappear()
-    {
-        ChangeBGM(die);
-        Invoke("HideObject", 0.7f);
-    }
+        public void ChangeBGM(AudioClip music)
+        {
+            BGM.Stop();
+            BGM.clip = music;
+            BGM.Play();
+        }
 
-    public void ChangeBGM(AudioClip music)
-    {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
-    }
-
-    private void HideObject()
-    {
-        Destroy(gameObject);
+        private void HideObject()
+        {
+            Destroy(gameObject);
+        }
     }
 }

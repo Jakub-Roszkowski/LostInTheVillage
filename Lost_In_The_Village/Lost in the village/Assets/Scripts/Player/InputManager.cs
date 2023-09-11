@@ -1,51 +1,54 @@
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    private PlayerInput playerInput;
-    public PlayerInput.OnFootActions onFoot;
+    public class InputManager : MonoBehaviour
+    {        
+        public PlayerInput.OnFootActions OnFoot { get; private set; }
 
-    private PlayerMotor motor;
-    private PlayerLook look;
+        private PlayerInput playerInput;
+        private PlayerMotor motor;
+        private PlayerLook look;
 
-    private bool isRunning = false;
+        private bool isRunning = false;
 
-    void Awake()
-    {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
+        private void Awake()
+        {
+            playerInput = new PlayerInput();
+            OnFoot = playerInput.OnFoot;
 
-        motor = GetComponent<PlayerMotor>();
-        look = GetComponent<PlayerLook>();
+            motor = GetComponent<PlayerMotor>();
+            look = GetComponent<PlayerLook>();
 
-        onFoot.Jump.performed += ctx => motor.Jump();
+            OnFoot.Jump.performed += ctx => motor.Jump();
 
-        onFoot.Run.performed += ctx => SetRunning(true);
-        onFoot.Run.canceled += ctx => SetRunning(false);
-    }
+            OnFoot.Run.performed += ctx => SetRunning(true);
+            OnFoot.Run.canceled += ctx => SetRunning(false);
+        }
 
-    void Update()
-    {
-        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>(), isRunning);
-    }
+        private void Update()
+        {
+            motor.ProcessMove(OnFoot.Movement.ReadValue<Vector2>(), isRunning);
+        }
 
-    private void LateUpdate()
-    {
-        look.ProcessLook(onFoot.Look.ReadValue<Vector2>());
-    }
+        private void LateUpdate()
+        {
+            look.ProcessLook(OnFoot.Look.ReadValue<Vector2>());
+        }
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
+        private void OnEnable()
+        {
+            OnFoot.Enable();
+        }
 
-    private void OnDisable()
-    {
-        onFoot.Disable();
-    }
+        private void OnDisable()
+        {
+            OnFoot.Disable();
+        }
 
-    private void SetRunning(bool isRunning)
-    {
-        this.isRunning = isRunning;
+        private void SetRunning(bool isRunning)
+        {
+            this.isRunning = isRunning;
+        }
     }
 }

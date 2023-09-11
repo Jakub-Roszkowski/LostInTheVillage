@@ -1,29 +1,22 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class welcomePanel : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.SuperPlatform.Scripts
 {
-    public GameObject PanelNick;
-    // Start is called before the first frame update
-    void Start()
+    public class WelcomePanel : MonoBehaviour
     {
-        
-    }
+        public GameObject PanelNick;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button2))
+        private void Update()
         {
-            PanelNick.SetActive(false);
-            PlayerPlatform.start = true;
-            PlayerPlatform.start_movement = true;
+            if (Input.GetKey(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button2))
+            {
+                PanelNick.SetActive(false);
+                PlayerPlatform.start = true;
+                PlayerPlatform.start_movement = true;
 
-            PlayerPlatform.timestart = DateTime.Now;
-
-
+                PlayerPlatform.timestart = DateTime.Now;
+            }
         }
     }
 }

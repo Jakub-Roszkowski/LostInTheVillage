@@ -1,12 +1,12 @@
-namespace Helpers
+namespace LostInTheVillage.Helpers
 {
     public class Scenes
     {
-        readonly public static string Village1 = "Village1";
-        readonly public static string Village2 = "Village2";
-        readonly public static string Empty = "empty";
-        readonly public static string Milioneirs = "milioneirs";
-        readonly public static string SuperPlatform = "SuperPlatform";
-        readonly public static string Puzzle = "puzzle";
+        public static string Village1 { get; } = "Village1";
+        public static string Village2 { get; } = "Village2";
+        public static string Empty { get; } = "empty";
+        public static string Milioneirs { get; } = "milioneirs";
+        public static string SuperPlatform { get; } = "SuperPlatform";
+        public static string Puzzle { get; } = "puzzle";
     }
 }

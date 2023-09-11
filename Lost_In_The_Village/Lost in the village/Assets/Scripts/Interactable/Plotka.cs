@@ -1,50 +1,50 @@
+using LostInTheVillage.Character;
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
 using TMPro;
 using UnityEngine;
 
-public class Plotka : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private GameObject objToActive;
-    [SerializeField] private TextMeshProUGUI destinationText;
-    [SerializeField] private CharacterMessage Roszkol;
-
-    public static bool toFeed;
-
-    private string promptMessageTemp;
-
-    void Start()
+    public class Plotka : AbstractInteractableObject
     {
-        toFeed = false;
-    }
-    void Update()
-    {
-    }
+        [SerializeField] private GameObject objToActive;
+        [SerializeField] private TextMeshProUGUI destinationText;
+        [SerializeField] private CharacterMessage roszkolCharacter;
 
-    protected override void Interact()
-    {
-        if (toFeed)
-            promptMessageTemp = Helpers.Languages.SetTextFeed();
-        else
-            promptMessageTemp = "";
-    }
+        public static bool IsToFeed { get; set; }
 
-    protected override void Interact2()
-    {
-        if (toFeed)
+        private string promptMessageTemp;
+
+        private void Start()
         {
-            objToActive.SetActive(true);
-            gameObject.SetActive(false);
-            Roszkol.place = Place_enum.Roszkol2;
-            setText();
+            IsToFeed = false;
         }
-    }
 
-    private void setText()
-    {
-        destinationText.text = Helpers.Languages.SetTextFindRoszkol();
-    }
+        protected override void Interact()
+        {
+            promptMessageTemp = IsToFeed ? Languages.SetTextFeed() : "";
+        }
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+        protected override void Interact2()
+        {
+            if (IsToFeed)
+            {
+                objToActive.SetActive(true);
+                gameObject.SetActive(false);
+                roszkolCharacter.Place = PlaceEnum.Roszkol2;
+                setDestinationText();
+            }
+        }
+
+        private void setDestinationText()
+        {
+            destinationText.text = Languages.SetTextFindRoszkol();
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

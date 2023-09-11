@@ -1,58 +1,58 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
-public class DoorEvacuation : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private GameObject objectToActivate;
-    [SerializeField] private GameObject[] objectsToDeactivate;
-
-    public static bool toSee = false;
-
-    private string promptMessageTemp;
-    private string text;
-    private string text2;
-
-    private void Start()
+    public class DoorEvacuation : AbstractInteractableObject
     {
-        toSee = false;
-    }
+        [SerializeField] private GameObject objectToActivate;
+        [SerializeField] private GameObject[] objectsToDeactivate;
 
-    protected override void Interact()
-    {
-        text = Helpers.Languages.SetTextDoorEvacuationInteract();
-        text2 = Helpers.Languages.SetTextDoorEvacuationInteract2();
+        public static bool IsToSee { get; set; } = false;
 
-        if (toSee)
-            promptMessageTemp = text;
-        else
-            promptMessageTemp = text2;
-    }
+        private string promptMessageTemp;
 
-    protected override void Interact2()
-    {
-        if (toSee)
+        private void Start()
         {
-            ActivateObjects();
-        }
-    }
-
-    private void ActivateObjects()
-    {
-        if (objectToActivate != null)
-        {
-            objectToActivate.SetActive(true);
+            IsToSee = false;
         }
 
-        foreach (var obj in objectsToDeactivate)
+        protected override void Interact()
         {
-            if (obj != null)
+            string text1 = Languages.SetTextDoorEvacuationInteract();
+            string text2 = Languages.SetTextDoorEvacuationInteract2();
+
+            promptMessageTemp = IsToSee ? text1 : text2;
+        }
+
+        protected override void Interact2()
+        {
+            if (IsToSee)
             {
-                obj.SetActive(false);
+                ActivateObjects();
             }
         }
-    }
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+        private void ActivateObjects()
+        {
+            if (objectToActivate != null)
+            {
+                objectToActivate.SetActive(true);
+            }
+
+            foreach (var obj in objectsToDeactivate)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(false);
+                }
+            }
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

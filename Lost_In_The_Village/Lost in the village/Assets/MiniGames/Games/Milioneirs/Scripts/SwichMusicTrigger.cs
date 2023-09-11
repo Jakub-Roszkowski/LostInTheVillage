@@ -1,43 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SwichMusicTrigger : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 {
-
-    public AudioClip newTrackBGM;
-    public AudioClip newTrackWIN;
-    public AudioClip newTrackLose;
-    private Music theAM;
-    // Start is called before the first frame update
-    void Start()
+    public class SwichMusicTrigger : MonoBehaviour
     {
-        theAM = FindObjectOfType<Music>();
-    }
+        [SerializeField] private AudioClip newTrackBGM;
+        [SerializeField] private AudioClip newTrackWIN;
+        [SerializeField] private AudioClip newTrackLose;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (test_milioneirs.CurrentPosition >= 13)
+        private Music music;
+
+        void Start()
         {
-            theAM.ChangeBGM(newTrackWIN);
-        }
-        else if (QestionText.lose)
-        {
-            theAM.ChangeBGM(newTrackLose);
-        }
-        else if (!INPUT_NICK.start)
-        {
-            theAM.ChangeBGM(newTrackBGM);
+            music = FindObjectOfType<Music>();
         }
 
-
-
-    }
-
-    public void OnTrigger()
-    {
-
-
+        void Update()
+        {
+            if (TestMilioneirs.CurrentPosition >= 13)
+            {
+                music.ChangeBGM(newTrackWIN);
+            }
+            else if (QestionText.lose)
+            {
+                music.ChangeBGM(newTrackLose);
+            }
+            else if (InputNick.IsStart)
+            {
+                music.ChangeBGM(newTrackBGM);
+            }
+        }
     }
 }

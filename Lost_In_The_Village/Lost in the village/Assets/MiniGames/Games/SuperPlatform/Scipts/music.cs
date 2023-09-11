@@ -1,60 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+using LostInTheVillage.Menus;
 using TMPro;
+using UnityEngine;
 
-public class music : MonoBehaviour
+namespace Minigames.Games.SuperPlatform.Scripts
 {
-    // Start is called before the first frame update
-
-    public TMP_Text Mute_TMP;
-    public AudioSource BGM;
-    public GameObject muteSounds_button;
-
-    private bool mute = false;
-
-
-    private AudioSource audioSource;
-    private float glosnosc;
-    void Start()
+    public class Music : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-        glosnosc = audioSource.volume;
-    }
+        public TMP_Text Mute_TMP;
+        public AudioSource BGM;
+        public GameObject muteSounds_button;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (mute) Mute_TMP.text = "0";
-        //else Mute_TMP.text = "1";
+        private bool mute = false;
 
-        //muteSounds_button.transform.GetComponent<Button>().onClick.AddListener(onClickButton);
-        //if (Input.GetKeyDown(KeyCode.Joystick1Button5)) onClickButton();
-        if (Pause.MusicisMute)
+        private AudioSource audioSource;
+        private float startVolume;
+
+        private void Start()
         {
-            audioSource.volume = 0f;
-        }
-        else
-        {
-            audioSource.volume = glosnosc;
-        }
-    }
-
-
-
-    private void onClickButton()
-    {
-        if (!mute)
-        {
-            BGM.volume = 0f;
-            mute = true;
+            audioSource = GetComponent<AudioSource>();
+            startVolume = audioSource.volume;
         }
 
-        else
+        private void Update()
         {
-            BGM.volume = 0.2f;
-            mute = false;
+            if (Pause.MusicIsMute)
+            {
+                audioSource.volume = 0f;
+            }
+            else
+            {
+                audioSource.volume = startVolume;
+            }
         }
     }
 }

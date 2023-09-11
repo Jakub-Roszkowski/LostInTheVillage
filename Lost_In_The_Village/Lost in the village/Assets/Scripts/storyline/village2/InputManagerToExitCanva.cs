@@ -1,28 +1,26 @@
 using UnityEngine;
 
-public class InputManagerToExitCanva : MonoBehaviour
+namespace LostInTheVillage.Storyline.Village2
 {
-    private PlayerInput playerInput;
-    public PlayerInput.OnFootActions onFoot;
-
-    void Awake()
+    public class InputManagerToExitCanva : MonoBehaviour
     {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
-    }
+        private PlayerInput playerInput;
+        public PlayerInput.OnFootActions onFoot;
 
-    void Update()
-    {
+        private void Awake()
+        {
+            playerInput = new PlayerInput();
+            onFoot = playerInput.OnFoot;
+        }
 
-    }
+        private void OnEnable()
+        {
+            onFoot.Enable();
+        }
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
-
-    private void OnDisable()
-    {
-        onFoot.Disable();
+        private void OnDisable()
+        {
+            onFoot.Disable();
+        }
     }
 }

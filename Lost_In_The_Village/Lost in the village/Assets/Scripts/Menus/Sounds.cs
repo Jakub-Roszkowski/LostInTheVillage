@@ -1,34 +1,37 @@
 using UnityEngine;
 
-public class Sounds : MonoBehaviour
+namespace LostInTheVillage.Menus
 {
-    private AudioSource audioSource;
-    private float volume;
-
-    void Start()
+    public class Sounds : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-        volume = audioSource.volume;
-    }
+        private AudioSource audioSource;
+        private float startVolume;
 
-    void Update()
-    {
-        if (Pause.GameIsPaused)
+        private void Start()
         {
-            audioSource.volume = 0f;
-        }
-        else
-        {
-            audioSource.volume = volume;
+            audioSource = GetComponent<AudioSource>();
+            startVolume = audioSource.volume;
         }
 
-        if (Pause.SoundisMute)
+        private void Update()
         {
-            audioSource.volume = 0f;
-        }
-        else
-        {
-            audioSource.volume = volume;
+            if (Pause.GameIsPaused)
+            {
+                audioSource.volume = 0f;
+            }
+            else
+            {
+                audioSource.volume = startVolume;
+            }
+
+            if (Pause.SoundIsMute)
+            {
+                audioSource.volume = 0f;
+            }
+            else
+            {
+                audioSource.volume = startVolume;
+            }
         }
     }
 }

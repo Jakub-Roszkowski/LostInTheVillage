@@ -1,37 +1,40 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Player;
 using UnityEngine;
 
-public class WeaponPickup : MonoBehaviour
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private GunManager gunManager;
-
-    public string promptMessage;
-
-    private string text;
-    private bool isToSee = false;
-
-    public void Interact(GameObject wepaon)
+    public class WeaponPickup : MonoBehaviour
     {
-        text = Helpers.Languages.SetTextPickUp();
+        [SerializeField] private GunManager gunManager;
 
-        if (!gunManager.IsTheSame(wepaon))
-        {
-            promptMessage = text;
-            isToSee = true;
-        }
-        else
-        {
-            promptMessage = "";
-            isToSee = false;
-        }
-    }
+        public string PromptMessage { get; private set; }
 
-    public void Interact2(GameObject weapon)
-    {
-        if (isToSee)
+        private bool isToSee = false;
+
+        public void Interact(GameObject wepaon)
         {
-            gunManager.PickupWeapon(weapon.tag);
-            gunManager.DropWeapon(weapon.tag);
-            weapon.SetActive(false);
+            string pickupText = Languages.SetTextPickUp();
+
+            if (!gunManager.IsTheSame(wepaon))
+            {
+                PromptMessage = pickupText;
+                isToSee = true;
+            }
+            else
+            {
+                PromptMessage = "";
+                isToSee = false;
+            }
+        }
+
+        public void Interact2(GameObject weapon)
+        {
+            if (isToSee)
+            {
+                gunManager.PickupWeapon(weapon.tag);
+                weapon.SetActive(false);
+            }
         }
     }
 }

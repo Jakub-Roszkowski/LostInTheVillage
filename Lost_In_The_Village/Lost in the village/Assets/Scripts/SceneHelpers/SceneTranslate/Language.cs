@@ -1,33 +1,38 @@
+using LostInTheVillage.Helpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Language : MonoBehaviour
+
+namespace LostInTheVillage.SceneHelpers.SceneTranslate
 {
-    public static Language_enum language = Language_enum.Polish;
-    public string sceneName = Helpers.Scenes.Village1;
-    AsyncOperation asyncOperation;
-    public void Start()
+    public class Language : MonoBehaviour
     {
-        asyncOperation = SceneManager.LoadSceneAsync(sceneName);
-        asyncOperation.allowSceneActivation = false;
-    }
-    public void polish()
-    {
-        language = Language_enum.Polish;
-        asyncOperation.allowSceneActivation = true;
-    }
-    public void enlish()
-    {
-        language = Language_enum.English;
-        asyncOperation.allowSceneActivation = true;
-    }
-    public void german()
-    {
-        language = Language_enum.German;
-        asyncOperation.allowSceneActivation = true;
-    }
-    public void spanish()
-    {
-        language = Language_enum.Spain;
-        asyncOperation.allowSceneActivation = true;
+        public static LanguageEnum LanguageName = LanguageEnum.Polish;
+        private string sceneName = Scenes.Village1;
+        AsyncOperation asyncOperation;
+        private void Start()
+        {
+            asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+            asyncOperation.allowSceneActivation = false;
+        }
+        public void Polish()
+        {
+            LanguageName = LanguageEnum.Polish;
+            asyncOperation.allowSceneActivation = true;
+        }
+        public void Enlish()
+        {
+            LanguageName = LanguageEnum.English;
+            asyncOperation.allowSceneActivation = true;
+        }
+        public void German()
+        {
+            LanguageName = LanguageEnum.German;
+            asyncOperation.allowSceneActivation = true;
+        }
+        public void Spanish()
+        {
+            LanguageName = LanguageEnum.Spanish;
+            asyncOperation.allowSceneActivation = true;
+        }
     }
 }

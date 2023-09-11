@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class sceneMenager2 : MonoBehaviour
+namespace LostInTheVillage.SceneHelpers.SceneMenager
 {
-    public static string currentScene;
-
-    void Start()
+    public class SceneMenager2 : MonoBehaviour
     {
-
-    }
-
-    void Update()
-    {
-
+        public static string currentScene;
     }
 }

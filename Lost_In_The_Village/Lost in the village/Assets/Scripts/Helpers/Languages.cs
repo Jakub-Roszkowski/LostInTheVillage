@@ -1,33 +1,38 @@
-﻿public enum Language_enum
-{
-    Polish,
-    English,
-    German,
-    Spain
-}
+﻿using LostInTheVillage.SceneHelpers.SceneTranslate;
 
-namespace Helpers
+namespace LostInTheVillage.Helpers
 {
+    #region Enum
+    public enum LanguageEnum
+    {
+        Polish,
+        English,
+        German,
+        Spanish
+    }
+    #endregion
+
     public static class Languages
     {
+        #region Defoult
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Defoult
         public static string SetTextNotAvailable()
         {
             string text = "";
 
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Niedostępne";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Not available";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Nicht verfügbar";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "No disponible)";
                     break;
             }
@@ -36,18 +41,18 @@ namespace Helpers
         public static string SetTextEagle()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Orzeł";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Eagle";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Adler";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Águila";
                     break;
             }
@@ -56,18 +61,18 @@ namespace Helpers
         public static string SetTextFindRoszkol()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "znajdź Roszkola";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Find Roszkol";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Finde Roszkol";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Encuentra Roszkol";
                     break;
             }
@@ -76,40 +81,42 @@ namespace Helpers
         public static string SetTextPickUp()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Podnieś (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Pick up (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Abholen (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Levantar (E)";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Control
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //control
         public static string SetTextControlInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Sterowanie (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Control (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Kontrolle (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Mando (E)";
                     break;
             }
@@ -119,9 +126,9 @@ namespace Helpers
         public static string SetTextControl()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Sterowanie:" + "\n" +
                         "WSAD - poruszanie się " + "\n" +
                         "spacja - skok" + "\n" +
@@ -134,7 +141,7 @@ namespace Helpers
                         "Q - zamkniecie wiadomosci" + "\n" +
                         "";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Controls:" + "\n" +
                          "WSAD - moving " + "\n" +
                          "space - jump" + "\n" +
@@ -147,7 +154,7 @@ namespace Helpers
                          "Q - close message" + "\n" +
                          "";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Kontrolle:" + "\n“" +
                          "WSAD – Verschieben" + "\n" +
                          "Leertaste – Sprung" + "\n" +
@@ -160,7 +167,7 @@ namespace Helpers
                          "Q – Nachricht schließen" + "\n" +
                          "";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Controles:" + "\n" +
                          "WSAD - moviendo" + "\n" +
                          "espacio - saltar" + "\n" +
@@ -176,23 +183,25 @@ namespace Helpers
             }
             return text;
         }
+        #endregion
+        #region Character
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //character
         public static string SetTextCharacterInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Rozmawiaj (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Talk (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Reden (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Hablar (E)";
                     break;
             }
@@ -202,62 +211,66 @@ namespace Helpers
         public static string SetTextCharacterInteract2()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Rozmowa niedostępna";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Conversation unavailable";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Konversation nicht verfügbar";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Conversación no disponible";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Console
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Console
         public static string SetTextConsoleInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Zagraj na konsoli (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Play on gameconsole (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Spielen Sie auf der Spielekonsole. (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Juega en la consola de juegos. (E)";
                     break;
             }
             return text;
         }
+        #endregion
+        #region GameMessage
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //GameMessage
         public static string SetTextGameInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Podejdź do komputera";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Go to the computer";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Gehen Sie zum Computer";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Ir a la computadora";
                     break;
             }
@@ -266,40 +279,42 @@ namespace Helpers
         public static string SetTextGameMessage()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Roszkol postanowił zabezpieczyć wejście do swojego domu prostą grą którą uruchomisz na komputerze przy wejściu.";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Roszkol decided to secure the entrance to his house with a simple game that you will run on the computer at the entrance.";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Roszkol beschloss, den Eingang zu seinem Haus mit einem einfachen Spiel zu sichern, das Sie am Eingang auf dem Computer ausführen.";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Roszkol decidió asegurar la entrada a su casa con un juego simple que ejecutará en la computadora en la entrada.";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Wine
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //wine
         public static string SetTextOnDestroyWine()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "kelnerka";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "waitress";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Kellnerin";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "camarera";
                     break;
             }
@@ -308,40 +323,42 @@ namespace Helpers
         public static string SetTextWineInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Napij się wina (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Drink some wine (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Trink etwas Wein (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Toma un poco de vino (E)";
                     break;
             }
             return text;
         }
+        #endregion
+        #region DoorEvacuation
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //door evacuation
         public static string SetTextDoorEvacuationInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Otwórz bramę (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Open the gate (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "öffne das Tor (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "abre la puerta (E)";
                     break;
             }
@@ -351,203 +368,217 @@ namespace Helpers
         public static string SetTextDoorEvacuationInteract2()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "JSOS jeszcze nie działa";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Not available";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Nicht verfügbar";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "No disponible)";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Laptop
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Laptop
         public static string SetTextLaptopInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Uruchom (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Run (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Laufen (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Correr (E)";
                     break;
             }
             return text;
         }
-
+        #endregion
+        #region Backup
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Backup
         public static string SetTextBackupInteract()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Uruchom (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Run (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Laufen (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Correr (E)";
                     break;
             }
             return text;
         }
-
+        #endregion
+        #region DestinationVillage2
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Destination Village2
         public static string SetDestinationVillage2()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Porozmawiaj z człowiekiem przed wioską";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Talk to the man outside the village";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Sprich mit dem Mann außerhalb des Dorfes";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Habla con el hombre fuera del pueblo.";
                     break;
             }
             return text;
         }
+        #endregion
+        #region CentralVillage1
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Central Village1
         public static string SetTextCentalBuild()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Centrala";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Headquarters";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Zentral";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "la sede";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Glasses
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Glasses
         public static string SetTextDonut()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Dostajesz";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "You get";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Du erhältst";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Usted obtiene";
                     break;
             }
             return text;
         }
-
+        #endregion
+        #region GameToIn
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Game to in
         public static string SetTextGameToIn()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Zagraj (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Play (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Spielen (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Jugar (E)";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Plotka
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Płotka
         public static string SetTextFeed()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Nakarm Płotke (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Feed Roach (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Füttern Plötze (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "alimentar Sardinilla(E)";
                     break;
             }
             return text;
         }
+        #endregion
+        #region Open/Close
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Open/Close
         public static string SetTextOpenClose()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Otworz / Zamknij (E)";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Open / Close (E)";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Öffnen / Schließen (E)";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Abrir / Cerrar (E)";
                     break;
             }
             return text;
         }
-
+        #endregion
+        #region Menu
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //Menu
         public static (string, string, string, string, string, string, string, string, string) SetTextMenu()
@@ -562,9 +593,9 @@ namespace Helpers
             string Music = "";
             string Sounds = "";
 
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     Resume = "Wznów";
                     Restart = "Rozpocznij gre na nowo";
                     GameLevel = "Poziom trudności:";
@@ -575,7 +606,7 @@ namespace Helpers
                     Music = "Wycisz muzykę";
                     Sounds = "Wycisz efekty dźwiękowe";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     Resume = "Resume";
                     Restart = "Restat Game";
                     GameLevel = "Difficulty level:";
@@ -586,7 +617,7 @@ namespace Helpers
                     Music = "Mute music";
                     Sounds = "Mute sound effects";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     Resume = "Fortsetzen";
                     Restart = "Das Spiel neu starten";
                     GameLevel = "Schwierigkeitsgrad:";
@@ -597,7 +628,7 @@ namespace Helpers
                     Music = "Musik stummschalten";
                     Sounds = "Soundeffekte stummschalten";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     Resume = "Continuar";
                     Restart = "Reiniciar el juego";
                     GameLevel = "Nivel de dificultad:";
@@ -611,6 +642,8 @@ namespace Helpers
             }
             return (Resume,Restart,GameLevel,Easy,Medium,Hard,Quit,Music,Sounds);
         }
+        #endregion
+        #region MiniGames
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
         //________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -619,21 +652,21 @@ namespace Helpers
         public static string SetTextExitPanel()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Aby uruchomić ponownie naciśnij klawisz F8" + "\n" +
                         "Aby zamknąć gre naciśnij F9";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "To restart, press the F8 key." + "\n" +
                         "To close the game, press F9.";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Um neu zu starten, drücke die F8-Taste." + "\n" +
                         "Um das Spiel zu schließen, drücke die F9-Taste.";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Para reiniciar, presiona la tecla F8." + "\n" +
                         "Para cerrar el juego, presiona la tecla F9.";
                     break;
@@ -645,18 +678,18 @@ namespace Helpers
         public static string SetTextFriendTelephone()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Drogi przyjacielu moim skromnym zdaniem poprawna odpowiedź to: ";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "Dear friend, in my humble opinion, the correct answer is: ";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Lieber Freund, meiner bescheidenen Meinung nach ist die richtige Antwort: ";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Querido amigo, en mi humilde opinión, la respuesta correcta es: ";
                     break;
             }
@@ -666,18 +699,18 @@ namespace Helpers
         public static string SetTextPublicAnswear()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "Tak odpowiedziała publiczność:";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "This is how the audience responded:";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "So hat das Publikum geantwortet:";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "Así respondió la audiencia:";
                     break;
             }
@@ -687,18 +720,18 @@ namespace Helpers
         public static string SetTextWin()
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = " Wygrałeś: ";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = " You won: ";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = " Du hast gewonnen: ";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = " ¡Has ganado! ";
                     break;
             }
@@ -709,18 +742,18 @@ namespace Helpers
         public static string SetTextPuzzle(string time)
         {
             string text = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text = "wygrałeś w czasie:\n" + time + "\n" + "Naciśnij F8 aby zacząć ponownie" + "\n" + "Naciśnij F9 aby wyjść";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text = "you won in time:\n" + time + "\n" + "Press F8 to start again" + "\n" + "Press F9 to exit";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text = "Sie haben in der Zeit gewonnen:\n" + time + "\n" + "Drücken Sie F8, um erneut zu beginnen" + "\n" + "Drücken Sie F9, um zu beenden";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text = "ganaste a tiempo:\n" + time + "\n" + "Presiona F8 para comenzar de nuevo" + "\n" + "Presiona F9 para salir";
                     break;
             }
@@ -736,9 +769,9 @@ namespace Helpers
             string text4 = "";
             string text5 = "";
             string text6 = "";
-            switch (Language.language)
+            switch (Language.LanguageName)
             {
-                case Language_enum.Polish:
+                case LanguageEnum.Polish:
                     text1 = "Wygrałeś";
                     text2 = "Przegrałeś";
                     text3 = "Czas:";
@@ -746,7 +779,7 @@ namespace Helpers
                     text5 = "[Naciśnij F8 aby uruchomić ponownie]";
                     text6 = "[Naciśnij F9 aby skończyć gre]";
                     break;
-                case Language_enum.English:
+                case LanguageEnum.English:
                     text1 = "You won!";
                     text2 = "You lost!";
                     text3 = "Time:";
@@ -754,7 +787,7 @@ namespace Helpers
                     text5 = "[Press F8 to restart]";
                     text6 = "[Press F9 to end the game]";
                     break;
-                case Language_enum.German:
+                case LanguageEnum.German:
                     text1 = "Du hast gewonnen!";
                     text2 = "Du hast verloren!";
                     text3 = "Zeit:";
@@ -762,7 +795,7 @@ namespace Helpers
                     text5 = "[Drücken Sie F8, um neu zu starten]";
                     text6 = "[Drücken Sie F9, um das Spiel zu beenden]";
                     break;
-                case Language_enum.Spain:
+                case LanguageEnum.Spanish:
                     text1 = "¡Ganaste!";
                     text2 = "¡Perdiste!";
                     text3 = "Tiempo:";
@@ -773,5 +806,6 @@ namespace Helpers
             }
             return (text1, text2, text3, text4, text5, text6);
         }
+        #endregion
     }
 }

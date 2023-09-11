@@ -1,51 +1,58 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
+using LostInTheVillage.Menus;
+using LostInTheVillage.Player;
 using UnityEngine;
 
-public class DonutInteract : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private AudioSource eatingSound;
-
-    public bool iseat = true;
-
-    private string promptMessageTemp;
-    
-    private static int value = 20;
-
-    private void Update()
+    public class DonutInteract : AbstractInteractableObject
     {
-        if (Pause.currentLevel == Level.Easy)
-        {
-            value = 30;
-        }
-        if (Pause.currentLevel == Level.Medium)
-        {
-            value = 20;
-        }
-        if (Pause.currentLevel == Level.Hard)
-        {
-            value = 5;
-        }
-    }
+        [SerializeField] private AudioSource eatingSound;
 
-    protected override void Interact()
-    {
-        promptMessageTemp = Helpers.Languages.SetTextDonut() + " " + value + " HP (E)";
-    }
+        private bool iseat = true;
 
-    protected override void Interact2()
-    {
-        Health playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
+        private string promptMessageTemp;
 
-        if (playerHealth != null && iseat)
+        private static int value = 20;
+
+        private void Update()
         {
-            playerHealth.RestoreHealth(value);
-            eatingSound.Play();
-            iseat = false;
-            Destroy(gameObject, 1);
+            if (Pause.CurrentLevel == Level.Easy)
+            {
+                value = ConfigNumbers.DonutRestorHpEasy;
+            }
+            if (Pause.CurrentLevel == Level.Medium)
+            {
+                value = ConfigNumbers.DonutRestorHpMedium;
+            }
+            if (Pause.CurrentLevel == Level.Hard)
+            {
+                value = ConfigNumbers.DonutRestorHpHard;
+            }
         }
-    }
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+        protected override void Interact()
+        {
+            promptMessageTemp = Languages.SetTextDonut() + " " + value + " HP (E)";
+        }
+
+        protected override void Interact2()
+        {
+            Health playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
+
+            if (playerHealth != null && iseat)
+            {
+                playerHealth.RestoreHealth(value);
+                eatingSound.Play();
+                iseat = false;
+                Destroy(gameObject, 1);
+            }
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

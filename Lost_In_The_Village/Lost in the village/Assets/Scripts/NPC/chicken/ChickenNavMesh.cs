@@ -2,45 +2,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChickenNavMesh : MonoBehaviour
+namespace LostInTheVillage.NPC.Chicken
 {
-    [SerializeField] private List<Transform> movePositionTransforms = new List<Transform>();
-    [SerializeField] private int avoidanceDistance = 5;
-
-    private NavMeshAgent navMeshAgent;
-    private int currentDestinationIndex = 0;
-
-    private void Awake()
+    public class ChickenNavMesh : MonoBehaviour
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-    }
+        [SerializeField] private List<Transform> movePositionTransforms = new List<Transform>();
+        [SerializeField] private int avoidanceDistance = 5;
 
-    private void Start()
-    {
-        SetRandomDestination();
-    }
+        private NavMeshAgent navMeshAgent;
+        private int currentDestinationIndex = 0;
 
-    private void Update()
-    {
-        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+        private void Awake()
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+
+        private void Start()
         {
             SetRandomDestination();
         }
-    }
 
-    private void SetRandomDestination()
-    {
-        int randomIndex = Random.Range(0, movePositionTransforms.Count);
-        currentDestinationIndex = randomIndex;
-        navMeshAgent.destination = movePositionTransforms[currentDestinationIndex].position;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("chicken"))
+        private void Update()
         {
-            Vector3 avoidanceDirection = transform.position - collision.transform.position;
-            navMeshAgent.destination = transform.position + avoidanceDirection.normalized * avoidanceDistance;
+            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+            {
+                SetRandomDestination();
+            }
+        }
+
+        private void SetRandomDestination()
+        {
+            int randomIndex = Random.Range(0, movePositionTransforms.Count);
+            currentDestinationIndex = randomIndex;
+            navMeshAgent.destination = movePositionTransforms[currentDestinationIndex].position;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("chicken"))
+            {
+                Vector3 avoidanceDirection = transform.position - collision.transform.position;
+                navMeshAgent.destination = transform.position + avoidanceDirection.normalized * avoidanceDistance;
+            }
         }
     }
 }

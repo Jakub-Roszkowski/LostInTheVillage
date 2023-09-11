@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class drunk : MonoBehaviour
+public class Drunk : MonoBehaviour
 {
     public Material material;
     private bool isEffectActive = false;
@@ -40,7 +40,6 @@ public class drunk : MonoBehaviour
         }
         else
         {
-            // Jeśli efekt jest wyłączony, przekazuj bez zmian
             Graphics.Blit(source, destination);
         }
     }

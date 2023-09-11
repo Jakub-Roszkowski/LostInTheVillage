@@ -1,31 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ReadNickname : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ReadNickname : MonoBehaviour
     {
-        
-    }
+        string playerNickname;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private void OnDisable()
+        {
+            PlayerPrefs.SetString("nickname", playerNickname);
+        }
 
-    string playerNickname;
-
-    void OnDisable()
-    {
-        PlayerPrefs.SetString("nickname", playerNickname);
-
-    }
-
-    public void SetNickname(string nickname)
-    {
-        playerNickname = nickname;
+        public void SetNickname(string nickname)
+        {
+            playerNickname = nickname;
+        }
     }
 }

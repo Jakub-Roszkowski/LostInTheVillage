@@ -105,9 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c7f002db2f28942bb7b9eb3b2ccd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fire: {fileID: 3283742906654421595}
+  explosionParticle: {fileID: 3283742906654421595}
   BGM: {fileID: 3283742908419486578}
-  boom: {fileID: 8300000, guid: bb49853d92f23e44fa99308880c88daf, type: 3}
+  explosionSound: {fileID: 8300000, guid: bb49853d92f23e44fa99308880c88daf, type: 3}
 --- !u!114 &3283742908419486579
 MonoBehaviour:
   m_ObjectHideFlags: 0

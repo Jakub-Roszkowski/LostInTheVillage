@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad8df20d1ec3df4184abaca4f5a14fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnswearText: {fileID: 301184592}
-  Button: {fileID: 772282529}
-  TelephonePanel: {fileID: 568453492}
+  answearText: {fileID: 301184592}
+  button: {fileID: 772282529}
+  telephonePanel: {fileID: 568453492}
 --- !u!1 &60072637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6678921216105053708, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 1930482660}
-  PanelNick: {fileID: 493473103}
+  panelNick: {fileID: 493473103}
 --- !u!114 &1221837195 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6678921216188324106, guid: 1e0a3778f898e9540b46b7946f90842d, type: 3}

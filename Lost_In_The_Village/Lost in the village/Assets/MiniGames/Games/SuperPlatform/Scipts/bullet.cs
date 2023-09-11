@@ -1,30 +1,30 @@
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.SuperPlatform.Scripts
 {
-    public Rigidbody2D rigidbody;
-    public float movementSpeed;
-
-    public PlayerPlatform player;
-
-    private void FixedUpdate()
+    public class Bullet : MonoBehaviour
     {
-        rigidbody.velocity = transform.right * movementSpeed * Time.fixedDeltaTime;
-    }
+        public Rigidbody2D rigidbody;
+        public float movementSpeed;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Block"))
+        public PlayerPlatform player;
+
+        private void FixedUpdate()
         {
-            Destroy(collision.collider.gameObject);
-            Destroy(gameObject);
+            rigidbody.velocity = transform.right * movementSpeed * Time.fixedDeltaTime;
         }
-        if (collision.collider)
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            Destroy(gameObject);
+            if (collision.collider.CompareTag("Block"))
+            {
+                Destroy(collision.collider.gameObject);
+                Destroy(gameObject);
+            }
+            if (collision.collider)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
-
-
-

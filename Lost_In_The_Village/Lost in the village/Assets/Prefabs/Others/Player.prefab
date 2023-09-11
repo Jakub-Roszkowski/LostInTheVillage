@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6064245376894823083}
   - component: {fileID: 6169322852503116930}
   m_Layer: 7
-  m_Name: czolowka
+  m_Name: HeadLampLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,8 +499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5881a281f58f47c28cdebdebb9ac56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   panelBlood: {fileID: 0}
+  maxHealth: 100
   fadeDuration: 1
   fadeDelay: 0.5
 --- !u!136 &5068705498201945213
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 1939758795346397394}
   - component: {fileID: 4115013553594625473}
   m_Layer: 7
-  m_Name: GameObject
+  m_Name: HeadLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5322245bacc594ab1338fc98f81d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 6169322852503116930}
+  headLampLight: {fileID: 6169322852503116930}
 --- !u!1001 &616125617319475377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1097,9 +1097,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GUN_Stats: {fileID: 11400000, guid: 1afaea9483d45174f9505adeeb80795d, type: 2}
   fpsCam: {fileID: 3534466371823524593}
-  BGM: {fileID: 3534466372502990396}
   muzzleFlash: {fileID: 3534466372486742962}
   impactEffect: {fileID: 100002, guid: 957385c45b877e645a128e11a3efb2f9, type: 3}
+  BGM: {fileID: 3534466372502990396}
   currentAmmo: 0
   lightObject: {fileID: 3534466372502117072}
 --- !u!114 &5451833005195839684
@@ -1508,9 +1508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GUN_Stats: {fileID: 11400000, guid: efdc6c76ae7a956409278f9786765274, type: 2}
   fpsCam: {fileID: 3534466371823524593}
-  BGM: {fileID: 8639117637103203135}
   muzzleFlash: {fileID: 616125617304659825}
   impactEffect: {fileID: 100002, guid: 957385c45b877e645a128e11a3efb2f9, type: 3}
+  BGM: {fileID: 8639117637103203135}
   currentAmmo: 0
   lightObject: {fileID: 616125617319575059}
 --- !u!1001 &5787548886879280564
@@ -2004,9 +2004,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GUN_Stats: {fileID: 11400000, guid: 7b330fb11019eca49995db9568380c3e, type: 2}
   fpsCam: {fileID: 3534466371823524593}
-  BGM: {fileID: 7144605010029049829}
   muzzleFlash: {fileID: 6797480106229556727}
   impactEffect: {fileID: 100002, guid: 957385c45b877e645a128e11a3efb2f9, type: 3}
+  BGM: {fileID: 7144605010029049829}
   currentAmmo: 0
   lightObject: {fileID: 6797480106214784149}
 --- !u!4 &7655137711779907382 stripped

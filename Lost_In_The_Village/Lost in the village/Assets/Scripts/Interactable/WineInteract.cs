@@ -1,32 +1,36 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
-public class WineInteract : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField]
-    private AudioSource eatingSound;
-
-    public bool iseat = true;
-    private string promptMessageTemp;
-    protected override void Interact()
+    public class WineInteract : AbstractInteractableObject
     {
-        promptMessageTemp = Helpers.Languages.SetTextWineInteract();
-    }
-    protected override void Interact2()
-    {
-        drunk playerdrunk = GameObject.FindWithTag("MainCamera").GetComponent<drunk>();
+        [SerializeField] private AudioSource eatingSound;
 
-        if (playerdrunk != null && iseat)
+        private bool isToDrink = true;
+        private string promptMessageTemp;
+        protected override void Interact()
         {
-            playerdrunk.DrunkEffect();
-            eatingSound.Play();
-            iseat = false;
-
-            Destroy(gameObject, 1);
+            promptMessageTemp = Languages.SetTextWineInteract();
         }
-    }
+        protected override void Interact2()
+        {
+            Drunk playerdrunk = GameObject.FindWithTag("MainCamera").GetComponent<Drunk>();
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+            if (playerdrunk != null && isToDrink)
+            {
+                playerdrunk.DrunkEffect();
+                eatingSound.Play();
+                isToDrink = false;
+
+                Destroy(gameObject, 1);
+            }
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

@@ -1,28 +1,28 @@
 using UnityEngine;
 
-public class InputManagerToShoot : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    private PlayerInput playerInput;
-    public PlayerInput.OnFootActions onFoot;
+    public class InputManagerToShoot : MonoBehaviour
+    {        
+        public PlayerInput.OnFootActions OnFoot { get; private set; }
+        
+        private PlayerInput playerInput;
 
-    void Awake()
-    {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
+        private void Awake()
+        {
+            playerInput = new PlayerInput();
+            OnFoot = playerInput.OnFoot;
 
-    }
-    void Update()
-    {
+        }
 
-    }
+        private void OnEnable()
+        {
+            OnFoot.Enable();
+        }
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
-
-    private void OnDisable()
-    {
-        onFoot.Disable();
+        private void OnDisable()
+        {
+            OnFoot.Disable();
+        }
     }
 }

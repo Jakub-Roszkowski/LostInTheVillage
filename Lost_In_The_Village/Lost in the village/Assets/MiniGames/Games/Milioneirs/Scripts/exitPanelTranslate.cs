@@ -1,20 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class exitPanelTranslate : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 {
-    public TMP_Text text;
-    // Start is called before the first frame update
-    void Start()
+    public class ExitPanelTranslate : MonoBehaviour
     {
-        text.text = Helpers.Languages.SetTextExitPanel();
-    }
+        public TMP_Text text;
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        private void Start()
+        {
+            text.text = Helpers.Languages.SetTextExitPanel();
+        }
     }
 }

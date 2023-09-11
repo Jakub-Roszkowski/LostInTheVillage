@@ -1,39 +1,27 @@
 using UnityEngine;
 
-public class Hello : MonoBehaviour
+namespace LostInTheVillage.Storyline.Village2
 {
-    [SerializeField] private AudioSource BGM;
-    [SerializeField] private AudioClip orzel;
-
-    void Start()
+    public class Hello : MonoBehaviour
     {
-        BGM.Stop();
-    }
+        [SerializeField] private AudioSource BGM;
+        [SerializeField] private AudioClip orzel;
 
-    void Update()
-    {
+        private void Start()
+        {
+            BGM.Stop();
+        }
 
-    }
+        public void OnTriggerEnter(Collider other)
+        {
+            ChangeBGM(orzel);
+        }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        ChangeBGM(orzel);
-
-    }
-    public void OnTriggerExit(Collider other)
-    {
-
-    }
-
-    public void OnTriggerStay(Collider other)
-    {
-
-    }
-
-    public void ChangeBGM(AudioClip music)
-    {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
+        public void ChangeBGM(AudioClip music)
+        {
+            BGM.Stop();
+            BGM.clip = music;
+            BGM.Play();
+        }
     }
 }

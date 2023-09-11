@@ -1,29 +1,27 @@
 using UnityEngine;
 
-public class InputManagerToMenu : MonoBehaviour
+namespace LostInTheVillage.Menus
 {
-    public PlayerInput.OnFootActions onFoot;
-
-    private PlayerInput playerInput;
-    
-    void Awake()
+    public class InputManagerToMenu : MonoBehaviour
     {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
-    }
+        public PlayerInput.OnFootActions OnFoot { get; private set; }
 
-    void Update()
-    {
+        private PlayerInput playerInput;
 
-    }
+        private void Awake()
+        {
+            playerInput = new PlayerInput();
+            OnFoot = playerInput.OnFoot;
+        }
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
+        private void OnEnable()
+        {
+            OnFoot.Enable();
+        }
 
-    private void OnDisable()
-    {
-        onFoot.Disable();
+        private void OnDisable()
+        {
+            OnFoot.Disable();
+        }
     }
 }

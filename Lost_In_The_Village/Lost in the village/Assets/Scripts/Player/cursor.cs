@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class cursor : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    void Start()
+    public class Cursor : MonoBehaviour
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    void Update()
-    {
-
+        private void Start()
+        {
+            UnityEngine.Cursor.visible = false;
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }

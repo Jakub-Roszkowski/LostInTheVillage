@@ -1,25 +1,26 @@
+using LostInTheVillage.Character;
+using LostInTheVillage.Interactable;
 using System.Collections;
 using UnityEngine;
 
-public class village1Start : MonoBehaviour
+namespace LostInTheVillage.SceneHelpers.SceneMenager
 {
-    public CharacterInteractable InteractableCharacter;
-    void Start()
+    public class Village1Start : MonoBehaviour
     {
-        CharacterMessage characterMessage = gameObject.GetComponent<CharacterMessage>();
+        [SerializeField] private CharacterInteractable InteractableCharacter;
 
-        characterMessage.Message();
-        StartCoroutine(wait());
-    }
+        private void Start()
+        {
+            CharacterMessage characterMessage = gameObject.GetComponent<CharacterMessage>();
 
-    void Update()
-    {
+            characterMessage.Message();
+            StartCoroutine(Wait());
+        }
 
-    }
-
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(0.5f);
-        InteractableCharacter.to_see = true;
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(0.5f);
+            InteractableCharacter.ToSee = true;
+        }
     }
 }

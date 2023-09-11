@@ -1,19 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-public class test : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.Puzzle.Scripts
 {
-    public float moveSpeed = 5f;
-
-    void Update()
+    public class Test : MonoBehaviour
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        public float moveSpeed = 5f;
 
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f) * moveSpeed * Time.deltaTime;
+        void Update()
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        transform.Translate(movement);
+            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f) * moveSpeed * Time.deltaTime;
+
+            transform.Translate(movement);
+        }
     }
 }

@@ -1,27 +1,26 @@
 using UnityEngine;
 
-public class InputManagerToHeadLamp : MonoBehaviour
+namespace LostInTheVillage.Headlamp
 {
-    private PlayerInput playerInput;
-    public PlayerInput.OnFootActions onFoot;
-    void Awake()
+    public class InputManagerToHeadLamp : MonoBehaviour
     {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
-    }
+        private PlayerInput playerInput;
+        public PlayerInput.OnFootActions OnFoot { get; private set; }
 
-    void Update()
-    {
+        private void Awake()
+        {
+            playerInput = new PlayerInput();
+            OnFoot = playerInput.OnFoot;
+        }
 
-    }
+        private void OnEnable()
+        {
+            OnFoot.Enable();
+        }
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
-
-    private void OnDisable()
-    {
-        onFoot.Disable();
+        private void OnDisable()
+        {
+            OnFoot.Disable();
+        }
     }
 }

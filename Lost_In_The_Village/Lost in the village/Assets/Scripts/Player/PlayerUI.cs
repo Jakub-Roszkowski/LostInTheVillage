@@ -1,46 +1,50 @@
+using LostInTheVillage.Helpers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUI : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    [SerializeField] private Health player;
-    [SerializeField] private Slider health;
-    [SerializeField] private TextMeshProUGUI promptText;
-    [SerializeField] private TextMeshProUGUI AMMOText;
-
-    void Start()
+    public class PlayerUI : MonoBehaviour
     {
-        health.maxValue = 100;
-        health.value = 100;
-    }
+        [SerializeField] private Health player;
+        [SerializeField] private Slider health;
+        [SerializeField] private TextMeshProUGUI promptText;
+        [SerializeField] private TextMeshProUGUI AMMOText;
 
-    public void UpdateText(string promptMessage)
-    {
-        promptText.text = promptMessage;
-
-    }
-    public void Update()
-    {
-        health.value = player.GetCurrentHealth();
-        AMMOText.text = GetAmmoCount().ToString();
-    }
-
-    private int GetAmmoCount()
-    {
-        GameObject mainCamera = GameObject.Find("Main Camera");
-        if (mainCamera != null)
+        private void Start()
         {
-            Transform testChild = mainCamera.transform.Find("test");
-            if (testChild != null)
+            health.maxValue = ConfigNumbers.DefaultMaxHp;
+            health.value = ConfigNumbers.DefaultMaxHp;
+        }
+
+        public void UpdateText(string promptMessage)
+        {
+            promptText.text = promptMessage;
+
+        }
+        public void Update()
+        {
+            health.value = player.GetCurrentHealth();
+            AMMOText.text = GetAmmoCount().ToString();
+        }
+
+        private int GetAmmoCount()
+        {
+            GameObject mainCamera = GameObject.Find("Main Camera");
+            if (mainCamera != null)
             {
-                AMMO ammoScript = testChild.GetComponent<AMMO>();
-                if (ammoScript != null)
+                Transform testChild = mainCamera.transform.Find("test");
+                if (testChild != null)
                 {
-                    return ammoScript.AMMO_count;
+                    Ammo ammoScript = testChild.GetComponent<Ammo>();
+                    if (ammoScript != null)
+                    {
+                        return ammoScript.AmmoCount;
+                    }
                 }
             }
+            return 0;
         }
-        return 0;
     }
 }

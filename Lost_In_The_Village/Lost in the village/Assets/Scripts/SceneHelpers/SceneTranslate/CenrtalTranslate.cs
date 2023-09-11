@@ -1,16 +1,15 @@
 using TMPro;
 using UnityEngine;
 
-public class CenrtalTranslate : MonoBehaviour
+namespace LostInTheVillage.SceneHelpers.SceneTranslate
 {
-    public TextMeshProUGUI Central;
-    void Start()
+    public class CenrtalTranslate : MonoBehaviour
     {
-        Central.text = Helpers.Languages.SetTextCentalBuild();
-    }
+        public TextMeshProUGUI Central;
 
-    void Update()
-    {
-
+        private void Start()
+        {
+            Central.text = Helpers.Languages.SetTextCentalBuild();
+        }
     }
 }

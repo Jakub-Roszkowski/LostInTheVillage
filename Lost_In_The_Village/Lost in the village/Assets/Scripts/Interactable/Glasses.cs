@@ -1,52 +1,50 @@
+using LostInTheVillage.Character;
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
 using TMPro;
 using UnityEngine;
 
-public class Glasses : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private CharacterMessage Orzel;
-    [SerializeField] private TextMeshProUGUI destinationText;
-
-    public static bool toSee = false;
-    
-    private string promptMessageTemp;
-    private string text;
-
-    void Start()
+    public class Glasses : AbstractInteractableObject
     {
-        toSee = false;
-    }
+        [SerializeField] private CharacterMessage eagleCharacter;
+        [SerializeField] private TextMeshProUGUI destinationText;
 
-    void Update()
-    {
+        public static bool IsToSee { get; set; } = false;
 
-    }
+        private string promptMessageTemp;
+        private string text;
 
-    protected override void Interact()
-    {
-        text = Helpers.Languages.SetTextPickUp();
-
-        if (toSee)
-            promptMessageTemp = text;
-        else
-            promptMessageTemp = "";
-    }
-
-    protected override void Interact2()
-    {
-        if (toSee)
+        private void Start()
         {
-            gameObject.SetActive(false);
-            Orzel.place = Place_enum.Orzel_glasses;
-            setText();
+            IsToSee = false;
         }
-    }
-    private void setText()
-    {
-        destinationText.text = Helpers.Languages.SetTextEagle();
-    }
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+        protected override void Interact()
+        {
+            string text = Languages.SetTextPickUp();
+
+            promptMessageTemp = IsToSee ? text : "";
+        }
+
+        protected override void Interact2()
+        {
+            if (IsToSee)
+            {
+                gameObject.SetActive(false);
+                eagleCharacter.Place = PlaceEnum.OrzelGlasses;
+                SetDestinationText();
+            }
+        }
+        private void SetDestinationText()
+        {
+            destinationText.text = Languages.SetTextEagle();
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

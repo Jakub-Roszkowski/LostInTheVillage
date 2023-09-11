@@ -1,28 +1,32 @@
+using LostInTheVillage.Helpers;
 using UnityEngine;
 
-public class MapTranslate : MonoBehaviour
+namespace LostInTheVillage.SceneHelpers.SceneTranslate
 {
-    public GameObject map1;
-    public GameObject map2;
-    public GameObject map3;
-    public GameObject map4;
-    void Start()
+    public class MapTranslate : MonoBehaviour
     {
-        switch (Language.language)
+        [SerializeField] private GameObject map1;
+        [SerializeField] private GameObject map2;
+        [SerializeField] private GameObject map3;
+        [SerializeField] private GameObject map4;
+
+        private void Start()
         {
-            case Language_enum.Polish:
-                map1.SetActive(true);
-                break;
-            case Language_enum.English:
-                map2.SetActive(true);
-                break;
-            case Language_enum.German:
-                map3.SetActive(true);
-                break;
-            case Language_enum.Spain:
-                map4.SetActive(true);
-                break;
+            switch (Language.LanguageName)
+            {
+                case LanguageEnum.Polish:
+                    map1.SetActive(true);
+                    break;
+                case LanguageEnum.English:
+                    map2.SetActive(true);
+                    break;
+                case LanguageEnum.German:
+                    map3.SetActive(true);
+                    break;
+                case LanguageEnum.Spanish:
+                    map4.SetActive(true);
+                    break;
+            }
         }
     }
-    void Update() { }
 }

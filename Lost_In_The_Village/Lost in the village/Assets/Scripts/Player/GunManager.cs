@@ -1,131 +1,112 @@
 using UnityEngine;
 
-public class GunManager : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    [SerializeField] private GameObject weapon1;
-    [SerializeField] private GameObject weapon2;
-    [SerializeField] private GameObject weapon3;
-    [SerializeField] private GameObject weapon4;
-    [SerializeField] private GameObject currentWeapon;
-
-    [SerializeField] private GameObject weapon2Panel;
-    [SerializeField] private GameObject weapon3Panel;
-    [SerializeField] private GameObject weapon4Panel;
-
-    public PlayerInput.OnFootActions onFoot;
-
-    private PlayerInput playerInput;
-
-    private bool weapon1Available = true;
-    private bool weapon2Available = false;
-    private bool weapon3Available = false;
-    private bool weapon4Available = false;
-
-    void Awake()
+    public class GunManager : MonoBehaviour
     {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
-    }
+        [SerializeField] private GameObject weapon1;
+        [SerializeField] private GameObject weapon2;
+        [SerializeField] private GameObject weapon3;
+        [SerializeField] private GameObject weapon4;
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
+        [SerializeField] private GameObject weapon2Panel;
+        [SerializeField] private GameObject weapon3Panel;
+        [SerializeField] private GameObject weapon4Panel;
 
-    private void OnDisable()
-    {
-        onFoot.Disable();
-    }
+        private PlayerInput.OnFootActions onFoot;
 
-    void Start()
-    {
-        currentWeapon = weapon1;
-    }
-    void Update()
-    {
-        if (onFoot.gun1.triggered && weapon1Available)
+        private PlayerInput playerInput;
+        private GameObject currentWeapon;
+
+        private bool weapon1Available = true;
+        private bool weapon2Available = false;
+        private bool weapon3Available = false;
+        private bool weapon4Available = false;
+
+        private void Awake()
         {
-            PickupWeapon("M4A1");
-            DropWeapon("M4A1");
+            playerInput = new PlayerInput();
+            onFoot = playerInput.OnFoot;
         }
-        else if (onFoot.gun2.triggered && weapon2Available)
+
+        private void OnEnable()
         {
-            PickupWeapon("AK47");
-            DropWeapon("AK47");
+            onFoot.Enable();
         }
-        else if (onFoot.gun3.triggered && weapon3Available)
+
+        private void OnDisable()
         {
-            PickupWeapon("shotgun");
-            DropWeapon("shotgun");
+            onFoot.Disable();
         }
-        else if (onFoot.gun4.triggered && weapon4Available)
+
+        void Start()
         {
-            PickupWeapon("SMG");
-            DropWeapon("SMG");
-        }
-    }
-    public void PickupWeapon(string weapon)
-    {
-        if (weapon == "M4A1")
-        {
-            weapon1.SetActive(true);
             currentWeapon = weapon1;
         }
-        else if (weapon == "AK47")
+        void Update()
         {
-            weapon2.SetActive(true);
-            currentWeapon = weapon2;
-            weapon2Available = true;
-            weapon2Panel.SetActive(true);
+            HandleWeaponSwitchingInput();
         }
-        else if (weapon == "shotgun")
-        {
-            weapon3.SetActive(true);
-            currentWeapon = weapon3;
-            weapon3Available = true;
-            weapon3Panel.SetActive(true);
-        }
-        else if (weapon == "SMG")
-        {
-            weapon4.SetActive(true);
-            currentWeapon = weapon4;
-            weapon4Available = true;
-            weapon4Panel.SetActive(true);
-        }
-    }
 
-    public void DropWeapon(string weapon)
-    {
-        if (weapon == "M4A1")
+        private void HandleWeaponSwitchingInput()
         {
-            weapon2.SetActive(false);
-            weapon3.SetActive(false);
-            weapon4.SetActive(false);
+            if (onFoot.gun1.triggered && weapon1Available)
+            {
+                SwitchToWeapon(weapon1);
+            }
+            else if (onFoot.gun2.triggered && weapon2Available)
+            {
+                SwitchToWeapon(weapon2);
+            }
+            else if (onFoot.gun3.triggered && weapon3Available)
+            {
+                SwitchToWeapon(weapon3);
+            }
+            else if (onFoot.gun4.triggered && weapon4Available)
+            {
+                SwitchToWeapon(weapon4);
+            }
         }
-        else if (weapon == "AK47")
-        {
-            weapon1.SetActive(false);
-            weapon3.SetActive(false);
-            weapon4.SetActive(false);
-        }
-        else if (weapon == "shotgun")
-        {
-            weapon1.SetActive(false);
-            weapon2.SetActive(false);
-            weapon4.SetActive(false);
-        }
-        else if (weapon == "SMG")
-        {
-            weapon1.SetActive(false);
-            weapon2.SetActive(false);
-            weapon3.SetActive(false);
-        }
-    }
 
-    public bool IsTheSame(GameObject weapon)
-    {
-        if (weapon.CompareTag(currentWeapon.tag))
-            return true;
-        else return false;
+        private void SwitchToWeapon(GameObject weapon)
+        {
+            currentWeapon.SetActive(false);
+            weapon.SetActive(true);
+            currentWeapon = weapon;
+
+            weapon2Panel.SetActive(weapon2Available);
+            weapon3Panel.SetActive(weapon3Available);
+            weapon4Panel.SetActive(weapon4Available);
+        }
+
+        public void PickupWeapon(string weapon)
+        {
+            if (weapon == "M4A1")
+            {
+                SwitchToWeapon(weapon1);
+            }
+            else if (weapon == "AK47")
+            {
+                weapon2Available = true;
+                SwitchToWeapon(weapon2);
+            }
+            else if (weapon == "shotgun")
+            {
+                weapon3Available = true;
+                SwitchToWeapon(weapon3);
+            }
+            else if (weapon == "SMG")
+            {
+                weapon4Available = true;
+                SwitchToWeapon(weapon4);
+            }
+        }
+
+        public bool IsTheSame(GameObject weapon)
+        {
+            if (weapon.CompareTag(currentWeapon.tag))
+                return true;
+            else return false;
+        }
     }
 }

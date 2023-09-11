@@ -1,86 +1,86 @@
 using TMPro;
 using UnityEngine;
 
-public class GameMessage : MonoBehaviour
+namespace LostInTheVillage.Storyline.Village2
 {
-    [SerializeField] private Canvas canvasToActivate;
-
-    [SerializeField] private AudioSource BGM;
-    [SerializeField] private AudioClip wiadomosc;
-
-    [SerializeField] private TextMeshProUGUI promptText;
-    [SerializeField] private TextMeshProUGUI textInMessage;
-
-    public PlayerInput.OnFootActions onFoot;
-
-    private bool visited = false;
-    private PlayerInput playerInput;
-
-    void Awake()
+    public class GameMessage : MonoBehaviour
     {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;
+        [SerializeField] private Canvas canvasToActivate;
 
-    }
+        [SerializeField] private AudioSource BGM;
+        [SerializeField] private AudioClip messageAudio;
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
+        [SerializeField] private TextMeshProUGUI promptText;
+        [SerializeField] private TextMeshProUGUI textInMessage;
 
-    private void OnDisable()
-    {
-        onFoot.Disable();
-    }
+        private PlayerInput.OnFootActions onFoot;
 
-    private void Start()
-    {
-        BGM.Stop();
-    }
+        private bool visited = false;
+        private PlayerInput playerInput;
 
-    private void Update()
-    {
-        if (onFoot.Exit.triggered)
+        private void Awake()
         {
-            canvasToActivate.gameObject.SetActive(false);
+            playerInput = new PlayerInput();
+            onFoot = playerInput.OnFoot;
+
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!visited)
+        private void OnEnable()
         {
-            if (other.CompareTag("Player"))
+            onFoot.Enable();
+        }
+
+        private void OnDisable()
+        {
+            onFoot.Disable();
+        }
+
+        private void Start()
+        {
+            BGM.Stop();
+        }
+
+        private void Update()
+        {
+            if (onFoot.Exit.triggered)
             {
-
-                ChangeBGM(wiadomosc);
-                canvasToActivate.gameObject.SetActive(true);
-                setText();
-                setTextInMessage();
-
-                visited = true;
-
+                canvasToActivate.gameObject.SetActive(false);
             }
         }
-    }
 
-    public void ChangeBGM(AudioClip music)
-    {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
-    }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!visited)
+            {
+                if (other.CompareTag("Player"))
+                {
 
-    private void setText()
-    {
-        promptText.text = Helpers.Languages.SetTextGameInteract();
+                    ChangeBGM(messageAudio);
+                    canvasToActivate.gameObject.SetActive(true);
+                    setText();
+                    setTextInMessage();
 
-    }
-    private void setTextInMessage()
-    {
-        textInMessage.text = Helpers.Languages.SetTextGameMessage();
+                    visited = true;
+
+                }
+            }
+        }
+
+        public void ChangeBGM(AudioClip music)
+        {
+            BGM.Stop();
+            BGM.clip = music;
+            BGM.Play();
+        }
+
+        private void setText()
+        {
+            promptText.text = LostInTheVillage.Helpers.Languages.SetTextGameInteract();
+
+        }
+        private void setTextInMessage()
+        {
+            textInMessage.text = LostInTheVillage.Helpers.Languages.SetTextGameMessage();
+        }
     }
 }
-
-
-

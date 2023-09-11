@@ -3,337 +3,344 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using LostInTheVillage.Helpers;
 
-public class QestionText : MonoBehaviour
+namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 {
-    public TMP_Text Question;
-    public TMP_Text AnswearA;
-    public TMP_Text AnswearB;
-    public TMP_Text AnswearC;
-    public TMP_Text AnswearD;
-
-    public TMP_Text timeShow;
-
-    public GameObject FrameAnswearA;
-    public GameObject FrameAnswearB;
-    public GameObject FrameAnswearC;
-    public GameObject FrameAnswearD;
-
-    public GameObject ButtonFinish;
-    public GameObject Button50;
-
-    int random2 = 0;
-    string answear;
-
-    static bool iftext;
-
-    ArrayList answears = new ArrayList();
-
-    public GameObject FrameLose2;
-    public TMP_Text text;
-    public TMP_Text Value;
-
-    public string corect;
-
-    public static string nick;
-    public static bool lose=false;
-    public static bool timeif=false;
-    public static bool f2=true;
-    public static bool buttonsActive=true;
-
-    string q;
-    string qa;
-    string qb;
-    string qc;
-    string qd;
-
-    System.DateTime time;
-    public static System.DateTime timestart;
-
-    private string text1;
-    private int timeToAnswear = 25;
-    void Start()
+    public class QestionText : MonoBehaviour
     {
-        buttonsActive = true;
-        f2 = true;
-        iftext = false;
-        timeif = false;
-        timestart = DateTime.Now;
+        public TMP_Text Question;
+        public TMP_Text AnswearA;
+        public TMP_Text AnswearB;
+        public TMP_Text AnswearC;
+        public TMP_Text AnswearD;
 
-        System.Random rnd = new System.Random();
-        random2 = rnd.Next(3);
+        public TMP_Text timeShow;
 
-        answears.Add("A");
-        answears.Add("B");
-        answears.Add("C");
-        answears.Add("D");
+        public GameObject FrameAnswearA;
+        public GameObject FrameAnswearB;
+        public GameObject FrameAnswearC;
+        public GameObject FrameAnswearD;
 
-        FrameLose2.SetActive(false);
-        text.text = nick + Helpers.Languages.SetTextWin();
-        Value.text = test_milioneirs.guaranteedWIN.ToString();
+        public GameObject ButtonFinish;
+        public GameObject Button50;
 
-        lose = false;
+        int random2 = 0;
+        string answear;
 
-        Question.text = test_milioneirs.CurrentQuestion;
-        AnswearA.text = test_milioneirs.CurrentAnswearA;
-        AnswearB.text = test_milioneirs.CurrentAnswearB;
-        AnswearC.text = test_milioneirs.CurrentAnswearC;
-        AnswearD.text = test_milioneirs.CurrentAnswearD;
+        static bool iftext;
 
-        FrameAnswearA.transform.GetComponent<Button>().onClick.AddListener(onClickA);
-        FrameAnswearB.transform.GetComponent<Button>().onClick.AddListener(onClickB);
-        FrameAnswearC.transform.GetComponent<Button>().onClick.AddListener(onClickC);
-        FrameAnswearD.transform.GetComponent<Button>().onClick.AddListener(onClickD);
-        ButtonFinish.transform.GetComponent<Button>().onClick.AddListener(MessageWin);
-        Button50.transform.GetComponent<Button>().onClick.AddListener(Message50);
+        ArrayList answears = new ArrayList();
 
-        text1 = Helpers.Languages.SetTextWin();
-    }
+        public GameObject FrameLose2;
+        public TMP_Text text;
+        public TMP_Text Value;
 
-    void Update()
-    {
-        corect = test_milioneirs.CurrentAnswear;
-        time = DateTime.Now;
+        public string corect;
 
-        if (f2) { 
-            if (Input.GetKeyDown(KeyCode.F2))
+        public static string Nick { get; set; }
+        public static bool lose = false;
+        public static bool timeif = false;
+        public static bool f2 = true;
+        public static bool buttonsActive = true;
+
+        string q;
+        string qa;
+        string qb;
+        string qc;
+        string qd;
+
+        System.DateTime time;
+        public static System.DateTime timestart;
+
+        private string text1;
+        private int timeToAnswear = 25;
+
+        private void Start()
+        {
+            buttonsActive = true;
+            f2 = true;
+            iftext = false;
+            timeif = false;
+            timestart = DateTime.Now;
+
+            System.Random rnd = new System.Random();
+            random2 = rnd.Next(3);
+
+            answears.Add("A");
+            answears.Add("B");
+            answears.Add("C");
+            answears.Add("D");
+
+            FrameLose2.SetActive(false);
+            text.text = Nick + Languages.SetTextWin();
+            Value.text = TestMilioneirs.guaranteedWIN.ToString();
+
+            lose = false;
+
+            Question.text = TestMilioneirs.CurrentQuestion;
+            AnswearA.text = TestMilioneirs.CurrentAnswearA;
+            AnswearB.text = TestMilioneirs.CurrentAnswearB;
+            AnswearC.text = TestMilioneirs.CurrentAnswearC;
+            AnswearD.text = TestMilioneirs.CurrentAnswearD;
+
+            FrameAnswearA.transform.GetComponent<Button>().onClick.AddListener(OnClickA);
+            FrameAnswearB.transform.GetComponent<Button>().onClick.AddListener(OnClickB);
+            FrameAnswearC.transform.GetComponent<Button>().onClick.AddListener(OnClickC);
+            FrameAnswearD.transform.GetComponent<Button>().onClick.AddListener(OnClickD);
+            ButtonFinish.transform.GetComponent<Button>().onClick.AddListener(MessageWin);
+            Button50.transform.GetComponent<Button>().onClick.AddListener(Message50);
+
+            text1 = Languages.SetTextWin();
+        }
+
+        private void Update()
+        {
+            corect = TestMilioneirs.CurrentAnswear;
+            time = DateTime.Now;
+
+            if (f2)
             {
-                Message50();
+                if (Input.GetKeyDown(KeyCode.F2))
+                {
+                    Message50();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.F4))
+            {
+                MessageWin();
+            }
+
+            if (timeif)
+            {
+                if (timestart.AddSeconds(timeToAnswear) < time)
+                {
+                    CorectValue();
+                    Message();
+                    lose = true;
+                }
+                if ((timestart.AddSeconds(15) - time) >= TimeSpan.Zero)
+                {
+                    timeShow.text = (timestart.AddSeconds(15) - time).Seconds.ToString();
+                }
+                else
+                {
+                    timeShow.text = "";
+                }
+            }
+
+            q = TestMilioneirs.CurrentQuestion;
+            qa = TestMilioneirs.CurrentAnswearA;
+            qb = TestMilioneirs.CurrentAnswearB;
+            qc = TestMilioneirs.CurrentAnswearC;
+            qd = TestMilioneirs.CurrentAnswearD;
+
+            if (text) { Next(); }
+        }
+
+        private void OnClickA()
+        {
+            if (buttonsActive)
+            {
+                if (TestMilioneirs.CurrentAnswear == "A")
+                {
+                    FrameAnswearA.transform.GetComponent<Image>().color = Color.green;
+                    SomeMethod();
+                    Checkmilion();
+
+                    timestart = DateTime.Now;
+                }
+                else
+                {
+                    FrameAnswearA.transform.GetComponent<Image>().color = Color.red;
+                    CorectValue();
+                    Message();
+                    lose = true;
+                }
+                FrameAnswearA.SetActive(true);
+            }
+        }
+        private void OnClickB()
+        {
+            if (buttonsActive)
+            {
+                if (TestMilioneirs.CurrentAnswear == "B")
+                {
+                    FrameAnswearB.transform.GetComponent<Image>().color = Color.green;
+                    SomeMethod();
+                    Checkmilion();
+                    timestart = DateTime.Now;
+                }
+                else
+                {
+                    FrameAnswearB.transform.GetComponent<Image>().color = Color.red;
+                    CorectValue();
+                    Message();
+                    lose = true;
+                }
+                FrameAnswearB.SetActive(true);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F4))
+        private void OnClickC()
         {
-            MessageWin();
+            if (buttonsActive)
+            {
+                if (TestMilioneirs.CurrentAnswear == "C")
+                {
+                    FrameAnswearC.transform.GetComponent<Image>().color = Color.green;
+                    SomeMethod();
+                    Checkmilion();
+                    timestart = DateTime.Now;
+                }
+                else
+                {
+                    FrameAnswearC.transform.GetComponent<Image>().color = Color.red;
+                    CorectValue();
+                    Message();
+                    lose = true;
+                }
+                FrameAnswearC.SetActive(true);
+            }
         }
-
-        if (timeif)
+        private void OnClickD()
         {
-            if (timestart.AddSeconds(timeToAnswear) < time) {
-                corectValue();
-                Message();
-                lose = true;
-            }
-            if((timestart.AddSeconds(15) - time)>=TimeSpan.Zero)
+            if (buttonsActive)
             {
-                timeShow.text = (timestart.AddSeconds(15) - time).Seconds.ToString();
-            }
-            else
-            {
-                timeShow.text = "";
+                if (TestMilioneirs.CurrentAnswear == "D")
+                {
+                    FrameAnswearD.transform.GetComponent<Image>().color = Color.green;
+                    SomeMethod();
+                    Checkmilion();
+                    timestart = DateTime.Now;
+                }
+                else
+                {
+                    FrameAnswearD.transform.GetComponent<Image>().color = Color.red;
+                    CorectValue();
+                    Message();
+                    lose = true;
+                }
+                FrameAnswearD.transform.GetComponent<Button>().CancelInvoke();
             }
         }
-
-        q = test_milioneirs.CurrentQuestion;
-        qa = test_milioneirs.CurrentAnswearA;
-        qb = test_milioneirs.CurrentAnswearB;
-        qc = test_milioneirs.CurrentAnswearC;
-        qd = test_milioneirs.CurrentAnswearD;
-
-        if (text){ next(); }
-    }
-
-    void onClickA()
-    {
-        if (buttonsActive)
+        private void CorectValue()
         {
-            if (test_milioneirs.CurrentAnswear == "A")
-            {
+            if (TestMilioneirs.CurrentAnswear == "A")
                 FrameAnswearA.transform.GetComponent<Image>().color = Color.green;
-                SomeMethod();
-                checkmilion();
-
-                timestart = DateTime.Now;
-            }
-            else
-            {
-                FrameAnswearA.transform.GetComponent<Image>().color = Color.red;
-                corectValue();
-                Message();
-                lose = true;
-            }
-            FrameAnswearA.SetActive(true);
-        }
-    }
-    void onClickB()
-    {
-        if (buttonsActive)
-        {
-            if (test_milioneirs.CurrentAnswear == "B")
-            {
+            else if (TestMilioneirs.CurrentAnswear == "B")
                 FrameAnswearB.transform.GetComponent<Image>().color = Color.green;
-                SomeMethod();
-                checkmilion();
-                timestart = DateTime.Now;
-            }
-            else
-            {
-                FrameAnswearB.transform.GetComponent<Image>().color = Color.red;
-                corectValue();
-                Message();
-                lose = true;
-            }
-            FrameAnswearB.SetActive(true);
-        }
-    }
-
-    void onClickC()
-    {
-        if (buttonsActive)
-        {
-            if (test_milioneirs.CurrentAnswear == "C")
-            {
+            else if (TestMilioneirs.CurrentAnswear == "C")
                 FrameAnswearC.transform.GetComponent<Image>().color = Color.green;
-                SomeMethod();
-                checkmilion();
-                timestart = DateTime.Now;
-            }
-            else
-            {
-                FrameAnswearC.transform.GetComponent<Image>().color = Color.red;
-                corectValue();
-                Message();
-                lose = true;
-            }
-            FrameAnswearC.SetActive(true);
-        }
-    }
-    void onClickD()
-    {
-        if (buttonsActive)
-        {
-            if (test_milioneirs.CurrentAnswear == "D")
-            {
+            else if (TestMilioneirs.CurrentAnswear == "D")
                 FrameAnswearD.transform.GetComponent<Image>().color = Color.green;
-                SomeMethod();
-                checkmilion();
-                timestart = DateTime.Now;
-            }
-            else
+        }
+
+        private void SomeMethod()
+        {
+            StartCoroutine(SomeCoroutine());
+        }
+
+        public bool flag = true;
+        private IEnumerator SomeCoroutine()
+        {
+            if (flag)
             {
-                FrameAnswearD.transform.GetComponent<Image>().color = Color.red;
-                corectValue();
-                Message();
-                lose = true;
+                TestMilioneirs.CurrentPosition++;
+                flag = false;
+                Next2();
             }
-            FrameAnswearD.transform.GetComponent<Button>().CancelInvoke();
-        }
-    }
-    void corectValue()
-    {
-        if (test_milioneirs.CurrentAnswear == "A")
-            FrameAnswearA.transform.GetComponent<Image>().color = Color.green;
-        else if (test_milioneirs.CurrentAnswear == "B")
-            FrameAnswearB.transform.GetComponent<Image>().color = Color.green;
-        else if (test_milioneirs.CurrentAnswear == "C")
-            FrameAnswearC.transform.GetComponent<Image>().color = Color.green;
-        else if (test_milioneirs.CurrentAnswear == "D")
-            FrameAnswearD.transform.GetComponent<Image>().color = Color.green;
-    }
 
-    public void SomeMethod()
-    {
-        StartCoroutine(SomeCoroutine());
-    }
+            buttonsActive = false;
 
-    public bool flag = true;
-    private IEnumerator SomeCoroutine()
-    {
-        if (flag)
-        {
-            test_milioneirs.CurrentPosition++;
-            flag = false;
-            next2();
+            //yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(3);
+            TestMilioneirs.NextQuestion();
+
+            flag = true;
+
+            FrameAnswearA.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
+            FrameAnswearB.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
+            FrameAnswearC.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
+            FrameAnswearD.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
+
+            buttonsActive = true;
         }
 
-        buttonsActive = false;
-
-        //yield return new WaitForSeconds(3);
-        yield return new WaitForSeconds(3);
-        test_milioneirs.NextQuestion();
-        
-        flag = true;
-
-        FrameAnswearA.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
-        FrameAnswearB.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
-        FrameAnswearC.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
-        FrameAnswearD.transform.GetComponent<Image>().color = new Color(0.1059f, 0.2863f, 0.8196f);
-
-        buttonsActive = true;
-    }
-
-    void Message()
-    {
-        FrameLose2.SetActive(true);
-        Value.text = test_milioneirs.guaranteedWIN.ToString();
-        timeif = false;
-        disableButtons();
-    }
-
-    void MessageWin()
-    {
-        FrameLose2.SetActive(true);
-        Value.text = test_milioneirs.potentialWIN.ToString();
-        timeif = false;
-        disableButtons();
-
-    } 
-    void Message50()
-    {
-        answears.Remove(corect);
-        answear = (string)answears[random2];
-        Debug.Log("onclic" + (string)answears[0] + " " + (string)answears[1]);
-
-        if ((string)answears[0] == "A" || (string)answears[1] == "A")
-        {
-            test_milioneirs.CurrentAnswearA = "";
-        }
-        if ((string)answears[0] == "B" || (string)answears[1] == "B")
-        {
-            test_milioneirs.CurrentAnswearB = "";
-        }
-        if ((string)answears[0] == "C" || (string)answears[1] == "C")
-        {
-            test_milioneirs.CurrentAnswearC = "";
-        }
-        if ((string)answears[0] == "D" || (string)answears[1] == "D")
-        {
-            test_milioneirs.CurrentAnswearD = "";
-        }
-
-        Button50.SetActive(false);
-        f2 = false;
-    }
-    void checkmilion()
-    {
-        if (test_milioneirs.CurrentPosition >= 13)
+        private void Message()
         {
             FrameLose2.SetActive(true);
-            Value.text = 1000000.ToString();
+            Value.text = TestMilioneirs.guaranteedWIN.ToString();
             timeif = false;
+            DisableButtons();
         }
-    }
 
-    void next()
-    {
-        Question.text = q;
-        AnswearA.text = qa;
-        AnswearB.text = qb;
-        AnswearC.text = qc;
-        AnswearD.text = qd;
+        private void MessageWin()
+        {
+            FrameLose2.SetActive(true);
+            Value.text = TestMilioneirs.potentialWIN.ToString();
+            timeif = false;
+            DisableButtons();
 
-        iftext = !iftext;
+        }
+        private void Message50()
+        {
+            answears.Remove(corect);
+            answear = (string)answears[random2];
+            Debug.Log("onclic" + (string)answears[0] + " " + (string)answears[1]);
 
-        text.text = nick + text1;
-    }
+            if ((string)answears[0] == "A" || (string)answears[1] == "A")
+            {
+                TestMilioneirs.CurrentAnswearA = "";
+            }
+            if ((string)answears[0] == "B" || (string)answears[1] == "B")
+            {
+                TestMilioneirs.CurrentAnswearB = "";
+            }
+            if ((string)answears[0] == "C" || (string)answears[1] == "C")
+            {
+                TestMilioneirs.CurrentAnswearC = "";
+            }
+            if ((string)answears[0] == "D" || (string)answears[1] == "D")
+            {
+                TestMilioneirs.CurrentAnswearD = "";
+            }
 
-    public static void next2()
-    {
-        iftext = !iftext;
-    }
+            Button50.SetActive(false);
+            f2 = false;
+        }
+        private void Checkmilion()
+        {
+            if (TestMilioneirs.CurrentPosition >= 13)
+            {
+                FrameLose2.SetActive(true);
+                Value.text = 1000000.ToString();
+                timeif = false;
+            }
+        }
 
-    void disableButtons()
-    {
-        buttonsActive = false;
+        private void Next()
+        {
+            Question.text = q;
+            AnswearA.text = qa;
+            AnswearB.text = qb;
+            AnswearC.text = qc;
+            AnswearD.text = qd;
+
+            iftext = !iftext;
+
+            text.text = Nick + text1;
+        }
+
+        private static void Next2()
+        {
+            iftext = !iftext;
+        }
+
+        private void DisableButtons()
+        {   
+            buttonsActive = false;
+        }
     }
 }

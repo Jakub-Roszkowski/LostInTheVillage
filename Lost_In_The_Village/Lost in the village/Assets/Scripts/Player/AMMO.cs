@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class AMMO : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    public int AMMO_count;
-
-    void Start()
+    public class Ammo : MonoBehaviour
     {
-
-    }
-
-    void Update()
-    {
-
+        public int AmmoCount { get; set; }
     }
 }

@@ -1,49 +1,54 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable;
+using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
-public class PlayerInteract : MonoBehaviour
-{   
-    [SerializeField] private LayerMask mask;
-
-    private Camera cam;
-    private float distance = 8f;
-    private PlayerUI playerUI;
-    private InputManager inputManager;
-
-    void Start()
+namespace LostInTheVillage.Player
+{
+    public class PlayerInteract : MonoBehaviour
     {
-        cam = GetComponent<PlayerLook>().cam;
-        playerUI = GetComponent<PlayerUI>();
-        inputManager = GetComponent<InputManager>();
-    }
+        [SerializeField] private LayerMask mask;
 
-    void Update()
-    {
-        playerUI.UpdateText(string.Empty);
-        //create a ray at the center of the camera, shooting outwards.
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        Debug.DrawRay(ray.origin, ray.direction * distance);
-        RaycastHit hitInfo; // variable to store our collision information.
+        private Camera cam;
+        private float distance = ConfigNumbers.InteractDistance;
+        private PlayerUI playerUI;
+        private InputManager inputManager;
 
-        if (Physics.Raycast(ray, out hitInfo, distance, mask))
+        private void Start()
         {
-            if (hitInfo.collider.GetComponent<WeaponPickup>() != null)
+            cam = GetComponent<PlayerLook>().cam;
+            playerUI = GetComponent<PlayerUI>();
+            inputManager = GetComponent<InputManager>();
+        }
+
+        private void Update()
+        {
+            playerUI.UpdateText(string.Empty);
+            Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+            Debug.DrawRay(ray.origin, ray.direction * distance);
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(ray, out hitInfo, distance, mask))
             {
-                WeaponPickup interactable = hitInfo.collider.GetComponent<WeaponPickup>();
-                interactable.Interact(hitInfo.collider.gameObject);
-                playerUI.UpdateText(interactable.promptMessage);
-                if (inputManager.onFoot.Interact.triggered)
+                if (hitInfo.collider.GetComponent<WeaponPickup>() != null)
                 {
-                    interactable.Interact2(hitInfo.collider.gameObject);
+                    WeaponPickup interactable = hitInfo.collider.GetComponent<WeaponPickup>();
+                    interactable.Interact(hitInfo.collider.gameObject);
+                    playerUI.UpdateText(interactable.PromptMessage);
+                    if (inputManager.OnFoot.Interact.triggered)
+                    {
+                        interactable.Interact2(hitInfo.collider.gameObject);
+                    }
                 }
-            }
-            else if (hitInfo.collider.GetComponent<AbstractInteractableObject>() != null)
-            {
-                AbstractInteractableObject interactable = hitInfo.collider.GetComponent<AbstractInteractableObject>();
-                interactable.Interact_();
-                playerUI.UpdateText(interactable.promptMessage_());
-                if (inputManager.onFoot.Interact.triggered)
+                else if (hitInfo.collider.GetComponent<AbstractInteractableObject>() != null)
                 {
-                    interactable.Interact2_();
+                    AbstractInteractableObject interactable = hitInfo.collider.GetComponent<AbstractInteractableObject>();
+                    interactable.Interact_();
+                    playerUI.UpdateText(interactable.PromptMessage_());
+                    if (inputManager.OnFoot.Interact.triggered)
+                    {
+                        interactable.Interact2_();
+                    }
                 }
             }
         }

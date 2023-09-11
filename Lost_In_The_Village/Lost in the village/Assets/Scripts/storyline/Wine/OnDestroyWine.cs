@@ -1,14 +1,18 @@
+using LostInTheVillage.Character;
 using TMPro;
 using UnityEngine;
 
-public class OnDestroyWine : MonoBehaviour
+namespace LostInTheVillage.Storyline.Wine
 {
-    public CharacterMessage waiter;
-    public TextMeshProUGUI destinationText;
-
-    public void OnDestroy()
+    public class OnDestroyWine : MonoBehaviour
     {
-        waiter.place = Place_enum.Bar2;
-        destinationText.text = Helpers.Languages.SetTextOnDestroyWine();
+        [SerializeField] private CharacterMessage waiterCharacter;
+        [SerializeField] private TextMeshProUGUI destinationText;
+
+        private void OnDestroy()
+        {
+            waiterCharacter.Place = PlaceEnum.Bar2;
+            destinationText.text = Helpers.Languages.SetTextOnDestroyWine();
+        }
     }
 }

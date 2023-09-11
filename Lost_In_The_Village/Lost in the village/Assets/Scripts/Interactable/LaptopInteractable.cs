@@ -1,63 +1,65 @@
+using LostInTheVillage.Character;
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
 using TMPro;
 using UnityEngine;
 
-public class LaptopInteractable : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private GameObject[] objectsToDeactivate;
-    [SerializeField] private CharacterMessage Orzel;
-    [SerializeField] private TextMeshProUGUI destinationText;
-
-    public static bool toSee = false;
-
-    private string promptMessageTemp;
-    private string text;
-    private string text2;
-
-    private void Start()
+    public class LaptopInteractable : AbstractInteractableObject
     {
-        toSee = false;
-    }
-    private void DisableObjects()
-    {
-        foreach (var obj in objectsToDeactivate)
+        [SerializeField] private GameObject[] objectsToDeactivate;
+        [SerializeField] private CharacterMessage eagleCharacter;
+        [SerializeField] private TextMeshProUGUI destinationText;
+
+        public static bool IsToSee { get; set; } = false;
+
+        private string promptMessageTemp;
+
+
+        private void Start()
         {
-            if (obj != null)
+            IsToSee = false;
+        }
+        private void DisableObjects()
+        {
+            foreach (var obj in objectsToDeactivate)
             {
-                obj.SetActive(false);
+                if (obj != null)
+                {
+                    obj.SetActive(false);
+                }
             }
         }
-    }
 
-    protected override void Interact()
-    {
-        text = Helpers.Languages.SetTextLaptopInteract();
-        text2 = Helpers.Languages.SetTextNotAvailable();
-
-        if (toSee)
-            promptMessageTemp = text;
-        else
-            promptMessageTemp = text2;
-    }
-
-    protected override void Interact2()
-    {
-        if (toSee)
+        protected override void Interact()
         {
-            DisableObjects();
-            Orzel.place = Place_enum.Orzel_laptop;
-            setText();
-            DoorEvacuation.toSee = true;
-            toSee = false;
+            string text = Languages.SetTextLaptopInteract();
+            string notAvailableText = Languages.SetTextNotAvailable();
+
+            promptMessageTemp = IsToSee ? text : notAvailableText;
         }
-    }
 
-    private void setText()
-    {
-        destinationText.text = Helpers.Languages.SetTextEagle();
-    }
+        protected override void Interact2()
+        {
+            if (IsToSee)
+            {
+                DisableObjects();
+                eagleCharacter.Place = PlaceEnum.OrzelLaptop;
+                SetText();
+                DoorEvacuation.IsToSee = true;
+                IsToSee = false;
+            }
+        }
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+        private void SetText()
+        {
+            destinationText.text = LostInTheVillage.Helpers.Languages.SetTextEagle();
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

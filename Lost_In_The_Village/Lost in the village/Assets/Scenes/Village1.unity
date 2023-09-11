@@ -6621,9 +6621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576ee57c9774214da610f2cbd1d957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next_character: {fileID: 0}
-  to_see: 0
-  to_see2: 1
+  nextCharacter: {fileID: 0}
+  ToSee: 0
+  ToSee2: 1
 --- !u!82 &666878075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6747,9 +6747,8 @@ MonoBehaviour:
   promptText: {fileID: 1501702219}
   destination: {fileID: 1497748773}
   sounds: {fileID: 11400000, guid: 45f3184b64c9d6a4ead42b9f11f6fab7, type: 2}
-  place: 10
   BGM: {fileID: 666878075}
-  audio: {fileID: 0}
+  Place: 10
 --- !u!136 &666878080
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12864,9 +12863,8 @@ MonoBehaviour:
   promptText: {fileID: 1501702219}
   destination: {fileID: 1497748773}
   sounds: {fileID: 11400000, guid: 45f3184b64c9d6a4ead42b9f11f6fab7, type: 2}
-  place: 9
   BGM: {fileID: 1238302296}
-  audio: {fileID: 0}
+  Place: 9
 --- !u!114 &1238302298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15877,7 +15875,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2974772814558596121, guid: 29837792038284049814ffd24fd1ca5c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2974772814558596121, guid: 29837792038284049814ffd24fd1ca5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21114,7 +21112,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6664060939688093554, guid: 15de692b3a4b6d641b8d64edae19e264, type: 3}
       propertyPath: m_Name
-      value: Muzyka
+      value: Music
       objectReference: {fileID: 0}
     - target: {fileID: 6664060939688093556, guid: 15de692b3a4b6d641b8d64edae19e264, type: 3}
       propertyPath: m_RootOrder
@@ -21171,7 +21169,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2974772814558596121, guid: 29837792038284049814ffd24fd1ca5c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2974772814558596121, guid: 29837792038284049814ffd24fd1ca5c, type: 3}
       propertyPath: m_LocalPosition.x

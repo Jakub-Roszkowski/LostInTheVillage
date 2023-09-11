@@ -1,60 +1,82 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
+using LostInTheVillage.Storyline.Village2;
 using TMPro;
 using UnityEngine;
 
-public class Control : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private Canvas canvasToActivate;
-    [SerializeField] private TextMeshProUGUI textCanva;
-
-    [SerializeField] private AudioSource BGM;
-    [SerializeField] private AudioClip message;
-
-    private InputManagerToExitCanva inputManager;
-    private string text;
-    private string promptMessageTemp;
-
-    private void Start()
+    public class Control : AbstractInteractableObject
     {
-        BGM.Stop();
-        inputManager = GetComponent<InputManagerToExitCanva>();
-    }
+        [SerializeField] private Canvas canvasToActivate;
+        [SerializeField] private TextMeshProUGUI textCanvas;
 
-    private void Update()
-    {
-        if (inputManager.onFoot.Exit.triggered)
+        [SerializeField] private AudioSource BGM;
+        [SerializeField] private AudioClip messageAudio;
+
+        private InputManagerToExitCanva inputManager;
+        private string text;
+        private string promptMessageTemp;
+
+        private void Start()
         {
-            canvasToActivate.gameObject.SetActive(false);
+            BGM.Stop();
+            inputManager = GetComponent<InputManagerToExitCanva>();
         }
-    }
 
-    protected override void Interact()
-    {
-        text = Helpers.Languages.SetTextControlInteract();
-        promptMessageTemp = text;
-    }
+        private void Update()
+        {
+            if (inputManager.onFoot.Exit.triggered)
+            {
+                DeactivateCanvas();
+            }
+        }
 
-    protected override void Interact2()
-    {
-        ChangeBGM(message);
-        canvasToActivate.gameObject.SetActive(true);
-        SetText();
-    }
+        protected override void Interact()
+        {
+            text = Languages.SetTextControlInteract();
+            promptMessageTemp = text;
+        }
+
+        protected override void Interact2()
+        {
+            ChangeBGM(messageAudio);
+            ActivateCanvas();
+            SetText();
+        }
 
 
-    private void SetText()
-    {
-        textCanva.text = Helpers.Languages.SetTextControl();
-    }
+        private void SetText()
+        {
+            textCanvas.text = Languages.SetTextControl();
+        }
 
-    public void ChangeBGM(AudioClip music)
-    {
-        BGM.Stop();
-        BGM.clip = music;
-        BGM.Play();
-    }
+        private void ChangeBGM(AudioClip music)
+        {
+            BGM.Stop();
+            BGM.clip = music;
+            BGM.Play();
+        }
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
+
+        private void ActivateCanvas()
+        {
+            if (canvasToActivate != null)
+            {
+                canvasToActivate.gameObject.SetActive(true);
+            }
+        }
+
+        private void DeactivateCanvas()
+        {
+            if (canvasToActivate != null)
+            {
+                canvasToActivate.gameObject.SetActive(false);
+            }
+        }
     }
 }

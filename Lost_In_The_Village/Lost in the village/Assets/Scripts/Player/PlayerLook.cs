@@ -1,51 +1,55 @@
+using LostInTheVillage.Helpers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerLook : MonoBehaviour
+namespace LostInTheVillage.Player
 {
-    public Camera cam;
-
-    public float mouseXSensitivity = 10f;
-    public float mouseYSensitivity = 10f;
-    public float gamepadXSensitivity = 95f;
-    public float gamepadYSensitivity = 95f;
-
-    private float xSensitivity;
-    private float ySensitivity;
-    
-    private float xRotation = 0f;
-
-    private void Start()
+    public class PlayerLook : MonoBehaviour
     {
-        xSensitivity = mouseXSensitivity;
-        ySensitivity = mouseYSensitivity;
-    }
+        public Camera cam;
 
-    public void ProcessLook(Vector2 input)
-    {
-        float mouseX = input.x;
-        float mouseY = input.y;
+        public float mouseXSensitivity = ConfigNumbers.MouseXSensitivity;
+        public float mouseYSensitivity = ConfigNumbers.MouseYSensitivity;
+        public float gamepadXSensitivity = ConfigNumbers.GamepadXSensitivity;
+        public float gamepadYSensitivity = ConfigNumbers.GamepadYSensitivity;
 
-        // Check Gamepad
-        if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue() != Vector2.zero)
-        {
-            xSensitivity = gamepadXSensitivity;
-            ySensitivity = gamepadYSensitivity;
-        }
-        else
+        private float xSensitivity;
+        private float ySensitivity;
+
+        private float xRotation = 0f;
+
+        private void Start()
         {
             xSensitivity = mouseXSensitivity;
             ySensitivity = mouseYSensitivity;
         }
 
-        mouseX *= xSensitivity;
-        mouseY *= ySensitivity;
+        public void ProcessLook(Vector2 input)
+        {
+            float mouseX = input.x;
+            float mouseY = input.y;
 
-        xRotation -= (mouseY * Time.deltaTime);
-        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+            // Check Gamepad
+            if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue() != Vector2.zero)
+            {
+                xSensitivity = gamepadXSensitivity;
+                ySensitivity = gamepadYSensitivity;
+            }
+            else
+            {
+                xSensitivity = mouseXSensitivity;
+                ySensitivity = mouseYSensitivity;
+            }
 
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            mouseX *= xSensitivity;
+            mouseY *= ySensitivity;
 
-        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime));
+            xRotation -= (mouseY * Time.deltaTime);
+            xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+
+            cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
+            transform.Rotate(Vector3.up * (mouseX * Time.deltaTime));
+        }
     }
 }

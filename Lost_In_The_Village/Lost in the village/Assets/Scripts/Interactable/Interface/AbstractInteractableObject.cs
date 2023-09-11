@@ -1,12 +1,16 @@
 using UnityEngine;
 
-public abstract class AbstractInteractableObject : MonoBehaviour
+namespace LostInTheVillage.Interactable.Interface
 {
-    public string promptMessage_() {return promptMessage(); }
-    public void Interact_() { Interact(); }
-    public void Interact2_() { Interact2(); }
 
-    protected abstract string promptMessage();
-    protected abstract void Interact();
-    protected abstract void Interact2();
+    public abstract class AbstractInteractableObject : MonoBehaviour
+    {
+        public string PromptMessage_() { return PromptMessage(); }
+        public void Interact_() { Interact(); }
+        public void Interact2_() { Interact2(); }
+
+        protected abstract string PromptMessage();
+        protected abstract void Interact();
+        protected abstract void Interact2();
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using LostInTheVillage.Interactable.Interface;
+using System.Collections;
 using UnityEngine;
 
 namespace SojaExiles
@@ -16,7 +17,7 @@ namespace SojaExiles
 
         protected override void Interact()
         {
-            promptMessageTemp = Helpers.Languages.SetTextOpenClose();
+            promptMessageTemp = LostInTheVillage.Helpers.Languages.SetTextOpenClose();
         }
         protected override void Interact2()
         {
@@ -46,7 +47,7 @@ namespace SojaExiles
             yield return new WaitForSeconds(.5f);
         }
 
-        protected override string promptMessage()
+        protected override string PromptMessage()
         {
             return promptMessageTemp;
         }

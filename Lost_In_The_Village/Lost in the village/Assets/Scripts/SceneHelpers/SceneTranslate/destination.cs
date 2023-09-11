@@ -1,15 +1,15 @@
 using TMPro;
 using UnityEngine;
 
-public class destination : MonoBehaviour
+namespace LostInTheVillage.SceneHelpers.SceneTranslate
 {
-    public TextMeshProUGUI promptText;
-    void Start()
+    public class Destination : MonoBehaviour
     {
-        promptText.text = Helpers.Languages.SetDestinationVillage2();
-    }
-    void Update()
-    {
+        public TextMeshProUGUI promptText;
 
+        private void Start()
+        {
+            promptText.text = Helpers.Languages.SetDestinationVillage2();
+        }
     }
 }

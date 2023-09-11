@@ -1,40 +1,45 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
-public class GameConsoleInteract : AbstractInteractableObject
+namespace LostInTheVillage.Interactable
 {
-    [SerializeField] private GameObject gamesPanel;
-    [SerializeField] private GameObject[] objects_to_disactive;
-
-    private string promptMessageTemp;
-
-    protected override void Interact()
+    public class GameConsoleInteract : AbstractInteractableObject
     {
-        promptMessageTemp = Helpers.Languages.SetTextConsoleInteract();
-    }
+        [SerializeField] private GameObject gamesPanel;
+        [SerializeField] private GameObject[] objectsToDeactivate;
 
-    protected override void Interact2()
-    {
-        drunk playerdrunk = GameObject.FindWithTag("MainCamera").GetComponent<drunk>();
+        private string promptMessageTemp;
 
-        if (playerdrunk != null)
+        protected override void Interact()
         {
-            playerdrunk.DisableDrunkEffect();
+            promptMessageTemp = Languages.SetTextConsoleInteract();
         }
 
-        Time.timeScale = 0f;
-        gamesPanel.SetActive(true);
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-
-        foreach (GameObject elem in objects_to_disactive)
+        protected override void Interact2()
         {
-            elem.SetActive(false);
-        }
-    }
+            Drunk playerdrunk = GameObject.FindWithTag("MainCamera").GetComponent<Drunk>();
 
-    protected override string promptMessage()
-    {
-        return promptMessageTemp;
+            if (playerdrunk != null)
+            {
+                playerdrunk.DisableDrunkEffect();
+            }
+
+            Time.timeScale = 0f;
+            gamesPanel.SetActive(true);
+
+            UnityEngine.Cursor.visible = true;
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+
+            foreach (GameObject elem in objectsToDeactivate)
+            {
+                elem.SetActive(false);
+            }
+        }
+
+        protected override string PromptMessage()
+        {
+            return promptMessageTemp;
+        }
     }
 }

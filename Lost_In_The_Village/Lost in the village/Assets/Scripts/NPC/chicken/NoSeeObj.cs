@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class NoSeeObj : MonoBehaviour
+namespace LostInTheVillage.NPC.Chicken
 {
-    public bool isVisible = true;
-    private Renderer renderer;
-
-    private void Start()
+    public class NoSeeObj : MonoBehaviour
     {
-        renderer = GetComponent<Renderer>();
-        SetVisibility(isVisible);
-    }
+        private bool isVisible = true;
+        private Renderer renderer;
 
-    public void SetVisibility(bool visible)
-    {
-        isVisible = visible;
-        renderer.enabled = isVisible;
+        private void Start()
+        {
+            renderer = GetComponent<Renderer>();
+            SetVisibility(isVisible);
+        }
+
+        public void SetVisibility(bool visible)
+        {
+            isVisible = visible;
+            renderer.enabled = isVisible;
+        }
     }
 }
 

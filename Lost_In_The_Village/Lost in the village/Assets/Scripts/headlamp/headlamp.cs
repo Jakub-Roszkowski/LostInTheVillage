@@ -1,24 +1,26 @@
 using UnityEngine;
 
-public class headlamp : MonoBehaviour
+namespace LostInTheVillage.Headlamp
 {
-    public Light light;
-    private InputManagerToHeadLamp inputManager;
-
-    private bool ifactive;
-
-    private void Start()
+    public class Headlamp : MonoBehaviour
     {
-        inputManager = GetComponent<InputManagerToHeadLamp>();
-        ifactive = true;
-    }
+        [SerializeField] private Light headLampLight;
+        private InputManagerToHeadLamp inputManager;
 
-    private void Update()
-    {
-        if (inputManager.onFoot.Light.triggered)
+        private bool ifActive = true;
+
+        private void Start()
         {
-            light.gameObject.SetActive(!ifactive);
-            ifactive = !ifactive;
+            inputManager = GetComponent<InputManagerToHeadLamp>();
+        }
+
+        private void Update()
+        {
+            if (inputManager.OnFoot.Light.triggered)
+            {
+                headLampLight.gameObject.SetActive(!ifActive);
+                ifActive = !ifActive;
+            }
         }
     }
 }

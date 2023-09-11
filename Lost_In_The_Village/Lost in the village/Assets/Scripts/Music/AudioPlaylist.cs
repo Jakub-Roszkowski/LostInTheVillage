@@ -1,50 +1,57 @@
+using LostInTheVillage.Character;
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Menus;
 using UnityEngine;
 
-public class AudioPlaylist : MonoBehaviour
+namespace LostInTheVillage.Music
 {
-    public AudioClip[] audioClips;
-    private AudioSource audioSource;
-    private int currentClipIndex = 0;
-    private float glosnosc;
-
-    private void Start()
+    public class AudioPlaylist : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-        PlayNextClip();
-        glosnosc = audioSource.volume;
-    }
+        [SerializeField] private AudioClip[] audioClips;
 
-    private void PlayNextClip()
-    {
-        if (currentClipIndex >= audioClips.Length)
-        {
-            currentClipIndex = 0;
-        }
+        private AudioSource audioSource;
+        private int currentClipIndex = 0;
+        private float startingVolume;
 
-        audioSource.clip = audioClips[currentClipIndex];
-        audioSource.Play();
-
-        currentClipIndex++;
-    }
-
-    private void Update()
-    {
-        if (Pause.MusicisMute)
+        private void Start()
         {
-            audioSource.volume = 0f;
-        }
-        else if (CharacterMessage.isMusicDown)
-        {
-            audioSource.volume = glosnosc * 0.3f;
-        }
-        else
-        {
-            audioSource.volume = glosnosc;
-        }
-
-        if (!audioSource.isPlaying)
-        {
+            audioSource = GetComponent<AudioSource>();
             PlayNextClip();
+            startingVolume = audioSource.volume;
+        }
+
+        private void PlayNextClip()
+        {
+            if (currentClipIndex >= audioClips.Length)
+            {
+                currentClipIndex = 0;
+            }
+
+            audioSource.clip = audioClips[currentClipIndex];
+            audioSource.Play();
+
+            currentClipIndex++;
+        }
+
+        private void Update()
+        {
+            if (Pause.MusicIsMute)
+            {
+                audioSource.volume = 0f;
+            }
+            else if (CharacterMessage.IsMusicDown)
+            {
+                audioSource.volume = startingVolume * ConfigNumbers.MusicMuteVolume;
+            }
+            else
+            {
+                audioSource.volume = startingVolume;
+            }
+
+            if (!audioSource.isPlaying)
+            {
+                PlayNextClip();
+            }
         }
     }
 }
