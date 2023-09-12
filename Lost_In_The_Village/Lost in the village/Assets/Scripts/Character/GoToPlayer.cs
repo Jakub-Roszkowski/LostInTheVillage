@@ -4,7 +4,7 @@ using UnityEngine.AI;
 namespace LostInTheVillage.Character
 {
     public class GoToPlayer : MonoBehaviour
-    {        
+    {
         [SerializeField] private Transform movePositionTransforms;
 
         public bool IsToGo { get; set; } = false;

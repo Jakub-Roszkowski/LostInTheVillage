@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace LostInTheVillage.Interactable.Interface
 {
-
     public abstract class AbstractInteractableObject : MonoBehaviour
     {
         public string PromptMessage_() { return PromptMessage(); }

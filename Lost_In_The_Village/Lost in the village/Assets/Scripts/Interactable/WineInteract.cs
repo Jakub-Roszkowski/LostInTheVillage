@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ namespace LostInTheVillage.Interactable
         private string promptMessageTemp;
         protected override void Interact()
         {
-            promptMessageTemp = Languages.SetTextWineInteract();
+            promptMessageTemp = LanguagesTranslation.SetTextWineInteract();
         }
         protected override void Interact2()
         {

@@ -1,7 +1,8 @@
+using LostInTheVillage.NPCOpponents.States;
 using System;
 using UnityEngine;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyBrainSmart : MonoBehaviour
     {

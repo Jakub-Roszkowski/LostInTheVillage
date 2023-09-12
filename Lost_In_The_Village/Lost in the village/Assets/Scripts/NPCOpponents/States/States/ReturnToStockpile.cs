@@ -18,9 +18,7 @@ namespace LostInTheVillage.NPCOpponents.States.States
             _animator = animator;
         }
 
-        public void Tick()
-        {
-        }
+        public void Tick() { }
 
         public void OnEnter()
         {

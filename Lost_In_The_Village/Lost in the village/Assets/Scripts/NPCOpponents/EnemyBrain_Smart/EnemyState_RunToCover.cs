@@ -1,10 +1,10 @@
+using LostInTheVillage.NPCOpponents.States;
 using UnityEngine;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyState_RunToCover : IState
     {
-
         private EnemyReferences enemyReferences;
         private CoverArea coverArea;
         public Vector3 destination;
@@ -27,7 +27,6 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
         public void OnExit()
         {
             enemyReferences.animator.SetFloat("speed", 0f);
-
         }
 
         public void Tick()
@@ -38,7 +37,6 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
         public bool HasArrivedAtDestination()
         {
             return Vector3.Distance(enemyReferences.transform.position, destination) < 0.5f;
-            //zmienilem z 0.5f
         }
 
         public Color GizmoColor()

@@ -1,5 +1,5 @@
+using LostInTheVillage.NPCOpponents.EnemyBrainSmart;
 using LostInTheVillage.NPCOpponents.States;
-using LostInTheVillage.NPCOpponents.States.EnemyBrainSmart;
 using UnityEngine;
 
 namespace LostInTheVillage.NPCOpponents
@@ -23,11 +23,9 @@ namespace LostInTheVillage.NPCOpponents
             enemyReferences.animator.SetBool("isWalking", false);
         }
 
-
         public void OnExit()
         {
             enemyReferences.animator.SetFloat("speed", 0f);
-
         }
 
         public void Tick()

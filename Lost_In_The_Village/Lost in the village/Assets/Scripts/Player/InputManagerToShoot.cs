@@ -3,9 +3,9 @@ using UnityEngine;
 namespace LostInTheVillage.Player
 {
     public class InputManagerToShoot : MonoBehaviour
-    {        
+    {
         public PlayerInput.OnFootActions OnFoot { get; private set; }
-        
+
         private PlayerInput playerInput;
 
         private void Awake()

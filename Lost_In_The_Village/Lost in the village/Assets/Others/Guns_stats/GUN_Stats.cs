@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New GUN", menuName = "GunStats")]
@@ -15,5 +13,4 @@ public class GUN_Stats : ScriptableObject
     public AudioClip shoot;
     public AudioClip ReloadSound;
     public AudioClip headshoot;
-
 }

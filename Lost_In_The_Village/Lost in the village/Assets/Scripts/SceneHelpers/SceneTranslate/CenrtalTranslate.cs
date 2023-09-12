@@ -1,3 +1,4 @@
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace LostInTheVillage.SceneHelpers.SceneTranslate
 
         private void Start()
         {
-            Central.text = Helpers.Languages.SetTextCentalBuild();
+            Central.text = LanguagesTranslation.SetTextCentalBuild();
         }
     }
 }

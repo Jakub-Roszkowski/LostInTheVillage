@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyReferences : MonoBehaviour
     {

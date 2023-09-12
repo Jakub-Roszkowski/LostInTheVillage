@@ -1,5 +1,5 @@
 using LostInTheVillage.Character;
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using TMPro;
 using UnityEngine;
@@ -34,8 +34,8 @@ namespace LostInTheVillage.Interactable
 
         protected override void Interact()
         {
-            string text = Languages.SetTextLaptopInteract();
-            string notAvailableText = Languages.SetTextNotAvailable();
+            string text = LanguagesTranslation.SetTextLaptopInteract();
+            string notAvailableText = LanguagesTranslation.SetTextNotAvailable();
 
             promptMessageTemp = IsToSee ? text : notAvailableText;
         }
@@ -54,7 +54,7 @@ namespace LostInTheVillage.Interactable
 
         private void SetText()
         {
-            destinationText.text = LostInTheVillage.Helpers.Languages.SetTextEagle();
+            destinationText.text = LanguagesTranslation.SetTextEagle();
         }
 
         protected override string PromptMessage()

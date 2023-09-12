@@ -1,15 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
-using Debug = UnityEngine.Debug;
 
 public class CoverArea : MonoBehaviour
 {
-
     private Cover[] covers;
 
     private Cover currentCover;
@@ -19,8 +12,6 @@ public class CoverArea : MonoBehaviour
         covers = GetComponentsInChildren<Cover>();
     }
 
-
-
     public Cover GetNearestCover(Vector3 agentLocation, Cover currentCover)
     {
         Cover nearestCover = null;
@@ -28,10 +19,9 @@ public class CoverArea : MonoBehaviour
 
         if (covers.Length == 1) return covers[0];
 
-
         foreach (Cover cover in covers)
         {
-            if (!cover.Equals(currentCover)) 
+            if (!cover.Equals(currentCover))
             {
                 float distance = Vector3.Distance(agentLocation, cover.transform.position);
 
@@ -41,14 +31,7 @@ public class CoverArea : MonoBehaviour
                     nearestDistance = distance;
                 }
             }
- 
-
         }
-
         return nearestCover;
     }
-
-
-
-
 }

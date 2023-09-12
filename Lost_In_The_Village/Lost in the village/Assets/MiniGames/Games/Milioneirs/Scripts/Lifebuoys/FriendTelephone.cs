@@ -1,8 +1,8 @@
+using LostInTheVillage.Helpers.Translations;
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using LostInTheVillage.Helpers;
 
 namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts.Lifebuoys
 {
@@ -13,6 +13,7 @@ namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts.Lifebuoys
         [SerializeField] private GameObject telephonePanel;
 
         private static bool f1 = true;
+
         private ArrayList answears = new ArrayList();
         private string text;
 
@@ -29,12 +30,12 @@ namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts.Lifebuoys
 
             f1 = true;
 
-            text = Languages.SetTextFriendTelephone();
+            text = LanguagesTranslation.SetTextFriendTelephone();
         }
 
         private void Update()
         {
-            answearText.text = text + TestMilioneirs.CurrentAnswear;
+            answearText.text = text + MilioneirsQuestions.CurrentAnswer;
 
             button.transform.GetComponent<Button>().onClick.AddListener(OnClickButton);
             if (Input.GetKey(KeyCode.Escape))

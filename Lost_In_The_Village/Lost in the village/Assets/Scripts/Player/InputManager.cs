@@ -3,7 +3,7 @@ using UnityEngine;
 namespace LostInTheVillage.Player
 {
     public class InputManager : MonoBehaviour
-    {        
+    {
         public PlayerInput.OnFootActions OnFoot { get; private set; }
 
         private PlayerInput playerInput;

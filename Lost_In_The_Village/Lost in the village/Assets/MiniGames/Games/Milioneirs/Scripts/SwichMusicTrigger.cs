@@ -10,18 +10,18 @@ namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 
         private Music music;
 
-        void Start()
+        private void Start()
         {
             music = FindObjectOfType<Music>();
         }
 
-        void Update()
+        private void Update()
         {
-            if (TestMilioneirs.CurrentPosition >= 13)
+            if (MilioneirsQuestions.CurrentPosition >= 13)
             {
                 music.ChangeBGM(newTrackWIN);
             }
-            else if (QestionText.lose)
+            else if (QuestionController.IsLose)
             {
                 music.ChangeBGM(newTrackLose);
             }

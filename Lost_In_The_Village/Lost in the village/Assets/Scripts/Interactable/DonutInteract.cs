@@ -1,4 +1,5 @@
 using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using LostInTheVillage.Menus;
 using LostInTheVillage.Player;
@@ -34,7 +35,7 @@ namespace LostInTheVillage.Interactable
 
         protected override void Interact()
         {
-            promptMessageTemp = Languages.SetTextDonut() + " " + value + " HP (E)";
+            promptMessageTemp = LanguagesTranslation.SetTextDonut() + " " + value + " HP (E)";
         }
 
         protected override void Interact2()

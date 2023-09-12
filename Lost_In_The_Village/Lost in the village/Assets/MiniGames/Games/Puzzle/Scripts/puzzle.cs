@@ -20,13 +20,13 @@ namespace LostInTheVillage.MiniGames.Games.Puzzle.Scripts
             {
                 if (collision.gameObject.name != gameObject.name)
                 {
-                    TimeAndRest.ChangeMusic(1);
+                    PuzzleTimerController.ChangeMusic(1);
                     StartCoroutine(MoveToInitialPosition(collision.gameObject));
                 }
                 else
                 {
-                    TimeAndRest.ChangeMusic(0);
-                    TimeAndRest.counter++;
+                    PuzzleTimerController.ChangeMusic(0);
+                    PuzzleTimerController.Counter++;
                     spriteRenderer.enabled = true;
 
                     Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
@@ -39,7 +39,7 @@ namespace LostInTheVillage.MiniGames.Games.Puzzle.Scripts
 
         private IEnumerator MoveToInitialPosition(GameObject obj)
         {
-            Vector3 initialPosition = obj.GetComponent<MouseDrag>().initialPosition;
+            Vector3 initialPosition = obj.GetComponent<MouseDrag>().InitialPosition;
             Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
 
             rb.isKinematic = true;

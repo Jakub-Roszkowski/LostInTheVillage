@@ -1,3 +1,4 @@
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ namespace LostInTheVillage.Interactable.StartPuzzle
 {
     public class InteractableBackup : AbstractInteractableObject
     {
-        [SerializeField] private string PromptMessageTemp ;
+        [SerializeField] private string PromptMessageTemp;
         public static bool ToSee { get; set; } = false;
 
         private string text;
@@ -21,8 +22,8 @@ namespace LostInTheVillage.Interactable.StartPuzzle
 
         protected override void Interact()
         {
-            text = Helpers.Languages.SetTextBackupInteract();
-            text2 = Helpers.Languages.SetTextNotAvailable();
+            text = LanguagesTranslation.SetTextBackupInteract();
+            text2 = LanguagesTranslation.SetTextNotAvailable();
 
             if (ToSee)
                 PromptMessageTemp = text;

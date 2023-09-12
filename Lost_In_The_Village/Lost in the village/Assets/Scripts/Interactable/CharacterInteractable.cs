@@ -1,5 +1,5 @@
 using LostInTheVillage.Character;
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using LostInTheVillage.Interactable.StartPuzzle;
 using LostInTheVillage.Storyline.Village1;
@@ -16,7 +16,7 @@ namespace LostInTheVillage.Interactable
 
         public bool ToSee { get; set; } = false;
 
-        private bool toSee2  = true;
+        private bool toSee2 = true;
         private string promptMessageTemp;
         private string text;
         private string text2;
@@ -29,8 +29,8 @@ namespace LostInTheVillage.Interactable
         }
         protected override void Interact()
         {
-            text = Languages.SetTextCharacterInteract();
-            text2 = Languages.SetTextCharacterInteract2();
+            text = LanguagesTranslation.SetTextCharacterInteract();
+            text2 = LanguagesTranslation.SetTextCharacterInteract2();
 
             promptMessageTemp = ToSee ? text : text2;
         }

@@ -1,3 +1,5 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -15,7 +17,7 @@ namespace LostInTheVillage.Storyline.Village1
 
         public static bool IfIsToOpen { get; set; } = false;
 
-        private string sceneName = LostInTheVillage.Helpers.Scenes.Village2;
+        private string sceneName = Scenes.Village2;
 
         private void Start()
         {
@@ -39,7 +41,7 @@ namespace LostInTheVillage.Storyline.Village1
 
         private void DisplayPromptText()
         {
-            promptText.text = LostInTheVillage.Helpers.Languages.SetTextNotAvailable();
+            promptText.text = LanguagesTranslation.SetTextNotAvailable();
 
             StartCoroutine(ClearPromptText(3f));
         }

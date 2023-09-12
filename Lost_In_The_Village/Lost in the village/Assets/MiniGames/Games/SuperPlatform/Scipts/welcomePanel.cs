@@ -5,17 +5,17 @@ namespace LostInTheVillage.MiniGames.Games.SuperPlatform.Scripts
 {
     public class WelcomePanel : MonoBehaviour
     {
-        public GameObject PanelNick;
+        [SerializeField] private GameObject PanelNick;
 
         private void Update()
         {
             if (Input.GetKey(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button2))
             {
                 PanelNick.SetActive(false);
-                PlayerPlatform.start = true;
-                PlayerPlatform.start_movement = true;
+                PlayerPlatformController.IsStart = true;
+                PlayerPlatformController.IsStartMovement = true;
 
-                PlayerPlatform.timestart = DateTime.Now;
+                PlayerPlatformController.TimeStart = DateTime.Now;
             }
         }
     }

@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ namespace LostInTheVillage.Interactable
 
         protected override void Interact()
         {
-            promptMessageTemp = Languages.SetTextConsoleInteract();
+            promptMessageTemp = LanguagesTranslation.SetTextConsoleInteract();
         }
 
         protected override void Interact2()
@@ -28,8 +28,8 @@ namespace LostInTheVillage.Interactable
             Time.timeScale = 0f;
             gamesPanel.SetActive(true);
 
-            UnityEngine.Cursor.visible = true;
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
 
             foreach (GameObject elem in objectsToDeactivate)
             {

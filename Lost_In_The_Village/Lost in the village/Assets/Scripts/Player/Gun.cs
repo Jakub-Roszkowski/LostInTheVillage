@@ -232,7 +232,7 @@ namespace LostInTheVillage.Player
             BGM.Play();
         }
 
-        void SetAmmoCountForParent(int ammo) 
+        void SetAmmoCountForParent(int ammo)
         {
             GameObject parentObject = transform.parent.gameObject;
             if (parentObject != null)
@@ -251,7 +251,7 @@ namespace LostInTheVillage.Player
             yield return new WaitForSeconds(0.2f);
             ChangeBGM(headshoot);
         }
-        
+
         IEnumerator Reload()
         {
             isReloading = true;

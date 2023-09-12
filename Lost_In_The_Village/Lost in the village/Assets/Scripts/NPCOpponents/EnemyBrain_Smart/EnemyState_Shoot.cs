@@ -1,8 +1,9 @@
+using LostInTheVillage.NPCOpponents.States;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyState_Shoot : IState
     {

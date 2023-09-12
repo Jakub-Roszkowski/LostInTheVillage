@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using LostInTheVillage.Storyline.Village2;
 using TMPro;
@@ -26,7 +26,7 @@ namespace LostInTheVillage.Interactable
 
         private void Update()
         {
-            if (inputManager.onFoot.Exit.triggered)
+            if (inputManager.OnFoot.Exit.triggered)
             {
                 DeactivateCanvas();
             }
@@ -34,7 +34,7 @@ namespace LostInTheVillage.Interactable
 
         protected override void Interact()
         {
-            text = Languages.SetTextControlInteract();
+            text = LanguagesTranslation.SetTextControlInteract();
             promptMessageTemp = text;
         }
 
@@ -48,7 +48,7 @@ namespace LostInTheVillage.Interactable
 
         private void SetText()
         {
-            textCanvas.text = Languages.SetTextControl();
+            textCanvas.text = LanguagesTranslation.SetTextControl();
         }
 
         private void ChangeBGM(AudioClip music)

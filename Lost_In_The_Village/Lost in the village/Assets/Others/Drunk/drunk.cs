@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Drunk : MonoBehaviour
 {
-    public Material material;
+    [SerializeField] private Material material;
     private bool isEffectActive = false;
 
     private void Start()
@@ -32,7 +32,7 @@ public class Drunk : MonoBehaviour
     }
 
 
-    void OnRenderImage(RenderTexture source, RenderTexture destination)
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (isEffectActive)
         {

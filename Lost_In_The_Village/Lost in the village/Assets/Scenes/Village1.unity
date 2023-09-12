@@ -6622,8 +6622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextCharacter: {fileID: 0}
-  ToSee: 0
-  ToSee2: 1
 --- !u!82 &666878075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6748,7 +6746,7 @@ MonoBehaviour:
   destination: {fileID: 1497748773}
   sounds: {fileID: 11400000, guid: 45f3184b64c9d6a4ead42b9f11f6fab7, type: 2}
   BGM: {fileID: 666878075}
-  Place: 10
+  place: 10
 --- !u!136 &666878080
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12864,7 +12862,7 @@ MonoBehaviour:
   destination: {fileID: 1497748773}
   sounds: {fileID: 11400000, guid: 45f3184b64c9d6a4ead42b9f11f6fab7, type: 2}
   BGM: {fileID: 1238302296}
-  Place: 9
+  place: 9
 --- !u!114 &1238302298
 MonoBehaviour:
   m_ObjectHideFlags: 0

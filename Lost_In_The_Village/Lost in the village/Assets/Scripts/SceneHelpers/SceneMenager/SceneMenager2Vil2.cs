@@ -7,7 +7,7 @@ namespace LostInTheVillage.SceneHelpers.SceneMenager
     {
         private void Start()
         {
-            SceneMenager2.currentScene = Scenes.Village2;
+            SceneMenager2.CurrentScene = Scenes.Village2;
         }
     }
 }

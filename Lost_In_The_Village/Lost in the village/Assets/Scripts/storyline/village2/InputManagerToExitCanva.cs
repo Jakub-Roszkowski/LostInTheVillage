@@ -5,22 +5,22 @@ namespace LostInTheVillage.Storyline.Village2
     public class InputManagerToExitCanva : MonoBehaviour
     {
         private PlayerInput playerInput;
-        public PlayerInput.OnFootActions onFoot;
+        public PlayerInput.OnFootActions OnFoot { get; private set; }
 
         private void Awake()
         {
             playerInput = new PlayerInput();
-            onFoot = playerInput.OnFoot;
+            OnFoot = playerInput.OnFoot;
         }
 
         private void OnEnable()
         {
-            onFoot.Enable();
+            OnFoot.Enable();
         }
 
         private void OnDisable()
         {
-            onFoot.Disable();
+            OnFoot.Disable();
         }
     }
 }

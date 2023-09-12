@@ -5,11 +5,16 @@ namespace LostInTheVillage.MiniGames.Games.SuperPlatform.Scripts
 {
     public class Panel : MonoBehaviour
     {
-        public Slider healtbar;
+        [SerializeField] private Slider healtbar;
+
+        private void Start ()
+        {
+            healtbar.maxValue = 100;
+        }
 
         private void Update()
         {
-            healtbar.value = PlayerPlatform.health;
+            healtbar.value = PlayerPlatformController.Health;
         }
     }
 }

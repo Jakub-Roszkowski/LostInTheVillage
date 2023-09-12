@@ -1,24 +1,24 @@
-using UnityEngine;
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using LostInTheVillage.Helpers;
 
 namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts.Lifebuoys
 {
     public class PublicAnswear : MonoBehaviour
     {
-        public TMP_Text AnswearText;
-        public GameObject Button;
-        public GameObject PublicPanel;
+        [SerializeField] private TMP_Text AnswearText;
+        [SerializeField] private GameObject Button;
+        [SerializeField] private GameObject PublicPanel;
 
-        int randomMax = 100;
-        int random = 0;
-        int random2 = 0;
-        int random3 = 0;
+        private static bool f3 = true;
 
-        string corect;
+        private int randomMax = 100;
+        private int random = 0;
+        private int random2 = 0;
+        private int random3 = 0;
 
-        public static bool f3 = true;
+        private string corect;
         private string text;
 
         private void Start()
@@ -35,12 +35,12 @@ namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts.Lifebuoys
             random3 = rnd.Next(randomMax);
             randomMax = randomMax - random3;
 
-            text = Languages.SetTextPublicAnswear();
+            text = LanguagesTranslation.SetTextPublicAnswear();
         }
 
         private void Update()
         {
-            corect = TestMilioneirs.CurrentAnswear;
+            corect = MilioneirsQuestions.CurrentAnswer;
 
             Button.transform.GetComponent<Button>().onClick.AddListener(OnClickButton);
             if (Input.GetKey(KeyCode.Escape))

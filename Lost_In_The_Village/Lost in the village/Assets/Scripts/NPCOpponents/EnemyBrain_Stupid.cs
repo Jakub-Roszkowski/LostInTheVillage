@@ -1,5 +1,5 @@
+using LostInTheVillage.NPCOpponents.EnemyBrainSmart;
 using LostInTheVillage.NPCOpponents.States;
-using LostInTheVillage.NPCOpponents.States.EnemyBrainSmart;
 using System;
 using UnityEngine;
 

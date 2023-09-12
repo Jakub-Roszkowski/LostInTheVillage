@@ -1,4 +1,5 @@
-﻿using LostInTheVillage.Interactable.Interface;
+﻿using LostInTheVillage.Helpers.Translations;
+using LostInTheVillage.Interactable.Interface;
 using System.Collections;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ namespace SojaExiles
         }
         protected override void Interact()
         {
-            promptMessageTemp = LostInTheVillage.Helpers.Languages.SetTextOpenClose();
+            promptMessageTemp = LanguagesTranslation.SetTextOpenClose();
         }
         protected override void Interact2()
         {

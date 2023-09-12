@@ -1,4 +1,5 @@
 using LostInTheVillage.Character;
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,8 +12,14 @@ namespace LostInTheVillage.Interactable.StartPuzzle
         [SerializeField] private CharacterMessage eagleCharacter;
         [SerializeField] private GameObject bossObjects;
 
-        public static bool InGame { get; set; } = false;
+        public static bool IsInGame { get; set; } = false;
         public static bool HasFinishedGame { get; set; } = false;
+
+        private void Start()
+        {
+            IsInGame = false;
+            HasFinishedGame = false;
+        }
 
         private void Update()
         {
@@ -29,15 +36,15 @@ namespace LostInTheVillage.Interactable.StartPuzzle
 
         public void StartGame()
         {
-            InGame = true;
-            UnityEngine.Cursor.visible = true;
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(LostInTheVillage.Helpers.Scenes.Puzzle);
+            IsInGame = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(Helpers.Scenes.Puzzle);
         }
 
         private void SetDestinationText()
         {
-            destinationText.text = LostInTheVillage.Helpers.Languages.SetTextEagle();
+            destinationText.text = LanguagesTranslation.SetTextEagle();
         }
     }
 }

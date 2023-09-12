@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Player;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ namespace LostInTheVillage.Interactable
 
         public void Interact(GameObject wepaon)
         {
-            string pickupText = Languages.SetTextPickUp();
+            string pickupText = LanguagesTranslation.SetTextPickUp();
 
             if (!gunManager.IsTheSame(wepaon))
             {

@@ -1,6 +1,7 @@
+using LostInTheVillage.NPCOpponents.States;
 using UnityEngine;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyState_Reload : IState
     {
@@ -9,10 +10,7 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
         public EnemyState_Reload(EnemyReferences enemyReferences)
         {
             this.enemyReferences = enemyReferences;
-
         }
-
-
 
         public void OnEnter()
         {
@@ -25,10 +23,7 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
             enemyReferences.animator.SetFloat("cover", 0);
         }
 
-        public void Tick()
-        {
-
-        }
+        public void Tick(){}
 
         public Color GizmoColor()
         {

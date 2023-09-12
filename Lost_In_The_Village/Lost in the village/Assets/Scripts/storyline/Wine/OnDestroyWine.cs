@@ -1,4 +1,5 @@
 using LostInTheVillage.Character;
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace LostInTheVillage.Storyline.Wine
         private void OnDestroy()
         {
             waiterCharacter.Place = PlaceEnum.Bar2;
-            destinationText.text = Helpers.Languages.SetTextOnDestroyWine();
+            destinationText.text = LanguagesTranslation.SetTextOnDestroyWine();
         }
     }
 }

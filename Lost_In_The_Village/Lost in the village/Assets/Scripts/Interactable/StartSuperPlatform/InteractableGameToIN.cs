@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 
 namespace LostInTheVillage.Interactable.StartSuperPlatform
@@ -19,7 +19,7 @@ namespace LostInTheVillage.Interactable.StartSuperPlatform
 
         protected override void Interact()
         {
-            text = Languages.SetTextGameToIn();
+            text = LanguagesTranslation.SetTextGameToIn();
 
             if (ToSee)
                 promptMessageTemp = text;

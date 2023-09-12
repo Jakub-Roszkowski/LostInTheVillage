@@ -3,14 +3,12 @@ using UnityEngine;
 namespace LostInTheVillage.MiniGames.Games.Puzzle.Scripts
 {
     public class MouseDrag : MonoBehaviour
-    {        
-        public Vector3 initialPosition;
+    {
+        public Vector3 InitialPosition { get; set; }
 
         private Vector3 offset;
         private bool isDragging = false;
         private Rigidbody2D rb;
-
-        private float delay = 2f;
 
         private bool isInArea = false;
         private Vector2 minPosition = new Vector2(-21f, -18f);
@@ -70,7 +68,7 @@ namespace LostInTheVillage.MiniGames.Games.Puzzle.Scripts
 
         private void UpdateInitialPosition()
         {
-            initialPosition = transform.position;
+            InitialPosition = transform.position;
         }
     }
 }

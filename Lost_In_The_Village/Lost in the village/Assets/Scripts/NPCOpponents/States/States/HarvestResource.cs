@@ -31,12 +31,8 @@ namespace LostInTheVillage.NPCOpponents.States.States
             }
         }
 
-        public void OnEnter()
-        {
-        }
+        public void OnEnter() { }
 
-        public void OnExit()
-        {
-        }
+        public void OnExit() { }
     }
 }

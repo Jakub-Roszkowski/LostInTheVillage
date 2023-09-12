@@ -1,4 +1,4 @@
-﻿using LostInTheVillage.Helpers.CharacterTranslate;
+﻿using LostInTheVillage.Helpers.Translations.CharacterTranslate;
 using LostInTheVillage.Storyline.Wine;
 using System.Collections;
 using TMPro;

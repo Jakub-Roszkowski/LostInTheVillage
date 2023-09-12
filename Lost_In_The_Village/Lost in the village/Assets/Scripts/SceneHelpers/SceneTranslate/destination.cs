@@ -1,3 +1,4 @@
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace LostInTheVillage.SceneHelpers.SceneTranslate
 
         private void Start()
         {
-            promptText.text = Helpers.Languages.SetDestinationVillage2();
+            promptText.text = LanguagesTranslation.SetDestinationVillage2();
         }
     }
 }

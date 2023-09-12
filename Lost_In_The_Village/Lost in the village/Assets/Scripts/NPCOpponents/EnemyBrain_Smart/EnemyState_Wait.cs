@@ -1,6 +1,7 @@
+using LostInTheVillage.NPCOpponents.States;
 using UnityEngine;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyState_Wait : IState
     {
@@ -18,14 +19,9 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
             deadline = Time.time + waitForSeconds;
         }
 
-        public void OnExit()
-        {
+        public void OnExit() { }
 
-        }
-
-        public void Tick()
-        {
-        }
+        public void Tick() { }
 
         public bool IsDone()
         {

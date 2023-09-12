@@ -1,3 +1,4 @@
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,7 +34,7 @@ namespace LostInTheVillage.Interactable.StartSuperPlatform
         public void StartGame()
         {
             IsInGame = true;
-            SceneManager.LoadScene(LostInTheVillage.Helpers.Scenes.SuperPlatform);
+            SceneManager.LoadScene(Helpers.Scenes.SuperPlatform);
         }
         private void RemoveObj()
         {
@@ -46,7 +47,7 @@ namespace LostInTheVillage.Interactable.StartSuperPlatform
 
         private void SetText()
         {
-            promptText.text = LostInTheVillage.Helpers.Languages.SetTextFindRoszkol();
+            promptText.text = LanguagesTranslation.SetTextFindRoszkol();
         }
     }
 }

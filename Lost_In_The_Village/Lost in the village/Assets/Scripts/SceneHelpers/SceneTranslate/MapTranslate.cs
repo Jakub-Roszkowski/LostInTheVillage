@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using UnityEngine;
 
 namespace LostInTheVillage.SceneHelpers.SceneTranslate

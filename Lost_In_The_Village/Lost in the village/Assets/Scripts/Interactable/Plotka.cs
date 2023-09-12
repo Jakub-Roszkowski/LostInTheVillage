@@ -1,5 +1,5 @@
 using LostInTheVillage.Character;
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using TMPro;
 using UnityEngine;
@@ -23,7 +23,7 @@ namespace LostInTheVillage.Interactable
 
         protected override void Interact()
         {
-            promptMessageTemp = IsToFeed ? Languages.SetTextFeed() : "";
+            promptMessageTemp = IsToFeed ? LanguagesTranslation.SetTextFeed() : "";
         }
 
         protected override void Interact2()
@@ -39,7 +39,7 @@ namespace LostInTheVillage.Interactable
 
         private void setDestinationText()
         {
-            destinationText.text = Languages.SetTextFindRoszkol();
+            destinationText.text = LanguagesTranslation.SetTextFindRoszkol();
         }
 
         protected override string PromptMessage()

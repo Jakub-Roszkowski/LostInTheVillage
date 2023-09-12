@@ -2,10 +2,9 @@ using UnityEngine;
 
 namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 {
-
     public class Music : MonoBehaviour
     {
-        public AudioSource BGM;
+        [SerializeField] private AudioSource BGM;
 
         public void ChangeBGM(AudioClip music)
         {

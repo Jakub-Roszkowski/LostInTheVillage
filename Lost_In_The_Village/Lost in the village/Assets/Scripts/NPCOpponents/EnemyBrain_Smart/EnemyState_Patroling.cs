@@ -1,9 +1,11 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.NPCOpponents.States;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyState_Patroling : IState
     {
@@ -11,7 +13,8 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
         private CoverArea coverArea;
         public Vector3 destination;
         private Transform target;
-        public float spottingDistance = 70f;
+
+        private float spottingDistance = ConfigNumbers.SpottingDistanceNPC_Brain;
 
         private Cover currentCover = null;
 

@@ -1,3 +1,4 @@
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 
@@ -75,12 +76,12 @@ namespace LostInTheVillage.Storyline.Village2
 
         private void setText()
         {
-            promptText.text = LostInTheVillage.Helpers.Languages.SetTextGameInteract();
+            promptText.text = LanguagesTranslation.SetTextGameInteract();
 
         }
         private void setTextInMessage()
         {
-            textInMessage.text = LostInTheVillage.Helpers.Languages.SetTextGameMessage();
+            textInMessage.text = LanguagesTranslation.SetTextGameMessage();
         }
     }
 }

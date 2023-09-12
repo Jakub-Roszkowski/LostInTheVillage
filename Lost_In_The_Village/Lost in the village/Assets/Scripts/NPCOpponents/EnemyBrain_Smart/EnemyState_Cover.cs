@@ -1,16 +1,17 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.NPCOpponents.States;
 using System;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
+namespace LostInTheVillage.NPCOpponents.EnemyBrainSmart
 {
     public class EnemyState_Cover : IState
     {
-
         private EnemyReferences enemyReferences;
         private StateMachine stateMachine;
         private Transform target;
-        public float spotingDistance = 70f;
+        public float spotingDistance = ConfigNumbers.SpottingDistanceNPC_Brain;
 
         public EnemyState_Cover(EnemyReferences enemyReferences)
         {
@@ -30,7 +31,6 @@ namespace LostInTheVillage.NPCOpponents.States.EnemyBrainSmart
 
             void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
             void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
-
         }
 
         public bool PlayerInRange()

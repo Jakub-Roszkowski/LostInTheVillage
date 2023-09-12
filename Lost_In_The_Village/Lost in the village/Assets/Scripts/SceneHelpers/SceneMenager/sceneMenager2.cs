@@ -4,6 +4,6 @@ namespace LostInTheVillage.SceneHelpers.SceneMenager
 {
     public class SceneMenager2 : MonoBehaviour
     {
-        public static string currentScene;
+        public static string CurrentScene { get; set; }
     }
 }

@@ -58,7 +58,7 @@ namespace LostInTheVillage.Player
                     {
                         Destroy(obj);
                     }
-                    SceneManager.LoadScene(SceneMenager2.currentScene);
+                    SceneManager.LoadScene(SceneMenager2.CurrentScene);
                 }
                 else if (!IsPlayer())
                 {

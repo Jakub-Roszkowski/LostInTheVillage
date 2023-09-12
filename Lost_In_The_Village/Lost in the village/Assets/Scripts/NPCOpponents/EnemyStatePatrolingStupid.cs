@@ -1,5 +1,6 @@
+using LostInTheVillage.Helpers;
+using LostInTheVillage.NPCOpponents.EnemyBrainSmart;
 using LostInTheVillage.NPCOpponents.States;
-using LostInTheVillage.NPCOpponents.States.EnemyBrainSmart;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,8 +10,9 @@ namespace LostInTheVillage.NPCOpponents
 {
     public class EnemyStatePatrolingStupid : IState
     {
-        public Vector3 destination;
-        public float spottingDistance = 60f;
+        public Vector3 destination { get; set; }
+
+        private float spottingDistance = ConfigNumbers.SpottingDistanceNPC_Stupid;
 
         private EnemyReferences enemyReferences;
         private GameObject player;

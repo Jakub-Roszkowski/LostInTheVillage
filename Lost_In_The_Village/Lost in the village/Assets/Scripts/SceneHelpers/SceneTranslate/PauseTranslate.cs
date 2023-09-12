@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +18,7 @@ namespace LostInTheVillage.SceneHelpers.SceneTranslate
 
         private void Start()
         {
-            (Resume.text, Restart.text, GameLevel.text, Easy.text, Medium.text, Hard.text, Quit.text, Music.text, Sounds.text) = Languages.SetTextMenu();
+            (Resume.text, Restart.text, GameLevel.text, Easy.text, Medium.text, Hard.text, Quit.text, Music.text, Sounds.text) = LanguagesTranslation.SetTextMenu();
         }
     }
 }

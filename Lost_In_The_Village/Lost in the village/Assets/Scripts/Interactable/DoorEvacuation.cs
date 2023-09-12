@@ -1,4 +1,4 @@
-using LostInTheVillage.Helpers;
+using LostInTheVillage.Helpers.Translations;
 using LostInTheVillage.Interactable.Interface;
 using UnityEngine;
 
@@ -20,8 +20,8 @@ namespace LostInTheVillage.Interactable
 
         protected override void Interact()
         {
-            string text1 = Languages.SetTextDoorEvacuationInteract();
-            string text2 = Languages.SetTextDoorEvacuationInteract2();
+            string text1 = LanguagesTranslation.SetTextDoorEvacuationInteract();
+            string text2 = LanguagesTranslation.SetTextDoorEvacuationInteract2();
 
             promptMessageTemp = IsToSee ? text1 : text2;
         }

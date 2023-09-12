@@ -31,6 +31,11 @@ namespace LostInTheVillage.Menus
             onFoot.Disable();
         }
 
+        private void Start()
+        {
+            IsInGame = false;
+        }
+
         private void Update()
         {
             if (onFoot.Exit.triggered)
@@ -39,8 +44,8 @@ namespace LostInTheVillage.Menus
             }
             if (IsInGame)
             {
-                UnityEngine.Cursor.visible = true;
-                UnityEngine.Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             if (IsInGame2)
             {
@@ -52,8 +57,8 @@ namespace LostInTheVillage.Menus
         {
             IsInGame = false;
             IsInGame2 = false;
-            UnityEngine.Cursor.visible = false;
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
             gamesPanel.SetActive(false);
             foreach (GameObject elem in objectsToActive)

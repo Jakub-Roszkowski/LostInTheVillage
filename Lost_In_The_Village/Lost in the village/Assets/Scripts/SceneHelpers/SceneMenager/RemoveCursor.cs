@@ -6,8 +6,8 @@ namespace LostInTheVillage.SceneHelpers.SceneMenager
     {
         private void Start()
         {
-            UnityEngine.Cursor.visible = false;
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

@@ -1,3 +1,4 @@
+using LostInTheVillage.Helpers.Translations;
 using TMPro;
 using UnityEngine;
 
@@ -5,11 +6,11 @@ namespace LostInTheVillage.MiniGames.Games.Milioneirs.Scripts
 {
     public class ExitPanelTranslate : MonoBehaviour
     {
-        public TMP_Text text;
+        [SerializeField] private TMP_Text text;
 
         private void Start()
         {
-            text.text = Helpers.Languages.SetTextExitPanel();
+            text.text = LanguagesTranslation.SetTextExitPanel();
         }
     }
 }

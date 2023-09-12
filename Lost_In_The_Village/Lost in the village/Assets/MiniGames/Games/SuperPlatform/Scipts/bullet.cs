@@ -4,10 +4,9 @@ namespace LostInTheVillage.MiniGames.Games.SuperPlatform.Scripts
 {
     public class Bullet : MonoBehaviour
     {
-        public Rigidbody2D rigidbody;
-        public float movementSpeed;
+        [SerializeField] private Rigidbody2D rigidbody;
 
-        public PlayerPlatform player;
+        private float movementSpeed = 1500;
 
         private void FixedUpdate()
         {

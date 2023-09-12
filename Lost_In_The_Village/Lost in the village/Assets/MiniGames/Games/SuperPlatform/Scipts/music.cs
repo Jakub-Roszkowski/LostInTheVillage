@@ -1,17 +1,10 @@
 using LostInTheVillage.Menus;
-using TMPro;
 using UnityEngine;
 
 namespace Minigames.Games.SuperPlatform.Scripts
 {
     public class Music : MonoBehaviour
     {
-        public TMP_Text Mute_TMP;
-        public AudioSource BGM;
-        public GameObject muteSounds_button;
-
-        private bool mute = false;
-
         private AudioSource audioSource;
         private float startVolume;
 
